@@ -432,7 +432,13 @@ def build_group_comparison_distribution(
         fig = go.Figure()
         return apply_dark_theme(fig, title="Group Distribution (No Valid Data)")
 
-    palette_colors = ["#38bdf8", "#f43f5e", "#10b981", "#a855f7", "#f59e0b"]
+    palette_colors = [
+        {"line": "#38bdf8", "fill": "rgba(56, 189, 248, 0.25)"},
+        {"line": "#f43f5e", "fill": "rgba(244, 63, 94, 0.25)"},
+        {"line": "#10b981", "fill": "rgba(16, 185, 129, 0.25)"},
+        {"line": "#a855f7", "fill": "rgba(168, 85, 247, 0.25)"},
+        {"line": "#f59e0b", "fill": "rgba(245, 158, 11, 0.25)"},
+    ]
     fig = go.Figure()
 
     unique_groups = groups if groups else list(clean[group_col].unique())
@@ -440,7 +446,7 @@ def build_group_comparison_distribution(
         grp_data = clean[clean[group_col] == grp][measure_col]
         if grp_data.empty:
             continue
-        color = palette_colors[i % len(palette_colors)]
+        color_info = palette_colors[i % len(palette_colors)]
         fig.add_trace(
             go.Violin(
                 x=clean[clean[group_col] == grp][group_col],
@@ -451,10 +457,8 @@ def build_group_comparison_distribution(
                 points="outliers",
                 jitter=0.2,
                 scalemode="count",
-                line_color=color,
-                fillcolor=color.replace("#", "rgba(") + ", 0.25)"
-                if not color.startswith("rgba")
-                else color,
+                line_color=color_info["line"],
+                fillcolor=color_info["fill"],
                 marker={"size": 4, "opacity": 0.7},
                 hovertemplate=f"<b>{grp}</b><br>Value: %{{y:,.2f}}<extra></extra>",
             )
