@@ -1,6 +1,7 @@
 """Page 3: Exploration Studio — Interactive Distributions, Correlations, and Grounded EDA Insights."""
 
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 from src.analytics.analysis_models import EDAFinding
 from src.analytics.descriptive import (
@@ -215,7 +216,16 @@ def render_interpretation_card(finding: EDAFinding) -> None:
 # ==============================================================================
 # MAIN TABS WORKSPACE
 # ==============================================================================
-tab_overview, tab_var, tab_dist, tab_corr, tab_group, tab_multi, tab_insights = st.tabs(
+(
+    tab_overview,
+    tab_var,
+    tab_dist,
+    tab_corr,
+    tab_group,
+    tab_multi,
+    tab_insights,
+    tab_custom,
+) = st.tabs(
     [
         "📋 1. Dataset Overview",
         "🔍 2. Variable Explorer",
@@ -224,6 +234,7 @@ tab_overview, tab_var, tab_dist, tab_corr, tab_group, tab_multi, tab_insights = 
         "👥 5. Grouped Disparity",
         "🌐 6. Multivariate Studio",
         "💡 7. Insights & Recommendations",
+        "🎨 8. Custom Chart Studio",
     ]
 )
 
@@ -699,6 +710,458 @@ with tab_insights:
                 """,
                 unsafe_allow_html=True,
             )
+
+# ------------------------------------------------------------------------------
+# TAB 8: CUSTOM CHART & INSIGHT STUDIO
+# ------------------------------------------------------------------------------
+with tab_custom:
+    st.subheader("🎨 Custom Chart & Insight Studio")
+    st.caption(
+        "Interactively configure, visualize, and analyze any relationship across your dataset with automated statistical interpretations."
+    )
+
+    all_cols = list(df.columns)
+    c_builder, c_display = st.columns([1, 2])
+
+    with c_builder:
+        st.markdown("##### ⚙️ Chart Configuration")
+        chart_type = st.selectbox(
+            "Select Chart Type:",
+            [
+                "Bar Chart (Aggregated / Category)",
+                "Scatter / Bubble Plot",
+                "Line Chart (Trend / Temporal)",
+                "Histogram / Frequency",
+                "Box Plot (Segment Comparison)",
+                "Violin Plot (Kernel Density)",
+                "Pie / Donut Chart",
+                "Treemap (Hierarchical Slices)",
+                "2D Density Heatmap",
+            ],
+            key="custom_chart_type",
+        )
+
+        x_col = st.selectbox(
+            "X-Axis / Category Column:", options=all_cols, index=0, key="custom_x_col"
+        )
+
+        # Y column selector depending on chart
+        y_options = ["None", *all_cols]
+        default_y_idx = 1 if len(numeric_cols) > 0 and numeric_cols[0] in y_options else 0
+        y_col = st.selectbox(
+            "Y-Axis / Measure Column:",
+            options=y_options,
+            index=default_y_idx,
+            key="custom_y_col",
+        )
+
+        # Aggregation selector if Bar, Line, Pie, or Treemap
+        agg_func = "None (Raw Values)"
+        if chart_type in (
+            "Bar Chart (Aggregated / Category)",
+            "Line Chart (Trend / Temporal)",
+            "Pie / Donut Chart",
+            "Treemap (Hierarchical Slices)",
+        ):
+            if y_col != "None":
+                agg_func = st.selectbox(
+                    "Aggregation Function for Y:",
+                    ["Sum", "Mean", "Median", "Count", "Min", "Max", "None (Raw Values)"],
+                    index=1,
+                    key="custom_agg_func",
+                )
+            else:
+                agg_func = "Count"
+                st.caption("ℹ️ No Y column selected: Plotting record counts per category.")
+
+        # Optional color breakdown
+        color_choices = [
+            "None",
+            *categorical_cols,
+            *[c for c in numeric_cols if c not in (x_col, y_col)],
+        ]
+        color_col = st.selectbox(
+            "Color / Grouping Dimension (Optional):",
+            color_choices,
+            index=0,
+            key="custom_color_col",
+        )
+
+        # Optional size for scatter
+        size_col = "None"
+        if "Scatter" in chart_type:
+            size_choices = ["None", *numeric_cols]
+            size_col = st.selectbox(
+                "Bubble Size Encoding (Optional):",
+                size_choices,
+                index=0,
+                key="custom_size_col",
+            )
+
+        # Optional facet column
+        facet_choices = [
+            "None",
+            *[c for c in categorical_cols if df[c].nunique() <= 8 and c != x_col],
+        ]
+        facet_col = st.selectbox(
+            "Subplot Grid / Facet (Optional):",
+            facet_choices,
+            index=0,
+            key="custom_facet_col",
+        )
+
+        # Visual styling
+        with st.expander("🎨 Styling & Display Options", expanded=False):
+            custom_title = st.text_input(
+                "Chart Title:",
+                value=f"{chart_type.split(' (')[0]}: {x_col}"
+                + (f" vs {y_col}" if y_col != "None" else ""),
+                key="custom_title_input",
+            )
+            color_theme = st.selectbox(
+                "Color Palette:",
+                ["Plotly Dark", "Viridis", "Blues", "Teal", "Plasma", "Sunsetdark", "RdBu_r"],
+                index=0,
+                key="custom_color_theme",
+            )
+            log_y = st.checkbox("Log scale Y-axis", value=False, key="custom_log_y")
+            show_trend = False
+            if "Scatter" in chart_type and y_col != "None":
+                show_trend = st.checkbox("Fit OLS Trendline", value=True, key="custom_show_trend")
+            orientation = "v"
+            if "Bar" in chart_type or "Box" in chart_type:
+                is_horiz = st.checkbox("Horizontal Orientation", value=False, key="custom_horiz")
+                if is_horiz:
+                    orientation = "h"
+
+    with c_display:
+        plot_df = df.copy()
+        c_arg = None if color_col == "None" else color_col
+        s_arg = None if size_col == "None" else size_col
+        f_arg = None if facet_col == "None" else facet_col
+
+        try:
+            if agg_func not in ("None (Raw Values)", "None"):
+                group_keys = [x_col]
+                if c_arg and c_arg != x_col and c_arg in categorical_cols:
+                    group_keys.append(c_arg)
+                if f_arg and f_arg not in group_keys:
+                    group_keys.append(f_arg)
+
+                if agg_func == "Count":
+                    plot_df = (
+                        plot_df.groupby(group_keys, as_index=False)
+                        .size()
+                        .rename(columns={"size": "Record_Count"})
+                    )
+                    y_metric = "Record_Count"
+                else:
+                    if y_col != "None" and pd.api.types.is_numeric_dtype(plot_df[y_col]):
+                        agg_map = {
+                            "Sum": "sum",
+                            "Mean": "mean",
+                            "Median": "median",
+                            "Min": "min",
+                            "Max": "max",
+                        }
+                        func = agg_map.get(agg_func, "mean")
+                        plot_df = plot_df.groupby(group_keys, as_index=False)[y_col].agg(func)
+                        y_metric = y_col
+                    else:
+                        plot_df = (
+                            plot_df.groupby(group_keys, as_index=False)
+                            .size()
+                            .rename(columns={"size": "Record_Count"})
+                        )
+                        y_metric = "Record_Count"
+            else:
+                y_metric = y_col if y_col != "None" else None
+
+            # Render Chart by Type
+            fig_custom = None
+            template_name = "plotly_dark"
+            palette_map = {
+                "Plotly Dark": None,
+                "Viridis": px.colors.sequential.Viridis,
+                "Blues": px.colors.sequential.Blues,
+                "Teal": px.colors.sequential.Teal,
+                "Plasma": px.colors.sequential.Plasma,
+                "Sunsetdark": px.colors.sequential.Sunsetdark,
+                "RdBu_r": px.colors.diverging.RdBu_r,
+            }
+            colors_seq = palette_map.get(color_theme)
+
+            if "Bar" in chart_type:
+                fig_custom = px.bar(
+                    plot_df,
+                    x=x_col if orientation == "v" else y_metric,
+                    y=y_metric if orientation == "v" else x_col,
+                    color=c_arg,
+                    facet_col=f_arg,
+                    orientation=orientation,
+                    title=custom_title,
+                    template=template_name,
+                    color_discrete_sequence=colors_seq,
+                    color_continuous_scale=colors_seq,
+                    log_y=log_y if orientation == "v" else False,
+                    log_x=log_y if orientation == "h" else False,
+                )
+            elif "Scatter" in chart_type:
+                if y_metric:
+                    s_limit = min(len(plot_df), 3000)
+                    sample_p = (
+                        plot_df.sample(s_limit, random_state=42)
+                        if len(plot_df) > s_limit
+                        else plot_df
+                    )
+                    fig_custom = px.scatter(
+                        sample_p,
+                        x=x_col,
+                        y=y_metric,
+                        color=c_arg,
+                        size=s_arg,
+                        facet_col=f_arg,
+                        trendline="ols"
+                        if show_trend
+                        and pd.api.types.is_numeric_dtype(sample_p[x_col])
+                        and pd.api.types.is_numeric_dtype(sample_p[y_metric])
+                        else None,
+                        title=custom_title,
+                        template=template_name,
+                        color_discrete_sequence=colors_seq,
+                        color_continuous_scale=colors_seq,
+                        log_y=log_y,
+                    )
+                else:
+                    st.warning("Scatter plot requires a Y-Axis column.")
+            elif "Line" in chart_type:
+                fig_custom = px.line(
+                    plot_df,
+                    x=x_col,
+                    y=y_metric,
+                    color=c_arg,
+                    facet_col=f_arg,
+                    title=custom_title,
+                    template=template_name,
+                    color_discrete_sequence=colors_seq,
+                    log_y=log_y,
+                )
+            elif "Histogram" in chart_type:
+                fig_custom = px.histogram(
+                    plot_df,
+                    x=x_col,
+                    y=y_metric if y_metric and y_metric != "Record_Count" else None,
+                    color=c_arg,
+                    facet_col=f_arg,
+                    marginal="box",
+                    title=custom_title,
+                    template=template_name,
+                    color_discrete_sequence=colors_seq,
+                    log_y=log_y,
+                )
+            elif "Box" in chart_type:
+                fig_custom = px.box(
+                    plot_df,
+                    x=x_col if orientation == "v" else y_metric,
+                    y=y_metric if orientation == "v" else x_col,
+                    color=c_arg,
+                    facet_col=f_arg,
+                    orientation=orientation,
+                    points="outliers",
+                    title=custom_title,
+                    template=template_name,
+                    color_discrete_sequence=colors_seq,
+                    log_y=log_y if orientation == "v" else False,
+                )
+            elif "Violin" in chart_type:
+                fig_custom = px.violin(
+                    plot_df,
+                    x=x_col,
+                    y=y_metric,
+                    color=c_arg,
+                    box=True,
+                    points="outliers",
+                    title=custom_title,
+                    template=template_name,
+                    color_discrete_sequence=colors_seq,
+                    log_y=log_y,
+                )
+            elif "Pie" in chart_type:
+                fig_custom = px.pie(
+                    plot_df,
+                    names=x_col,
+                    values=y_metric if y_metric else None,
+                    title=custom_title,
+                    template=template_name,
+                    color_discrete_sequence=colors_seq,
+                    hole=0.4,
+                )
+            elif "Treemap" in chart_type:
+                path_cols = [x_col]
+                if c_arg and c_arg != x_col and c_arg in categorical_cols:
+                    path_cols.append(c_arg)
+                fig_custom = px.treemap(
+                    plot_df,
+                    path=path_cols,
+                    values=y_metric if y_metric and y_metric != x_col else None,
+                    title=custom_title,
+                    template=template_name,
+                    color_continuous_scale=colors_seq,
+                )
+            elif "2D Density" in chart_type:
+                if y_metric:
+                    fig_custom = px.density_heatmap(
+                        plot_df,
+                        x=x_col,
+                        y=y_metric,
+                        facet_col=f_arg,
+                        title=custom_title,
+                        template=template_name,
+                        color_continuous_scale=colors_seq or "Viridis",
+                    )
+                else:
+                    st.warning("2D Density Heatmap requires both X and Y columns.")
+
+            if fig_custom is not None:
+                fig_custom.update_layout(height=420, margin={"l": 20, "r": 20, "t": 50, "b": 30})
+                st.plotly_chart(
+                    fig_custom,
+                    use_container_width=True,
+                    key=f"cust_canvas_{chart_type[:4]}_{x_col}_{y_col}_{agg_func}_{color_col}",
+                )
+
+                # Statistical Insights Card
+                st.markdown("#### 💡 Automated Analytical Insights")
+                ins_c1, ins_c2, ins_c3, ins_c4 = st.columns(4)
+                ins_c1.metric("Plotted Rows", f"{len(plot_df):,}")
+                ins_c2.metric("Distinct X Values", f"{plot_df[x_col].nunique():,}")
+                if (
+                    y_metric
+                    and y_metric in plot_df.columns
+                    and pd.api.types.is_numeric_dtype(plot_df[y_metric])
+                ):
+                    y_s = plot_df[y_metric].dropna()
+                    ins_c3.metric(f"Mean ({y_metric})", f"{y_s.mean():,.2f}")
+                    ins_c4.metric(f"Sum ({y_metric})", f"{y_s.sum():,.2f}")
+                else:
+                    ins_c3.metric("Completeness", f"{(1 - df[x_col].isna().mean()) * 100:.1f}%")
+                    ins_c4.metric(
+                        "Memory Used", f"{plot_df.memory_usage(deep=True).sum() / 1024:.1f} KB"
+                    )
+
+                # Contextual Interpretation
+                insight_text = ""
+                if (
+                    "Scatter" in chart_type
+                    and y_metric
+                    and pd.api.types.is_numeric_dtype(df[x_col])
+                    and pd.api.types.is_numeric_dtype(df[y_metric])
+                ):
+                    clean_biv = df[[x_col, y_metric]].dropna()
+                    if len(clean_biv) >= 3:
+                        r_val = float(clean_biv[x_col].corr(clean_biv[y_metric]))
+                        direction = "positive" if r_val > 0 else "negative"
+                        strength = (
+                            "strong"
+                            if abs(r_val) >= 0.7
+                            else ("moderate" if abs(r_val) >= 0.4 else "weak")
+                        )
+                        insight_text = (
+                            f"**Correlation Analysis:** {x_col} and {y_metric} show a **{strength} {direction} correlation** "
+                            f"($r = {r_val:+.3f}$, $R^2 = {r_val**2:.3f}$). Approximately **{r_val**2 * 100:.1f}%** of the variation in {y_metric} is statistically explained by {x_col}."
+                        )
+                elif (
+                    agg_func not in ("None (Raw Values)", "None")
+                    and y_metric
+                    and pd.api.types.is_numeric_dtype(plot_df[y_metric])
+                    and len(plot_df) >= 2
+                ):
+                    top_row = plot_df.sort_values(by=y_metric, ascending=False).iloc[0]
+                    bot_row = plot_df.sort_values(by=y_metric, ascending=True).iloc[0]
+                    top_val = float(top_row[y_metric])
+                    bot_val = float(bot_row[y_metric])
+                    ratio = (top_val / bot_val) if bot_val > 0 else 0.0
+                    ratio_str = f" by a factor of **{ratio:.1f}×**." if ratio > 0 else "."
+                    insight_text = (
+                        f"**Segment Disparity:** The leading segment **'{top_row[x_col]}'** reaches **{top_val:,.2f}** "
+                        f"({y_metric} {agg_func}), outperforming **'{bot_row[x_col]}'** ({bot_val:,.2f}){ratio_str}"
+                    )
+                elif "Histogram" in chart_type or "Box" in chart_type:
+                    if pd.api.types.is_numeric_dtype(df[x_col]):
+                        s_num = df[x_col].dropna()
+                        skew = float(s_num.skew())
+                        q25, med, q75 = s_num.quantile(0.25), s_num.median(), s_num.quantile(0.75)
+                        shape_str = (
+                            "right-skewed"
+                            if skew > 0.5
+                            else ("left-skewed" if skew < -0.5 else "symmetric")
+                        )
+                        insight_text = (
+                            f"**Distribution Properties:** Median is **{med:,.2f}** with IQR spanning `[{q25:,.2f}, {q75:,.2f}]`. "
+                            f"Distribution exhibits a **{shape_str}** shape (skewness = {skew:+.2f})."
+                        )
+
+                if insight_text:
+                    st.info(insight_text)
+
+                # Action buttons: Data download & Pin to Canvas
+                st.markdown("---")
+                btn_c1, btn_c2 = st.columns(2)
+                with btn_c1:
+                    csv_bytes = plot_df.to_csv(index=False).encode("utf-8")
+                    st.download_button(
+                        label="📥 Download Plotted Data (CSV)",
+                        data=csv_bytes,
+                        file_name=f"custom_plot_{x_col}_{y_metric or 'count'}.csv",
+                        mime="text/csv",
+                        key="btn_dl_custom_plot_data",
+                    )
+                with btn_c2:
+                    if "saved_custom_charts" not in st.session_state:
+                        st.session_state["saved_custom_charts"] = []
+
+                    if st.button("📌 Pin this Chart to Saved Canvas", key="btn_pin_chart"):
+                        st.session_state["saved_custom_charts"].append(
+                            {
+                                "title": custom_title,
+                                "type": chart_type,
+                                "summary": insight_text
+                                or f"Plotted {x_col}"
+                                + (f" against {y_metric}" if y_metric else ""),
+                                "timestamp": pd.Timestamp.now().strftime("%H:%M:%S"),
+                            }
+                        )
+                        st.success(f"Pinned '{custom_title}' to Canvas below!")
+                        st.rerun()
+
+        except Exception as ex:
+            st.error(f"Could not render visual: {ex}")
+
+    # Saved Charts Gallery
+    if st.session_state.get("saved_custom_charts"):
+        st.markdown("---")
+        st.markdown("### 📌 Pinned Charts & Visual Canvas")
+        st.caption(
+            "Custom visual collection pinned during your active analytical exploration session."
+        )
+        gallery_cols = st.columns(min(3, len(st.session_state["saved_custom_charts"])))
+        for idx, saved in enumerate(st.session_state["saved_custom_charts"]):
+            col_idx = idx % len(gallery_cols)
+            with gallery_cols[col_idx]:
+                st.markdown(
+                    f"""
+                    <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid #475569; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                        <h5 style="color: #38bdf8; margin: 0 0 6px 0;">📊 {saved["title"]}</h5>
+                        <p style="font-size: 0.8rem; color: #94a3b8; margin: 0 0 4px 0;"><strong>Type:</strong> {saved["type"]} • <em>Pinned at {saved["timestamp"]}</em></p>
+                        <p style="font-size: 0.82rem; color: #e2e8f0; margin: 0;">{saved["summary"]}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+        if st.button("🗑️ Clear Pinned Visuals Canvas", key="btn_clear_canvas"):
+            st.session_state["saved_custom_charts"] = []
+            st.rerun()
 
 st.markdown("---")
 st.page_link("app.py", label="← Return to Main Workspace", icon="🏠")
