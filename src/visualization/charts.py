@@ -412,3 +412,326 @@ def build_residual_fitted_plot(
     return apply_dark_theme(
         fig, title=title, x_title="Fitted Values (ŷ)", y_title="Residuals (e = y - ŷ)"
     )
+
+
+def build_group_comparison_distribution(
+    df: pd.DataFrame,
+    group_col: str,
+    measure_col: str,
+    groups: list[str] | None = None,
+    title: str | None = None,
+) -> go.Figure:
+    """Build a side-by-side violin + box distribution plot comparing groups with data jitter."""
+    needed = [group_col, measure_col]
+    clean = df[needed].dropna()
+    clean[group_col] = clean[group_col].astype(str)
+    if groups:
+        clean = clean[clean[group_col].isin(groups)]
+
+    if clean.empty:
+        fig = go.Figure()
+        return apply_dark_theme(fig, title="Group Distribution (No Valid Data)")
+
+    palette_colors = ["#38bdf8", "#f43f5e", "#10b981", "#a855f7", "#f59e0b"]
+    fig = go.Figure()
+
+    unique_groups = groups if groups else list(clean[group_col].unique())
+    for i, grp in enumerate(unique_groups):
+        grp_data = clean[clean[group_col] == grp][measure_col]
+        if grp_data.empty:
+            continue
+        color = palette_colors[i % len(palette_colors)]
+        fig.add_trace(
+            go.Violin(
+                x=clean[clean[group_col] == grp][group_col],
+                y=grp_data,
+                name=str(grp),
+                box_visible=True,
+                meanline_visible=True,
+                points="outliers",
+                jitter=0.2,
+                scalemode="count",
+                line_color=color,
+                fillcolor=color.replace("#", "rgba(") + ", 0.25)"
+                if not color.startswith("rgba")
+                else color,
+                marker={"size": 4, "opacity": 0.7},
+                hovertemplate=f"<b>{grp}</b><br>Value: %{{y:,.2f}}<extra></extra>",
+            )
+        )
+
+    chart_title = title or f"Group Distribution Comparison: '{measure_col}' by '{group_col}'"
+    return apply_dark_theme(fig, title=chart_title, x_title=group_col, y_title=measure_col)
+
+
+def build_difference_forest_plot(
+    point_estimate: float,
+    ci_lower: float,
+    ci_upper: float,
+    estimand_label: str = "Mean Difference",
+    group1: str = "",
+    group2: str = "",
+    is_significant: bool = True,
+    title: str | None = None,
+) -> go.Figure:
+    """Build a horizontal forest plot showing effect estimate and 95% Confidence Interval vs Null."""
+    fig = go.Figure()
+
+    # Zero reference line (Null Hypothesis of 0 difference)
+    fig.add_vline(
+        x=0.0,
+        line_dash="dash",
+        line_color="#f43f5e",
+        line_width=2,
+        annotation_text="Null (Zero Difference)",
+        annotation_position="top left",
+        annotation_font={"color": "#f43f5e", "size": 11},
+    )
+
+    err_plus = max(0.0, ci_upper - point_estimate)
+    err_minus = max(0.0, point_estimate - ci_lower)
+    marker_color = "#10b981" if is_significant else "#f59e0b"
+
+    fig.add_trace(
+        go.Scatter(
+            x=[point_estimate],
+            y=[estimand_label],
+            error_x={
+                "type": "data",
+                "symmetric": False,
+                "array": [err_plus],
+                "arrayminus": [err_minus],
+                "color": marker_color,
+                "thickness": 3,
+                "width": 10,
+            },
+            mode="markers",
+            marker={"size": 12, "color": marker_color, "symbol": "diamond"},
+            name=estimand_label,
+            hovertemplate=(
+                f"<b>{estimand_label}</b><br>"
+                f"Estimate: %{{x:,.3f}}<br>"
+                f"95% CI: [{ci_lower:,.3f}, {ci_upper:,.3f}]<extra></extra>"
+            ),
+        )
+    )
+
+    # Annotate direction
+    sub_title = title or f"Confidence Interval & Significance: {estimand_label}"
+    if group1 and group2:
+        sub_title += f" ({group1} vs {group2})"
+
+    fig.update_layout(height=260)
+    return apply_dark_theme(fig, title=sub_title, x_title=f"{estimand_label} (with 95% CI)")
+
+
+def build_ecdf_comparison_plot(
+    df: pd.DataFrame,
+    group_col: str,
+    measure_col: str,
+    groups: list[str] | None = None,
+    title: str | None = None,
+) -> go.Figure:
+    """Build an empirical cumulative distribution function (eCDF) plot comparing groups."""
+    needed = [group_col, measure_col]
+    clean = df[needed].dropna()
+    clean[group_col] = clean[group_col].astype(str)
+    if groups:
+        clean = clean[clean[group_col].isin(groups)]
+
+    if clean.empty:
+        fig = go.Figure()
+        return apply_dark_theme(fig, title="eCDF (No Valid Data)")
+
+    palette_colors = ["#38bdf8", "#f43f5e", "#10b981", "#a855f7", "#f59e0b"]
+    fig = go.Figure()
+
+    unique_groups = groups if groups else list(clean[group_col].unique())
+    for i, grp in enumerate(unique_groups):
+        grp_vals = clean[clean[group_col] == grp][measure_col].sort_values().values
+        if len(grp_vals) == 0:
+            continue
+        y_pct = (np.arange(len(grp_vals)) + 1) / len(grp_vals) * 100.0
+        color = palette_colors[i % len(palette_colors)]
+
+        fig.add_trace(
+            go.Scatter(
+                x=grp_vals,
+                y=y_pct,
+                mode="lines",
+                name=f"{grp} (N={len(grp_vals):,})",
+                line={"color": color, "width": 2.5},
+                hovertemplate=f"<b>{grp}</b><br>Value: %{{x:,.2f}}<br>Cumulative: %{{y:.1f}}%<extra></extra>",
+            )
+        )
+
+    chart_title = title or f"Empirical Cumulative Distribution (eCDF): '{measure_col}'"
+    return apply_dark_theme(
+        fig,
+        title=chart_title,
+        x_title=measure_col,
+        y_title="Cumulative Percentile (%)",
+    )
+
+
+def build_normality_overlay_plot(
+    series: pd.Series,
+    group_name: str,
+    var_name: str,
+    title: str | None = None,
+) -> go.Figure:
+    """Build a histogram of empirical density with theoretical Gaussian bell curve overlaid."""
+    clean = pd.to_numeric(series, errors="coerce").dropna()
+    if len(clean) < 3:
+        fig = go.Figure()
+        return apply_dark_theme(fig, title=f"Normality Check: '{var_name}' (Insufficient Data)")
+
+    mean_val = float(clean.mean())
+    std_val = float(clean.std(ddof=1)) if len(clean) > 1 else 1.0
+
+    fig = go.Figure()
+
+    # Empirical Density Histogram
+    fig.add_trace(
+        go.Histogram(
+            x=clean,
+            histnorm="probability density",
+            name="Sample Data",
+            marker={"color": "rgba(56, 189, 248, 0.45)", "line": {"color": "#38bdf8", "width": 1}},
+            hovertemplate="Range: %{x}<br>Density: %{y:.5f}<extra></extra>",
+        )
+    )
+
+    # Theoretical Normal Curve
+    if std_val > 1e-9:
+        x_min, x_max = float(clean.min()), float(clean.max())
+        x_range = max(1e-6, x_max - x_min)
+        x_grid = np.linspace(x_min - 0.1 * x_range, x_max + 0.1 * x_range, 200)
+        norm_pdf = (1.0 / (std_val * np.sqrt(2 * np.pi))) * np.exp(
+            -0.5 * ((x_grid - mean_val) / std_val) ** 2
+        )
+
+        fig.add_trace(
+            go.Scatter(
+                x=x_grid,
+                y=norm_pdf,
+                mode="lines",
+                name="Theoretical Gaussian",
+                line={"color": "#f43f5e", "width": 2.5, "dash": "dash"},
+                hovertemplate="Value: %{x:,.2f}<br>Normal PDF: %{y:.5f}<extra></extra>",
+            )
+        )
+
+    chart_title = title or f"Normality Check: '{var_name}' — {group_name} (vs. Normal Bell Curve)"
+    return apply_dark_theme(fig, title=chart_title, x_title=var_name, y_title="Probability Density")
+
+
+def build_regression_predicted_actual(
+    y_true: np.ndarray | pd.Series,
+    y_pred: np.ndarray | pd.Series,
+    outcome_name: str = "Outcome",
+    title: str = "Predicted vs. Actual",
+) -> go.Figure:
+    """Build a predicted vs actual scatter plot with 45-degree ideal fit line."""
+    y_t = np.asarray(y_true, dtype=float)
+    y_p = np.asarray(y_pred, dtype=float)
+
+    fig = go.Figure()
+    if len(y_t) == 0:
+        return apply_dark_theme(fig, title=title)
+
+    min_val = min(float(np.min(y_t)), float(np.min(y_p)))
+    max_val = max(float(np.max(y_t)), float(np.max(y_p)))
+
+    # 45-degree ideal fit line
+    fig.add_trace(
+        go.Scatter(
+            x=[min_val, max_val],
+            y=[min_val, max_val],
+            mode="lines",
+            name="Ideal (1:1 Fit)",
+            line={"color": "#f43f5e", "dash": "dash", "width": 2},
+        )
+    )
+
+    fig.add_trace(
+        go.Scatter(
+            x=y_t,
+            y=y_p,
+            mode="markers",
+            name="Observations",
+            marker={"color": "rgba(56, 189, 248, 0.7)", "size": 6},
+            hovertemplate="Actual: %{x:,.2f}<br>Predicted: %{y:,.2f}<extra></extra>",
+        )
+    )
+
+    return apply_dark_theme(
+        fig,
+        title=title,
+        x_title=f"Actual {outcome_name}",
+        y_title=f"Predicted {outcome_name}",
+    )
+
+
+def build_regression_coef_forest_plot(
+    coefficients: list[dict[str, object]],
+    title: str = "Regression Coefficients & 95% Confidence Intervals",
+) -> go.Figure:
+    """Build a horizontal forest plot of regression beta coefficients with 95% CIs."""
+    fig = go.Figure()
+    if not coefficients:
+        return apply_dark_theme(fig, title=title)
+
+    vars_list = [str(c.get("variable", "")) for c in coefficients]
+    estimates = [float(c.get("estimate", 0.0)) for c in coefficients]
+    ci_lowers = [float(c.get("ci_lower", 0.0)) for c in coefficients]
+    ci_uppers = [float(c.get("ci_upper", 0.0)) for c in coefficients]
+    p_values = [float(c.get("p_value", 1.0)) for c in coefficients]
+
+    # Invert so first predictor is at top
+    vars_list.reverse()
+    estimates.reverse()
+    ci_lowers.reverse()
+    ci_uppers.reverse()
+    p_values.reverse()
+
+    fig.add_vline(
+        x=0.0,
+        line_dash="dash",
+        line_color="#94a3b8",
+        line_width=1.5,
+        annotation_text="Zero Effect (β=0)",
+        annotation_position="top left",
+    )
+
+    err_plus = [max(0.0, u - e) for e, u in zip(estimates, ci_uppers, strict=False)]
+    err_minus = [max(0.0, e - low) for e, low in zip(estimates, ci_lowers, strict=False)]
+    colors = ["#10b981" if p < 0.05 else "#94a3b8" for p in p_values]
+
+    fig.add_trace(
+        go.Scatter(
+            x=estimates,
+            y=vars_list,
+            error_x={
+                "type": "data",
+                "symmetric": False,
+                "array": err_plus,
+                "arrayminus": err_minus,
+                "color": "#38bdf8",
+                "thickness": 2,
+                "width": 6,
+            },
+            mode="markers",
+            marker={"size": 10, "color": colors},
+            customdata=p_values,
+            hovertemplate="<b>%{y}</b><br>Estimate (β): %{x:+,.3f}<br>p-value: %{customdata:.4f}<extra></extra>",
+        )
+    )
+
+    return apply_dark_theme(
+        fig,
+        title=title,
+        height=max(280, 50 * len(vars_list)),
+        x_title="Coefficient Estimate (β with 95% CI)",
+        y_title="Predictor Variable",
+    )

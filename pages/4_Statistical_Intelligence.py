@@ -1,5 +1,6 @@
 """Page 4: Statistical Intelligence — Formal Hypothesis Testing, Effect Sizes, and Diagnostics."""
 
+import numpy as np
 import pandas as pd
 import streamlit as st
 from src.analytics.assumption_checks import generate_qq_plot_data
@@ -17,7 +18,9 @@ from src.analytics.robustness import (
     evaluate_two_group_robustness,
 )
 from src.analytics.statistical_interpretation import (
+    render_plain_english_takeaway,
     render_regression_interpretation_markdown,
+    render_regression_plain_english,
     render_statistical_interpretation_markdown,
 )
 from src.analytics.statistical_models import (
@@ -40,7 +43,15 @@ from src.core.ui_components import (
 from src.ingestion.loader import ManagedDataset
 from src.ingestion.schema import infer_dataset_schema
 from src.visualization.charts import (
+    build_bivariate_scatter,
+    build_difference_forest_plot,
+    build_ecdf_comparison_plot,
+    build_group_comparison_distribution,
+    build_normality_overlay_plot,
     build_qq_plot,
+    build_regression_coef_forest_plot,
+    build_regression_predicted_actual,
+    build_residual_fitted_plot,
 )
 
 settings = get_settings()
@@ -57,6 +68,28 @@ render_page_header(
     title="🧪 Statistical Intelligence",
     subtitle="Formal hypothesis testing, effect sizes, uncertainty quantification, and rigorous assumption verification.",
     badge="Module 3 • Statistical Inference",
+)
+
+st.markdown(
+    """
+    <style>
+    /* Clean, high-contrast, easily readable typography */
+    body, [data-testid="stAppViewContainer"] {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    }
+    .plain-takeaway-container {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border: 1px solid #334155;
+        border-radius: 12px;
+        padding: 22px 26px;
+        margin-bottom: 20px;
+        color: #f1f5f9;
+        line-height: 1.6;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 if not is_dataset_loaded(st.session_state):
@@ -395,27 +428,171 @@ if active_test and analysis_type != "regression":
         r_col4.metric("Degrees of Freedom", str(active_test.degrees_of_freedom or "N/A"))
 
     # Tabs for Deep Evidence
-    res_tab_interp, res_tab_diags, res_tab_robust = st.tabs(
+    res_tab_interp, res_tab_diags, res_tab_robust, res_tab_academic = st.tabs(
         [
-            "📖 8-Layer Grounded Interpretation",
-            "🔬 Assumption Diagnostics",
-            "⚖️ Robustness & Sensitivity",
+            "💡 1. Plain-English Takeaways & Visual Evidence",
+            "🔬 2. Assumption Diagnostics & Normality Checks",
+            "⚖️ 3. Robustness & Sensitivity",
+            "📖 4. Formal Academic Methodology",
         ]
     )
 
     with res_tab_interp:
-        st.markdown(render_statistical_interpretation_markdown(active_test))
+        # 1. Plain-English Human Takeaway Banner (No AI jargon, clean readable typography)
+        st.markdown(render_plain_english_takeaway(active_test), unsafe_allow_html=True)
+
+        # 2. Visual Evidence Plots based on Test Type
+        if (
+            analysis_type in ["two_group", "multi_group"]
+            and len(active_test.selected_variables) >= 2
+        ):
+            grp_col = active_test.selected_variables[0]
+            val_col = active_test.selected_variables[1]
+            act_groups = (
+                active_test.groups
+                if active_test.groups
+                else list(df[grp_col].dropna().unique())[:5]
+            )
+
+            st.markdown("#### 📊 Visual Empirical Evidence & Group Distributions")
+            g_col1, g_col2 = st.columns(2)
+
+            with g_col1:
+                # Plot 1: Violin + Box + Points Distribution Plot
+                dist_fig = build_group_comparison_distribution(
+                    df=df,
+                    group_col=grp_col,
+                    measure_col=val_col,
+                    groups=act_groups,
+                    title=f"Distribution & Outlier Spread: '{val_col}' by '{grp_col}'",
+                )
+                st.plotly_chart(
+                    dist_fig, use_container_width=True, key=f"dist_{active_test.analysis_id}"
+                )
+
+            with g_col2:
+                # Plot 2: 95% Confidence Interval vs Zero Null Hypothesis
+                if active_test.confidence_interval and len(act_groups) >= 2:
+                    ci = active_test.confidence_interval
+                    meta = active_test.method_metadata or {}
+                    pt_est = float(meta.get("raw_diff", ci.point_estimate))
+                    forest_fig = build_difference_forest_plot(
+                        point_estimate=pt_est,
+                        ci_lower=ci.lower_bound,
+                        ci_upper=ci.upper_bound,
+                        estimand_label=f"Mean Difference ({act_groups[0]} - {act_groups[1]})",
+                        group1=act_groups[0],
+                        group2=act_groups[1],
+                        is_significant=active_test.p_value < 0.05,
+                        title="95% Confidence Interval vs. Zero Null Hypothesis",
+                    )
+                    st.plotly_chart(
+                        forest_fig,
+                        use_container_width=True,
+                        key=f"forest_{active_test.analysis_id}",
+                    )
+                else:
+                    ecdf_fig = build_ecdf_comparison_plot(
+                        df=df,
+                        group_col=grp_col,
+                        measure_col=val_col,
+                        groups=act_groups,
+                        title=f"Cumulative Percentile Separation (eCDF): '{val_col}'",
+                    )
+                    st.plotly_chart(
+                        ecdf_fig, use_container_width=True, key=f"ecdf_{active_test.analysis_id}"
+                    )
+
+            # Plot 3 (Expander): Full eCDF comparison
+            with st.expander(
+                "📈 View Empirical Cumulative Distribution (eCDF) & Quantile Separation",
+                expanded=False,
+            ):
+                ecdf_fig = build_ecdf_comparison_plot(
+                    df=df,
+                    group_col=grp_col,
+                    measure_col=val_col,
+                    groups=act_groups,
+                    title=f"Empirical Cumulative Distribution: '{val_col}' Across Segments",
+                )
+                st.plotly_chart(
+                    ecdf_fig, use_container_width=True, key=f"ecdf_exp_{active_test.analysis_id}"
+                )
+
+            # Summary Table of Exact Group Metrics
+            st.markdown("#### 📋 Detailed Group Statistics Breakdown")
+            group_stats = []
+            for grp in act_groups:
+                g_series = df[df[grp_col] == grp][val_col].dropna()
+                if not g_series.empty:
+                    group_stats.append(
+                        {
+                            "Group": grp,
+                            "Sample Size (N)": f"{len(g_series):,}",
+                            "Mean (Average)": f"{g_series.mean():,.2f}",
+                            "Median": f"{g_series.median():,.2f}",
+                            "Std Dev": f"{g_series.std(ddof=1):,.2f}"
+                            if len(g_series) > 1
+                            else "0.00",
+                            "25th Percentile": f"{g_series.quantile(0.25):,.2f}",
+                            "75th Percentile": f"{g_series.quantile(0.75):,.2f}",
+                            "Min": f"{g_series.min():,.2f}",
+                            "Max": f"{g_series.max():,.2f}",
+                        }
+                    )
+            if group_stats:
+                st.dataframe(pd.DataFrame(group_stats), use_container_width=True)
+
+        elif analysis_type == "correlation" and len(active_test.selected_variables) >= 2:
+            st.markdown("#### 📊 Bivariate Scatter & Trendline Inspection")
+            v1, v2 = active_test.selected_variables[0], active_test.selected_variables[1]
+            sc_fig, _ = build_bivariate_scatter(df, x_col=v1, y_col=v2, add_trendline=True)
+            st.plotly_chart(
+                sc_fig, use_container_width=True, key=f"sc_corr_{active_test.analysis_id}"
+            )
 
     with res_tab_diags:
-        st.markdown("#### Diagnostic Verification of Assumptions")
+        st.markdown("#### 🔬 Diagnostic Verification of Assumptions")
+        st.caption(
+            "Verifies whether the dataset satisfies the theoretical conditions required by parametric inference."
+        )
+
         for check in active_test.assumption_checks:
-            badge = "✅" if check.is_satisfied else "⚠️"
-            st.markdown(
-                f"**{badge} {check.name}** (`{check.statistic_name} = {check.statistic_value}`)"
+            badge = "✅ Satisfied" if check.is_satisfied else "⚠️ Violated / Departed"
+            bg_col = (
+                "rgba(16, 185, 129, 0.15)" if check.is_satisfied else "rgba(245, 158, 11, 0.15)"
             )
-            st.write(check.message)
-            st.caption(f"**Guidance:** {check.recommendation}")
-            st.markdown("---")
+            bd_col = "#10b981" if check.is_satisfied else "#f59e0b"
+
+            st.markdown(
+                f"""
+                <div style="background: {bg_col}; border-left: 4px solid {bd_col}; padding: 12px 16px; border-radius: 6px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <strong style="color: #f8fafc; font-size: 1rem;">{check.name}</strong>
+                        <span style="font-size: 0.85rem; font-weight: bold; color: {bd_col};">{badge}</span>
+                    </div>
+                    <div style="font-size: 0.9rem; color: #cbd5e1; margin-top: 4px;">{check.message}</div>
+                    <div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;"><strong>Guidance:</strong> {check.recommendation}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        # Normality distribution overlay plots for active groups
+        if active_test.groups and len(active_test.selected_variables) >= 2:
+            grp_col = active_test.selected_variables[0]
+            val_col = active_test.selected_variables[1]
+            st.markdown("#### 🔔 Group Normality Overlay vs. Theoretical Bell Curve")
+            norm_cols = st.columns(min(len(active_test.groups), 2))
+            for i, grp in enumerate(active_test.groups[:2]):
+                with norm_cols[i]:
+                    grp_s = df[df[grp_col] == grp][val_col].dropna()
+                    norm_fig = build_normality_overlay_plot(grp_s, group_name=grp, var_name=val_col)
+                    st.plotly_chart(
+                        norm_fig,
+                        use_container_width=True,
+                        key=f"norm_{grp}_{active_test.analysis_id}",
+                    )
 
         # Q-Q plot if numeric variable evaluated
         if active_test.selected_variables:
@@ -423,10 +600,12 @@ if active_test and analysis_type != "regression":
             if target_num in df.columns and pd.api.types.is_numeric_dtype(df[target_num]):
                 qq_data = generate_qq_plot_data(df[target_num])
                 qq_fig = build_qq_plot(qq_data, title=f"Normal Q-Q Plot — '{target_num}'")
-                st.plotly_chart(qq_fig, use_container_width=True)
+                st.plotly_chart(
+                    qq_fig, use_container_width=True, key=f"qq_{active_test.analysis_id}"
+                )
 
     with res_tab_robust:
-        st.markdown("#### Specification Curve & Sensitivity Analysis")
+        st.markdown("#### ⚖️ Specification Curve & Sensitivity Analysis")
         st.caption(
             "Compares findings against defensible alternative methods to verify that conclusions do not hinge on arbitrary choices."
         )
@@ -477,6 +656,13 @@ if active_test and analysis_type != "regression":
         else:
             st.info("Sensitivity matrix not applicable for current analysis type.")
 
+    with res_tab_academic:
+        st.markdown("#### 📖 Formal 8-Layer Academic Evidence Framework")
+        st.caption(
+            "Complete methodological audit trail and mathematical derivations for formal reporting."
+        )
+        st.markdown(render_statistical_interpretation_markdown(active_test))
+
 elif active_reg and analysis_type == "regression":
     st.markdown("---")
     st.subheader("2. Regression Model Summary & Coefficients")
@@ -490,36 +676,107 @@ elif active_reg and analysis_type == "regression":
         "< 0.001" if active_reg.f_pvalue < 0.001 else f"= {active_reg.f_pvalue:.4f}",
     )
 
-    st.markdown("#### Estimated Coefficients & Parameter Uncertainty")
-    coeff_rows = [
-        {
-            "Predictor": c.variable,
-            "Estimate (β)": f"{c.estimate:+,.3f}",
-            "Std Error": f"{c.std_error:,.3f}",
-            "t-stat": f"{c.t_statistic:+,.2f}",
-            "p-value": "< 0.001" if c.p_value < 0.001 else f"{c.p_value:.4f}",
-            "95% CI": f"[{c.ci_lower:+,.2f}, {c.ci_upper:+,.2f}]",
-            "VIF": f"{c.vif:.2f}" if c.vif is not None else "1.00",
-            "Significance": "✅ p < 0.05" if c.p_value < 0.05 else "Not Sig",
-        }
-        for c in active_reg.coefficients
-    ]
-    st.dataframe(pd.DataFrame(coeff_rows), use_container_width=True)
-
-    reg_tab_interp, reg_tab_diags = st.tabs(
-        ["📖 Regression Interpretation", "🔬 Model Diagnostics"]
+    reg_tab_interp, reg_tab_diags, reg_tab_academic = st.tabs(
+        [
+            "💡 1. Key Takeaways & Visual Drivers",
+            "🔬 2. Residual Diagnostics & OLS Audits",
+            "📖 3. Formal Regression Methodology",
+        ]
     )
+
     with reg_tab_interp:
-        st.markdown(render_regression_interpretation_markdown(active_reg))
+        st.markdown(render_regression_plain_english(active_reg), unsafe_allow_html=True)
+
+        st.markdown("#### Estimated Coefficients & Parameter Uncertainty")
+        coeff_rows = [
+            {
+                "Predictor": c.variable,
+                "Estimate (β)": f"{c.estimate:+,.3f}",
+                "Std Error": f"{c.std_error:,.3f}",
+                "t-stat": f"{c.t_statistic:+,.2f}",
+                "p-value": "< 0.001" if c.p_value < 0.001 else f"{c.p_value:.4f}",
+                "95% CI": f"[{c.ci_lower:+,.2f}, {c.ci_upper:+,.2f}]",
+                "VIF": f"{c.vif:.2f}" if c.vif is not None else "1.00",
+                "Significance": "✅ p < 0.05" if c.p_value < 0.05 else "Not Sig",
+            }
+            for c in active_reg.coefficients
+        ]
+        st.dataframe(pd.DataFrame(coeff_rows), use_container_width=True)
+
+        # Visual Plots for Regression: Predicted vs Actual & Coefficient Forest Plot
+        rg_p1, rg_p2 = st.columns(2)
+        with rg_p1:
+            const_b = next(
+                (c.estimate for c in active_reg.coefficients if c.variable == "const"), 0.0
+            )
+            valid_mask = df[active_reg.outcome_variable].notna()
+            for c in active_reg.coefficients:
+                if c.variable != "const" and c.variable in df.columns:
+                    valid_mask = valid_mask & df[c.variable].notna()
+            sub_df = df[valid_mask]
+            y_act = sub_df[active_reg.outcome_variable].values
+            y_hat = np.full(len(sub_df), const_b)
+            for c in active_reg.coefficients:
+                if c.variable != "const" and c.variable in sub_df.columns:
+                    y_hat += (
+                        c.estimate
+                        * pd.to_numeric(sub_df[c.variable], errors="coerce").fillna(0).values
+                    )
+
+            pred_fig = build_regression_predicted_actual(
+                y_true=y_act,
+                y_pred=y_hat,
+                outcome_name=active_reg.outcome_variable,
+                title=f"Actual vs. Predicted '{active_reg.outcome_variable}' (1:1 Fit)",
+            )
+            st.plotly_chart(
+                pred_fig, use_container_width=True, key=f"reg_pred_{active_reg.analysis_id}"
+            )
+
+        with rg_p2:
+            coef_dicts = [c.model_dump() for c in active_reg.coefficients if c.variable != "const"]
+            coef_fig = build_regression_coef_forest_plot(
+                coef_dicts,
+                title="Predictor Impact & 95% Confidence Intervals",
+            )
+            st.plotly_chart(
+                coef_fig, use_container_width=True, key=f"reg_coef_{active_reg.analysis_id}"
+            )
 
     with reg_tab_diags:
-        st.markdown("#### OLS Diagnostic Audits")
+        st.markdown("#### 🔬 Residual Diagnostics & OLS Assumption Audits")
+        if "y_act" in locals() and "y_hat" in locals() and len(y_act) > 0:
+            res_residuals = y_act - y_hat
+            res_fig = build_residual_fitted_plot(
+                fitted=y_hat,
+                residuals=res_residuals,
+                title="Residuals vs. Fitted Values (Homoscedasticity Check)",
+            )
+            st.plotly_chart(
+                res_fig, use_container_width=True, key=f"reg_res_{active_reg.analysis_id}"
+            )
+
         for d in active_reg.diagnostics:
-            badge = "✅" if d.is_satisfied else "⚠️"
-            st.markdown(f"**{badge} {d.name}**")
-            st.write(d.message)
-            st.caption(f"**Guideline:** {d.recommendation}")
-            st.markdown("---")
+            badge = "✅ Satisfied" if d.is_satisfied else "⚠️ Violated"
+            bg_col = "rgba(16, 185, 129, 0.15)" if d.is_satisfied else "rgba(245, 158, 11, 0.15)"
+            bd_col = "#10b981" if d.is_satisfied else "#f59e0b"
+            st.markdown(
+                f"""
+                <div style="background: {bg_col}; border-left: 4px solid {bd_col}; padding: 12px 16px; border-radius: 6px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <strong style="color: #f8fafc; font-size: 1rem;">{d.name}</strong>
+                        <span style="font-size: 0.85rem; font-weight: bold; color: {bd_col};">{badge}</span>
+                    </div>
+                    <div style="font-size: 0.9rem; color: #cbd5e1; margin-top: 4px;">{d.message}</div>
+                    <div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;"><strong>Guideline:</strong> {d.recommendation}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+    with reg_tab_academic:
+        st.markdown("#### 📖 Formal OLS Regression Framework")
+        st.markdown(render_regression_interpretation_markdown(active_reg))
 
 # ==============================================================================
 # SECTION C: MULTIPLE-TESTING CORRECTION LAB
