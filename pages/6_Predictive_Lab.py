@@ -38,7 +38,7 @@ init_session_state()
 render_sidebar_status()
 
 # Ensure ModelRegistry in session state
-if "model_registry" not in st.session_state:
+if not isinstance(st.session_state.get("model_registry"), ModelRegistry):
     st.session_state["model_registry"] = ModelRegistry()
 model_registry: ModelRegistry = st.session_state["model_registry"]
 
