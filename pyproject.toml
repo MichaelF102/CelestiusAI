@@ -1,0 +1,52 @@
+[project]
+name = "ai-data-analyst"
+version = "0.1.0"
+description = "AI Data Analyst Agent - Autonomous data analytics platform from raw data to validated insights."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "AI Data Analyst Team" }
+]
+dependencies = [
+    "streamlit>=1.38.0,<2.0.0",
+    "pandas>=2.2.0,<3.0.0",
+    "numpy>=1.26.0,<3.0.0",
+    "plotly>=5.20.0,<6.0.0",
+    "pydantic>=2.7.0,<3.0.0",
+    "python-dotenv>=1.0.1,<2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0,<9.0.0",
+    "ruff>=0.4.0,<1.0.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # Line length handled by formatter
+    "B008",  # Do not perform function call in argument defaults (standard in some UI contexts)
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --strict-markers"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
