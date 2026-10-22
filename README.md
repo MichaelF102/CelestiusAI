@@ -255,6 +255,29 @@ GEMINI_MODEL=gemini-1.5-pro
 
 ---
 
+## 🔮 Predictive Analytics Lab & Intelligence Reporting Engine (Phase 7)
+
+### 1. Leakage-Safe Predictive Modeling (`pages/6_Predictive_Lab.py`)
+- **Task Inference & Target Selection:** Automated classification of problem category (`Regression`, `Binary Classification`, `Multiclass Classification`, `Time-Series Forecasting`) with suitability verification and ID screening.
+- **Leakage-Safe Preprocessing (`src/predictive/preprocessing.py`):** Scikit-learn column transformers fitted exclusively on training data partitions (`SimpleImputer`, `StandardScaler`, `OneHotEncoder(handle_unknown="ignore")`).
+- **Splitting Strategies (`src/predictive/split_strategy.py`):** Reproducible stratified partitions, group-aware splitting, and chronological splitting (zero future leakage for ordered series).
+- **Benchmark Baselines (`src/predictive/baselines.py`):** Candidate models compared against defensible naive baselines (`DummyRegressor(strategy="mean")`, `DummyClassifier(strategy="most_frequent")`, `NaiveForecaster`, `SeasonalNaiveForecaster`).
+- **Candidate Models:** Ridge, Linear Regression, Random Forest, HistGradientBoosting, and Holt-Winters Exponential Smoothing.
+- **Holdout Diagnostics & Curves (`src/predictive/diagnostics.py`):** Actual vs. Predicted scatter plots with 45-degree reference, residual plots, Confusion Matrix heatmaps, and ROC curves.
+- **Permutation Explainability (`src/predictive/explainability.py`):** Test-set permutation feature importance with feature name preservation and non-causal interpretative warnings.
+- **Conformal Uncertainty (`src/predictive/uncertainty.py`):** Distribution-free conformal prediction intervals calculated from test residual empirical quantiles.
+- **Model Registry & Provenance (`src/predictive/model_registry.py`):** Tracks dataset version provenance, random seeds, and flags models as stale if the dataset is modified.
+
+### 2. Evidence-Backed Intelligence Reporting (`pages/7_Intelligence_Reports.py`)
+- **Evidence Collector (`src/reporting/evidence_collector.py`):** Aggregates verified outputs across Ingestion, Data Quality, EDA, Statistical Inference, AI Investigation, and Predictive Modeling. Every cited metric links to a stable evidence ID with zero hallucination.
+- **Report Types:** Executive Analytics Report, Exploratory Data Analysis Report, Statistical Intelligence Report, AI Investigation Report, Predictive Model Evaluation Report, and Comprehensive Dataset Intelligence Report.
+- **Multi-Format Export (`src/reporting/export_service.py`):**
+  - **Standalone Interactive HTML:** Responsive design with print CSS for executive presentations.
+  - **Downloadable PDF:** Clean, professional styling via ReportLab with automatic table pagination and graceful fallbacks.
+- **Deterministic Offline Support:** Operates seamlessly with deterministic template synthesis without requiring an active LLM provider.
+
+---
+
 ### 4. Install Dependencies
 
 ```bash
@@ -267,7 +290,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore in **3. Exploration Studio**, test inferences in **4. Statistical Intelligence**, and orchestrate multi-step investigations in **5. AI Analyst Workspace**!
+Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore in **3. Exploration Studio**, test inferences in **4. Statistical Intelligence**, orchestrate investigations in **5. AI Analyst Workspace**, train models in **6. Predictive Lab**, and export deliverables in **7. Intelligence Reports**!
 
 ### 6. Run Automated Tests
 
@@ -294,4 +317,5 @@ ruff format --check .
 | **Phase 4** | **Statistical Intelligence, Hypothesis Testing & Inference Engine** | **Complete** ✅ |
 | **Phase 5** | **Evidence-Grounded AI Interpretation Engine & Claim Validation** | **Complete** ✅ |
 | **Phase 6** | **Agentic Multi-Step Investigation Orchestration & Plan Validation** | **Complete** ✅ |
-| **Phase 7** | Predictive Intelligence Lab & Executive Report Export | *Upcoming* |
+| **Phase 7** | **Predictive Intelligence Lab & Executive Report Export Engine** | **Complete** ✅ |
+| **Phase 8** | Final Production Hardening, Performance Optimization & Polish | *Upcoming* |
