@@ -139,6 +139,34 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
+## 📈 Exploratory Data Analysis & Interactive Analytics (Phase 3)
+
+### 1. Multi-Tab Exploration Workspace (`pages/3_Exploration_Studio.py`)
+- **Dataset Overview:** Total rows, columns, memory consumption in MB, missing cell percentages, duplicate counts, and identifier safeguards that prevent statistical distortion.
+- **Variable Explorer:** Dynamic univariate profiling:
+  - *Numeric:* Mean, median, std dev, variance, min/max, quartiles, IQR, skewness, kurtosis, zero/negative counts, and outlier counts via Tukey's fences.
+  - *Categorical:* Unique category counts, frequency bar charts, dominant category share, rare categories (<1%), and missing/blank counts.
+  - *Datetime:* Span in days, temporal interval analysis, and chronological metric trends.
+- **Distribution Diagnostics:** Configurable histogram bins (10–80), Tukey box plots, violin density plots with quartile markers, and empirical quantile breakdowns. Includes actionable central tendency advice (mean vs. median divergence).
+- **Correlations & Relationships:** Pearson & Spearman pairwise correlation heatmaps with 2-decimal annotations, top correlated pair rankings with sample size $N$ and p-values, bivariate scatter plots with OLS trendlines, and categorical association via Cramér's V.
+- **Grouped Disparity Analysis:** Segment comparisons across categorical dimensions using flexible aggregation functions (`mean`, `median`, `sum`, `count`, `std`), disparity ratios between top and bottom groups, and sample size imbalance warnings.
+- **Multivariate Studio:** Interactive scatter plotting with X-axis, Y-axis, categorical color grouping, and quantitative bubble size encoding, supported by client performance sampling safeguards (2,500 record ceiling).
+- **Automated Insights & Chart Recommendations:** Fully deterministic scoring of optimal chart types and compilation of grounded 6-layer analytical findings.
+
+### 2. Grounded 6-Layer Interpretation Engine (`src/analytics/interpretation.py`)
+Deterministic, calculation-backed analytical findings adhering to the 6-layer interpretation model without LLM hallucination:
+1. **Observation:** What did the data reveal?
+2. **Quantitative Evidence:** Exact calculated values, units, and sample sizes.
+3. **Statistical Context:** Distributional shape, variability, missingness, or descriptive uncertainty (strictly non-causal).
+4. **Practical Implication:** Operational and analytical impact.
+5. **Limitations & Confounders:** Plausible confounding variables, sampling effects, and alternative explanations.
+6. **Next Investigation:** Concrete follow-up analyses with available dataset features.
+
+### 3. Deterministic Chart Recommender (`src/analytics/chart_recommender.py`)
+Selects and ranks optimal visualizations based on column cardinality, statistical data types, and analytical objectives, assigning a 0–100 suitability score with documented rationale and limitations.
+
+---
+
 ### 3. Install Dependencies
 
 ```bash
@@ -151,7 +179,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`, navigate to **2. Data Quality Lab**, and test with `sample_data/ecommerce_customer_churn.csv`!
+Open `http://localhost:8501`, navigate to **2. Data Quality Lab** to upload data, then open **3. Exploration Studio** to interact with the analytics engine!
 
 ### 5. Run Automated Tests
 
@@ -174,7 +202,8 @@ ruff format --check .
 | :--- | :--- | :---: |
 | **Phase 1** | **Project Architecture, Shell, Config, Session State & Tests** | **Complete** ✅ |
 | **Phase 2** | **Data Ingestion, Profiling, Quality Scoring & Cleaning Workbench** | **Complete** ✅ |
-| **Phase 3** | Exploratory Data Analysis (EDA) Studio & Statistical Intelligence | *Upcoming* |
-| **Phase 4** | Autonomous Agent Planning & 6-Layer Interpretation Engine | *Upcoming* |
-| **Phase 5** | Time-Series Forecasting & Predictive Modeling Lab | *Upcoming* |
-| **Phase 6** | Executive Reports & Production Hardening | *Upcoming* |
+| **Phase 3** | **Exploratory Data Analysis (EDA) & Interactive Analytics Engine** | **Complete** ✅ |
+| **Phase 4** | Statistical Intelligence, Hypothesis Testing & Inference Engine | *Upcoming* |
+| **Phase 5** | Autonomous Agent Planning & LLM Multi-Step Orchestration | *Upcoming* |
+| **Phase 6** | Time-Series Forecasting & Predictive Modeling Lab | *Upcoming* |
+| **Phase 7** | Executive Intelligence Reports & Production Hardening | *Upcoming* |

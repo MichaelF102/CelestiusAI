@@ -210,5 +210,10 @@ def test_streamlit_app_with_loaded_dataset():
         dq_at.run()
         assert not dq_at.exception, f"2_Data_Quality.py raised: {dq_at.exception}"
 
+        # Test Exploration Studio with loaded dataset
+        eda_at = at.switch_page("pages/3_Exploration_Studio.py")
+        eda_at.run()
+        assert not eda_at.exception, f"3_Exploration_Studio.py raised: {eda_at.exception}"
+
     except ImportError:
         pass

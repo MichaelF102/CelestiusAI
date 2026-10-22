@@ -48,12 +48,13 @@ with col_left:
     findings = st.session_state.get(KEY_GENERATED_FINDINGS, [])
     if findings:
         for f in findings:
-            st.markdown(f"**{f.title}** ({f.severity_or_importance.upper()})")
+            sev = getattr(f, "severity", getattr(f, "severity_or_importance", "medium"))
+            st.markdown(f"**{f.title}** (`{str(sev).upper()}`)")
             st.write(f.summary)
     else:
         st.info(
             "**No Findings Generated Yet**\n\n"
-            "Once a dataset is analyzed in the **AI Analyst** or **Statistical Intelligence** "
+            "Once a dataset is analyzed in the **Exploration Studio**, **AI Analyst**, or **Statistical Intelligence** "
             "workspaces, verified findings and executive takeaways will be synthesized here."
         )
 
@@ -98,4 +99,5 @@ with col_right:
     st.markdown("#### Quick Navigation")
     st.page_link("app.py", label="← Return to Main Workspace", icon="🏠")
     st.page_link("pages/2_Data_Quality.py", label="Go to Data Quality Lab", icon="🔍")
+    st.page_link("pages/3_Exploration_Studio.py", label="Go to Exploration Studio", icon="📈")
     st.page_link("pages/5_AI_Analyst.py", label="Go to AI Analyst", icon="🤖")
