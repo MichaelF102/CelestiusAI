@@ -1,5 +1,8 @@
 """Page 2: Data Quality Lab - Ingestion, profiling, issue audit, and interactive cleaning workbench."""
 
+import json
+
+import pandas as pd
 import plotly.express as px
 import streamlit as st
 from src.config.settings import get_settings
@@ -20,6 +23,11 @@ from src.ingestion.loader import ManagedDataset, get_excel_sheet_names, load_dat
 from src.ingestion.transformation_history import TransformationPipeline
 from src.ingestion.transformations import preview_transformation
 from src.models.common import DatasetMetadata
+from src.profiling.duplicates import find_candidate_primary_keys
+from src.profiling.missing_values import (
+    compute_missingness_correlation,
+    compute_nullity_matrix,
+)
 from src.profiling.outliers import (
     detect_outliers_iqr,
     detect_outliers_modified_zscore,
@@ -216,6 +224,81 @@ with tab_schema:
 
         st.dataframe(schema_records, use_container_width=True)
 
+        # Storage & Memory Footprint Breakdown
+        st.markdown("---")
+        st.markdown("#### 💾 Column Storage & In-Memory Footprint")
+        mem_series = dataset.working_df.memory_usage(deep=True)
+        col_mems = mem_series.drop(labels=["Index"], errors="ignore")
+        total_mem_bytes = int(col_mems.sum())
+        total_mem_mb = total_mem_bytes / (1024 * 1024)
+
+        mem_c1, mem_c2, mem_c3 = st.columns(3)
+        mem_c1.metric("Total In-Memory Size", f"{total_mem_mb:.2f} MB")
+        avg_col_mb = (total_mem_mb / len(col_mems)) if len(col_mems) > 0 else 0.0
+        mem_c2.metric("Avg Size per Column", f"{avg_col_mb:.2f} MB")
+        if not col_mems.empty:
+            heaviest_col = str(col_mems.idxmax())
+            heaviest_mb = float(col_mems.max()) / (1024 * 1024)
+            mem_c3.metric("Heaviest Column", f"{heaviest_col} ({heaviest_mb:.2f} MB)")
+
+        mem_records = [
+            {
+                "Column": str(c),
+                "Memory (KB)": round(float(col_mems[c]) / 1024.0, 1),
+                "Memory (MB)": round(float(col_mems[c]) / (1024.0 * 1024.0), 2),
+                "Share (%)": round(
+                    (float(col_mems[c]) / total_mem_bytes) * 100.0 if total_mem_bytes > 0 else 0.0,
+                    1,
+                ),
+                "Dtype": str(dataset.working_df[c].dtype),
+            }
+            for c in col_mems.index
+        ]
+        mem_records.sort(key=lambda x: x["Memory (KB)"], reverse=True)
+
+        fig_mem = px.bar(
+            mem_records,
+            x="Column",
+            y="Memory (KB)",
+            color="Dtype",
+            template="plotly_dark",
+            title="Column Memory Usage (KB) by Pandas Data Type",
+        )
+        fig_mem.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=300)
+        st.plotly_chart(fig_mem, use_container_width=True)
+
+        # Cardinality & Drift Risk Diagnostics
+        st.markdown("#### ⚠️ Cardinality & Drift Risk Diagnostics")
+        tot_rows = len(dataset.working_df)
+        card_risks = []
+        for col, s in dataset.schema_info.items():
+            card_ratio = s.distinct_count / tot_rows if tot_rows > 0 else 0.0
+            if s.is_constant:
+                card_risks.append(
+                    {
+                        "Column": col,
+                        "Distinct": s.distinct_count,
+                        "Ratio": f"{card_ratio:.1%}",
+                        "Risk Level": "CRITICAL (Zero Variance)",
+                        "Diagnostic Explanation": "Column contains only 1 unique value across all rows; provides zero variance or analytical signal.",
+                    }
+                )
+            elif s.inferred_type == "categorical" and card_ratio > 0.40 and not s.is_identifier:
+                card_risks.append(
+                    {
+                        "Column": col,
+                        "Distinct": s.distinct_count,
+                        "Ratio": f"{card_ratio:.1%}",
+                        "Risk Level": "HIGH CARDINALITY",
+                        "Diagnostic Explanation": f"Over {card_ratio:.0%} unique category labels. May cause severe dimensionality inflation if one-hot encoded.",
+                    }
+                )
+
+        if card_risks:
+            st.dataframe(card_risks, use_container_width=True)
+        else:
+            st.success("No critical cardinality anomalies or zero-variance columns detected.")
+
 # ---------------------------------------------------------
 # TAB 3: QUALITY OVERVIEW
 # ---------------------------------------------------------
@@ -287,6 +370,34 @@ with tab_overview:
         else:
             st.success("No issues detected for the selected severity filters!")
 
+        # Quality Certification Badge & Download
+        st.markdown("---")
+        st.markdown("#### 📜 Data Quality Certification & Audit Export")
+        cert_payload = {
+            "dataset_filename": dataset.filename,
+            "fingerprint": dataset.fingerprint,
+            "quality_grade": "A (Production Ready)"
+            if qs.overall_score >= 90
+            else ("B (Usable with Warnings)" if qs.overall_score >= 75 else "C (Needs Cleaning)"),
+            "overall_score": round(qs.overall_score, 1),
+            "completeness_score": round(qs.completeness_score, 1),
+            "uniqueness_score": round(qs.uniqueness_score, 1),
+            "consistency_score": round(qs.consistency_score, 1),
+            "validity_score": round(qs.validity_score, 1),
+            "total_rows": len(dataset.working_df),
+            "total_columns": len(dataset.working_df.columns),
+            "active_issues_count": len(profile.quality_issues),
+            "applied_transformations": len(pipeline.records),
+        }
+        cert_json = json.dumps(cert_payload, indent=2)
+        st.download_button(
+            label="📥 Download Quality Audit Certificate (JSON)",
+            data=cert_json,
+            file_name=f"quality_audit_{dataset.dataset_id}.json",
+            mime="application/json",
+            key="btn_download_quality_cert",
+        )
+
 # ---------------------------------------------------------
 # TAB 4: MISSINGNESS ANALYSIS
 # ---------------------------------------------------------
@@ -329,6 +440,46 @@ with tab_missing:
 
         st.dataframe(missing_data, use_container_width=True)
 
+        # Nullity Sparsity Matrix
+        st.markdown("---")
+        st.markdown("#### 🧱 Missingness Sparsity Matrix (Nullity Map)")
+        st.caption(
+            "Visual representation of missing value positions sampled uniformly across the dataset. Red marks missing cells; Dark Navy marks observed values."
+        )
+        matrix_df = compute_nullity_matrix(dataset.working_df, max_rows=250)
+        if not matrix_df.empty:
+            fig_nullity = px.imshow(
+                matrix_df.T,
+                color_continuous_scale=[[0.0, "#ef4444"], [1.0, "#1e293b"]],
+                template="plotly_dark",
+                aspect="auto",
+                labels={
+                    "x": "Sampled Records (Uniform Interval)",
+                    "y": "Column",
+                    "color": "Observed (1=Yes, 0=No)",
+                },
+            )
+            fig_nullity.update_layout(height=280, margin={"l": 20, "r": 20, "t": 20, "b": 20})
+            st.plotly_chart(fig_nullity, use_container_width=True)
+
+        # Missingness Co-occurrence / Correlation Heatmap
+        corr = compute_missingness_correlation(dataset.working_df)
+        if corr is not None and not corr.empty:
+            st.markdown("#### 🔗 Missingness Co-occurrence & Correlation Heatmap")
+            st.caption(
+                "Measures whether missingness in one column predicts missingness in another (+1 = always missing together, -1 = mutually exclusive)."
+            )
+            fig_corr = px.imshow(
+                corr,
+                color_continuous_scale="RdBu_r",
+                zmin=-1.0,
+                zmax=1.0,
+                template="plotly_dark",
+                text_auto=".2f",
+            )
+            fig_corr.update_layout(height=320, margin={"l": 20, "r": 20, "t": 20, "b": 20})
+            st.plotly_chart(fig_corr, use_container_width=True)
+
 # ---------------------------------------------------------
 # TAB 5: DUPLICATE ANALYSIS
 # ---------------------------------------------------------
@@ -355,9 +506,42 @@ with tab_dups:
         else:
             st.success("No exact duplicate rows found across the dataset.")
 
+        # Automated Primary Key Discovery
+        st.markdown("---")
+        st.markdown("#### 🔑 Automated Primary Key & Identifier Discovery")
+        st.caption(
+            "The engine automatically searches single columns and composite pairs to find columns that uniquely identify each row."
+        )
+        candidates = find_candidate_primary_keys(dataset.working_df)
+        if candidates:
+            cand_rows = [
+                {
+                    "Candidate Key Column(s)": " + ".join(c["columns"]),
+                    "Key Structure": c["type"],
+                    "Distinct Values": f"{c['distinct_count']:,}",
+                    "Uniqueness Rate": f"{c['uniqueness_pct']:.2f}%",
+                    "Primary Key Status": "✅ 100% Unique Primary Key"
+                    if c["is_100_percent_unique"]
+                    else "⚠️ Near-Unique Candidate",
+                }
+                for c in candidates
+            ]
+            st.dataframe(cand_rows, use_container_width=True)
+
+            best_key = candidates[0]
+            if best_key["is_100_percent_unique"]:
+                st.success(
+                    f"🎯 **Recommended Entity Key:** `{' + '.join(best_key['columns'])}` "
+                    f"is **100.0% unique** across all {len(dataset.working_df):,} rows!"
+                )
+        else:
+            st.info(
+                "No individual column or simple composite pair achieves >= 90% uniqueness in this dataset."
+            )
+
         # Key-based duplicate checker
         st.markdown("---")
-        st.markdown("#### Entity Key Uniqueness Checker")
+        st.markdown("#### Custom Entity Key Uniqueness Checker")
         key_cols = st.multiselect(
             "Select business key columns to verify entity uniqueness:",
             options=list(dataset.working_df.columns),
@@ -434,8 +618,68 @@ with tab_outliers:
                 template="plotly_dark",
                 title=f"Boxplot Distribution for '{selected_num_col}' with Detected Outliers",
             )
-            fig.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=350)
+            fig.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=320)
             st.plotly_chart(fig, use_container_width=True)
+
+            # Histogram with Shaded Outlier Rejection Regions
+            fig_hist = px.histogram(
+                dataset.working_df,
+                x=selected_num_col,
+                nbins=40,
+                template="plotly_dark",
+                title=f"Distribution of '{selected_num_col}' with Outlier Rejection Bands",
+                color_discrete_sequence=["#38bdf8"],
+            )
+            if lower_b is not None and upper_b is not None:
+                col_min = float(col_series.min())
+                col_max = float(col_series.max())
+                fig_hist.add_vline(
+                    x=lower_b,
+                    line_width=2,
+                    line_dash="dash",
+                    line_color="#ef4444",
+                    annotation_text="Lower Bound",
+                )
+                fig_hist.add_vline(
+                    x=upper_b,
+                    line_width=2,
+                    line_dash="dash",
+                    line_color="#ef4444",
+                    annotation_text="Upper Bound",
+                )
+                if col_min < lower_b:
+                    fig_hist.add_vrect(
+                        x0=col_min,
+                        x1=lower_b,
+                        fillcolor="#ef4444",
+                        opacity=0.15,
+                        line_width=0,
+                        annotation_text="Lower Outliers",
+                    )
+                if col_max > upper_b:
+                    fig_hist.add_vrect(
+                        x0=upper_b,
+                        x1=col_max,
+                        fillcolor="#ef4444",
+                        opacity=0.15,
+                        line_width=0,
+                        annotation_text="Upper Outliers",
+                    )
+
+            fig_hist.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=320)
+            st.plotly_chart(fig_hist, use_container_width=True)
+
+            # Distribution Tail & Skewness Insights
+            skew_val = float(col_series.skew())
+            kurt_val = float(col_series.kurtosis())
+            if skew_val > 1.0:
+                skew_diag = f"Strong positive right-skew (+{skew_val:.2f}). Most records bunch near lower values; outliers represent extreme high values."
+            elif skew_val < -1.0:
+                skew_diag = f"Strong negative left-skew ({skew_val:.2f}). Most records bunch near higher values; outliers represent extreme low values."
+            else:
+                skew_diag = f"Moderate/symmetrical skewness ({skew_val:.2f}). Values roughly balance around the median."
+
+            st.info(f"📊 **Distribution Profile:** {skew_diag} Tail Kurtosis: `{kurt_val:.2f}`.")
 
             if res_count > 0:
                 indices = res.get("outlier_indices", [])  # type: ignore[assignment]
@@ -489,6 +733,47 @@ with tab_clean:
         if not actionable_issues:
             st.success("No automated cleaning transformations currently recommended!")
         else:
+            # One-Click Auto-Clean for Safe Actions
+            safe_issues = [
+                i
+                for i in actionable_issues
+                if i.suggested_action_type in ("drop_duplicates", "strip_whitespace")
+                or (i.suggested_action_type == "drop_column" and "100%" in i.title)
+            ]
+            if safe_issues:
+                st.markdown("##### ⚡ One-Click Auto-Clean (Safe Non-Destructive Actions)")
+                st.caption(
+                    f"Found **{len(safe_issues)}** verified safe cleaning actions (whitespace trimming, row deduplication, dropping empty columns)."
+                )
+                if st.button(
+                    "🚀 Apply All Safe Recommendations", key="btn_auto_clean_safe", type="primary"
+                ):
+                    with st.spinner("Applying safe cleaning transformations..."):
+                        from src.profiling.models import TransformationSpec
+
+                        applied_c = 0
+                        for s_iss in safe_issues:
+                            spec = TransformationSpec(
+                                spec_id=f"auto_{s_iss.issue_id}",
+                                action_type=s_iss.suggested_action_type,
+                                column_name=s_iss.suggested_action_params.get("column_name"),
+                                parameters=s_iss.suggested_action_params,
+                                description=s_iss.recommended_action,
+                            )
+                            pipeline.apply(spec, dataset)
+                            applied_c += 1
+
+                        new_profile = profile_dataset(
+                            dataset.working_df, dataset_id=dataset.dataset_id
+                        )
+                        st.session_state[KEY_DATA_QUALITY_REPORT] = new_profile
+                        st.session_state[KEY_DATASET_SCHEMA] = dataset.schema_info
+                        invalidate_downstream_analyses(st.session_state)
+                        st.success(f"Successfully applied {applied_c} safe transformations!")
+                        st.rerun()
+
+                st.markdown("---")
+
             issue_options = {
                 f"[{i.severity.upper()}] {i.title} → {i.recommended_action}": i
                 for i in actionable_issues
@@ -521,6 +806,37 @@ with tab_clean:
                 if preview.warnings:
                     for w in preview.warnings:
                         st.warning(f"⚠️ {w}")
+
+                # Distribution Shift / Statistical Delta
+                target_col = spec_to_preview.column_name
+                if target_col and target_col in dataset.working_df.columns:
+                    s_orig = dataset.working_df[target_col]
+                    if pd.api.types.is_numeric_dtype(s_orig):
+                        st.caption("Distribution delta preview on target column:")
+                        delta_rows = [
+                            {
+                                "Metric": "Valid Count",
+                                "Before": f"{int(s_orig.count()):,}",
+                                "After Preview": f"{max(0, int(s_orig.count()) - preview.affected_cells_count):,}"
+                                if spec_to_preview.action_type in ("drop_column", "drop_duplicates")
+                                else f"{int(s_orig.count()):,}",
+                            },
+                            {
+                                "Metric": "Missing Count",
+                                "Before": f"{int(s_orig.isna().sum()):,}",
+                                "After Preview": "0"
+                                if spec_to_preview.action_type == "impute_numeric"
+                                else f"{int(s_orig.isna().sum()):,}",
+                            },
+                            {
+                                "Metric": "Mean Value",
+                                "Before": f"{float(s_orig.mean()):.2f}",
+                                "After Preview": "Imputed / Filtered"
+                                if spec_to_preview.action_type in ("impute_numeric", "cap_outliers")
+                                else f"{float(s_orig.mean()):.2f}",
+                            },
+                        ]
+                        st.dataframe(delta_rows, use_container_width=True)
 
                 if preview.before_sample:
                     st.caption("Before vs. After sample values:")

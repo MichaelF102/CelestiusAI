@@ -1,8 +1,12 @@
 """Data profiling and quality intelligence package."""
 
 from src.profiling.consistency import analyze_consistency
-from src.profiling.duplicates import analyze_duplicates
-from src.profiling.missing_values import analyze_missing_values
+from src.profiling.duplicates import analyze_duplicates, find_candidate_primary_keys
+from src.profiling.missing_values import (
+    analyze_missing_values,
+    compute_missingness_correlation,
+    compute_nullity_matrix,
+)
 from src.profiling.models import (
     DatasetProfile,
     QualityIssue,
@@ -32,8 +36,11 @@ __all__ = [
     "analyze_missing_values",
     "analyze_outliers",
     "calculate_quality_score",
+    "compute_missingness_correlation",
+    "compute_nullity_matrix",
     "detect_outliers_iqr",
     "detect_outliers_modified_zscore",
     "detect_outliers_zscore",
+    "find_candidate_primary_keys",
     "profile_dataset",
 ]

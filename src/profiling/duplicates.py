@@ -1,6 +1,7 @@
 """Duplicate row and entity key conflict detection."""
 
 import uuid
+from typing import Any
 
 import pandas as pd
 
@@ -80,3 +81,63 @@ def analyze_duplicates(
                 )
 
     return stats, issues
+
+
+def find_candidate_primary_keys(
+    df: pd.DataFrame,
+    max_composite_search: int = 12,
+) -> list[dict[str, Any]]:
+    """Automatically discover single or composite column combinations that uniquely identify rows."""
+    total_rows = len(df)
+    if total_rows == 0:
+        return []
+
+    candidates: list[dict[str, Any]] = []
+
+    # 1. Single column check
+    for col in df.columns:
+        col_str = str(col)
+        distinct = int(df[col].nunique(dropna=False))
+        uniqueness_pct = round((distinct / total_rows) * 100.0, 2)
+        if uniqueness_pct >= 90.0:
+            candidates.append(
+                {
+                    "columns": [col_str],
+                    "type": "Single Column",
+                    "distinct_count": distinct,
+                    "uniqueness_pct": uniqueness_pct,
+                    "is_100_percent_unique": (distinct == total_rows),
+                }
+            )
+
+    # 2. Check 2-column composite combinations among candidate columns
+    # Select columns with high cardinality or identifier/discrete nature
+    import itertools
+
+    candidate_cols = [
+        str(c)
+        for c in df.columns[:max_composite_search]
+        if df[c].nunique() > 1 and df[c].dtype != "float64"
+    ]
+    candidate_cols.sort(key=lambda c: df[c].nunique(), reverse=True)
+    candidate_cols = candidate_cols[:8]
+
+    for col1, col2 in itertools.combinations(candidate_cols, 2):
+        dup_count = int(df.duplicated(subset=[col1, col2]).sum())
+        distinct = total_rows - dup_count
+        uniqueness_pct = round((distinct / total_rows) * 100.0, 2)
+        if uniqueness_pct >= 98.0:
+            candidates.append(
+                {
+                    "columns": [col1, col2],
+                    "type": "Composite Key (Pair)",
+                    "distinct_count": distinct,
+                    "uniqueness_pct": uniqueness_pct,
+                    "is_100_percent_unique": (dup_count == 0),
+                }
+            )
+            if len(candidates) >= 8:
+                break
+
+    candidates.sort(key=lambda x: (x["is_100_percent_unique"], x["uniqueness_pct"]), reverse=True)
+    return candidates

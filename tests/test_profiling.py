@@ -106,3 +106,58 @@ def test_full_dataset_profile():
     assert profile.quality_score.overall_score > 0
     assert "amount" in profile.numeric_profiles
     assert "status" in profile.categorical_profiles
+
+
+def test_find_candidate_primary_keys():
+    """Verify primary key finder discovers single and composite keys."""
+    from src.profiling import find_candidate_primary_keys
+
+    # Single column 100% unique
+    df = pd.DataFrame(
+        {
+            "id": [1, 2, 3, 4, 5],
+            "category": ["a", "a", "b", "b", "c"],
+            "seq": [1, 2, 1, 2, 1],
+        }
+    )
+    cand = find_candidate_primary_keys(df)
+    assert len(cand) >= 1
+    # 'id' should be the top candidate
+    top = cand[0]
+    assert top["columns"] == ["id"]
+    assert top["is_100_percent_unique"] is True
+
+    # Composite pair
+    df_comp = pd.DataFrame(
+        {
+            "dept": ["sales", "sales", "eng", "eng"],
+            "level": [1, 2, 1, 2],
+            "score": [90, 85, 95, 80],
+        }
+    )
+    cand_comp = find_candidate_primary_keys(df_comp)
+    assert any(
+        c["is_100_percent_unique"] and set(c["columns"]) == {"dept", "level"} for c in cand_comp
+    )
+
+
+def test_nullity_matrix_and_correlation():
+    """Verify nullity indicator matrix and missingness correlation helpers."""
+    from src.profiling import compute_missingness_correlation, compute_nullity_matrix
+
+    df = pd.DataFrame(
+        {
+            "a": [1.0, None, 3.0, None],
+            "b": [10.0, None, 30.0, None],  # perfectly correlated missingness with 'a'
+            "c": ["x", "y", "z", "w"],  # complete
+        }
+    )
+    matrix = compute_nullity_matrix(df, max_rows=10)
+    assert len(matrix) == 4
+    assert matrix.loc["Row 0", "a"] == 1
+    assert matrix.loc["Row 1", "a"] == 0
+
+    corr = compute_missingness_correlation(df)
+    assert corr is not None
+    # a and b should have correlation ~ 1.0
+    assert abs(corr.loc["a", "b"] - 1.0) < 1e-5

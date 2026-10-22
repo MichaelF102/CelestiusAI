@@ -151,3 +151,45 @@ def analyze_missing_values(
             )
 
     return missing_stats, issues
+
+
+def compute_nullity_matrix(
+    df: pd.DataFrame,
+    max_rows: int = 250,
+) -> pd.DataFrame:
+    """Sample dataset rows and return a binary indicator matrix (1=present, 0=null)."""
+    if df.empty:
+        return pd.DataFrame()
+
+    total_rows = len(df)
+    if total_rows <= max_rows:
+        sample_df = df
+    else:
+        # Uniformly spaced sampling across entire dataset
+        import numpy as np
+
+        indices = np.linspace(0, total_rows - 1, max_rows, dtype=int)
+        sample_df = df.iloc[indices]
+
+    # Invert isna: 1 = data present, 0 = missing
+    matrix = (~sample_df.isna()).astype(int)
+    matrix.index = [f"Row {i}" for i in range(len(matrix))]
+    return matrix
+
+
+def compute_missingness_correlation(
+    df: pd.DataFrame,
+) -> pd.DataFrame | None:
+    """Compute pairwise Pearson correlation between missingness indicators."""
+    if df.empty or len(df.columns) < 2:
+        return None
+
+    # Filter to columns that have at least some missingness and aren't completely missing
+    cols_with_nulls = [c for c in df.columns if 0 < df[c].isna().sum() < len(df)]
+    if len(cols_with_nulls) < 2:
+        return None
+
+    indicators = df[cols_with_nulls].isna().astype(int)
+    # Compute correlation
+    corr = indicators.corr()
+    return corr
