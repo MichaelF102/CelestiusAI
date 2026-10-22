@@ -210,6 +210,9 @@ with tab_models:
                     validation_strategy=val_strategy,
                     test_size=test_pct / 100.0,
                 )
+                if not isinstance(model_registry, ModelRegistry):
+                    model_registry = ModelRegistry()
+                    st.session_state["model_registry"] = model_registry
                 model_registry.register_models(records)
                 st.session_state["predictive_records"] = records
                 st.success(f"Successfully trained and evaluated {len(records)} models.")
@@ -452,6 +455,10 @@ with tab_registry:
         "Every trained model records exact dataset version IDs, random seeds, and split parameters. "
         "If the active working dataset is cleaned or modified, models are automatically marked as **stale**."
     )
+
+    if not isinstance(model_registry, ModelRegistry):
+        model_registry = ModelRegistry()
+        st.session_state["model_registry"] = model_registry
 
     registered_models = model_registry.list_models(
         dataset_id=dataset_id, active_version=dataset_version

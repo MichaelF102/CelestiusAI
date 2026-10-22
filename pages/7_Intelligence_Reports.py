@@ -70,7 +70,10 @@ else:
     st.error("Invalid dataset representation in session state.")
     st.stop()
 
-model_registry: ModelRegistry = st.session_state.get("model_registry")
+model_registry = st.session_state.get("model_registry")
+if not isinstance(model_registry, ModelRegistry):
+    model_registry = ModelRegistry()
+    st.session_state["model_registry"] = model_registry
 
 # Setup Report Evidence Collector
 collector = ReportEvidenceCollector(managed_dataset=managed_ds, model_registry=model_registry)
