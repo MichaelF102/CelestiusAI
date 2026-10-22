@@ -265,7 +265,7 @@ with tab_schema:
             title="Column Memory Usage (KB) by Pandas Data Type",
         )
         fig_mem.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=300)
-        st.plotly_chart(fig_mem, use_container_width=True)
+        st.plotly_chart(fig_mem, use_container_width=True, key="dq_fig_mem")
 
         # Cardinality & Drift Risk Diagnostics
         st.markdown("#### ⚠️ Cardinality & Drift Risk Diagnostics")
@@ -342,7 +342,7 @@ with tab_overview:
                 template="plotly_dark",
             )
             fig.update_layout(margin={"l": 20, "r": 20, "t": 20, "b": 20}, height=300)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="dq_fig_completeness")
 
         # Quality Issues Table
         st.markdown("#### Detected Quality Issues")
@@ -436,7 +436,7 @@ with tab_missing:
             title="Missing Value Percentage by Column",
         )
         m_fig.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=320)
-        st.plotly_chart(m_fig, use_container_width=True)
+        st.plotly_chart(m_fig, use_container_width=True, key="dq_fig_missing_bar")
 
         st.dataframe(missing_data, use_container_width=True)
 
@@ -460,7 +460,7 @@ with tab_missing:
                 },
             )
             fig_nullity.update_layout(height=280, margin={"l": 20, "r": 20, "t": 20, "b": 20})
-            st.plotly_chart(fig_nullity, use_container_width=True)
+            st.plotly_chart(fig_nullity, use_container_width=True, key="dq_fig_nullity_map")
 
         # Missingness Co-occurrence / Correlation Heatmap
         corr = compute_missingness_correlation(dataset.working_df)
@@ -478,7 +478,7 @@ with tab_missing:
                 text_auto=".2f",
             )
             fig_corr.update_layout(height=320, margin={"l": 20, "r": 20, "t": 20, "b": 20})
-            st.plotly_chart(fig_corr, use_container_width=True)
+            st.plotly_chart(fig_corr, use_container_width=True, key="dq_fig_missing_corr")
 
 # ---------------------------------------------------------
 # TAB 5: DUPLICATE ANALYSIS
@@ -619,7 +619,9 @@ with tab_outliers:
                 title=f"Boxplot Distribution for '{selected_num_col}' with Detected Outliers",
             )
             fig.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=320)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(
+                fig, use_container_width=True, key=f"dq_fig_outlier_box_{selected_num_col}"
+            )
 
             # Histogram with Shaded Outlier Rejection Regions
             fig_hist = px.histogram(
@@ -667,7 +669,9 @@ with tab_outliers:
                     )
 
             fig_hist.update_layout(margin={"l": 20, "r": 20, "t": 40, "b": 20}, height=320)
-            st.plotly_chart(fig_hist, use_container_width=True)
+            st.plotly_chart(
+                fig_hist, use_container_width=True, key=f"dq_fig_outlier_hist_{selected_num_col}"
+            )
 
             # Distribution Tail & Skewness Insights
             skew_val = float(col_series.skew())

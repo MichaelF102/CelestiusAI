@@ -319,10 +319,10 @@ with tab_var:
             p_col1, p_col2 = st.columns([3, 2])
             with p_col1:
                 hist_fig = build_histogram(col_series, target_col, nbins=30)
-                st.plotly_chart(hist_fig, use_container_width=True)
+                st.plotly_chart(hist_fig, use_container_width=True, key=f"hist_var_{target_col}")
             with p_col2:
                 box_fig = build_boxplot(col_series, target_col)
-                st.plotly_chart(box_fig, use_container_width=True)
+                st.plotly_chart(box_fig, use_container_width=True, key=f"box_var_{target_col}")
 
             # Interpret skewness
             fnd = generate_skewness_finding(num_sum, shape_diag)
@@ -337,7 +337,7 @@ with tab_var:
             c_col3.metric("Rare Categories (<1%)", f"{cat_sum.rare_categories_count:,}")
 
             bar_fig = build_categorical_bar(cat_sum.top_categories, target_col)
-            st.plotly_chart(bar_fig, use_container_width=True)
+            st.plotly_chart(bar_fig, use_container_width=True, key=f"bar_cat_{target_col}")
 
             fnd_cat = generate_category_concentration_finding(cat_sum)
             render_interpretation_card(fnd_cat)
@@ -358,7 +358,9 @@ with tab_var:
                 )
                 daily_agg.columns = ["date", meas]
                 ts_fig = build_time_series_chart(daily_agg, "date", meas, agg_name="mean")
-                st.plotly_chart(ts_fig, use_container_width=True)
+                st.plotly_chart(
+                    ts_fig, use_container_width=True, key=f"ts_plot_{target_col}_{meas}"
+                )
 
         elif col_schema and col_schema.is_identifier:
             st.info(
@@ -392,10 +394,12 @@ with tab_dist:
 
             if chart_mode == "Histogram + Markers":
                 fig = build_histogram(s_clean, dist_col, nbins=bin_count)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(
+                    fig, use_container_width=True, key=f"dist_hist_{dist_col}_{bin_count}"
+                )
             elif chart_mode == "Violin Density":
                 fig = build_violinplot(s_clean, dist_col)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, key=f"dist_violin_{dist_col}")
             else:
                 q_df = calculate_empirical_quantiles(s_clean)
                 st.markdown(f"##### Empirical Quantiles — {dist_col}")
@@ -459,7 +463,7 @@ with tab_corr:
                 heat_fig = build_correlation_heatmap(
                     corr_matrix, title=f"{corr_method.capitalize()} Correlation Heatmap"
                 )
-                st.plotly_chart(heat_fig, use_container_width=True)
+                st.plotly_chart(heat_fig, use_container_width=True, key=f"corr_heat_{corr_method}")
 
         st.markdown("---")
         st.markdown("#### Ranked Pairwise Associations & Bivariate Scatter")
@@ -496,7 +500,7 @@ with tab_corr:
                 scatter_fig, was_sampled = build_bivariate_scatter(
                     df, p_v1, p_v2, add_trendline=add_trend
                 )
-                st.plotly_chart(scatter_fig, use_container_width=True)
+                st.plotly_chart(scatter_fig, use_container_width=True, key=f"scatter_{p_v1}_{p_v2}")
 
             # Grounded 6-layer finding for top correlation
             fnd_corr = generate_correlation_finding(top_p)
@@ -520,7 +524,7 @@ with tab_corr:
             )
             if not contingency_df.empty:
                 ct_fig = build_crosstab_heatmap(contingency_df, c_v1, c_v2)
-                st.plotly_chart(ct_fig, use_container_width=True)
+                st.plotly_chart(ct_fig, use_container_width=True, key=f"ct_fig_{c_v1}_{c_v2}")
 
 # ------------------------------------------------------------------------------
 # TAB 5: GROUPED ANALYSIS
@@ -550,7 +554,9 @@ with tab_group:
                 grp_fig = build_grouped_bar(
                     grp_result.groups, grp_col_sel, grp_meas_sel, grp_agg_sel
                 )
-                st.plotly_chart(grp_fig, use_container_width=True)
+                st.plotly_chart(
+                    grp_fig, use_container_width=True, key=f"grp_fig_{grp_col_sel}_{grp_meas_sel}"
+                )
 
             with r_c2:
                 st.markdown("##### Ranked Segment Metrics")
@@ -612,7 +618,7 @@ with tab_multi:
             size_col=size_arg,
             sample_limit=2500,
         )
-        st.plotly_chart(multi_fig, use_container_width=True)
+        st.plotly_chart(multi_fig, use_container_width=True, key=f"multi_fig_{mx_col}_{my_col}")
 
         if was_sampled:
             st.caption(
