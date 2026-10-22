@@ -200,27 +200,63 @@ Deterministic, calculation-backed narrative generated for every inferential resu
 
 ---
 
-### 3. Install Dependencies
+## 🤖 Phase 5: Evidence-Grounded AI Interpretation Engine
+
+Phase 5 connects deterministic data profiling, EDA, and statistical inference to a configurable Large Language Model (LLM).
+
+### Core Philosophy
+**The LLM interprets evidence; deterministic Python functions calculate evidence.** Zero hallucination or fabrication of metrics, charts, p-values, or unexecuted actions.
+
+### Key Capabilities
+- **Configurable LLM Provider Layer:** Pluggable interface supporting Google Gemini (`google-genai` SDK) and a deterministic offline `MockLLMProvider`. No API keys are leaked in logs or exceptions.
+- **Evidence Pack (Source of Truth):** Assembles scoped, verified analytical context with stable IDs (`ev_...`), exact metric values, sample sizes, and provenance.
+- **Numerical Claim Validation:** Deterministically verifies that all quantitative statements made in analyst findings correspond directly to active Evidence Pack items within strict floating-point tolerances.
+- **Contradiction Detection:** Proactively flags correlation-to-causation fallacies, directional conflicts (claiming increase when trend is negative), false significance assertions ($p \ge 0.05$), and stale dataset references.
+- **Controlled Analytical Tool Registry:** Safe execution wrappers (`get_dataset_overview`, `calculate_descriptive_statistics`, `compare_groups`, `calculate_correlation`, `fit_regression`, `get_regression_diagnostics`, `inspect_missingness`) with audit logs. Arbitrary Python/shell execution is strictly blocked.
+- **8-Layer Deep Interpretation Framework:** Generates comprehensive analyses addressing what happened, magnitude, concentration, mechanisms, confounding, robustness, and next actions.
+- **Exploratory Hypothesis Generation:** Formulates structured, testable hypotheses with explicit supporting/weakening criteria and exploratory labeling.
+- **Conversational Memory:** Preserves multi-turn session context with dataset version scoping, reference resolution, and invalidation upon dataset changes.
+- **No-Provider Fallback:** Full application remains functional without external credentials, providing deterministic analytical synthesis.
+
+---
+
+### 3. Configure Credentials (Optional)
+
+Copy `.env.example` to `.env` and configure your Gemini API key:
+```bash
+cp .env.example .env
+```
+Edit `.env`:
+```env
+LLM_PROVIDER=gemini
+GEMINI_API_KEY="your-gemini-api-key"
+GEMINI_MODEL=gemini-1.5-pro
+```
+*Note: If no API key is configured, the application runs seamlessly in **Deterministic Offline Mode** or with the built-in **Mock Provider**.*
+
+---
+
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Application
+### 5. Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore distributions in **3. Exploration Studio**, and run hypothesis tests in **4. Statistical Intelligence**!
+Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore in **3. Exploration Studio**, test inferences in **4. Statistical Intelligence**, and interact with the AI Analyst in **5. AI Analyst Workspace**!
 
-### 5. Run Automated Tests
+### 6. Run Automated Tests
 
 ```bash
 pytest
 ```
 
-### 6. Run Code Quality & Formatting Checks
+### 7. Run Code Quality & Formatting Checks
 
 ```bash
 ruff check .
@@ -237,6 +273,6 @@ ruff format --check .
 | **Phase 2** | **Data Ingestion, Profiling, Quality Scoring & Cleaning Workbench** | **Complete** ✅ |
 | **Phase 3** | **Exploratory Data Analysis (EDA) & Interactive Analytics Engine** | **Complete** ✅ |
 | **Phase 4** | **Statistical Intelligence, Hypothesis Testing & Inference Engine** | **Complete** ✅ |
-| **Phase 5** | Autonomous Agent Planning & LLM Multi-Step Orchestration | *Upcoming* |
-| **Phase 6** | Time-Series Forecasting & Predictive Modeling Lab | *Upcoming* |
+| **Phase 5** | **Evidence-Grounded AI Interpretation Engine & Claim Validation** | **Complete** ✅ |
+| **Phase 6** | Autonomous Multi-Agent Orchestration & Predictive Intelligence Lab | *Upcoming* |
 | **Phase 7** | Executive Intelligence Reports & Production Hardening | *Upcoming* |
