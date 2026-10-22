@@ -215,5 +215,10 @@ def test_streamlit_app_with_loaded_dataset():
         eda_at.run()
         assert not eda_at.exception, f"3_Exploration_Studio.py raised: {eda_at.exception}"
 
+        # Test Statistical Intelligence with loaded dataset
+        stat_at = at.switch_page("pages/4_Statistical_Intelligence.py")
+        stat_at.run()
+        assert not stat_at.exception, f"4_Statistical_Intelligence.py raised: {stat_at.exception}"
+
     except ImportError:
         pass

@@ -167,6 +167,39 @@ Selects and ranks optimal visualizations based on column cardinality, statistica
 
 ---
 
+## 🧪 Statistical Intelligence & Inference Engine (Phase 4)
+
+### 1. Multi-Objective Statistical Workspace (`pages/4_Statistical_Intelligence.py`)
+- **Two-Group Comparisons:** Welch's t-test (heteroscedastic default), Student's t-test (equal variance), and Mann-Whitney U rank-sum test with exact p-values, Welch-Satterthwaite confidence intervals, and Cohen's d / Hedges' g / Cliff's delta effect sizes.
+- **Paired Comparisons:** Paired Student's t-test and Wilcoxon signed-rank test for repeated measures and aligned pre/post observations, with paired confidence intervals and $d_z$ effect sizes.
+- **Multi-Group Comparisons:** One-Way ANOVA omnibus testing across 3+ segments with $\eta^2$ and $\omega^2$ effect sizes and between/within variance breakdowns.
+- **Categorical Association:** Pearson Chi-Square test of independence, Fisher's exact test for sparse $2 \times 2$ tables, Cochran's expected frequency checks, standardized residual matrices, and Cramér's V.
+- **Correlation Inference:** Pearson and Spearman correlation tests with exact p-values, Fisher's $z$-transformation confidence intervals, and non-causal interpretative safeguards.
+- **OLS Linear Regression:** Ordinary Least Squares estimation with dummy-encoded categorical predictors, parameter uncertainty (std errors, t-statistics, 95% CIs), $R^2$, adjusted $R^2$, overall model F-tests, and comprehensive diagnostics:
+  - *Multicollinearity:* Variance Inflation Factor (VIF).
+  - *Heteroscedasticity:* Breusch-Pagan LM test.
+  - *Autocorrelation:* Durbin-Watson test.
+  - *Residual Normality:* Jarque-Bera test.
+  - *Influential Observations:* Cook's distance ($4/N$ threshold).
+
+### 2. Multiplicity Correction & Assumption Diagnostics
+- **Multiple-Testing Correction (`src/analytics/multiple_testing.py`):** Benjamini-Hochberg False Discovery Rate (FDR) control, Bonferroni FWER, and Holm-Bonferroni step-down correction.
+- **Assumption Verification (`src/analytics/assumption_checks.py`):** Shapiro-Wilk and D'Agostino-Pearson normality tests, Levene's / Brown-Forsythe homoscedasticity test, and normal Q-Q plot generation.
+- **Robustness & Sensitivity (`src/analytics/robustness.py`):** Compares baseline findings against non-parametric alternatives, outlier-trimmed samples (Tukey 1.5x IQR), and conservative significance levels ($\alpha = 0.01$).
+
+### 3. Grounded 8-Layer Interpretation Framework (`src/analytics/statistical_interpretation.py`)
+Deterministic, calculation-backed narrative generated for every inferential result:
+1. **Research Question:** Specific empirical relationship or difference under evaluation.
+2. **Method & Rationale:** Why the test was selected and its mathematical justification.
+3. **Quantitative Evidence:** Actual test statistics, degrees of freedom, sample sizes, and p-values.
+4. **Statistical Evidence:** Relation to the null hypothesis without confusing statistical detectability with proof.
+5. **Effect Size & Practical Importance:** Standardized magnitude (Cohen's d, Cliff's delta, Cramér's V, $\eta^2$, $R^2$) evaluated in operational context.
+6. **Assumptions & Limitations:** Diagnostic warnings, dependence concerns, sample limitations, and omitted confounders.
+7. **Grounded Conclusion:** Humble, non-causal conclusion language.
+8. **Recommended Next Investigation:** Concrete follow-up analyses and sensitivity checks.
+
+---
+
 ### 3. Install Dependencies
 
 ```bash
@@ -179,7 +212,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`, navigate to **2. Data Quality Lab** to upload data, then open **3. Exploration Studio** to interact with the analytics engine!
+Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore distributions in **3. Exploration Studio**, and run hypothesis tests in **4. Statistical Intelligence**!
 
 ### 5. Run Automated Tests
 
@@ -203,7 +236,7 @@ ruff format --check .
 | **Phase 1** | **Project Architecture, Shell, Config, Session State & Tests** | **Complete** ✅ |
 | **Phase 2** | **Data Ingestion, Profiling, Quality Scoring & Cleaning Workbench** | **Complete** ✅ |
 | **Phase 3** | **Exploratory Data Analysis (EDA) & Interactive Analytics Engine** | **Complete** ✅ |
-| **Phase 4** | Statistical Intelligence, Hypothesis Testing & Inference Engine | *Upcoming* |
+| **Phase 4** | **Statistical Intelligence, Hypothesis Testing & Inference Engine** | **Complete** ✅ |
 | **Phase 5** | Autonomous Agent Planning & LLM Multi-Step Orchestration | *Upcoming* |
 | **Phase 6** | Time-Series Forecasting & Predictive Modeling Lab | *Upcoming* |
 | **Phase 7** | Executive Intelligence Reports & Production Hardening | *Upcoming* |

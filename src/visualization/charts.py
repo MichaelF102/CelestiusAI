@@ -348,3 +348,67 @@ def build_crosstab_heatmap(
 
     title = f"Co-occurrence Matrix: '{row_var}' × '{col_var}'"
     return apply_dark_theme(fig, title=title, x_title=col_var, y_title=row_var)
+
+
+def build_qq_plot(qq_data: dict[str, list[float]], title: str = "Normal Q-Q Plot") -> go.Figure:
+    """Build a quantile-quantile plot comparing sample quantiles against theoretical standard normal."""
+    theo = qq_data.get("theoretical_quantiles", [])
+    sample = qq_data.get("sample_quantiles", [])
+    tx = qq_data.get("trend_line_x", [])
+    ty = qq_data.get("trend_line_y", [])
+
+    fig = go.Figure()
+    if not theo or not sample:
+        return apply_dark_theme(fig, title=title)
+
+    if tx and ty:
+        fig.add_trace(
+            go.Scatter(
+                x=tx,
+                y=ty,
+                mode="lines",
+                name="Theoretical Line",
+                line={"color": "#f43f5e", "width": 2, "dash": "dash"},
+            )
+        )
+
+    fig.add_trace(
+        go.Scatter(
+            x=theo,
+            y=sample,
+            mode="markers",
+            name="Sample Quantiles",
+            marker={"color": "#38bdf8", "size": 6, "line": {"color": "#0284c7", "width": 1}},
+            hovertemplate="Theoretical: %{x:.2f}<br>Sample: %{y:.2f}<extra></extra>",
+        )
+    )
+
+    return apply_dark_theme(
+        fig, title=title, x_title="Theoretical Quantiles (Normal)", y_title="Sample Quantiles"
+    )
+
+
+def build_residual_fitted_plot(
+    fitted: np.ndarray, residuals: np.ndarray, title: str = "Residuals vs Fitted"
+) -> go.Figure:
+    """Build a residual vs fitted scatter plot with zero reference line for homoscedasticity inspection."""
+    fig = go.Figure()
+    if len(fitted) == 0 or len(residuals) == 0:
+        return apply_dark_theme(fig, title=title)
+
+    fig.add_hline(y=0.0, line_dash="dash", line_color="#f43f5e", line_width=1.5)
+
+    fig.add_trace(
+        go.Scatter(
+            x=fitted,
+            y=residuals,
+            mode="markers",
+            name="Residuals",
+            marker={"color": "rgba(56, 189, 248, 0.7)", "size": 5},
+            hovertemplate="Fitted: %{x:.2f}<br>Residual: %{y:.2f}<extra></extra>",
+        )
+    )
+
+    return apply_dark_theme(
+        fig, title=title, x_title="Fitted Values (ŷ)", y_title="Residuals (e = y - ŷ)"
+    )

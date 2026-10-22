@@ -8,6 +8,8 @@ from src.visualization.charts import (
     build_crosstab_heatmap,
     build_grouped_bar,
     build_histogram,
+    build_qq_plot,
+    build_residual_fitted_plot,
     build_time_series_chart,
     build_violinplot,
 )
@@ -32,6 +34,8 @@ __all__ = [
     "build_crosstab_heatmap",
     "build_grouped_bar",
     "build_histogram",
+    "build_qq_plot",
+    "build_residual_fitted_plot",
     "build_time_series_chart",
     "build_violinplot",
 ]
