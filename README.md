@@ -239,13 +239,106 @@ Phase 6 connects deterministic analytical capabilities and evidence-grounded AI 
 
 ---
 
-### 3. Configure Credentials (Optional)
+---
 
-Copy `.env.example` to `.env` and configure your Gemini API key:
+## 🛡️ Phase 8: End-to-End Integration, Production Hardening & Release Readiness
+
+Phase 8 completes the AI Data Analyst Agent by integrating all subsystems into a unified, hardened, production-ready analytical platform.
+
+```mermaid
+flowchart TD
+    subgraph Ingestion_Lifecycle ["1. Ingestion & Canonical Dataset Lifecycle"]
+        RAW["Uploaded Raw File\n(CSV / Excel / Parquet)"] --> MD["ManagedDataset\n(Raw Immutable DF, Working DF, Fingerprint, Version v)"]
+        MD --> TRANS["Transformation Pipeline\n(Previews, Apply, Undo, Reset)"]
+        TRANS -->|Increments v & Invalidates Downstream| MD
+    end
+
+    subgraph Analytical_Engines ["2. Deterministic Analytical Engines"]
+        MD --> QUAL["Data Quality Engine\n(Missingness, Outliers, Duplicates, Score)"]
+        MD --> EDA["Exploration Studio\n(Distributions, Correlations, Disparities)"]
+        MD --> STAT["Statistical Intelligence Engine\n(Hypothesis Tests, CI, OLS Diagnostics, FDR)"]
+        MD --> PRED["Predictive Analytics Lab\n(Leakage-Safe Splitting, Baselines, ML, Forecasters)"]
+    end
+
+    subgraph Evidence_Layer ["3. Evidence & Governance Layer"]
+        QUAL & EDA & STAT & PRED --> EP["Evidence Pack & Evidence Registry\n(Stable IDs, Calculated Values, Sample Sizes)"]
+        MD -.->|Dataset Changed or Transformed| INVAL["State Invalidation Engine\n(Clears Stale Results & Marks Models Stale)"]
+        INVAL -.-> EP
+    end
+
+    subgraph Agentic_Layer ["4. Agentic AI & Investigation Orchestration"]
+        EP --> AGENT["AI Analyst & Orchestrator\n(DAG Validation, StepExecutor, LLM Synthesis)"]
+        AGENT -->|Tool Invocations| STAT
+        AGENT -->|Tool Invocations| EDA
+        AGENT --> CLAIM["Numerical Claim Validator\n(Zero Hallucination Tolerance)"]
+    end
+
+    subgraph Delivery_Layer ["5. Delivery & Reporting"]
+        EP & CLAIM & PRED --> REP["Intelligence Reporting Engine\n(Executive, EDA, Stat, AI, Predictive Reports)"]
+        REP --> HTML["Interactive HTML Dossier"]
+        REP --> PDF["Publication-Ready PDF Export"]
+    end
+```
+
+### 1. Canonical Dataset Lifecycle & Downstream Invalidation
+- **Version Tracking:** The `ManagedDataset` maintains a monotonically increasing `version` counter (starting at `v=1`).
+- **Strict Invalidation Rules (`invalidate_downstream_analyses`):**
+  - Applying, undoing, or resetting a data cleaning transformation increments dataset version and clears stale downstream analysis caches, active report documents, and latest investigation states.
+  - Previously trained predictive models in the `ModelRegistry` are deterministically flagged with `is_stale = True`, preventing obsolete models from being presented as current.
+  - Uploading a new dataset triggers a complete session state purge, preventing evidence leakage across independent datasets or sessions.
+- **Original Data Immutability:** Raw uploaded records are preserved in `_raw_df`, guaranteeing safe reset without memory bloat.
+
+### 2. Security Hardening
+- **Path Traversal & Filename Defense:** Ingestion sanitizes uploaded filenames, stripping path separators and verifying extensions against explicit allowlists (`.csv`, `.parquet`, `.xlsx`, `.xls`).
+- **No Arbitrary Code Execution:** The analytical tool registry exposes strict, validated Python function endpoints. Arbitrary code execution (`eval`, `exec`, shell scripts, or raw SQL queries) is strictly prohibited.
+- **Prompt Injection Defense:** Plan validation screens user prompts and intermediate inputs against structural injection markers (`system:`, `ignore previous`, `exec(`, `<script>`).
+- **Zero Secret Leakage:** Configuration values (e.g., `GEMINI_API_KEY`) are masked in logs and developer diagnostics using secure masking (`sk-...1234`).
+- **Safe Serialization:** Rejects unsafe pickle or joblib artifacts; uses typed Pydantic models for data interchange.
+
+### 3. Error Classification & Graceful Fallback
+- **Tiered Error Taxonomy:** Separates `DataIngestionError`, `SchemaInferenceError`, `DataQualityError`, and `AnalyticalExecutionError` from transient infrastructure faults.
+- **Deterministic Offline Fallback:** If an LLM provider is unconfigured or encounters API limits, all statistical analysis, hypothesis testing, predictive modeling, and executive report generation remain 100% operational using deterministic offline synthesis.
+- **PDF Export Fallback:** If OS-level PDF rendering libraries or fonts are unavailable, the application gracefully returns a user-friendly error message while offering instant, full-featured standalone HTML exports.
+
+### 4. Container Deployment & Docker Readiness
+A multi-stage, non-root `Dockerfile` is provided for local or cloud container environments:
+```bash
+# Build the container image
+docker build -t da-agent:latest .
+
+# Run the containerized analytical platform
+docker run -p 8501:8501 --env-file .env da-agent:latest
+```
+The container runs as non-root user `appuser` (UID 1000) and includes automatic healthchecks hitting `/_stcore/health`.
+
+---
+
+## 🚀 Quickstart Guide (Pop!_OS / Linux Terminal)
+
+### 1. Create a Virtual Environment
+
+```bash
+python3 -m venv .venv
+```
+
+### 2. Activate the Environment
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Credentials (Optional)
+
 ```bash
 cp .env.example .env
 ```
-Edit `.env`:
+Edit `.env` (optional):
 ```env
 LLM_PROVIDER=gemini
 GEMINI_API_KEY="your-gemini-api-key"
@@ -253,47 +346,16 @@ GEMINI_MODEL=gemini-1.5-pro
 ```
 *Note: If no API key is configured, the application runs seamlessly in **Deterministic Offline Mode** or with the built-in **Mock Provider**.*
 
----
-
-## 🔮 Predictive Analytics Lab & Intelligence Reporting Engine (Phase 7)
-
-### 1. Leakage-Safe Predictive Modeling (`pages/6_Predictive_Lab.py`)
-- **Task Inference & Target Selection:** Automated classification of problem category (`Regression`, `Binary Classification`, `Multiclass Classification`, `Time-Series Forecasting`) with suitability verification and ID screening.
-- **Leakage-Safe Preprocessing (`src/predictive/preprocessing.py`):** Scikit-learn column transformers fitted exclusively on training data partitions (`SimpleImputer`, `StandardScaler`, `OneHotEncoder(handle_unknown="ignore")`).
-- **Splitting Strategies (`src/predictive/split_strategy.py`):** Reproducible stratified partitions, group-aware splitting, and chronological splitting (zero future leakage for ordered series).
-- **Benchmark Baselines (`src/predictive/baselines.py`):** Candidate models compared against defensible naive baselines (`DummyRegressor(strategy="mean")`, `DummyClassifier(strategy="most_frequent")`, `NaiveForecaster`, `SeasonalNaiveForecaster`).
-- **Candidate Models:** Ridge, Linear Regression, Random Forest, HistGradientBoosting, and Holt-Winters Exponential Smoothing.
-- **Holdout Diagnostics & Curves (`src/predictive/diagnostics.py`):** Actual vs. Predicted scatter plots with 45-degree reference, residual plots, Confusion Matrix heatmaps, and ROC curves.
-- **Permutation Explainability (`src/predictive/explainability.py`):** Test-set permutation feature importance with feature name preservation and non-causal interpretative warnings.
-- **Conformal Uncertainty (`src/predictive/uncertainty.py`):** Distribution-free conformal prediction intervals calculated from test residual empirical quantiles.
-- **Model Registry & Provenance (`src/predictive/model_registry.py`):** Tracks dataset version provenance, random seeds, and flags models as stale if the dataset is modified.
-
-### 2. Evidence-Backed Intelligence Reporting (`pages/7_Intelligence_Reports.py`)
-- **Evidence Collector (`src/reporting/evidence_collector.py`):** Aggregates verified outputs across Ingestion, Data Quality, EDA, Statistical Inference, AI Investigation, and Predictive Modeling. Every cited metric links to a stable evidence ID with zero hallucination.
-- **Report Types:** Executive Analytics Report, Exploratory Data Analysis Report, Statistical Intelligence Report, AI Investigation Report, Predictive Model Evaluation Report, and Comprehensive Dataset Intelligence Report.
-- **Multi-Format Export (`src/reporting/export_service.py`):**
-  - **Standalone Interactive HTML:** Responsive design with print CSS for executive presentations.
-  - **Downloadable PDF:** Clean, professional styling via ReportLab with automatic table pagination and graceful fallbacks.
-- **Deterministic Offline Support:** Operates seamlessly with deterministic template synthesis without requiring an active LLM provider.
-
----
-
-### 4. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
 ### 5. Run the Application
 
 ```bash
 streamlit run app.py
 ```
-
-Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore in **3. Exploration Studio**, test inferences in **4. Statistical Intelligence**, orchestrate investigations in **5. AI Analyst Workspace**, train models in **6. Predictive Lab**, and export deliverables in **7. Intelligence Reports**!
+Open `http://localhost:8501` to start your analytical session!
 
 ### 6. Run Automated Tests
 
+Execute the complete 142-test automated test suite:
 ```bash
 pytest
 ```
@@ -304,6 +366,14 @@ pytest
 ruff check .
 ruff format --check .
 ```
+
+---
+
+## ⚠️ Known Limitations & Boundaries
+
+1. **In-Memory Dataset Scope:** Designed for single-node in-memory analysis (up to ~500MB CSV / 2,000,000 rows depending on host RAM). For petabyte-scale distributed data, an upstream query engine (e.g., BigQuery, DuckDB, Spark) should be used to extract relevant analytical subsets.
+2. **Single-User Local Session State:** Streamlit session state is scoped to individual browser sessions. Multi-tenant enterprise deployments require external authentication proxies and database-backed session stores.
+3. **Causal Claims Safeguard:** The application enforces strict non-causal language on observational data. Observational regression or group disparities are reported as empirical associations, never as proven causal effects without experimental controls.
 
 ---
 
@@ -318,4 +388,5 @@ ruff format --check .
 | **Phase 5** | **Evidence-Grounded AI Interpretation Engine & Claim Validation** | **Complete** ✅ |
 | **Phase 6** | **Agentic Multi-Step Investigation Orchestration & Plan Validation** | **Complete** ✅ |
 | **Phase 7** | **Predictive Intelligence Lab & Executive Report Export Engine** | **Complete** ✅ |
-| **Phase 8** | Final Production Hardening, Performance Optimization & Polish | *Upcoming* |
+| **Phase 8** | **End-to-End Integration, Production Hardening & Release Readiness** | **Complete** ✅ |
+

@@ -4,6 +4,8 @@ Defines standard session state keys, default empty values, and pure helper funct
 independent of Streamlit so they can be unit-tested in headless environments.
 """
 
+from __future__ import annotations
+
 import uuid
 from collections.abc import MutableMapping
 from typing import Any
@@ -21,13 +23,10 @@ KEY_ANALYSIS_PLAN = "analysis_plan"  # Multi-step execution plan
 KEY_EXECUTION_TRACE = "execution_trace"  # List of steps executed with metrics
 KEY_CONVERSATION_HISTORY = "conversation_history"  # Conversational Q&A log
 KEY_TRANSFORMATION_PIPELINE = "transformation_pipeline"  # Active cleaning pipeline instance
-
-# Persistence Classification:
-# - TEMPORARY / IN-MEMORY ONLY: current_dataset, conversation_history, analytical_objective,
-#   transformation_pipeline
-# - EVENTUALLY PERSISTED (SQLite / Parquet / Reports): workspace_id, dataset_metadata,
-#   dataset_schema, data_quality_report, analysis_results, generated_findings,
-#   analysis_plan, execution_trace
+KEY_MODEL_REGISTRY = "model_registry"  # Predictive model registry
+KEY_PREDICTIVE_RECORDS = "predictive_records"  # Latest predictive model records
+KEY_ACTIVE_REPORT_DOC = "active_report_doc"  # Generated report document
+KEY_LATEST_INVESTIGATION_STATE = "latest_investigation_state"  # Orchestrated investigation trace
 
 
 def get_default_session_state() -> dict[str, Any]:
@@ -45,6 +44,10 @@ def get_default_session_state() -> dict[str, Any]:
         KEY_EXECUTION_TRACE: [],
         KEY_CONVERSATION_HISTORY: [],
         KEY_TRANSFORMATION_PIPELINE: None,
+        KEY_MODEL_REGISTRY: None,
+        KEY_PREDICTIVE_RECORDS: [],
+        KEY_ACTIVE_REPORT_DOC: None,
+        KEY_LATEST_INVESTIGATION_STATE: None,
     }
 
 
@@ -75,6 +78,24 @@ def init_session_state(state: MutableMapping[str, Any] | None = None) -> Mutable
     return target
 
 
+def invalidate_downstream_analyses(state: MutableMapping[str, Any]) -> None:
+    """Invalidate analyses dependent on prior working dataset version after a transformation."""
+    state[KEY_ANALYSIS_RESULTS] = {}
+    state[KEY_GENERATED_FINDINGS] = []
+    state[KEY_ANALYSIS_PLAN] = None
+    state[KEY_EXECUTION_TRACE] = []
+    state[KEY_ACTIVE_REPORT_DOC] = None
+    state[KEY_LATEST_INVESTIGATION_STATE] = None
+    state[KEY_PREDICTIVE_RECORDS] = []
+
+    # Flag existing models in registry as stale
+    registry = state.get(KEY_MODEL_REGISTRY)
+    dataset = state.get(KEY_CURRENT_DATASET)
+    active_version = getattr(dataset, "version", None)
+    if registry and hasattr(registry, "list_models"):
+        registry.list_models(active_version=active_version)
+
+
 def reset_dataset_state(state: MutableMapping[str, Any]) -> None:
     """Reset dataset-derived state when a new dataset is loaded or unloaded."""
     defaults = get_default_session_state()
@@ -89,6 +110,10 @@ def reset_dataset_state(state: MutableMapping[str, Any]) -> None:
         KEY_ANALYSIS_PLAN,
         KEY_EXECUTION_TRACE,
         KEY_TRANSFORMATION_PIPELINE,
+        KEY_MODEL_REGISTRY,
+        KEY_PREDICTIVE_RECORDS,
+        KEY_ACTIVE_REPORT_DOC,
+        KEY_LATEST_INVESTIGATION_STATE,
     ]
     for key in keys_to_reset:
         state[key] = defaults[key]

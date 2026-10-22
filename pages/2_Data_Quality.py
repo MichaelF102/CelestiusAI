@@ -12,6 +12,7 @@ from src.core.session_state import (
     KEY_DATASET_SCHEMA,
     KEY_TRANSFORMATION_PIPELINE,
     init_session_state,
+    invalidate_downstream_analyses,
     reset_dataset_state,
 )
 from src.core.ui_components import render_page_header, render_sidebar_status
@@ -536,6 +537,7 @@ with tab_clean:
                         )
                         st.session_state[KEY_DATA_QUALITY_REPORT] = new_profile
                         st.session_state[KEY_DATASET_SCHEMA] = dataset.schema_info
+                        invalidate_downstream_analyses(st.session_state)
                         st.success(f"Applied: {record.summary}")
                         st.rerun()
 
@@ -571,6 +573,7 @@ with tab_clean:
                         )
                         st.session_state[KEY_DATA_QUALITY_REPORT] = new_profile
                         st.session_state[KEY_DATASET_SCHEMA] = dataset.schema_info
+                        invalidate_downstream_analyses(st.session_state)
                         st.info(f"Reverted: {undone.summary}")
                         st.rerun()
             with ctrl_c2:
@@ -579,6 +582,7 @@ with tab_clean:
                     new_profile = profile_dataset(dataset.working_df, dataset_id=dataset.dataset_id)
                     st.session_state[KEY_DATA_QUALITY_REPORT] = new_profile
                     st.session_state[KEY_DATASET_SCHEMA] = dataset.schema_info
+                    invalidate_downstream_analyses(st.session_state)
                     st.warning(
                         "All transformations reverted! Working dataset restored to immutable raw state."
                     )

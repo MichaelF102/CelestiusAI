@@ -157,20 +157,20 @@ with gen_col2:
 if generate_btn:
     with st.spinner("Compiling verified evidence into structured report..."):
         ai_narrative = None
-        if enable_ai and settings.llm.gemini_api_key:
+        if enable_ai and getattr(settings, "gemini_api_key", None):
             try:
                 from src.agent.analyst_service import AnalystService
                 from src.agent.provider_factory import ProviderFactory
 
-                provider = ProviderFactory.create_provider(settings.llm)
-                analyst = AnalystService(provider=provider)
+                provider = ProviderFactory.get_provider(settings=settings)
+                analyst = AnalystService(provider=provider, settings=settings)
                 # Quick prompt for executive briefing
-                res = analyst.analyze_query(
-                    query="Provide a concise 2-paragraph executive overview summarizing the key metrics and verified data patterns.",
+                res, _ = analyst.analyze_question(
+                    question="Provide a concise 2-paragraph executive overview summarizing the key metrics and verified data patterns.",
                     managed_dataset=managed_ds,
                 )
-                if res and res.summary:
-                    ai_narrative = res.summary
+                if res and getattr(res, "synthesis", None):
+                    ai_narrative = res.synthesis
             except Exception as e:
                 st.warning(f"Could not generate AI narrative ({e}). Using deterministic summary.")
 

@@ -50,6 +50,7 @@ class ManagedDataset:
         self.working_df = working_df.copy(deep=True)
         self.schema_info = schema_info
         self.ingestion_report = ingestion_report
+        self.version: int = 1
 
     @property
     def raw_df(self) -> pd.DataFrame:
@@ -60,11 +61,13 @@ class ManagedDataset:
         """Reset the working dataset to match the original raw dataset."""
         self.working_df = self._raw_df.copy(deep=True)
         self.schema_info = infer_dataset_schema(self.working_df)
+        self.version += 1
 
     def update_working_df(self, new_df: pd.DataFrame) -> None:
         """Update active working dataset after an approved transformation."""
         self.working_df = new_df.copy(deep=True)
         self.schema_info = infer_dataset_schema(self.working_df)
+        self.version += 1
 
 
 def get_excel_sheet_names(stream: BinaryIO | bytes) -> list[str]:

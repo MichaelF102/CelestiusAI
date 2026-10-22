@@ -100,4 +100,9 @@ with col_right:
     st.page_link("app.py", label="← Return to Main Workspace", icon="🏠")
     st.page_link("pages/2_Data_Quality.py", label="Go to Data Quality Lab", icon="🔍")
     st.page_link("pages/3_Exploration_Studio.py", label="Go to Exploration Studio", icon="📈")
+    st.page_link(
+        "pages/4_Statistical_Intelligence.py", label="Go to Statistical Intelligence", icon="🧪"
+    )
     st.page_link("pages/5_AI_Analyst.py", label="Go to AI Analyst", icon="🤖")
+    st.page_link("pages/6_Predictive_Lab.py", label="Go to Predictive Lab", icon="🔮")
+    st.page_link("pages/7_Intelligence_Reports.py", label="Go to Intelligence Reports", icon="📑")
