@@ -23,6 +23,7 @@ from src.analytics.robustness import (
 )
 from src.analytics.statistical_service import StatisticalService
 from src.ingestion.loader import ManagedDataset
+from src.ingestion.schema import infer_dataset_schema
 from src.profiling.missing_values import analyze_missing_values
 from src.profiling.profiler import profile_categorical_column, profile_numeric_column
 
@@ -492,5 +493,9 @@ class AnalyticalToolRegistry:
     ) -> dict[str, Any]:
         df = md.working_df
         target_df = df[[self._resolve_column(df, c) for c in columns]] if columns else df
-        missing_analysis = analyze_missing_values(target_df)
-        return missing_analysis.model_dump()
+        schemas = getattr(md, "schema_info", None) or infer_dataset_schema(target_df)
+        missing_stats, issues = analyze_missing_values(target_df, schemas)
+        return {
+            "missing_stats": missing_stats,
+            "issues": [issue.model_dump() for issue in issues],
+        }

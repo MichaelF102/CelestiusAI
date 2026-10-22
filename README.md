@@ -220,6 +220,25 @@ Phase 5 connects deterministic data profiling, EDA, and statistical inference to
 
 ---
 
+## 🕵️ Phase 6: Agentic Orchestration & Investigation Engine
+
+Phase 6 connects deterministic analytical capabilities and evidence-grounded AI into a coordinated, multi-step investigation engine.
+
+### Core Philosophy
+**The LLM proposes plans and synthesizes findings; deterministic Python services execute calculations, enforce DAG dependencies, and validate outputs.**
+
+### Key Capabilities
+- **Typed Lifecycle Architecture:** Strict Pydantic models for `InvestigationPlan`, `InvestigationStep`, `InvestigationState`, and `InvestigationResult`.
+- **Deterministic DAG Validation (`WorkflowGraphValidator`):** Verifies step dependency acyclicity via Kahn's algorithm, enforces registered tool schemas, blocks prompt-injection attempts, and validates that all referenced columns exist in the active working dataset.
+- **Dependency-Aware Step Execution (`StepExecutor`):** Schedules steps in topological order, halts downstream branches on prerequisite failure, and caches deterministic outputs using composite `(version, tool, args)` keys.
+- **Explicit State Machine (`InvestigationStateMachine`):** Implements an audited transition graph across 12 lifecycle states (`CREATED`, `PLANNING`, `PLAN_VALIDATION`, `READY`, `RUNNING`, `REVIEWING`, `REVISING`, `SYNTHESIZING`, `COMPLETED`, `FAILED`, `CANCELLED`, `BUDGET_EXCEEDED`).
+- **Adaptive Plan Revision (`PlanRevisionEngine`):** Dynamically adjusts remaining steps based on intermediate findings (e.g., automatically appending a robustness check when a significant segment disparity $p < 0.05$ is detected).
+- **Deterministic Stopping Criteria & Budgets (`TerminationEvaluator`):** Enforces bounds on steps, tool calls, elapsed time, and plan revisions. Detects and halts infinite loop cycles via plan signature hashing.
+- **Error Classification & Bounded Recovery (`ErrorRecoveryClassifier`):** Categorizes failures into transient infrastructure, argument errors, assumption violations, and security breaches.
+- **Dual-Mode UI Workspace:** Toggle between **Quick Answer** (instant single-turn synthesis) and **Deep Multi-Step Investigation** (plan preview, user approval, live execution trace, budget indicators, and final investigation report).
+
+---
+
 ### 3. Configure Credentials (Optional)
 
 Copy `.env.example` to `.env` and configure your Gemini API key:
@@ -248,7 +267,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore in **3. Exploration Studio**, test inferences in **4. Statistical Intelligence**, and interact with the AI Analyst in **5. AI Analyst Workspace**!
+Open `http://localhost:8501`, upload data in **2. Data Quality Lab**, explore in **3. Exploration Studio**, test inferences in **4. Statistical Intelligence**, and orchestrate multi-step investigations in **5. AI Analyst Workspace**!
 
 ### 6. Run Automated Tests
 
@@ -274,5 +293,5 @@ ruff format --check .
 | **Phase 3** | **Exploratory Data Analysis (EDA) & Interactive Analytics Engine** | **Complete** ✅ |
 | **Phase 4** | **Statistical Intelligence, Hypothesis Testing & Inference Engine** | **Complete** ✅ |
 | **Phase 5** | **Evidence-Grounded AI Interpretation Engine & Claim Validation** | **Complete** ✅ |
-| **Phase 6** | Autonomous Multi-Agent Orchestration & Predictive Intelligence Lab | *Upcoming* |
-| **Phase 7** | Executive Intelligence Reports & Production Hardening | *Upcoming* |
+| **Phase 6** | **Agentic Multi-Step Investigation Orchestration & Plan Validation** | **Complete** ✅ |
+| **Phase 7** | Predictive Intelligence Lab & Executive Report Export | *Upcoming* |
