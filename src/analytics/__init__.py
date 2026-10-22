@@ -80,7 +80,9 @@ from src.analytics.robustness import (
     evaluate_two_group_robustness,
 )
 from src.analytics.statistical_interpretation import (
+    render_plain_english_takeaway,
     render_regression_interpretation_markdown,
+    render_regression_plain_english,
     render_statistical_interpretation_markdown,
 )
 from src.analytics.statistical_models import (
@@ -161,7 +163,9 @@ __all__ = [
     "generate_skewness_finding",
     "identify_influential_points_cooks_d",
     "recommend_charts",
+    "render_plain_english_takeaway",
     "render_regression_interpretation_markdown",
+    "render_regression_plain_english",
     "render_statistical_interpretation_markdown",
     "run_chi_square_test",
     "run_correlation_test",
