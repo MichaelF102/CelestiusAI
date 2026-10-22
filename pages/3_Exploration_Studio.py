@@ -33,7 +33,10 @@ if not is_dataset_loaded(st.session_state):
     render_empty_state_banner("Exploration Studio", phase_label="Phase 2")
 else:
     metadata = st.session_state.get(KEY_DATASET_METADATA)
-    st.success(f"Exploring active dataset: **{metadata.get('filename', 'Unknown')}**")
+    fname = getattr(metadata, "filename", None) or (
+        metadata.get("filename", "Unknown") if isinstance(metadata, dict) else "Unknown"
+    )
+    st.success(f"Exploring active dataset: **{fname}**")
 
 st.markdown("### Planned Capabilities in Phase 2")
 e_col1, e_col2 = st.columns(2)

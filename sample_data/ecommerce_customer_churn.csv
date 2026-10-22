@@ -1,0 +1,21 @@
+customer_id,signup_date,age,country,monthly_spend,total_orders,support_tickets,churn,notes
+1001,2023-01-15,34,USA,120.50,12,1,0,active account
+1002,2023-02-10,45,Canada,85.00,8,0,0,good standing
+1003,2023-03-22,29, USA,210.00,24,3,1,N/A
+1004,2023-04-05,52,UK,45.00,3,4,1,dissatisfied
+1005,2023-05-18,,Germany,350.00,38,0,0,premium member
+1006,2023-06-30,31,usa,95.00,9,1,0,regular buyer
+1007,2023-07-12,28,France,180.00,16,2,0,engaged
+1008,2023-08-01,105,Germany,60.00,5,5,1,extreme outlier age
+1009,2023-09-14,39,UK,140.00,14,0,0,frequent shopper
+1010,2023-10-25,,Canada,75.00,7,2,0,unknown
+1011,2023-11-03,22,USA,290.00,31,1,0,vip customer
+1012,2023-12-19,41,France,115.00,11,0,0,active
+1013,2024-01-08,36,Germany,165.00,17,1,0,reliable
+1014,2024-02-14,48,USA,50.00,4,3,1,low activity
+1014,2024-02-14,48,USA,50.00,4,3,1,low activity
+1015,2024-03-01,33,Canada,220.00,21,0,0,expanding
+1016,2024-03-15,27,UK,130.00,13,2,0,loyal
+1017,2024-04-02,59,France,90.00,8,1,0,stable
+1018,2024-04-20,38,usa,310.00,29,0,0,high value
+1019,2024-05-11,44,Germany,70.00,6,4,1,at risk

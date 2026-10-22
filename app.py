@@ -32,21 +32,35 @@ render_sidebar_status()
 render_page_header(
     title=f"📊 {settings.app_name}",
     subtitle="From raw data to validated insights and informed decisions.",
-    badge="Phase 1 Foundation",
+    badge="Phase 2 Quality Intelligence",
 )
 
 # Workspace Overview & KPI Indicators
 kpis = get_workspace_kpis()
+is_loaded = kpis["dataset"] != "Not loaded"
+
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.metric(label="Dataset Status", value=kpis["dataset"])
 with col2:
-    st.metric(label="Rows Analyzed", value=kpis["rows"])
+    st.metric(
+        label="Observed Rows",
+        value=kpis["rows"],
+        help=f"{kpis['cols']} columns detected" if is_loaded else None,
+    )
 with col3:
-    st.metric(label="Columns Detected", value=kpis["cols"])
+    st.metric(
+        label="Data Quality Score",
+        value=kpis["quality_score"] if is_loaded else "N/A",
+        help=f"{kpis['missing_pct']} missing cells" if is_loaded else None,
+    )
 with col4:
-    st.metric(label="Insights Generated", value=kpis["insights"])
+    st.metric(
+        label="Quality Issues",
+        value=kpis["issues_count"] if is_loaded else "0",
+        help=f"{kpis['transformations_count']} transformations applied" if is_loaded else None,
+    )
 
 st.markdown("<br>", unsafe_allow_html=True)
 

@@ -11,6 +11,7 @@ from src.core.session_state import (
     KEY_DATASET_SCHEMA,
     KEY_EXECUTION_TRACE,
     KEY_GENERATED_FINDINGS,
+    KEY_TRANSFORMATION_PIPELINE,
     KEY_WORKSPACE_ID,
     get_default_session_state,
     init_session_state,
@@ -35,6 +36,7 @@ def test_default_session_state_keys():
         KEY_ANALYSIS_PLAN,
         KEY_EXECUTION_TRACE,
         KEY_CONVERSATION_HISTORY,
+        KEY_TRANSFORMATION_PIPELINE,
     }
     assert expected_keys.issubset(defaults.keys())
     assert defaults[KEY_CURRENT_DATASET] is None
@@ -47,6 +49,7 @@ def test_default_session_state_keys():
     assert defaults[KEY_ANALYSIS_PLAN] is None
     assert defaults[KEY_EXECUTION_TRACE] == []
     assert defaults[KEY_CONVERSATION_HISTORY] == []
+    assert defaults[KEY_TRANSFORMATION_PIPELINE] is None
     assert len(defaults[KEY_WORKSPACE_ID]) > 0
 
 

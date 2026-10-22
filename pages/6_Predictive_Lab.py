@@ -33,7 +33,10 @@ if not is_dataset_loaded(st.session_state):
     render_empty_state_banner("Predictive Lab", phase_label="Phase 5")
 else:
     metadata = st.session_state.get(KEY_DATASET_METADATA)
-    st.success(f"Modeling workspace active for: **{metadata.get('filename', 'Unknown')}**")
+    fname = getattr(metadata, "filename", None) or (
+        metadata.get("filename", "Unknown") if isinstance(metadata, dict) else "Unknown"
+    )
+    st.success(f"Modeling workspace active for: **{fname}**")
 
 st.markdown("### Planned Capabilities in Phase 5")
 p_col1, p_col2 = st.columns(2)

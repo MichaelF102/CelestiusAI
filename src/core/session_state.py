@@ -20,9 +20,11 @@ KEY_ANALYTICAL_OBJECTIVE = "analytical_objective"  # Current user question or ob
 KEY_ANALYSIS_PLAN = "analysis_plan"  # Multi-step execution plan
 KEY_EXECUTION_TRACE = "execution_trace"  # List of steps executed with metrics
 KEY_CONVERSATION_HISTORY = "conversation_history"  # Conversational Q&A log
+KEY_TRANSFORMATION_PIPELINE = "transformation_pipeline"  # Active cleaning pipeline instance
 
 # Persistence Classification:
-# - TEMPORARY / IN-MEMORY ONLY: current_dataset, conversation_history, analytical_objective
+# - TEMPORARY / IN-MEMORY ONLY: current_dataset, conversation_history, analytical_objective,
+#   transformation_pipeline
 # - EVENTUALLY PERSISTED (SQLite / Parquet / Reports): workspace_id, dataset_metadata,
 #   dataset_schema, data_quality_report, analysis_results, generated_findings,
 #   analysis_plan, execution_trace
@@ -42,6 +44,7 @@ def get_default_session_state() -> dict[str, Any]:
         KEY_ANALYSIS_PLAN: None,
         KEY_EXECUTION_TRACE: [],
         KEY_CONVERSATION_HISTORY: [],
+        KEY_TRANSFORMATION_PIPELINE: None,
     }
 
 
@@ -85,6 +88,7 @@ def reset_dataset_state(state: MutableMapping[str, Any]) -> None:
         KEY_ANALYTICAL_OBJECTIVE,
         KEY_ANALYSIS_PLAN,
         KEY_EXECUTION_TRACE,
+        KEY_TRANSFORMATION_PIPELINE,
     ]
     for key in keys_to_reset:
         state[key] = defaults[key]

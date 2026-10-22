@@ -130,3 +130,85 @@ def test_streamlit_app_smoke():
             assert not page_at.exception, f"{page} raised: {page_at.exception}"
     except ImportError:
         pass
+
+
+def test_streamlit_app_with_loaded_dataset():
+    """Verify pages render cleanly when a ManagedDataset and DatasetProfile are loaded in session state."""
+    try:
+        import pandas as pd
+        from src.core.session_state import (
+            KEY_CURRENT_DATASET,
+            KEY_DATA_QUALITY_REPORT,
+            KEY_DATASET_METADATA,
+            KEY_DATASET_SCHEMA,
+            KEY_TRANSFORMATION_PIPELINE,
+        )
+        from src.ingestion.loader import ManagedDataset
+        from src.ingestion.models import DatasetIngestionReport
+        from src.ingestion.schema import infer_dataset_schema
+        from src.ingestion.transformation_history import TransformationPipeline
+        from src.models.common import DatasetMetadata
+        from src.profiling.profiler import profile_dataset
+        from streamlit.testing.v1 import AppTest
+
+        df = pd.DataFrame(
+            {
+                "customer_id": [101, 102, 103],
+                "revenue": [150.0, 220.5, 310.0],
+                "churn": [0, 1, 0],
+            }
+        )
+        schema = infer_dataset_schema(df)
+        report = DatasetIngestionReport(
+            dataset_id="ds_smoke_123",
+            filename="smoke_customers.csv",
+            file_format="csv",
+            file_size_bytes=250,
+            content_fingerprint="abc999",
+            row_count=3,
+            column_count=3,
+        )
+        managed = ManagedDataset(
+            dataset_id="ds_smoke_123",
+            filename="smoke_customers.csv",
+            file_format="csv",
+            file_size_bytes=250,
+            fingerprint="abc999",
+            raw_df=df,
+            working_df=df,
+            schema_info=schema,
+            ingestion_report=report,
+        )
+        profile = profile_dataset(df, dataset_id="ds_smoke_123", schemas=schema)
+        metadata = DatasetMetadata(
+            filename="smoke_customers.csv",
+            file_format="csv",
+            row_count=3,
+            column_count=3,
+            dataset_id="ds_smoke_123",
+            file_size_bytes=250,
+        )
+
+        root = Path(__file__).resolve().parent.parent
+        at = AppTest.from_file(str(root / "app.py"), default_timeout=10)
+        at.session_state[KEY_CURRENT_DATASET] = managed
+        at.session_state[KEY_DATA_QUALITY_REPORT] = profile
+        at.session_state[KEY_DATASET_SCHEMA] = schema
+        at.session_state[KEY_DATASET_METADATA] = metadata
+        at.session_state[KEY_TRANSFORMATION_PIPELINE] = TransformationPipeline()
+
+        at.run()
+        assert not at.exception, f"app.py raised with loaded dataset: {at.exception}"
+
+        # Test Executive Overview with loaded dataset
+        exec_at = at.switch_page("pages/1_Executive_Overview.py")
+        exec_at.run()
+        assert not exec_at.exception, f"1_Executive_Overview.py raised: {exec_at.exception}"
+
+        # Test Data Quality Lab with loaded dataset
+        dq_at = at.switch_page("pages/2_Data_Quality.py")
+        dq_at.run()
+        assert not dq_at.exception, f"2_Data_Quality.py raised: {dq_at.exception}"
+
+    except ImportError:
+        pass

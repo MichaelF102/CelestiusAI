@@ -59,10 +59,23 @@ with col_left:
 
     st.subheader("Data Quality Status")
     dq_report = st.session_state.get(KEY_DATA_QUALITY_REPORT)
-    if dq_report:
-        st.json(dq_report)
+    if dq_report and hasattr(dq_report, "quality_score"):
+        qs = dq_report.quality_score
+        dqc1, dqc2, dqc3 = st.columns(3)
+        dqc1.metric("Overall Score", f"{qs.overall_score:.0f}/100")
+        dqc2.metric("Missing Cells", f"{dq_report.missing_cell_percentage:.1f}%")
+        dqc3.metric("Duplicate Rows", f"{dq_report.duplicate_row_percentage:.1f}%")
+
+        if dq_report.quality_issues:
+            st.caption(f"**Top Quality Issues ({len(dq_report.quality_issues)} total):**")
+            for iss in dq_report.quality_issues[:3]:
+                st.markdown(
+                    f"- **[{iss.severity.upper()}]** {iss.title}: *{iss.recommended_action}*"
+                )
+        else:
+            st.success("No critical or high-severity quality anomalies detected.")
     else:
-        st.caption(
+        st.info(
             "Quality score and anomaly summary will be generated automatically upon data ingestion."
         )
 
