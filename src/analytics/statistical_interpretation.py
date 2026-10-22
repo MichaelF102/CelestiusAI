@@ -1,5 +1,7 @@
 """Structured, evidence-grounded 8-layer statistical interpretation generator."""
 
+import textwrap
+
 from src.analytics.statistical_models import RegressionModelResult, StatisticalTestResult
 
 
@@ -98,25 +100,25 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
             )
 
         ci_str = f"[{ci.lower_bound:+,.2f}, {ci.upper_bound:+,.2f}]" if ci else "N/A"
-        details_html = f"""
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0;">
-            <div style="background: rgba(30, 41, 59, 0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid #334155;">
-                <div style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Group 1: {g1}</div>
-                <div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">Mean: {m1:,.2f}</div>
-                <div style="font-size: 0.85rem; color: #cbd5e1;">Median: {med1:,.2f} • N: {result.sample_sizes.get(g1, 0):,}</div>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid #334155;">
-                <div style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Group 2: {g2}</div>
-                <div style="font-size: 1.25rem; font-weight: 700; color: #f43f5e;">Mean: {m2:,.2f}</div>
-                <div style="font-size: 0.85rem; color: #cbd5e1;">Median: {med2:,.2f} • N: {result.sample_sizes.get(g2, 0):,}</div>
-            </div>
-            <div style="background: rgba(30, 41, 59, 0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid #334155;">
-                <div style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Absolute Difference</div>
-                <div style="font-size: 1.25rem; font-weight: 700; color: #f1f5f9;">{diff:+,.2f}</div>
-                <div style="font-size: 0.85rem; color: #cbd5e1;">95% CI: {ci_str}</div>
-            </div>
-        </div>
-        """
+        details_html = (
+            '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0;">'
+            f'<div style="background: rgba(30, 41, 59, 0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid #334155;">'
+            f'<div style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Group 1: {g1}</div>'
+            f'<div style="font-size: 1.25rem; font-weight: 700; color: #38bdf8;">Mean: {m1:,.2f}</div>'
+            f'<div style="font-size: 0.85rem; color: #cbd5e1;">Median: {med1:,.2f} • N: {result.sample_sizes.get(g1, 0):,}</div>'
+            "</div>"
+            f'<div style="background: rgba(30, 41, 59, 0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid #334155;">'
+            f'<div style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Group 2: {g2}</div>'
+            f'<div style="font-size: 1.25rem; font-weight: 700; color: #f43f5e;">Mean: {m2:,.2f}</div>'
+            f'<div style="font-size: 0.85rem; color: #cbd5e1;">Median: {med2:,.2f} • N: {result.sample_sizes.get(g2, 0):,}</div>'
+            "</div>"
+            f'<div style="background: rgba(30, 41, 59, 0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid #334155;">'
+            '<div style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Absolute Difference</div>'
+            f'<div style="font-size: 1.25rem; font-weight: 700; color: #f1f5f9;">{diff:+,.2f}</div>'
+            f'<div style="font-size: 0.85rem; color: #cbd5e1;">95% CI: {ci_str}</div>'
+            "</div>"
+            "</div>"
+        )
     else:
         headline = f"Analysis of {vars_str}: {result.test_name}"
         bottom_line = result.summary
@@ -136,7 +138,7 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
             f"<div style='margin-top: 10px; font-size: 0.95rem; color: #e2e8f0;'>"
             f"<strong>Practical Real-World Impact:</strong> Magnitude is rated <strong>{eff.magnitude.upper()}</strong> ({eff.name} = {eff.estimate:+.2f}). "
             f"This indicates the separation between groups is {'substantial in business terms' if eff.magnitude in ['large', 'very_large'] else 'moderate' if eff.magnitude == 'moderate' else 'subtle and may have limited operational impact'}."
-            f"</div>"
+            "</div>"
         )
 
     # Check assumptions summary
@@ -147,7 +149,7 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
             f"<strong>Assumption Note:</strong> {len(failed_checks)} assumption(s) departed from ideal theoretical conditions "
             f"({', '.join(c.name for c in failed_checks)}). "
             f"The chosen test (<strong>{result.test_name}</strong>) was specifically selected because it is robust against these exact deviations (e.g. heteroscedasticity or unequal variance)."
-            f"</div>"
+            "</div>"
         )
     else:
         assump_note = (
@@ -156,29 +158,24 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
             "</div>"
         )
 
-    return f"""
-    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-                border: 1px solid #334155; border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; color: #f1f5f9;">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
-            <div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">
-                {headline}
-            </div>
-            {badge_html}
-        </div>
-        <p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 8px;">
-            {bottom_line}
-        </p>
-        {details_html}
-        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #334155; border-radius: 8px; padding: 14px 18px; margin-top: 12px;">
-            <div style="font-size: 0.95rem; color: #e2e8f0; line-height: 1.5;">
-                {p_expl}
-            </div>
-            {eff_expl}
-        </div>
-        {assump_note}
-    </div>
-    """
+    card_html = (
+        "<div style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; "
+        "background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); "
+        'border: 1px solid #334155; border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; color: #f1f5f9;">'
+        '<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">'
+        f'<div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">{headline}</div>'
+        f"{badge_html}"
+        "</div>"
+        f'<p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 8px;">{bottom_line}</p>'
+        f"{details_html}"
+        '<div style="background: rgba(15, 23, 42, 0.6); border: 1px solid #334155; border-radius: 8px; padding: 14px 18px; margin-top: 12px;">'
+        f'<div style="font-size: 0.95rem; color: #e2e8f0; line-height: 1.5;">{p_expl}</div>'
+        f"{eff_expl}"
+        "</div>"
+        f"{assump_note}"
+        "</div>"
+    )
+    return textwrap.dedent(card_html)
 
 
 def render_regression_plain_english(result: RegressionModelResult) -> str:
@@ -196,32 +193,25 @@ def render_regression_plain_english(result: RegressionModelResult) -> str:
         ", ".join(f"<strong>{c.variable}</strong> ({c.estimate:,.2f})" for c in neg_preds) or "None"
     )
 
-    return f"""
-    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-                border: 1px solid #334155; border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; color: #f1f5f9;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">
-                OLS Regression: Predicting <strong>{result.outcome_variable}</strong>
-            </div>
-            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #0284c7; padding: 4px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.85rem;">
-                R² = {r2_pct:.1f}% Variance Explained
-            </span>
-        </div>
-        <p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">
-            This model explains <strong>{r2_pct:.1f}%</strong> of all variation in <strong>{result.outcome_variable}</strong>
-            using {len(result.predictor_variables)} predictor variable(s). The overall model is
-            <strong>{"statistically significant (p < 0.001)" if result.f_pvalue < 0.001 else "not statistically significant"}</strong>.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 14px;">
-            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px;">
-                <div style="font-size: 0.8rem; color: #34d399; font-weight: 700; text-transform: uppercase;">Top Positive Drivers (Increases Outcome)</div>
-                <div style="font-size: 0.95rem; color: #f1f5f9; margin-top: 6px;">{pos_str}</div>
-            </div>
-            <div style="background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: 8px; padding: 12px 16px;">
-                <div style="font-size: 0.8rem; color: #fb7185; font-weight: 700; text-transform: uppercase;">Top Negative Drivers (Decreases Outcome)</div>
-                <div style="font-size: 0.95rem; color: #f1f5f9; margin-top: 6px;">{neg_str}</div>
-            </div>
-        </div>
-    </div>
-    """
+    card_html = (
+        "<div style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; "
+        "background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); "
+        'border: 1px solid #334155; border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; color: #f1f5f9;">'
+        '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">'
+        f'<div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">OLS Regression: Predicting <strong>{result.outcome_variable}</strong></div>'
+        f'<span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #0284c7; padding: 4px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.85rem;">R² = {r2_pct:.1f}% Variance Explained</span>'
+        "</div>"
+        f'<p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">This model explains <strong>{r2_pct:.1f}%</strong> of all variation in <strong>{result.outcome_variable}</strong> using {len(result.predictor_variables)} predictor variable(s). The overall model is <strong>{"statistically significant (p < 0.001)" if result.f_pvalue < 0.001 else "not statistically significant"}</strong>.</p>'
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 14px;">'
+        '<div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px;">'
+        '<div style="font-size: 0.8rem; color: #34d399; font-weight: 700; text-transform: uppercase;">Top Positive Drivers (Increases Outcome)</div>'
+        f'<div style="font-size: 0.95rem; color: #f1f5f9; margin-top: 6px;">{pos_str}</div>'
+        "</div>"
+        '<div style="background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); border-radius: 8px; padding: 12px 16px;">'
+        '<div style="font-size: 0.8rem; color: #fb7185; font-weight: 700; text-transform: uppercase;">Top Negative Drivers (Decreases Outcome)</div>'
+        f'<div style="font-size: 0.95rem; color: #f1f5f9; margin-top: 6px;">{neg_str}</div>'
+        "</div>"
+        "</div>"
+        "</div>"
+    )
+    return textwrap.dedent(card_html)

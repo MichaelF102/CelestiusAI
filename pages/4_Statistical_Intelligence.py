@@ -439,7 +439,7 @@ if active_test and analysis_type != "regression":
 
     with res_tab_interp:
         # 1. Plain-English Human Takeaway Banner (No AI jargon, clean readable typography)
-        st.markdown(render_plain_english_takeaway(active_test), unsafe_allow_html=True)
+        st.html(render_plain_english_takeaway(active_test))
 
         # 2. Visual Evidence Plots based on Test Type
         if (
@@ -685,7 +685,7 @@ elif active_reg and analysis_type == "regression":
     )
 
     with reg_tab_interp:
-        st.markdown(render_regression_plain_english(active_reg), unsafe_allow_html=True)
+        st.html(render_regression_plain_english(active_reg))
 
         st.markdown("#### Estimated Coefficients & Parameter Uncertainty")
         coeff_rows = [
