@@ -1,0 +1,2001 @@
+patient_id,age,sex,primary_diagnosis,length_of_stay_days,num_prior_admissions,num_medications,bmi,discharged_to,readmitted_30d
+900000,80.0,F,hip fracture,2.0,0,5.0,,home,0
+900001,91.0,F,heart failure,13.0,1,6.0,33.8,home,1
+900002,22.0,M,hip fracture,10.0,3,6.0,31.0,home,0
+900003,61.0,M,diabetes,1.0,3,6.0,24.3,home,1
+900004,79.0,F,heart failure,4.0,1,8.0,31.2,home,0
+900005,85.0,M,COPD,4.0,1,,,home,0
+900006,73.0,F,pneumonia,4.0,0,2.0,28.3,home,1
+900007,87.0,M,pneumonia,3.0,1,6.0,31.4,home,0
+900008,68.0,F,heart failure,1.0,2,9.0,23.1,home,1
+900009,72.0,F,diabetes,2.0,1,8.0,,home,0
+900010,66.0,F,pneumonia,8.0,1,7.0,36.1,rehab,0
+900011,46.0,F,heart failure,3.0,1,15.0,39.0,nursing facility,0
+900012,49.0,M,hip fracture,6.0,1,,,home,0
+900013,69.0,F,pneumonia,5.0,2,9.0,29.2,home,1
+900014,54.0,M,heart failure,4.0,1,7.0,27.9,home,0
+900015,83.0,M,diabetes,1.0,0,4.0,25.9,home,0
+900016,84.0,M,COPD,1.0,0,5.0,28.2,home,1
+900017,92.0,F,pneumonia,6.0,0,6.0,33.5,home,0
+900018,63.0,F,heart failure,8.0,0,6.0,29.1,nursing facility,0
+900019,85.0,F,diabetes,7.0,3,5.0,36.9,home,1
+900020,49.0,F,diabetes,1.0,1,8.0,26.3,home,0
+900021,50.0,F,pneumonia,8.0,0,2.0,,home,0
+900022,64.0,M,pneumonia,7.0,0,7.0,30.3,home,1
+900023,68.0,F,pneumonia,14.0,0,9.0,24.9,home,0
+900024,37.0,F,diabetes,1.0,0,,31.0,home,0
+900025,35.0,F,hip fracture,1.0,0,7.0,,home,0
+900026,69.0,F,hip fracture,3.0,2,12.0,33.4,nursing facility,0
+900027,49.0,M,pneumonia,3.0,1,11.0,25.5,home,0
+900028,82.0,M,diabetes,2.0,0,5.0,,home,0
+900029,69.0,M,heart failure,1.0,1,1.0,24.6,rehab,0
+900030,68.0,M,heart failure,3.0,1,9.0,16.2,nursing facility,0
+900031,66.0,M,heart failure,1.0,1,6.0,,home,0
+900032,77.0,F,COPD,4.0,1,7.0,25.6,home,0
+900033,61.0,M,hip fracture,3.0,0,,31.7,home,0
+900034,80.0,M,COPD,1.0,0,13.0,,home,0
+900035,55.0,M,diabetes,1.0,1,5.0,25.0,nursing facility,1
+900036,59.0,M,pneumonia,4.0,2,3.0,16.6,nursing facility,0
+900037,52.0,M,pneumonia,7.0,0,9.0,25.1,home,0
+900038,73.0,F,pneumonia,6.0,1,5.0,22.6,home,0
+900039,64.0,M,COPD,2.0,1,6.0,31.6,rehab,0
+900040,49.0,F,hip fracture,4.0,0,10.0,27.5,nursing facility,0
+900041,95.0,F,heart failure,5.0,5,9.0,25.4,home,1
+900042,57.0,F,heart failure,6.0,3,,25.9,home,1
+900043,61.0,M,diabetes,3.0,2,11.0,31.8,nursing facility,1
+900044,69.0,F,diabetes,5.0,2,9.0,32.7,home,1
+900045,91.0,F,diabetes,3.0,1,8.0,32.4,home,0
+900046,61.0,M,heart failure,2.0,2,13.0,,home,0
+900047,74.0,M,COPD,4.0,1,15.0,27.5,rehab,0
+900048,65.0,M,diabetes,16.0,2,7.0,16.2,home,1
+900049,40.0,F,hip fracture,5.0,0,7.0,37.5,nursing facility,0
+900050,76.0,M,diabetes,10.0,0,,40.1,nursing facility,1
+900051,79.0,M,pneumonia,9.0,1,,,nursing facility,0
+900052,59.0,M,pneumonia,16.0,0,8.0,33.2,nursing facility,0
+900053,63.0,F,heart failure,1.0,3,9.0,27.7,home,1
+900054,39.0,M,pneumonia,2.0,1,8.0,25.3,home,0
+900055,39.0,M,heart failure,1.0,2,11.0,20.7,home,1
+900056,57.0,F,heart failure,4.0,1,7.0,34.3,home,0
+900057,73.0,M,pneumonia,11.0,2,7.0,19.4,home,1
+900058,55.0,F,hip fracture,10.0,0,6.0,26.6,home,0
+900059,68.0,M,COPD,1.0,1,,34.7,home,0
+900060,78.0,F,pneumonia,1.0,0,9.0,26.8,home,0
+900061,65.0,M,COPD,9.0,2,10.0,25.7,rehab,0
+900062,72.0,M,diabetes,4.0,3,8.0,27.4,home,1
+900063,86.0,F,heart failure,9.0,2,5.0,23.3,home,1
+900064,43.0,F,heart failure,3.0,1,3.0,29.6,home,1
+900065,75.0,M,pneumonia,1.0,3,9.0,27.8,nursing facility,0
+900066,33.0,F,heart failure,7.0,0,9.0,25.4,home,0
+900067,70.0,F,heart failure,8.0,2,14.0,30.1,rehab,1
+900068,66.0,F,heart failure,5.0,0,9.0,25.7,home,1
+900069,54.0,F,diabetes,3.0,0,,29.5,home,1
+900070,46.0,F,heart failure,1.0,1,5.0,26.7,rehab,0
+900071,62.0,F,diabetes,10.0,2,10.0,25.2,home,0
+900072,56.0,M,heart failure,3.0,0,4.0,21.0,rehab,0
+900073,65.0,F,hip fracture,4.0,0,5.0,30.6,home,0
+900074,48.0,F,diabetes,7.0,0,11.0,28.4,home,0
+900075,72.0,M,diabetes,6.0,0,7.0,33.0,home,0
+900076,46.0,F,COPD,7.0,2,6.0,21.4,home,0
+900077,58.0,M,diabetes,8.0,1,8.0,30.8,home,1
+900078,57.0,F,heart failure,2.0,2,10.0,30.7,home,1
+900079,83.0,M,hip fracture,13.0,2,12.0,22.3,home,1
+900080,39.0,M,pneumonia,2.0,2,6.0,33.2,home,0
+900081,56.0,M,diabetes,16.0,1,11.0,27.2,home,0
+900082,82.0,F,pneumonia,6.0,1,11.0,26.0,home,1
+900083,52.0,F,COPD,2.0,1,,36.9,nursing facility,0
+900084,43.0,M,diabetes,2.0,1,7.0,35.9,rehab,0
+900085,68.0,M,heart failure,5.0,2,11.0,21.0,nursing facility,1
+900086,58.0,M,heart failure,4.0,1,6.0,27.5,home,1
+900087,76.0,M,hip fracture,1.0,0,5.0,28.5,home,1
+900088,48.0,F,pneumonia,1.0,0,4.0,,rehab,0
+900089,66.0,F,COPD,5.0,0,4.0,,rehab,0
+900090,74.0,F,hip fracture,5.0,1,10.0,26.9,home,0
+900091,80.0,M,hip fracture,13.0,2,13.0,,home,1
+900092,45.0,F,heart failure,4.0,0,1.0,31.8,rehab,1
+900093,86.0,M,heart failure,3.0,0,12.0,,home,1
+900094,49.0,F,heart failure,1.0,0,4.0,28.0,home,0
+900095,39.0,F,pneumonia,1.0,3,8.0,36.3,home,0
+900096,48.0,M,pneumonia,20.0,1,4.0,29.3,home,0
+900097,65.0,M,COPD,3.0,4,5.0,41.3,home,1
+900098,58.0,M,diabetes,6.0,1,8.0,27.2,rehab,0
+900099,70.0,F,pneumonia,3.0,0,9.0,30.9,home,1
+900100,71.0,F,diabetes,2.0,0,10.0,38.5,home,0
+900101,68.0,F,pneumonia,14.0,3,7.0,30.4,rehab,1
+900102,59.0,F,hip fracture,3.0,2,2.0,25.7,home,0
+900103,92.0,M,diabetes,2.0,2,9.0,25.9,rehab,1
+900104,28.0,F,heart failure,4.0,0,6.0,30.9,home,0
+900105,35.0,F,hip fracture,1.0,0,15.0,17.4,nursing facility,0
+900106,55.0,M,diabetes,8.0,1,10.0,33.3,home,0
+900107,43.0,M,pneumonia,5.0,0,7.0,21.1,home,1
+900108,22.0,M,hip fracture,7.0,1,,21.3,home,0
+900109,50.0,M,heart failure,6.0,1,4.0,35.7,home,0
+900110,51.0,F,diabetes,3.0,0,7.0,,nursing facility,1
+900111,24.0,F,heart failure,12.0,1,11.0,30.7,home,0
+900112,77.0,F,diabetes,6.0,3,7.0,34.9,nursing facility,0
+900113,84.0,F,COPD,3.0,1,5.0,37.1,nursing facility,0
+900114,83.0,M,hip fracture,3.0,1,4.0,20.4,rehab,1
+900115,55.0,M,diabetes,1.0,0,12.0,,nursing facility,0
+900116,65.0,F,hip fracture,5.0,2,6.0,24.8,home,1
+900117,45.0,M,hip fracture,7.0,1,10.0,28.2,home,0
+900118,66.0,M,hip fracture,3.0,1,,,nursing facility,0
+900119,52.0,M,diabetes,4.0,1,9.0,31.0,home,0
+900120,70.0,F,heart failure,5.0,2,12.0,,home,1
+900121,58.0,F,diabetes,2.0,4,,37.0,home,0
+900122,80.0,F,hip fracture,7.0,3,7.0,31.8,rehab,1
+900123,76.0,F,heart failure,8.0,3,16.0,30.1,home,0
+900124,83.0,M,pneumonia,15.0,2,7.0,19.1,nursing facility,1
+900125,37.0,F,hip fracture,3.0,2,8.0,22.3,rehab,0
+900126,34.0,M,diabetes,3.0,0,5.0,25.3,home,0
+900127,69.0,F,pneumonia,3.0,4,10.0,18.2,home,0
+900128,54.0,M,diabetes,2.0,1,9.0,25.0,home,0
+900129,69.0,F,pneumonia,11.0,0,9.0,31.7,nursing facility,0
+900130,68.0,F,COPD,5.0,1,5.0,33.4,home,0
+900131,66.0,M,pneumonia,6.0,2,5.0,38.1,home,1
+900132,78.0,M,pneumonia,2.0,1,9.0,26.5,rehab,0
+900133,72.0,F,diabetes,3.0,2,9.0,15.5,home,0
+900134,71.0,M,hip fracture,6.0,1,6.0,30.4,home,0
+900135,49.0,F,hip fracture,3.0,3,15.0,29.8,home,0
+900136,91.0,F,heart failure,2.0,0,7.0,21.8,home,0
+900137,65.0,M,heart failure,2.0,1,5.0,42.3,home,0
+900138,81.0,M,diabetes,4.0,0,9.0,,home,0
+900139,68.0,M,diabetes,3.0,0,7.0,20.4,nursing facility,0
+900140,83.0,M,heart failure,6.0,0,6.0,28.3,nursing facility,1
+900141,65.0,M,diabetes,9.0,0,3.0,28.6,nursing facility,1
+900142,66.0,M,heart failure,12.0,2,6.0,28.8,home,0
+900143,65.0,M,heart failure,3.0,1,10.0,27.8,rehab,1
+900144,52.0,M,hip fracture,6.0,2,5.0,31.7,home,0
+900145,54.0,F,COPD,4.0,3,,22.4,home,1
+900146,61.0,M,hip fracture,11.0,2,,19.7,home,1
+900147,61.0,M,heart failure,2.0,1,12.0,35.3,home,0
+900148,47.0,M,pneumonia,4.0,0,7.0,31.0,home,0
+900149,98.0,M,diabetes,5.0,1,9.0,39.6,home,0
+900150,47.0,M,diabetes,3.0,2,5.0,26.4,nursing facility,1
+900151,58.0,F,diabetes,6.0,2,8.0,19.9,home,0
+900152,98.0,M,diabetes,4.0,2,11.0,28.0,home,1
+900153,52.0,F,pneumonia,7.0,2,12.0,24.5,nursing facility,0
+900154,75.0,F,COPD,3.0,2,13.0,28.5,rehab,1
+900155,74.0,F,hip fracture,2.0,1,16.0,28.7,home,1
+900156,60.0,F,diabetes,8.0,1,8.0,22.2,nursing facility,1
+900157,40.0,F,hip fracture,4.0,0,10.0,26.0,home,0
+900158,38.0,M,hip fracture,8.0,1,8.0,30.8,home,1
+900159,63.0,M,hip fracture,2.0,1,,24.0,home,0
+900160,70.0,F,diabetes,2.0,1,8.0,37.8,nursing facility,0
+900161,29.0,F,COPD,2.0,0,8.0,25.2,nursing facility,0
+900162,65.0,M,heart failure,2.0,1,7.0,41.5,home,1
+900163,53.0,M,COPD,4.0,2,7.0,28.5,nursing facility,0
+900164,77.0,F,COPD,4.0,1,9.0,33.3,home,1
+900165,66.0,F,heart failure,4.0,1,8.0,25.6,home,1
+900166,50.0,M,hip fracture,10.0,3,12.0,29.5,home,1
+900167,56.0,M,heart failure,6.0,2,7.0,31.2,home,1
+900168,64.0,F,pneumonia,5.0,2,9.0,26.9,rehab,1
+900169,85.0,M,pneumonia,4.0,0,6.0,30.1,home,0
+900170,98.0,M,COPD,2.0,1,,23.4,home,1
+900171,69.0,M,COPD,6.0,0,13.0,23.6,home,0
+900172,65.0,M,COPD,1.0,0,13.0,29.5,home,0
+900173,74.0,F,heart failure,2.0,2,6.0,29.5,home,0
+900174,64.0,M,diabetes,3.0,1,11.0,26.8,home,0
+900175,74.0,F,COPD,5.0,0,6.0,35.6,home,0
+900176,71.0,M,COPD,6.0,0,9.0,36.0,rehab,1
+900177,64.0,M,hip fracture,4.0,2,8.0,28.1,nursing facility,1
+900178,52.0,M,pneumonia,7.0,2,8.0,28.0,home,1
+900179,67.0,F,pneumonia,4.0,1,6.0,32.9,home,0
+900180,79.0,M,COPD,6.0,3,13.0,28.4,home,1
+900181,66.0,M,heart failure,1.0,1,7.0,26.1,home,0
+900182,89.0,F,heart failure,4.0,2,8.0,15.0,home,1
+900183,80.0,F,pneumonia,4.0,0,5.0,32.7,home,1
+900184,62.0,F,hip fracture,5.0,0,6.0,23.1,home,0
+900185,92.0,M,diabetes,7.0,1,10.0,28.3,nursing facility,1
+900186,47.0,F,diabetes,6.0,3,1.0,,home,1
+900187,83.0,F,diabetes,11.0,1,12.0,25.0,home,0
+900188,94.0,F,COPD,4.0,3,13.0,22.7,home,1
+900189,61.0,F,diabetes,4.0,0,7.0,31.0,home,1
+900190,63.0,F,COPD,6.0,1,6.0,,home,1
+900191,80.0,F,diabetes,1.0,0,7.0,29.5,nursing facility,0
+900192,88.0,M,diabetes,5.0,1,9.0,,nursing facility,1
+900193,72.0,F,hip fracture,4.0,5,7.0,29.2,home,0
+900194,69.0,F,COPD,2.0,0,,21.1,home,0
+900195,80.0,F,pneumonia,5.0,1,4.0,22.7,home,1
+900196,69.0,M,heart failure,2.0,2,8.0,24.7,nursing facility,1
+900197,46.0,F,COPD,10.0,2,7.0,29.8,home,0
+900198,62.0,F,hip fracture,7.0,1,6.0,28.0,home,1
+900199,65.0,M,hip fracture,1.0,1,8.0,27.8,home,0
+900200,41.0,M,heart failure,4.0,1,15.0,32.8,home,0
+900201,71.0,M,heart failure,2.0,2,8.0,24.4,nursing facility,0
+900202,53.0,M,hip fracture,2.0,1,,23.7,rehab,1
+900203,77.0,M,diabetes,4.0,1,9.0,34.5,home,0
+900204,41.0,M,pneumonia,5.0,1,6.0,,home,1
+900205,50.0,F,hip fracture,7.0,1,8.0,26.8,home,0
+900206,42.0,F,hip fracture,4.0,0,8.0,31.2,nursing facility,0
+900207,85.0,F,pneumonia,3.0,0,,,home,1
+900208,85.0,M,hip fracture,4.0,1,9.0,26.3,home,0
+900209,88.0,F,hip fracture,2.0,0,7.0,35.4,home,1
+900210,88.0,F,hip fracture,4.0,0,10.0,24.0,nursing facility,1
+900211,79.0,M,pneumonia,2.0,2,14.0,,nursing facility,1
+900212,79.0,F,hip fracture,11.0,2,8.0,32.8,home,1
+900213,38.0,M,diabetes,4.0,2,2.0,26.8,home,1
+900214,70.0,F,COPD,4.0,1,6.0,29.7,home,1
+900215,57.0,F,pneumonia,3.0,2,,34.4,home,0
+900216,60.0,F,COPD,13.0,1,8.0,25.1,home,0
+900217,45.0,M,heart failure,1.0,3,9.0,38.3,home,1
+900218,86.0,F,diabetes,2.0,1,10.0,23.2,home,0
+900219,67.0,F,heart failure,4.0,0,7.0,21.2,home,0
+900220,41.0,M,heart failure,3.0,2,9.0,22.6,home,0
+900221,73.0,F,diabetes,1.0,0,5.0,25.5,nursing facility,1
+900222,63.0,M,heart failure,9.0,0,11.0,32.7,home,1
+900223,48.0,M,hip fracture,3.0,1,8.0,34.5,home,0
+900224,60.0,F,pneumonia,1.0,1,5.0,26.7,home,0
+900225,52.0,F,heart failure,4.0,0,6.0,18.8,home,0
+900226,27.0,M,pneumonia,7.0,2,6.0,29.5,home,0
+900227,39.0,M,COPD,4.0,0,6.0,25.5,home,1
+900228,72.0,F,heart failure,9.0,3,8.0,29.5,home,1
+900229,69.0,F,hip fracture,4.0,0,5.0,25.1,home,1
+900230,68.0,M,heart failure,6.0,2,15.0,,rehab,1
+900231,44.0,F,heart failure,3.0,0,8.0,30.5,home,1
+900232,53.0,M,diabetes,6.0,2,8.0,28.4,home,0
+900233,64.0,M,diabetes,3.0,6,3.0,,nursing facility,1
+900234,74.0,M,pneumonia,1.0,1,,33.8,home,1
+900235,50.0,M,COPD,2.0,1,10.0,29.7,home,0
+900236,46.0,F,diabetes,1.0,0,6.0,32.6,nursing facility,1
+900237,81.0,F,COPD,4.0,2,9.0,22.4,home,1
+900238,64.0,M,heart failure,12.0,0,5.0,21.8,nursing facility,0
+900239,57.0,F,pneumonia,9.0,3,5.0,25.9,home,0
+900240,51.0,F,diabetes,3.0,3,6.0,28.7,nursing facility,0
+900241,52.0,F,COPD,2.0,0,15.0,22.3,home,0
+900242,88.0,M,hip fracture,5.0,0,4.0,24.1,home,1
+900243,79.0,M,heart failure,2.0,0,8.0,21.0,home,1
+900244,56.0,M,COPD,2.0,1,4.0,,home,1
+900245,43.0,F,COPD,4.0,0,10.0,20.2,nursing facility,1
+900246,90.0,M,pneumonia,7.0,2,13.0,36.1,home,1
+900247,88.0,M,diabetes,8.0,1,6.0,,home,1
+900248,82.0,M,diabetes,1.0,1,13.0,21.6,home,1
+900249,76.0,M,COPD,3.0,1,10.0,22.0,home,0
+900250,33.0,M,hip fracture,10.0,1,11.0,31.9,nursing facility,0
+900251,42.0,M,COPD,8.0,1,12.0,28.1,nursing facility,0
+900252,72.0,M,hip fracture,4.0,1,11.0,28.3,home,1
+900253,58.0,F,pneumonia,7.0,2,8.0,28.3,home,1
+900254,67.0,M,COPD,2.0,1,5.0,23.8,home,1
+900255,55.0,F,hip fracture,7.0,4,,28.3,home,1
+900256,52.0,M,COPD,6.0,2,12.0,,home,0
+900257,72.0,M,diabetes,4.0,1,7.0,28.4,home,0
+900258,57.0,F,pneumonia,2.0,6,11.0,33.5,nursing facility,0
+900259,63.0,F,pneumonia,9.0,2,8.0,30.9,home,1
+900260,67.0,F,hip fracture,6.0,0,9.0,32.4,rehab,0
+900261,67.0,M,COPD,7.0,2,11.0,31.9,home,0
+900262,82.0,F,pneumonia,8.0,1,10.0,32.6,home,1
+900263,85.0,F,diabetes,1.0,2,2.0,,home,0
+900264,41.0,M,COPD,8.0,0,6.0,,home,0
+900265,59.0,F,COPD,6.0,2,5.0,19.7,home,1
+900266,53.0,M,diabetes,2.0,1,13.0,28.2,home,0
+900267,75.0,M,COPD,6.0,3,,28.9,home,1
+900268,46.0,F,COPD,1.0,1,4.0,37.6,home,0
+900269,75.0,M,COPD,7.0,1,4.0,,home,1
+900270,74.0,F,heart failure,10.0,3,5.0,30.0,nursing facility,1
+900271,72.0,M,hip fracture,3.0,3,8.0,25.2,rehab,0
+900272,47.0,M,heart failure,1.0,1,,31.3,home,0
+900273,60.0,F,heart failure,5.0,4,7.0,28.0,home,0
+900274,46.0,F,hip fracture,4.0,1,11.0,29.1,nursing facility,0
+900275,69.0,F,diabetes,1.0,2,7.0,24.3,home,0
+900276,78.0,M,hip fracture,1.0,4,9.0,,home,1
+900277,39.0,F,pneumonia,2.0,2,4.0,32.7,home,1
+900278,50.0,F,pneumonia,3.0,1,,21.5,home,1
+900279,60.0,M,pneumonia,4.0,3,5.0,24.2,home,1
+900280,54.0,M,hip fracture,3.0,2,8.0,,home,0
+900281,87.0,F,heart failure,7.0,1,4.0,31.5,home,1
+900282,61.0,F,pneumonia,7.0,0,9.0,30.4,home,0
+900283,67.0,F,pneumonia,4.0,1,,33.9,nursing facility,1
+900284,45.0,F,pneumonia,4.0,1,2.0,16.5,home,0
+900285,88.0,M,diabetes,2.0,1,7.0,31.0,home,1
+900286,66.0,F,hip fracture,6.0,2,8.0,30.4,home,0
+900287,75.0,F,heart failure,3.0,0,,33.5,home,0
+900288,64.0,F,pneumonia,1.0,1,11.0,,home,1
+900289,29.0,M,heart failure,5.0,0,,27.7,home,0
+900290,37.0,M,hip fracture,9.0,0,9.0,28.8,home,0
+900291,42.0,M,hip fracture,4.0,2,6.0,36.7,home,1
+900292,70.0,F,hip fracture,6.0,1,9.0,34.5,home,0
+900293,55.0,M,diabetes,3.0,1,5.0,25.5,rehab,0
+900294,70.0,M,pneumonia,3.0,1,9.0,,home,0
+900295,68.0,F,COPD,2.0,1,11.0,21.2,rehab,1
+900296,67.0,M,COPD,7.0,1,9.0,33.9,rehab,0
+900297,78.0,F,heart failure,14.0,1,4.0,33.9,home,1
+900298,66.0,F,pneumonia,9.0,3,9.0,33.5,home,0
+900299,37.0,M,hip fracture,6.0,1,7.0,28.1,home,0
+900300,52.0,M,COPD,5.0,4,11.0,33.0,rehab,0
+900301,90.0,M,heart failure,9.0,1,8.0,27.3,nursing facility,0
+900302,46.0,F,hip fracture,5.0,1,9.0,36.8,home,0
+900303,85.0,F,diabetes,1.0,0,4.0,31.3,home,1
+900304,89.0,F,pneumonia,18.0,2,6.0,22.2,rehab,1
+900305,53.0,F,COPD,10.0,1,7.0,17.8,rehab,1
+900306,69.0,M,heart failure,14.0,1,9.0,28.3,home,0
+900307,41.0,F,COPD,4.0,0,12.0,26.0,home,1
+900308,75.0,M,pneumonia,6.0,0,11.0,31.6,home,0
+900309,51.0,M,diabetes,3.0,1,,29.0,nursing facility,0
+900310,42.0,F,pneumonia,1.0,1,8.0,40.3,nursing facility,1
+900311,57.0,F,pneumonia,3.0,0,9.0,34.5,nursing facility,0
+900312,56.0,M,hip fracture,8.0,1,6.0,16.3,home,0
+900313,54.0,M,COPD,4.0,0,7.0,19.5,home,0
+900314,66.0,M,diabetes,8.0,0,8.0,29.3,rehab,0
+900315,60.0,M,diabetes,4.0,1,12.0,27.9,nursing facility,1
+900316,52.0,F,hip fracture,8.0,1,,28.0,nursing facility,0
+900317,78.0,F,diabetes,10.0,2,6.0,18.4,home,0
+900318,98.0,M,hip fracture,1.0,1,11.0,27.2,home,0
+900319,64.0,F,pneumonia,4.0,0,9.0,28.4,home,0
+900320,52.0,F,pneumonia,3.0,2,6.0,35.4,home,1
+900321,47.0,F,heart failure,5.0,1,8.0,30.9,nursing facility,1
+900322,72.0,F,pneumonia,5.0,1,9.0,24.7,home,0
+900323,59.0,F,heart failure,6.0,0,9.0,37.3,home,0
+900324,63.0,M,COPD,11.0,2,12.0,21.8,home,1
+900325,31.0,M,heart failure,6.0,2,16.0,22.3,nursing facility,0
+900326,45.0,F,pneumonia,3.0,0,11.0,34.1,rehab,0
+900327,44.0,M,diabetes,7.0,0,11.0,23.3,home,0
+900328,78.0,M,hip fracture,2.0,2,10.0,34.1,home,0
+900329,59.0,F,COPD,6.0,2,6.0,30.2,nursing facility,1
+900330,23.0,M,pneumonia,1.0,4,8.0,19.7,home,0
+900331,71.0,F,diabetes,3.0,1,10.0,,home,0
+900332,81.0,F,hip fracture,12.0,0,9.0,23.7,home,0
+900333,84.0,M,hip fracture,1.0,2,5.0,32.7,home,1
+900334,18.0,F,COPD,3.0,2,5.0,37.5,nursing facility,0
+900335,65.0,M,COPD,12.0,2,16.0,35.4,home,1
+900336,76.0,M,pneumonia,1.0,4,,,home,1
+900337,73.0,F,diabetes,4.0,0,,34.2,home,0
+900338,59.0,F,diabetes,2.0,2,6.0,,rehab,1
+900339,34.0,F,heart failure,11.0,1,,21.5,rehab,1
+900340,56.0,M,pneumonia,3.0,1,7.0,30.3,nursing facility,0
+900341,58.0,M,hip fracture,1.0,2,,25.1,home,0
+900342,72.0,F,pneumonia,8.0,2,8.0,27.2,home,0
+900343,73.0,M,pneumonia,4.0,1,8.0,,home,0
+900344,59.0,F,COPD,2.0,1,6.0,35.1,home,0
+900345,77.0,F,COPD,7.0,1,18.0,28.3,rehab,1
+900346,46.0,F,diabetes,8.0,1,7.0,38.6,home,1
+900347,52.0,F,hip fracture,1.0,0,18.0,31.3,home,0
+900348,63.0,M,hip fracture,6.0,0,6.0,16.7,home,0
+900349,72.0,F,diabetes,1.0,1,5.0,,home,0
+900350,58.0,F,pneumonia,1.0,1,8.0,22.3,home,1
+900351,83.0,M,heart failure,7.0,0,,27.1,home,0
+900352,70.0,F,COPD,6.0,0,7.0,21.7,home,0
+900353,48.0,M,heart failure,4.0,2,7.0,,rehab,0
+900354,64.0,F,pneumonia,4.0,1,4.0,28.4,home,0
+900355,49.0,F,pneumonia,8.0,2,4.0,23.7,nursing facility,0
+900356,48.0,F,heart failure,3.0,0,6.0,21.6,nursing facility,0
+900357,40.0,M,diabetes,4.0,1,7.0,24.8,nursing facility,0
+900358,85.0,M,pneumonia,4.0,1,6.0,21.3,nursing facility,1
+900359,78.0,F,diabetes,1.0,0,11.0,34.7,home,0
+900360,37.0,F,pneumonia,3.0,1,6.0,28.0,home,0
+900361,81.0,F,pneumonia,2.0,2,9.0,25.3,home,0
+900362,78.0,M,hip fracture,4.0,1,,22.5,home,0
+900363,57.0,F,pneumonia,6.0,1,,17.9,nursing facility,1
+900364,71.0,F,diabetes,4.0,0,15.0,,home,1
+900365,98.0,M,hip fracture,3.0,1,10.0,30.8,rehab,0
+900366,68.0,M,pneumonia,13.0,1,,30.2,rehab,1
+900367,70.0,F,COPD,2.0,1,6.0,,home,0
+900368,81.0,M,diabetes,7.0,0,,28.3,home,1
+900369,46.0,F,diabetes,4.0,2,4.0,,home,0
+900370,43.0,F,diabetes,19.0,2,7.0,,home,1
+900371,40.0,M,heart failure,3.0,0,4.0,26.1,home,0
+900372,62.0,F,COPD,5.0,2,15.0,33.9,home,1
+900373,77.0,M,hip fracture,6.0,1,12.0,22.8,home,1
+900374,49.0,M,hip fracture,13.0,2,6.0,34.0,nursing facility,1
+900375,41.0,M,diabetes,2.0,1,,28.8,home,0
+900376,66.0,F,hip fracture,4.0,2,6.0,28.5,nursing facility,1
+900377,57.0,M,pneumonia,3.0,1,14.0,30.2,home,1
+900378,73.0,F,heart failure,1.0,0,8.0,35.0,home,0
+900379,61.0,F,COPD,6.0,0,6.0,27.4,home,0
+900380,61.0,F,COPD,6.0,0,7.0,32.6,home,0
+900381,62.0,F,heart failure,4.0,3,8.0,35.3,home,1
+900382,64.0,M,diabetes,10.0,2,5.0,26.7,home,1
+900383,48.0,F,diabetes,1.0,2,6.0,22.8,home,1
+900384,46.0,M,COPD,7.0,2,12.0,31.5,home,1
+900385,89.0,F,diabetes,14.0,1,4.0,33.5,nursing facility,1
+900386,98.0,M,diabetes,6.0,0,11.0,30.6,home,0
+900387,82.0,M,pneumonia,3.0,1,4.0,18.1,home,0
+900388,38.0,F,COPD,4.0,3,5.0,28.4,nursing facility,0
+900389,64.0,M,diabetes,8.0,3,6.0,34.5,home,0
+900390,83.0,M,COPD,9.0,1,6.0,22.9,home,0
+900391,38.0,M,heart failure,2.0,1,5.0,24.5,home,0
+900392,56.0,M,diabetes,2.0,3,7.0,24.1,home,0
+900393,57.0,M,COPD,1.0,0,7.0,32.6,home,1
+900394,49.0,F,COPD,8.0,3,4.0,17.4,home,1
+900395,50.0,F,heart failure,9.0,1,10.0,37.1,home,1
+900396,80.0,M,COPD,9.0,0,11.0,28.1,nursing facility,1
+900397,57.0,M,hip fracture,5.0,0,8.0,23.2,home,1
+900398,60.0,F,pneumonia,3.0,4,,,home,1
+900399,91.0,F,pneumonia,2.0,1,7.0,15.0,nursing facility,0
+900400,50.0,F,heart failure,4.0,3,,31.7,rehab,1
+900401,33.0,M,pneumonia,6.0,0,7.0,33.3,home,0
+900402,74.0,M,COPD,7.0,2,9.0,,home,1
+900403,96.0,F,hip fracture,9.0,0,7.0,34.3,home,1
+900404,67.0,M,diabetes,7.0,2,9.0,,home,1
+900405,69.0,F,heart failure,9.0,2,7.0,20.1,home,1
+900406,43.0,F,pneumonia,9.0,2,9.0,40.7,nursing facility,0
+900407,49.0,M,heart failure,5.0,1,,29.4,home,1
+900408,87.0,M,diabetes,2.0,1,10.0,27.9,home,0
+900409,84.0,F,COPD,5.0,0,12.0,36.0,home,0
+900410,73.0,F,diabetes,5.0,1,6.0,25.5,home,0
+900411,54.0,M,pneumonia,19.0,0,10.0,34.3,home,1
+900412,45.0,F,hip fracture,6.0,1,7.0,29.1,nursing facility,1
+900413,47.0,M,hip fracture,5.0,0,8.0,30.6,home,1
+900414,45.0,F,diabetes,5.0,1,5.0,30.7,rehab,1
+900415,73.0,F,diabetes,4.0,0,10.0,,home,0
+900416,51.0,F,pneumonia,2.0,0,9.0,23.1,home,0
+900417,56.0,F,diabetes,11.0,3,10.0,29.9,home,1
+900418,75.0,M,COPD,3.0,1,5.0,29.0,home,1
+900419,74.0,M,pneumonia,2.0,1,5.0,26.4,home,0
+900420,64.0,M,diabetes,2.0,0,,29.9,nursing facility,0
+900421,71.0,M,diabetes,2.0,2,9.0,32.2,home,1
+900422,63.0,M,COPD,16.0,2,11.0,33.4,home,1
+900423,32.0,F,heart failure,1.0,2,9.0,25.1,home,0
+900424,62.0,F,hip fracture,3.0,1,4.0,27.1,nursing facility,1
+900425,56.0,M,pneumonia,1.0,0,5.0,19.1,nursing facility,0
+900426,57.0,M,diabetes,1.0,1,,18.1,home,0
+900427,67.0,F,pneumonia,3.0,0,9.0,34.4,nursing facility,1
+900428,54.0,M,heart failure,1.0,0,5.0,25.5,home,0
+900429,83.0,F,COPD,3.0,1,4.0,20.8,home,0
+900430,60.0,M,pneumonia,3.0,0,5.0,,home,0
+900431,66.0,M,COPD,11.0,1,5.0,,home,0
+900432,68.0,M,COPD,4.0,0,,20.4,home,0
+900433,60.0,M,hip fracture,4.0,2,12.0,31.9,rehab,0
+900434,73.0,M,hip fracture,2.0,1,,36.1,home,0
+900435,75.0,F,COPD,5.0,1,8.0,31.1,nursing facility,0
+900436,73.0,M,diabetes,6.0,2,3.0,,home,1
+900437,52.0,M,COPD,21.0,3,8.0,28.6,home,0
+900438,48.0,F,hip fracture,9.0,1,9.0,34.6,home,0
+900439,53.0,M,diabetes,6.0,0,3.0,24.1,home,0
+900440,63.0,M,diabetes,2.0,0,5.0,33.5,home,0
+900441,33.0,M,heart failure,7.0,0,6.0,24.4,home,0
+900442,49.0,M,COPD,2.0,1,10.0,30.3,home,0
+900443,44.0,M,hip fracture,12.0,2,8.0,16.8,nursing facility,0
+900444,52.0,M,pneumonia,9.0,0,9.0,27.1,nursing facility,0
+900445,48.0,M,hip fracture,3.0,2,,27.0,rehab,0
+900446,76.0,F,hip fracture,9.0,1,,,nursing facility,1
+900447,70.0,F,pneumonia,2.0,1,11.0,38.9,home,1
+900448,78.0,M,hip fracture,4.0,0,,,rehab,1
+900449,47.0,M,COPD,2.0,0,10.0,27.0,home,0
+900450,50.0,F,heart failure,3.0,0,,35.5,home,0
+900451,58.0,F,heart failure,5.0,0,7.0,24.9,rehab,0
+900452,89.0,F,heart failure,10.0,1,6.0,27.8,home,0
+900453,90.0,F,heart failure,8.0,0,6.0,37.0,home,1
+900454,53.0,F,hip fracture,1.0,1,11.0,24.2,home,0
+900455,73.0,M,heart failure,2.0,2,4.0,30.0,home,1
+900456,97.0,F,heart failure,5.0,1,,,home,1
+900457,46.0,M,pneumonia,9.0,1,,27.1,nursing facility,0
+900458,60.0,M,heart failure,2.0,2,8.0,15.0,home,0
+900459,84.0,M,COPD,1.0,1,11.0,,home,0
+900460,74.0,M,diabetes,9.0,1,6.0,29.2,nursing facility,0
+900461,47.0,F,pneumonia,10.0,1,8.0,19.7,home,0
+900462,87.0,M,heart failure,4.0,1,4.0,24.5,home,1
+900463,79.0,F,hip fracture,1.0,1,7.0,35.5,home,1
+900464,74.0,M,hip fracture,3.0,3,2.0,25.0,home,1
+900465,43.0,F,pneumonia,15.0,1,7.0,21.3,home,0
+900466,60.0,M,diabetes,1.0,0,10.0,21.0,home,0
+900467,84.0,F,hip fracture,1.0,1,6.0,27.4,home,1
+900468,71.0,M,diabetes,11.0,1,9.0,30.6,home,1
+900469,76.0,F,pneumonia,11.0,1,13.0,29.8,home,0
+900470,59.0,M,COPD,3.0,1,9.0,26.0,nursing facility,1
+900471,87.0,F,pneumonia,12.0,4,6.0,27.9,home,1
+900472,59.0,M,heart failure,5.0,0,8.0,28.8,home,1
+900473,78.0,F,heart failure,6.0,2,6.0,35.6,home,1
+900474,68.0,F,COPD,7.0,2,6.0,29.7,home,0
+900475,48.0,F,COPD,5.0,3,7.0,30.7,home,1
+900476,87.0,F,pneumonia,2.0,3,,26.7,home,0
+900477,43.0,F,pneumonia,8.0,2,12.0,22.4,nursing facility,0
+900478,51.0,M,hip fracture,6.0,1,6.0,28.7,home,0
+900479,65.0,F,diabetes,4.0,1,17.0,27.2,home,1
+900480,40.0,F,COPD,7.0,1,8.0,,home,0
+900481,34.0,F,pneumonia,3.0,1,14.0,17.9,home,0
+900482,61.0,M,COPD,6.0,1,3.0,19.4,home,1
+900483,56.0,F,diabetes,11.0,1,9.0,31.0,home,0
+900484,58.0,F,pneumonia,9.0,0,,19.8,home,1
+900485,71.0,F,hip fracture,10.0,2,12.0,33.0,home,1
+900486,98.0,M,COPD,5.0,1,12.0,19.7,home,1
+900487,56.0,M,pneumonia,1.0,1,8.0,27.5,nursing facility,1
+900488,98.0,F,hip fracture,1.0,2,7.0,,nursing facility,1
+900489,67.0,F,COPD,8.0,1,5.0,35.5,nursing facility,1
+900490,61.0,M,hip fracture,2.0,0,9.0,,home,0
+900491,19.0,F,heart failure,6.0,0,10.0,27.5,home,0
+900492,38.0,F,heart failure,1.0,2,7.0,,home,0
+900493,67.0,F,hip fracture,6.0,0,7.0,,home,0
+900494,72.0,M,diabetes,4.0,1,,30.7,home,0
+900495,49.0,M,pneumonia,6.0,3,6.0,26.3,home,0
+900496,67.0,M,heart failure,9.0,1,9.0,27.2,home,1
+900497,77.0,F,diabetes,3.0,2,4.0,33.7,nursing facility,1
+900498,53.0,M,hip fracture,5.0,0,7.0,27.5,home,0
+900499,36.0,F,pneumonia,6.0,2,9.0,40.1,home,0
+900500,47.0,M,COPD,2.0,1,11.0,20.6,rehab,0
+900501,58.0,F,diabetes,1.0,0,,35.2,nursing facility,0
+900502,67.0,F,diabetes,3.0,4,6.0,22.7,home,0
+900503,75.0,F,COPD,13.0,2,7.0,19.8,nursing facility,1
+900504,48.0,F,pneumonia,7.0,0,9.0,25.1,home,0
+900505,63.0,M,hip fracture,2.0,0,8.0,,home,1
+900506,58.0,M,COPD,3.0,2,8.0,28.3,home,1
+900507,63.0,M,pneumonia,2.0,1,13.0,,home,0
+900508,80.0,M,diabetes,2.0,0,7.0,27.0,home,0
+900509,83.0,F,pneumonia,3.0,2,8.0,33.1,home,1
+900510,55.0,F,hip fracture,5.0,3,12.0,27.7,rehab,1
+900511,53.0,F,COPD,3.0,1,9.0,22.9,home,0
+900512,51.0,M,hip fracture,4.0,1,7.0,34.2,nursing facility,1
+900513,54.0,F,diabetes,8.0,0,9.0,22.5,home,0
+900514,56.0,M,COPD,6.0,3,6.0,35.4,home,0
+900515,60.0,M,pneumonia,5.0,1,16.0,,rehab,0
+900516,54.0,F,hip fracture,5.0,1,10.0,33.7,rehab,0
+900517,45.0,M,heart failure,1.0,1,7.0,24.0,nursing facility,0
+900518,44.0,M,diabetes,9.0,1,7.0,23.3,nursing facility,1
+900519,63.0,F,heart failure,3.0,2,11.0,30.8,home,1
+900520,98.0,F,heart failure,1.0,0,6.0,25.2,home,1
+900521,71.0,F,diabetes,9.0,1,8.0,30.7,rehab,1
+900522,73.0,M,pneumonia,6.0,1,6.0,27.6,home,1
+900523,68.0,F,hip fracture,4.0,0,12.0,23.3,home,1
+900524,60.0,M,heart failure,14.0,0,8.0,32.9,home,0
+900525,95.0,M,pneumonia,1.0,0,6.0,25.8,rehab,1
+900526,57.0,F,heart failure,4.0,0,4.0,24.5,home,0
+900527,47.0,F,diabetes,6.0,3,10.0,23.6,home,0
+900528,43.0,M,COPD,2.0,2,7.0,36.3,home,1
+900529,65.0,M,heart failure,8.0,0,7.0,24.1,home,1
+900530,47.0,M,pneumonia,3.0,1,8.0,28.3,home,1
+900531,48.0,M,diabetes,3.0,1,4.0,23.8,home,0
+900532,49.0,M,pneumonia,3.0,0,7.0,24.2,home,0
+900533,41.0,M,hip fracture,5.0,1,,35.3,home,0
+900534,65.0,M,heart failure,4.0,2,6.0,21.2,nursing facility,0
+900535,36.0,M,COPD,5.0,1,4.0,,home,0
+900536,98.0,F,pneumonia,2.0,1,7.0,20.0,home,0
+900537,18.0,F,diabetes,7.0,1,10.0,21.5,rehab,0
+900538,40.0,M,hip fracture,3.0,0,2.0,24.8,home,0
+900539,64.0,M,heart failure,7.0,1,13.0,,home,1
+900540,69.0,F,pneumonia,2.0,2,10.0,34.4,home,0
+900541,57.0,F,diabetes,3.0,1,16.0,23.1,home,0
+900542,67.0,F,pneumonia,2.0,2,9.0,24.1,home,0
+900543,65.0,M,hip fracture,3.0,0,9.0,30.8,nursing facility,0
+900544,65.0,F,diabetes,9.0,1,9.0,33.3,home,0
+900545,72.0,M,heart failure,8.0,0,7.0,27.7,home,1
+900546,67.0,F,COPD,3.0,2,13.0,26.6,rehab,0
+900547,61.0,M,pneumonia,2.0,1,,30.0,home,1
+900548,61.0,M,COPD,7.0,1,7.0,28.2,home,0
+900549,77.0,F,heart failure,6.0,1,12.0,35.1,nursing facility,1
+900550,60.0,F,COPD,8.0,3,5.0,26.5,home,1
+900551,72.0,M,pneumonia,10.0,0,,,rehab,1
+900552,88.0,F,diabetes,3.0,1,8.0,19.5,home,1
+900553,69.0,F,hip fracture,4.0,3,7.0,,nursing facility,1
+900554,82.0,F,pneumonia,2.0,1,5.0,37.4,home,0
+900555,56.0,F,pneumonia,8.0,0,7.0,16.6,home,0
+900556,67.0,F,pneumonia,12.0,3,9.0,25.6,home,1
+900557,71.0,M,pneumonia,3.0,2,10.0,25.7,home,1
+900558,67.0,M,diabetes,5.0,0,6.0,24.8,home,0
+900559,71.0,M,pneumonia,5.0,0,8.0,30.2,nursing facility,1
+900560,86.0,M,heart failure,4.0,1,9.0,34.0,home,1
+900561,58.0,M,heart failure,6.0,1,12.0,27.2,home,0
+900562,52.0,F,COPD,13.0,5,12.0,27.1,nursing facility,1
+900563,68.0,F,COPD,7.0,2,,24.8,home,0
+900564,40.0,F,COPD,7.0,0,6.0,,home,0
+900565,63.0,F,COPD,7.0,2,6.0,41.6,home,0
+900566,82.0,M,diabetes,4.0,2,,28.8,nursing facility,1
+900567,63.0,M,pneumonia,6.0,0,7.0,22.2,nursing facility,1
+900568,72.0,M,pneumonia,4.0,0,9.0,29.3,home,0
+900569,69.0,F,pneumonia,9.0,0,3.0,34.1,home,1
+900570,82.0,F,hip fracture,4.0,0,12.0,44.6,nursing facility,1
+900571,71.0,M,pneumonia,4.0,1,9.0,33.8,home,0
+900572,66.0,M,heart failure,9.0,0,10.0,,home,0
+900573,18.0,M,heart failure,6.0,1,11.0,32.5,home,0
+900574,55.0,F,hip fracture,1.0,1,4.0,31.3,home,1
+900575,74.0,M,heart failure,4.0,0,8.0,26.8,home,0
+900576,61.0,M,pneumonia,9.0,0,9.0,31.7,home,0
+900577,51.0,M,pneumonia,8.0,0,9.0,,nursing facility,0
+900578,77.0,M,hip fracture,12.0,1,9.0,25.1,nursing facility,1
+900579,49.0,F,diabetes,6.0,0,,27.3,nursing facility,1
+900580,57.0,M,COPD,3.0,1,15.0,17.6,home,1
+900581,74.0,F,COPD,2.0,0,4.0,,home,0
+900582,54.0,M,heart failure,3.0,2,12.0,28.5,nursing facility,1
+900583,65.0,M,hip fracture,1.0,1,13.0,22.2,home,1
+900584,62.0,M,pneumonia,4.0,2,7.0,23.4,home,0
+900585,43.0,M,COPD,8.0,1,7.0,19.9,home,0
+900586,54.0,F,COPD,1.0,0,9.0,30.8,rehab,0
+900587,56.0,F,COPD,7.0,2,,20.7,home,1
+900588,52.0,F,heart failure,4.0,0,12.0,24.4,home,0
+900589,80.0,F,COPD,1.0,1,,25.2,home,1
+900590,62.0,F,COPD,6.0,3,5.0,31.5,home,1
+900591,52.0,F,diabetes,3.0,0,5.0,,home,0
+900592,40.0,M,hip fracture,1.0,2,8.0,,home,0
+900593,57.0,F,pneumonia,1.0,1,7.0,24.3,nursing facility,0
+900594,83.0,F,hip fracture,8.0,1,9.0,,nursing facility,0
+900595,57.0,F,hip fracture,6.0,2,7.0,28.9,home,0
+900596,74.0,F,COPD,5.0,3,4.0,22.8,home,1
+900597,69.0,F,COPD,1.0,2,,23.5,home,0
+900598,54.0,M,diabetes,1.0,2,9.0,35.6,nursing facility,0
+900599,47.0,M,heart failure,8.0,1,9.0,29.6,home,1
+900600,71.0,M,diabetes,2.0,1,6.0,31.5,home,1
+900601,35.0,M,COPD,4.0,2,7.0,21.6,nursing facility,0
+900602,71.0,M,hip fracture,4.0,0,8.0,25.1,home,1
+900603,43.0,F,heart failure,4.0,0,5.0,31.3,nursing facility,1
+900604,76.0,F,diabetes,7.0,0,7.0,20.8,home,0
+900605,56.0,F,heart failure,2.0,3,8.0,15.0,home,1
+900606,61.0,M,pneumonia,3.0,0,11.0,17.5,nursing facility,0
+900607,79.0,F,COPD,4.0,0,,33.5,home,0
+900608,46.0,F,hip fracture,6.0,1,,29.6,home,0
+900609,63.0,M,diabetes,1.0,1,4.0,32.8,home,0
+900610,57.0,M,heart failure,3.0,0,5.0,,home,0
+900611,70.0,F,pneumonia,18.0,0,12.0,33.4,home,1
+900612,74.0,M,pneumonia,1.0,2,10.0,,home,1
+900613,67.0,M,diabetes,1.0,1,13.0,,home,1
+900614,66.0,M,hip fracture,3.0,1,10.0,39.8,nursing facility,0
+900615,56.0,M,pneumonia,2.0,3,8.0,34.1,rehab,0
+900616,72.0,F,COPD,4.0,1,,35.4,home,1
+900617,58.0,F,COPD,4.0,0,,35.9,home,0
+900618,64.0,M,pneumonia,4.0,3,9.0,,nursing facility,0
+900619,65.0,F,diabetes,1.0,2,7.0,28.9,home,0
+900620,41.0,F,COPD,13.0,1,8.0,24.2,home,0
+900621,44.0,F,COPD,2.0,2,6.0,,nursing facility,0
+900622,66.0,M,diabetes,6.0,3,7.0,29.4,rehab,0
+900623,62.0,M,pneumonia,7.0,1,5.0,25.7,home,0
+900624,82.0,M,diabetes,3.0,2,,29.4,home,1
+900625,24.0,M,pneumonia,3.0,0,9.0,28.3,home,0
+900626,66.0,F,diabetes,2.0,0,8.0,17.0,home,0
+900627,80.0,F,heart failure,3.0,0,7.0,23.4,nursing facility,0
+900628,64.0,M,pneumonia,2.0,0,11.0,21.7,home,0
+900629,75.0,M,hip fracture,13.0,1,3.0,27.8,home,0
+900630,63.0,M,heart failure,4.0,1,9.0,22.6,home,1
+900631,62.0,F,hip fracture,6.0,2,1.0,31.5,nursing facility,0
+900632,77.0,M,COPD,5.0,1,7.0,31.9,home,0
+900633,42.0,M,heart failure,3.0,0,12.0,,home,1
+900634,27.0,M,COPD,3.0,0,6.0,23.1,home,0
+900635,70.0,F,heart failure,3.0,0,5.0,29.2,home,1
+900636,64.0,M,heart failure,8.0,1,9.0,25.2,home,0
+900637,64.0,F,diabetes,5.0,1,6.0,35.6,home,1
+900638,67.0,M,diabetes,6.0,1,3.0,28.9,home,0
+900639,72.0,F,COPD,7.0,0,2.0,,rehab,0
+900640,55.0,F,pneumonia,3.0,3,8.0,,home,0
+900641,70.0,M,heart failure,2.0,1,10.0,33.1,home,1
+900642,68.0,F,diabetes,2.0,0,1.0,31.9,home,0
+900643,44.0,M,heart failure,6.0,0,9.0,,home,0
+900644,60.0,F,pneumonia,2.0,2,8.0,15.4,home,0
+900645,67.0,M,hip fracture,1.0,1,6.0,26.7,home,1
+900646,50.0,F,pneumonia,6.0,0,8.0,23.2,rehab,0
+900647,79.0,F,heart failure,3.0,1,11.0,28.5,home,0
+900648,58.0,M,COPD,7.0,0,11.0,,nursing facility,1
+900649,75.0,F,hip fracture,3.0,0,5.0,26.0,home,0
+900650,86.0,F,hip fracture,15.0,0,,37.4,nursing facility,1
+900651,39.0,F,pneumonia,1.0,2,5.0,32.2,home,0
+900652,42.0,F,diabetes,4.0,0,5.0,28.0,nursing facility,0
+900653,72.0,F,COPD,8.0,0,4.0,34.4,home,0
+900654,60.0,F,heart failure,8.0,1,8.0,31.6,nursing facility,0
+900655,71.0,F,heart failure,1.0,1,9.0,,home,1
+900656,90.0,M,diabetes,5.0,1,12.0,30.8,nursing facility,1
+900657,55.0,M,hip fracture,6.0,3,8.0,,rehab,0
+900658,77.0,F,diabetes,3.0,1,7.0,25.9,home,0
+900659,59.0,F,heart failure,12.0,2,7.0,25.4,home,1
+900660,53.0,M,COPD,8.0,0,,,home,0
+900661,70.0,M,pneumonia,8.0,2,8.0,25.8,nursing facility,1
+900662,67.0,F,heart failure,2.0,2,,,home,1
+900663,80.0,F,pneumonia,2.0,3,5.0,22.4,home,1
+900664,68.0,F,diabetes,3.0,2,9.0,40.4,rehab,1
+900665,77.0,F,heart failure,5.0,1,9.0,32.1,rehab,0
+900666,71.0,F,COPD,6.0,0,12.0,24.5,home,0
+900667,36.0,M,hip fracture,6.0,1,4.0,33.5,home,0
+900668,57.0,F,COPD,2.0,1,7.0,,home,1
+900669,58.0,M,hip fracture,4.0,2,5.0,21.0,nursing facility,0
+900670,77.0,M,hip fracture,2.0,3,10.0,25.0,nursing facility,1
+900671,46.0,F,heart failure,9.0,1,5.0,24.3,rehab,1
+900672,66.0,F,heart failure,4.0,2,8.0,15.8,home,1
+900673,56.0,M,diabetes,2.0,4,12.0,34.9,home,1
+900674,34.0,M,pneumonia,2.0,2,10.0,25.3,home,0
+900675,61.0,M,heart failure,7.0,1,11.0,24.9,home,0
+900676,73.0,M,pneumonia,8.0,3,11.0,24.3,home,0
+900677,57.0,F,pneumonia,3.0,0,5.0,25.2,home,0
+900678,78.0,F,diabetes,2.0,0,6.0,27.1,home,1
+900679,69.0,M,heart failure,14.0,2,,32.1,home,0
+900680,68.0,M,pneumonia,2.0,1,5.0,35.9,home,0
+900681,55.0,F,COPD,7.0,1,10.0,,home,1
+900682,60.0,F,pneumonia,4.0,0,5.0,27.0,rehab,1
+900683,70.0,F,diabetes,3.0,3,8.0,24.9,home,1
+900684,63.0,M,heart failure,2.0,1,,35.8,home,1
+900685,43.0,F,diabetes,18.0,0,,26.5,home,0
+900686,60.0,M,COPD,1.0,3,7.0,25.3,home,1
+900687,69.0,M,COPD,1.0,0,6.0,31.2,home,0
+900688,81.0,M,COPD,6.0,1,9.0,32.6,home,1
+900689,76.0,F,COPD,3.0,0,5.0,22.1,home,1
+900690,47.0,M,heart failure,10.0,0,7.0,28.6,home,0
+900691,74.0,M,hip fracture,5.0,0,9.0,32.5,nursing facility,0
+900692,37.0,F,diabetes,1.0,1,3.0,28.5,rehab,0
+900693,53.0,F,heart failure,8.0,0,10.0,30.9,home,0
+900694,50.0,F,diabetes,6.0,0,3.0,30.2,home,0
+900695,87.0,F,diabetes,4.0,3,9.0,31.4,home,0
+900696,74.0,M,pneumonia,3.0,1,8.0,27.9,home,1
+900697,68.0,M,COPD,9.0,0,7.0,24.0,home,1
+900698,53.0,M,diabetes,9.0,1,14.0,36.1,home,1
+900699,83.0,F,pneumonia,8.0,2,,38.4,home,1
+900700,59.0,M,pneumonia,4.0,0,11.0,22.0,home,0
+900701,71.0,M,heart failure,8.0,0,7.0,26.2,nursing facility,0
+900702,81.0,M,COPD,5.0,2,5.0,29.6,home,1
+900703,58.0,F,hip fracture,13.0,2,7.0,26.1,home,0
+900704,72.0,F,diabetes,11.0,1,7.0,28.2,rehab,1
+900705,32.0,M,diabetes,8.0,1,7.0,23.8,nursing facility,0
+900706,72.0,F,diabetes,4.0,1,7.0,24.1,rehab,0
+900707,36.0,M,hip fracture,8.0,1,3.0,27.6,rehab,0
+900708,70.0,F,pneumonia,1.0,2,7.0,21.1,home,1
+900709,68.0,M,COPD,5.0,1,,31.9,home,0
+900710,71.0,M,COPD,5.0,0,11.0,30.5,home,0
+900711,98.0,F,diabetes,3.0,0,,,home,1
+900712,23.0,F,hip fracture,3.0,1,12.0,25.5,nursing facility,0
+900713,71.0,M,heart failure,3.0,0,7.0,24.6,home,1
+900714,57.0,M,hip fracture,4.0,1,5.0,27.7,home,0
+900715,75.0,M,COPD,3.0,1,4.0,21.5,nursing facility,1
+900716,68.0,M,pneumonia,1.0,2,8.0,31.8,home,1
+900717,65.0,F,hip fracture,1.0,0,9.0,20.7,home,0
+900718,55.0,M,diabetes,4.0,0,11.0,18.3,home,0
+900719,52.0,M,COPD,5.0,1,6.0,19.7,home,1
+900720,69.0,M,heart failure,5.0,1,5.0,24.8,nursing facility,0
+900721,39.0,M,hip fracture,8.0,1,8.0,39.0,home,0
+900722,80.0,M,heart failure,1.0,2,12.0,36.0,rehab,0
+900723,54.0,M,heart failure,7.0,2,9.0,23.2,home,1
+900724,71.0,F,diabetes,6.0,1,,30.1,home,0
+900725,44.0,M,diabetes,3.0,1,10.0,23.5,nursing facility,0
+900726,71.0,F,COPD,3.0,3,,24.0,home,1
+900727,60.0,M,COPD,5.0,2,7.0,19.6,home,0
+900728,76.0,F,diabetes,6.0,1,3.0,34.4,home,1
+900729,83.0,M,diabetes,9.0,2,,35.8,rehab,0
+900730,55.0,F,hip fracture,3.0,1,9.0,30.2,home,0
+900731,65.0,M,heart failure,1.0,1,8.0,32.2,nursing facility,0
+900732,67.0,F,heart failure,2.0,0,7.0,21.4,nursing facility,1
+900733,87.0,M,COPD,5.0,3,13.0,29.5,home,1
+900734,43.0,M,pneumonia,10.0,2,12.0,26.1,nursing facility,1
+900735,73.0,M,COPD,7.0,0,9.0,27.8,rehab,0
+900736,63.0,M,heart failure,4.0,5,4.0,29.9,home,1
+900737,44.0,F,diabetes,1.0,2,10.0,28.5,home,0
+900738,58.0,F,pneumonia,5.0,0,12.0,30.5,nursing facility,0
+900739,53.0,M,COPD,6.0,1,9.0,30.4,home,0
+900740,81.0,F,pneumonia,8.0,5,7.0,19.0,home,1
+900741,48.0,F,hip fracture,5.0,1,11.0,18.6,nursing facility,0
+900742,80.0,F,diabetes,1.0,1,13.0,38.3,home,0
+900743,56.0,M,heart failure,4.0,0,5.0,20.6,home,0
+900744,74.0,M,diabetes,2.0,3,9.0,33.9,nursing facility,1
+900745,36.0,F,COPD,2.0,0,11.0,23.0,home,0
+900746,51.0,M,pneumonia,1.0,1,9.0,34.8,home,1
+900747,66.0,F,heart failure,2.0,1,6.0,,home,0
+900748,49.0,M,heart failure,4.0,2,8.0,40.4,rehab,0
+900749,39.0,F,COPD,2.0,0,15.0,23.0,home,0
+900750,64.0,F,heart failure,2.0,0,5.0,34.9,nursing facility,0
+900751,76.0,M,diabetes,1.0,0,10.0,26.2,rehab,0
+900752,64.0,F,heart failure,4.0,1,5.0,36.4,nursing facility,1
+900753,60.0,M,diabetes,1.0,1,9.0,,home,0
+900754,70.0,M,diabetes,3.0,2,9.0,26.0,home,0
+900755,57.0,F,diabetes,5.0,0,5.0,32.4,home,0
+900756,78.0,F,pneumonia,3.0,1,7.0,26.6,home,1
+900757,81.0,F,heart failure,14.0,1,8.0,28.4,home,1
+900758,43.0,M,pneumonia,4.0,0,8.0,23.1,home,0
+900759,80.0,M,pneumonia,10.0,3,,29.2,home,1
+900760,75.0,F,hip fracture,1.0,1,7.0,31.6,home,0
+900761,68.0,F,diabetes,3.0,1,7.0,25.3,home,0
+900762,75.0,M,COPD,4.0,5,3.0,31.8,home,1
+900763,87.0,M,hip fracture,6.0,4,7.0,17.8,home,1
+900764,94.0,M,COPD,19.0,0,5.0,31.7,home,1
+900765,90.0,F,COPD,6.0,2,,30.2,home,0
+900766,60.0,M,pneumonia,2.0,1,8.0,34.6,home,0
+900767,85.0,M,diabetes,6.0,0,12.0,,home,0
+900768,37.0,F,COPD,2.0,0,,35.6,home,0
+900769,78.0,F,heart failure,2.0,0,8.0,30.1,home,0
+900770,75.0,F,hip fracture,2.0,0,8.0,31.0,nursing facility,0
+900771,80.0,M,hip fracture,1.0,1,,27.3,home,0
+900772,50.0,F,COPD,3.0,0,10.0,21.8,home,0
+900773,87.0,M,hip fracture,8.0,0,8.0,22.8,home,1
+900774,84.0,M,heart failure,6.0,1,9.0,24.9,home,0
+900775,67.0,F,COPD,1.0,2,9.0,29.4,home,1
+900776,41.0,M,COPD,1.0,0,12.0,23.8,home,1
+900777,69.0,F,pneumonia,5.0,0,5.0,26.1,home,0
+900778,50.0,M,pneumonia,1.0,1,,30.2,home,1
+900779,39.0,M,pneumonia,5.0,3,5.0,,home,0
+900780,52.0,M,COPD,4.0,2,11.0,,home,0
+900781,98.0,F,hip fracture,8.0,0,10.0,23.9,home,1
+900782,40.0,F,pneumonia,6.0,3,10.0,26.2,home,1
+900783,58.0,F,hip fracture,6.0,1,6.0,25.1,home,0
+900784,67.0,F,heart failure,3.0,0,12.0,,home,0
+900785,79.0,M,COPD,15.0,1,,23.4,rehab,1
+900786,48.0,M,COPD,8.0,1,11.0,29.1,home,1
+900787,48.0,F,diabetes,3.0,2,6.0,35.8,home,0
+900788,78.0,M,hip fracture,12.0,4,,34.6,home,1
+900789,68.0,M,hip fracture,4.0,0,,32.8,home,0
+900790,83.0,M,COPD,3.0,0,5.0,32.6,nursing facility,1
+900791,45.0,M,heart failure,5.0,1,6.0,30.1,home,0
+900792,61.0,M,heart failure,5.0,3,10.0,25.0,home,1
+900793,78.0,M,pneumonia,4.0,0,12.0,30.0,nursing facility,0
+900794,65.0,M,pneumonia,1.0,1,8.0,27.2,home,0
+900795,45.0,F,hip fracture,3.0,2,10.0,22.4,home,1
+900796,65.0,M,COPD,1.0,0,10.0,22.5,home,1
+900797,33.0,F,pneumonia,1.0,0,7.0,24.4,nursing facility,0
+900798,51.0,M,COPD,1.0,0,0.0,34.3,home,0
+900799,75.0,M,heart failure,7.0,0,9.0,25.8,home,1
+900800,77.0,F,pneumonia,4.0,1,5.0,28.6,home,1
+900801,69.0,M,COPD,12.0,1,10.0,22.9,home,1
+900802,74.0,M,diabetes,6.0,2,5.0,15.6,home,0
+900803,39.0,F,diabetes,5.0,0,7.0,29.0,home,0
+900804,52.0,M,COPD,10.0,1,,29.2,home,1
+900805,79.0,F,diabetes,5.0,1,7.0,28.5,home,1
+900806,98.0,M,pneumonia,1.0,0,7.0,32.4,home,1
+900807,70.0,M,heart failure,2.0,2,9.0,33.0,home,1
+900808,48.0,M,diabetes,7.0,1,11.0,15.0,home,0
+900809,47.0,F,pneumonia,4.0,0,6.0,25.0,home,0
+900810,82.0,F,hip fracture,1.0,0,11.0,23.3,home,0
+900811,80.0,F,heart failure,5.0,1,3.0,19.5,home,1
+900812,43.0,M,COPD,2.0,1,10.0,24.7,nursing facility,0
+900813,65.0,M,diabetes,2.0,2,7.0,24.5,home,0
+900814,85.0,F,hip fracture,3.0,1,7.0,,home,1
+900815,85.0,F,heart failure,4.0,0,7.0,28.6,home,0
+900816,54.0,F,COPD,1.0,0,9.0,31.2,home,0
+900817,60.0,F,heart failure,4.0,1,8.0,19.0,home,1
+900818,70.0,F,heart failure,1.0,1,6.0,36.6,home,1
+900819,45.0,M,pneumonia,2.0,1,8.0,31.3,nursing facility,0
+900820,37.0,M,heart failure,4.0,1,8.0,16.4,nursing facility,1
+900821,52.0,F,pneumonia,11.0,0,6.0,29.9,home,0
+900822,82.0,M,pneumonia,10.0,0,10.0,28.0,home,0
+900823,80.0,M,pneumonia,10.0,1,7.0,27.9,rehab,0
+900824,70.0,M,pneumonia,5.0,0,8.0,30.4,home,0
+900825,44.0,F,diabetes,2.0,2,8.0,25.0,nursing facility,0
+900826,31.0,F,heart failure,10.0,0,9.0,23.9,home,0
+900827,46.0,F,heart failure,8.0,2,13.0,31.8,home,0
+900828,63.0,F,diabetes,7.0,0,,32.4,home,0
+900829,79.0,M,COPD,5.0,1,8.0,33.2,rehab,1
+900830,48.0,F,COPD,3.0,0,6.0,15.0,home,0
+900831,63.0,M,COPD,10.0,1,8.0,22.5,home,0
+900832,33.0,M,pneumonia,8.0,1,4.0,26.8,home,0
+900833,28.0,M,hip fracture,7.0,2,7.0,34.2,home,0
+900834,62.0,M,heart failure,4.0,2,10.0,26.3,home,0
+900835,43.0,F,pneumonia,7.0,0,5.0,20.7,nursing facility,0
+900836,45.0,M,pneumonia,10.0,2,,25.8,home,0
+900837,25.0,M,hip fracture,5.0,3,10.0,29.6,home,0
+900838,74.0,M,hip fracture,5.0,3,7.0,24.5,rehab,0
+900839,33.0,F,COPD,3.0,1,12.0,36.9,home,0
+900840,62.0,F,pneumonia,4.0,2,6.0,27.4,home,1
+900841,37.0,M,diabetes,4.0,2,11.0,27.7,home,1
+900842,55.0,M,COPD,4.0,1,8.0,31.7,nursing facility,0
+900843,82.0,M,hip fracture,6.0,1,7.0,32.8,home,1
+900844,65.0,F,pneumonia,1.0,1,7.0,34.5,home,0
+900845,63.0,F,pneumonia,9.0,0,9.0,27.5,home,0
+900846,75.0,M,hip fracture,3.0,1,11.0,,home,0
+900847,69.0,M,diabetes,4.0,1,11.0,,home,0
+900848,83.0,F,diabetes,3.0,1,14.0,30.1,home,0
+900849,38.0,M,heart failure,4.0,0,9.0,21.7,home,0
+900850,83.0,F,diabetes,9.0,1,,,nursing facility,1
+900851,62.0,F,COPD,16.0,0,6.0,25.2,home,0
+900852,44.0,F,heart failure,12.0,2,8.0,27.7,home,1
+900853,71.0,F,hip fracture,1.0,3,,18.0,home,1
+900854,70.0,F,heart failure,4.0,2,3.0,27.3,home,1
+900855,61.0,M,pneumonia,4.0,1,9.0,34.2,home,0
+900856,75.0,M,heart failure,3.0,2,5.0,21.0,home,1
+900857,40.0,F,pneumonia,5.0,1,,20.8,home,1
+900858,35.0,M,heart failure,2.0,0,6.0,31.1,home,0
+900859,52.0,M,diabetes,4.0,0,15.0,22.5,home,0
+900860,79.0,F,COPD,9.0,0,9.0,35.4,home,0
+900861,70.0,M,hip fracture,11.0,1,10.0,32.9,home,0
+900862,62.0,M,COPD,10.0,0,,26.3,nursing facility,0
+900863,51.0,F,pneumonia,2.0,1,10.0,31.9,home,1
+900864,61.0,M,pneumonia,14.0,0,,27.4,nursing facility,0
+900865,80.0,F,heart failure,4.0,0,6.0,24.1,home,1
+900866,53.0,F,hip fracture,10.0,0,7.0,23.8,home,0
+900867,52.0,M,diabetes,2.0,1,8.0,36.5,home,1
+900868,69.0,M,COPD,4.0,3,5.0,,home,0
+900869,72.0,M,COPD,21.0,1,5.0,,home,1
+900870,64.0,F,COPD,4.0,2,,,rehab,0
+900871,85.0,F,pneumonia,6.0,3,6.0,31.4,home,0
+900872,65.0,M,COPD,5.0,5,10.0,26.6,home,1
+900873,47.0,M,hip fracture,5.0,2,8.0,29.7,home,0
+900874,27.0,M,diabetes,1.0,0,6.0,23.2,rehab,0
+900875,81.0,F,pneumonia,8.0,0,8.0,,nursing facility,1
+900876,60.0,F,heart failure,4.0,1,6.0,32.8,home,0
+900877,68.0,M,heart failure,1.0,0,7.0,23.3,nursing facility,1
+900878,70.0,M,COPD,3.0,1,9.0,29.4,home,1
+900879,84.0,M,COPD,5.0,1,9.0,21.5,rehab,0
+900880,79.0,M,heart failure,6.0,3,10.0,33.9,home,1
+900881,79.0,F,COPD,3.0,0,11.0,29.5,home,0
+900882,67.0,M,diabetes,3.0,3,4.0,28.1,home,0
+900883,59.0,F,diabetes,3.0,2,4.0,,home,0
+900884,67.0,F,diabetes,3.0,1,,26.6,nursing facility,0
+900885,50.0,F,heart failure,7.0,3,7.0,32.7,home,1
+900886,69.0,M,heart failure,5.0,0,10.0,26.9,rehab,0
+900887,80.0,M,diabetes,5.0,1,,33.0,home,0
+900888,75.0,F,diabetes,11.0,1,6.0,23.1,rehab,0
+900889,66.0,M,diabetes,4.0,2,3.0,,home,0
+900890,49.0,M,COPD,3.0,0,5.0,20.2,home,0
+900891,49.0,M,pneumonia,3.0,1,8.0,21.2,home,0
+900892,52.0,M,heart failure,1.0,1,,18.2,home,1
+900893,57.0,F,pneumonia,8.0,3,9.0,40.5,rehab,1
+900894,70.0,F,heart failure,12.0,1,,25.3,rehab,1
+900895,71.0,M,hip fracture,1.0,0,8.0,19.9,home,0
+900896,72.0,F,COPD,10.0,2,7.0,35.8,home,0
+900897,79.0,M,COPD,9.0,0,10.0,33.2,nursing facility,0
+900898,48.0,F,diabetes,3.0,1,4.0,,home,0
+900899,60.0,F,COPD,8.0,0,12.0,30.4,home,0
+900900,72.0,F,pneumonia,7.0,2,12.0,34.1,nursing facility,0
+900901,76.0,M,hip fracture,2.0,4,9.0,16.6,home,1
+900902,52.0,F,diabetes,2.0,2,10.0,18.4,home,1
+900903,52.0,F,diabetes,1.0,1,4.0,30.1,nursing facility,0
+900904,81.0,F,diabetes,5.0,0,5.0,38.5,home,0
+900905,74.0,M,pneumonia,7.0,0,,26.1,nursing facility,0
+900906,70.0,F,hip fracture,1.0,1,12.0,24.0,home,0
+900907,59.0,F,pneumonia,12.0,1,5.0,24.5,home,1
+900908,48.0,M,heart failure,1.0,0,4.0,32.0,home,0
+900909,63.0,M,pneumonia,15.0,2,4.0,38.4,home,1
+900910,68.0,M,heart failure,1.0,0,12.0,29.4,home,1
+900911,71.0,F,hip fracture,11.0,2,,,nursing facility,1
+900912,77.0,M,hip fracture,6.0,1,8.0,28.3,home,1
+900913,65.0,M,diabetes,3.0,1,9.0,35.6,nursing facility,0
+900914,83.0,F,heart failure,7.0,4,5.0,30.0,home,1
+900915,58.0,F,diabetes,10.0,2,10.0,21.4,home,0
+900916,69.0,M,pneumonia,8.0,0,9.0,25.0,home,0
+900917,64.0,F,pneumonia,6.0,1,12.0,25.1,home,0
+900918,35.0,F,hip fracture,9.0,0,8.0,37.1,nursing facility,0
+900919,42.0,F,pneumonia,7.0,1,12.0,18.9,home,0
+900920,55.0,F,heart failure,9.0,2,13.0,,rehab,1
+900921,66.0,M,pneumonia,6.0,0,,23.7,home,0
+900922,68.0,F,COPD,6.0,2,8.0,28.1,nursing facility,0
+900923,84.0,M,diabetes,3.0,2,5.0,,home,1
+900924,63.0,F,diabetes,3.0,1,9.0,17.8,rehab,0
+900925,58.0,M,COPD,4.0,1,9.0,28.5,nursing facility,1
+900926,68.0,F,hip fracture,3.0,1,7.0,31.7,home,0
+900927,44.0,M,heart failure,10.0,0,10.0,25.8,home,1
+900928,60.0,F,diabetes,4.0,1,10.0,34.4,home,1
+900929,47.0,M,COPD,2.0,0,7.0,38.3,nursing facility,0
+900930,64.0,M,hip fracture,2.0,0,,22.8,home,0
+900931,52.0,F,hip fracture,1.0,2,6.0,31.9,home,0
+900932,56.0,M,heart failure,4.0,0,7.0,37.2,home,1
+900933,93.0,M,COPD,5.0,4,6.0,23.8,home,1
+900934,80.0,F,hip fracture,2.0,0,7.0,20.2,home,0
+900935,98.0,F,heart failure,1.0,1,16.0,35.9,nursing facility,1
+900936,66.0,M,pneumonia,5.0,0,9.0,32.7,home,1
+900937,60.0,F,diabetes,7.0,2,9.0,26.9,home,1
+900938,50.0,F,diabetes,5.0,0,7.0,26.5,home,1
+900939,62.0,M,heart failure,1.0,0,8.0,24.3,home,1
+900940,35.0,M,pneumonia,5.0,0,8.0,30.1,home,1
+900941,64.0,M,hip fracture,9.0,1,8.0,25.9,home,0
+900942,54.0,M,diabetes,6.0,2,9.0,,home,0
+900943,41.0,F,COPD,4.0,1,8.0,27.0,home,0
+900944,34.0,F,heart failure,2.0,3,9.0,31.6,home,1
+900945,48.0,M,diabetes,8.0,0,15.0,34.0,home,1
+900946,56.0,F,diabetes,12.0,1,6.0,29.9,nursing facility,0
+900947,62.0,F,pneumonia,3.0,0,6.0,27.4,nursing facility,1
+900948,37.0,M,pneumonia,4.0,1,11.0,,home,1
+900949,62.0,M,heart failure,8.0,1,6.0,23.4,rehab,1
+900950,68.0,M,diabetes,14.0,0,,28.1,home,1
+900951,98.0,F,diabetes,8.0,0,9.0,35.8,home,1
+900952,68.0,M,hip fracture,4.0,0,9.0,32.4,home,0
+900953,77.0,F,hip fracture,4.0,2,,25.9,home,0
+900954,51.0,F,hip fracture,5.0,1,8.0,15.0,home,0
+900955,63.0,M,diabetes,6.0,1,10.0,29.2,nursing facility,0
+900956,51.0,F,pneumonia,5.0,2,9.0,28.6,home,1
+900957,49.0,F,diabetes,1.0,2,,30.8,home,1
+900958,71.0,M,pneumonia,5.0,1,5.0,36.2,nursing facility,1
+900959,59.0,M,hip fracture,4.0,0,1.0,24.6,home,0
+900960,86.0,F,COPD,3.0,1,11.0,,rehab,0
+900961,62.0,F,COPD,3.0,1,5.0,31.9,home,0
+900962,70.0,F,COPD,5.0,0,5.0,21.2,home,1
+900963,43.0,M,COPD,7.0,2,9.0,24.9,home,0
+900964,47.0,F,pneumonia,2.0,6,6.0,29.1,rehab,1
+900965,73.0,M,heart failure,4.0,1,7.0,30.0,home,0
+900966,52.0,F,hip fracture,7.0,0,8.0,21.8,nursing facility,0
+900967,83.0,M,COPD,12.0,1,3.0,31.2,nursing facility,1
+900968,50.0,M,heart failure,2.0,4,7.0,,home,0
+900969,49.0,F,hip fracture,4.0,0,5.0,26.3,home,0
+900970,94.0,M,heart failure,8.0,3,7.0,,home,0
+900971,36.0,M,COPD,3.0,0,12.0,31.8,nursing facility,0
+900972,55.0,F,COPD,1.0,1,9.0,34.4,home,0
+900973,71.0,M,COPD,1.0,0,7.0,29.8,home,1
+900974,72.0,F,diabetes,3.0,2,8.0,,home,0
+900975,45.0,M,diabetes,1.0,0,,26.7,home,0
+900976,97.0,M,hip fracture,1.0,1,11.0,27.4,home,1
+900977,56.0,M,heart failure,1.0,1,4.0,,nursing facility,0
+900978,32.0,F,COPD,4.0,1,7.0,38.6,home,0
+900979,77.0,F,COPD,5.0,2,9.0,28.5,nursing facility,1
+900980,55.0,F,heart failure,2.0,2,8.0,42.1,home,1
+900981,64.0,F,diabetes,1.0,2,8.0,30.6,rehab,0
+900982,75.0,F,pneumonia,1.0,3,,27.3,home,0
+900983,49.0,F,COPD,6.0,1,12.0,24.3,nursing facility,0
+900984,51.0,F,COPD,2.0,5,,33.3,home,1
+900985,61.0,M,diabetes,3.0,0,5.0,24.0,nursing facility,0
+900986,76.0,F,heart failure,5.0,0,8.0,25.5,home,1
+900987,42.0,M,pneumonia,5.0,0,7.0,29.2,home,0
+900988,86.0,M,pneumonia,5.0,1,2.0,28.0,home,1
+900989,69.0,M,heart failure,2.0,1,5.0,31.9,home,1
+900990,45.0,F,COPD,4.0,0,4.0,31.1,nursing facility,0
+900991,64.0,M,diabetes,1.0,3,9.0,39.3,rehab,1
+900992,72.0,F,hip fracture,4.0,1,3.0,35.6,home,0
+900993,83.0,M,diabetes,5.0,1,5.0,29.5,home,0
+900994,77.0,F,diabetes,2.0,0,7.0,30.8,nursing facility,0
+900995,81.0,M,COPD,8.0,1,12.0,31.2,home,1
+900996,61.0,M,diabetes,5.0,2,1.0,27.7,rehab,1
+900997,75.0,F,heart failure,4.0,0,11.0,24.5,home,1
+900998,21.0,M,heart failure,5.0,1,5.0,27.4,home,0
+900999,79.0,F,heart failure,3.0,1,2.0,19.9,home,1
+901000,62.0,F,heart failure,10.0,0,8.0,27.7,home,0
+901001,88.0,M,heart failure,5.0,2,3.0,28.1,home,1
+901002,54.0,M,hip fracture,13.0,2,11.0,,home,1
+901003,55.0,F,diabetes,3.0,1,17.0,33.5,home,1
+901004,64.0,M,diabetes,10.0,0,6.0,27.8,home,0
+901005,76.0,M,hip fracture,1.0,1,9.0,21.8,home,0
+901006,68.0,M,diabetes,4.0,0,13.0,29.8,nursing facility,1
+901007,80.0,M,COPD,6.0,0,10.0,29.5,home,0
+901008,64.0,F,diabetes,1.0,0,6.0,,home,1
+901009,80.0,F,COPD,1.0,2,11.0,26.1,home,1
+901010,98.0,F,heart failure,4.0,2,9.0,26.8,nursing facility,1
+901011,83.0,F,hip fracture,2.0,0,,,home,1
+901012,73.0,F,pneumonia,3.0,0,10.0,18.7,nursing facility,0
+901013,40.0,F,hip fracture,2.0,4,5.0,28.0,home,0
+901014,73.0,F,diabetes,4.0,1,,28.3,home,1
+901015,81.0,M,COPD,2.0,1,5.0,27.5,rehab,0
+901016,60.0,M,diabetes,7.0,3,9.0,28.2,nursing facility,0
+901017,80.0,F,pneumonia,5.0,2,6.0,31.3,home,1
+901018,28.0,M,COPD,3.0,0,9.0,27.5,home,0
+901019,52.0,F,COPD,4.0,0,7.0,34.2,home,0
+901020,48.0,M,diabetes,13.0,0,7.0,,home,0
+901021,72.0,F,heart failure,6.0,0,12.0,23.7,home,0
+901022,50.0,M,diabetes,7.0,0,11.0,26.6,nursing facility,0
+901023,48.0,F,diabetes,9.0,2,11.0,31.6,home,1
+901024,87.0,F,heart failure,1.0,0,9.0,24.6,nursing facility,1
+901025,40.0,M,hip fracture,5.0,0,9.0,,home,0
+901026,71.0,F,heart failure,2.0,3,10.0,28.1,home,0
+901027,81.0,M,hip fracture,6.0,1,18.0,28.0,home,1
+901028,59.0,M,pneumonia,1.0,0,6.0,27.8,nursing facility,0
+901029,49.0,M,pneumonia,3.0,3,10.0,24.5,home,0
+901030,60.0,M,heart failure,1.0,0,4.0,29.8,home,0
+901031,54.0,F,heart failure,4.0,1,7.0,,home,0
+901032,51.0,F,hip fracture,10.0,0,6.0,20.5,nursing facility,0
+901033,67.0,M,heart failure,2.0,1,3.0,34.4,home,0
+901034,63.0,F,heart failure,5.0,0,9.0,31.0,home,1
+901035,98.0,M,pneumonia,3.0,1,6.0,31.4,nursing facility,0
+901036,84.0,M,heart failure,5.0,2,8.0,,nursing facility,0
+901037,66.0,F,diabetes,1.0,1,11.0,27.1,nursing facility,0
+901038,72.0,F,heart failure,10.0,1,5.0,29.1,home,1
+901039,90.0,M,diabetes,1.0,1,9.0,30.8,home,0
+901040,82.0,M,diabetes,6.0,1,8.0,24.0,home,1
+901041,64.0,F,pneumonia,7.0,2,9.0,31.4,home,0
+901042,51.0,M,heart failure,2.0,1,8.0,32.8,home,0
+901043,92.0,M,heart failure,3.0,1,9.0,27.7,home,0
+901044,63.0,F,COPD,12.0,0,11.0,34.2,home,0
+901045,67.0,F,heart failure,3.0,1,8.0,28.7,nursing facility,1
+901046,85.0,M,diabetes,1.0,0,10.0,27.9,home,1
+901047,66.0,M,diabetes,4.0,0,3.0,25.8,nursing facility,0
+901048,84.0,F,pneumonia,4.0,1,5.0,25.8,home,1
+901049,59.0,M,pneumonia,2.0,1,7.0,34.9,home,0
+901050,66.0,F,COPD,22.0,1,13.0,36.1,home,1
+901051,60.0,F,heart failure,6.0,1,2.0,27.4,nursing facility,1
+901052,97.0,M,diabetes,3.0,3,7.0,39.4,home,1
+901053,40.0,M,COPD,3.0,0,8.0,19.8,rehab,0
+901054,60.0,F,diabetes,4.0,1,8.0,23.0,home,1
+901055,49.0,F,heart failure,4.0,1,4.0,21.5,home,0
+901056,52.0,M,diabetes,1.0,3,11.0,39.1,home,1
+901057,43.0,M,diabetes,4.0,4,7.0,26.3,home,0
+901058,50.0,F,hip fracture,4.0,0,8.0,33.8,nursing facility,0
+901059,82.0,F,pneumonia,3.0,4,,27.7,rehab,1
+901060,86.0,F,diabetes,3.0,1,,25.3,home,0
+901061,53.0,F,diabetes,6.0,0,7.0,24.9,home,0
+901062,43.0,F,hip fracture,4.0,1,8.0,33.8,home,0
+901063,55.0,M,heart failure,6.0,0,5.0,24.0,rehab,0
+901064,89.0,F,COPD,7.0,0,2.0,,nursing facility,1
+901065,62.0,F,diabetes,5.0,1,9.0,,home,0
+901066,29.0,F,COPD,4.0,1,11.0,38.1,home,0
+901067,76.0,F,heart failure,1.0,0,8.0,39.2,home,1
+901068,61.0,F,heart failure,1.0,1,8.0,26.2,home,0
+901069,73.0,M,COPD,4.0,0,11.0,32.5,rehab,0
+901070,69.0,F,COPD,1.0,1,15.0,,home,1
+901071,42.0,F,heart failure,3.0,1,8.0,,rehab,1
+901072,79.0,F,pneumonia,1.0,0,8.0,31.4,home,0
+901073,73.0,M,hip fracture,7.0,2,6.0,37.8,nursing facility,1
+901074,52.0,M,heart failure,1.0,1,7.0,25.2,home,1
+901075,26.0,M,diabetes,14.0,0,9.0,22.9,home,0
+901076,44.0,M,heart failure,8.0,4,13.0,31.1,rehab,1
+901077,44.0,F,heart failure,2.0,2,7.0,27.4,home,1
+901078,74.0,F,COPD,5.0,0,6.0,35.1,home,0
+901079,53.0,F,heart failure,1.0,2,7.0,21.2,home,0
+901080,56.0,F,diabetes,5.0,0,,30.2,home,0
+901081,63.0,M,heart failure,2.0,0,6.0,24.9,home,0
+901082,56.0,F,COPD,7.0,0,10.0,,nursing facility,0
+901083,69.0,M,COPD,4.0,0,,36.8,home,1
+901084,68.0,F,pneumonia,1.0,1,8.0,33.4,home,0
+901085,78.0,F,diabetes,3.0,2,,30.3,home,1
+901086,43.0,M,diabetes,3.0,1,9.0,29.5,home,0
+901087,68.0,M,diabetes,4.0,0,7.0,37.8,nursing facility,0
+901088,58.0,F,heart failure,6.0,0,5.0,22.4,rehab,0
+901089,96.0,F,hip fracture,4.0,0,9.0,24.2,home,0
+901090,86.0,F,heart failure,1.0,2,7.0,35.1,home,0
+901091,56.0,F,hip fracture,3.0,0,3.0,16.0,home,1
+901092,78.0,F,COPD,1.0,1,10.0,26.7,home,0
+901093,35.0,M,COPD,2.0,1,8.0,34.9,home,1
+901094,46.0,M,hip fracture,3.0,1,7.0,17.5,home,0
+901095,58.0,M,COPD,3.0,1,11.0,30.4,home,0
+901096,67.0,F,COPD,4.0,0,10.0,,home,0
+901097,45.0,M,hip fracture,5.0,2,9.0,19.5,nursing facility,0
+901098,63.0,M,hip fracture,8.0,1,7.0,31.4,rehab,0
+901099,83.0,F,COPD,7.0,0,7.0,25.7,nursing facility,1
+901100,37.0,M,COPD,3.0,0,6.0,24.2,home,0
+901101,41.0,F,COPD,10.0,1,6.0,30.1,home,0
+901102,32.0,F,hip fracture,18.0,3,9.0,29.0,home,1
+901103,81.0,F,COPD,1.0,1,9.0,21.5,home,0
+901104,45.0,M,heart failure,6.0,2,8.0,33.9,home,1
+901105,56.0,M,pneumonia,2.0,0,,22.5,home,0
+901106,48.0,F,COPD,5.0,0,14.0,42.5,home,1
+901107,61.0,M,COPD,3.0,2,8.0,22.8,nursing facility,1
+901108,57.0,F,hip fracture,5.0,3,,33.5,home,1
+901109,65.0,M,hip fracture,3.0,1,7.0,29.1,home,0
+901110,65.0,M,pneumonia,11.0,3,10.0,32.3,home,0
+901111,88.0,M,COPD,21.0,2,7.0,31.2,nursing facility,0
+901112,47.0,F,diabetes,8.0,0,8.0,33.2,home,0
+901113,65.0,M,pneumonia,1.0,1,12.0,,nursing facility,1
+901114,61.0,M,heart failure,3.0,1,,32.7,nursing facility,1
+901115,48.0,F,heart failure,3.0,0,,25.4,home,1
+901116,76.0,F,diabetes,8.0,1,7.0,24.3,home,0
+901117,91.0,F,heart failure,3.0,0,7.0,,home,1
+901118,45.0,F,COPD,11.0,2,13.0,32.0,home,1
+901119,98.0,M,diabetes,12.0,1,5.0,17.8,nursing facility,1
+901120,60.0,M,hip fracture,4.0,0,6.0,,home,0
+901121,61.0,M,pneumonia,4.0,0,,34.5,home,0
+901122,20.0,F,heart failure,1.0,1,9.0,30.3,nursing facility,1
+901123,63.0,M,heart failure,3.0,0,8.0,31.6,home,0
+901124,60.0,F,hip fracture,4.0,2,14.0,23.0,home,0
+901125,58.0,M,COPD,4.0,1,11.0,29.0,nursing facility,1
+901126,73.0,M,COPD,4.0,1,6.0,28.6,home,1
+901127,59.0,F,diabetes,1.0,3,,27.7,home,0
+901128,68.0,M,hip fracture,1.0,2,7.0,37.6,nursing facility,0
+901129,52.0,M,COPD,12.0,3,,,home,0
+901130,44.0,F,diabetes,4.0,0,8.0,36.4,nursing facility,0
+901131,64.0,F,heart failure,6.0,1,10.0,17.4,home,1
+901132,71.0,F,pneumonia,1.0,1,5.0,33.5,rehab,0
+901133,73.0,M,heart failure,4.0,0,7.0,22.3,home,0
+901134,64.0,F,diabetes,7.0,1,9.0,34.2,home,1
+901135,50.0,F,COPD,11.0,2,2.0,32.8,home,1
+901136,63.0,F,diabetes,5.0,3,14.0,35.0,nursing facility,0
+901137,58.0,F,COPD,1.0,2,,25.2,home,0
+901138,42.0,F,COPD,2.0,1,6.0,31.4,nursing facility,0
+901139,67.0,M,heart failure,9.0,0,4.0,,home,0
+901140,59.0,M,pneumonia,4.0,1,,18.4,nursing facility,0
+901141,45.0,M,COPD,2.0,1,12.0,24.6,home,0
+901142,57.0,M,pneumonia,4.0,2,,22.9,home,0
+901143,72.0,M,diabetes,1.0,2,7.0,,nursing facility,1
+901144,86.0,F,hip fracture,2.0,3,11.0,22.7,home,1
+901145,33.0,F,hip fracture,4.0,1,6.0,23.0,home,0
+901146,56.0,M,hip fracture,2.0,1,8.0,,nursing facility,0
+901147,71.0,M,diabetes,9.0,0,,29.3,home,0
+901148,81.0,F,hip fracture,8.0,0,9.0,32.1,nursing facility,1
+901149,68.0,M,heart failure,5.0,4,9.0,29.8,home,1
+901150,46.0,F,diabetes,8.0,1,3.0,,home,0
+901151,54.0,F,hip fracture,5.0,0,6.0,30.3,home,0
+901152,62.0,M,heart failure,1.0,1,10.0,30.1,home,0
+901153,50.0,M,heart failure,5.0,2,8.0,24.5,home,1
+901154,45.0,F,diabetes,4.0,1,4.0,25.0,home,0
+901155,42.0,M,hip fracture,7.0,2,,30.5,home,1
+901156,98.0,F,diabetes,6.0,2,9.0,25.7,nursing facility,1
+901157,63.0,F,pneumonia,5.0,1,4.0,,home,0
+901158,58.0,M,diabetes,2.0,1,8.0,20.2,home,1
+901159,73.0,F,COPD,7.0,1,12.0,33.7,home,0
+901160,63.0,M,pneumonia,8.0,0,8.0,,home,1
+901161,60.0,F,pneumonia,5.0,0,11.0,29.8,home,0
+901162,66.0,F,diabetes,7.0,1,7.0,22.8,home,1
+901163,50.0,M,pneumonia,4.0,1,9.0,15.0,nursing facility,0
+901164,56.0,M,COPD,6.0,1,12.0,25.8,home,1
+901165,77.0,F,COPD,2.0,2,12.0,,home,0
+901166,72.0,F,COPD,2.0,1,7.0,28.5,nursing facility,0
+901167,45.0,M,heart failure,8.0,0,7.0,31.1,nursing facility,1
+901168,87.0,F,pneumonia,4.0,1,4.0,15.0,nursing facility,1
+901169,56.0,F,diabetes,1.0,0,5.0,39.5,home,1
+901170,37.0,M,pneumonia,8.0,0,13.0,,home,0
+901171,74.0,F,diabetes,9.0,1,2.0,,home,0
+901172,73.0,M,pneumonia,4.0,3,8.0,37.7,home,1
+901173,68.0,M,heart failure,4.0,0,8.0,25.2,nursing facility,0
+901174,47.0,M,heart failure,1.0,1,9.0,28.1,home,1
+901175,82.0,M,COPD,4.0,2,,22.2,rehab,0
+901176,71.0,M,hip fracture,2.0,2,5.0,30.9,home,0
+901177,69.0,F,pneumonia,4.0,2,12.0,28.9,home,1
+901178,67.0,F,pneumonia,2.0,0,13.0,24.9,home,0
+901179,69.0,F,pneumonia,4.0,0,9.0,33.7,nursing facility,0
+901180,98.0,F,COPD,7.0,2,12.0,26.4,nursing facility,1
+901181,55.0,M,hip fracture,5.0,3,,33.8,home,1
+901182,68.0,F,diabetes,3.0,1,12.0,24.0,nursing facility,0
+901183,81.0,F,pneumonia,3.0,0,8.0,25.7,home,1
+901184,76.0,M,diabetes,3.0,0,11.0,,nursing facility,1
+901185,51.0,F,heart failure,2.0,2,9.0,26.0,nursing facility,0
+901186,62.0,M,hip fracture,3.0,0,,24.0,home,0
+901187,57.0,F,COPD,6.0,0,7.0,30.8,home,0
+901188,40.0,M,diabetes,2.0,0,8.0,29.1,home,0
+901189,60.0,M,diabetes,5.0,1,5.0,25.6,home,1
+901190,79.0,F,heart failure,14.0,1,4.0,34.5,home,1
+901191,68.0,M,heart failure,9.0,0,6.0,28.4,rehab,1
+901192,81.0,F,heart failure,2.0,4,5.0,27.6,home,1
+901193,71.0,M,pneumonia,7.0,2,10.0,37.6,rehab,0
+901194,52.0,M,hip fracture,6.0,3,4.0,21.1,home,0
+901195,72.0,F,pneumonia,4.0,2,6.0,28.8,home,1
+901196,36.0,M,pneumonia,14.0,2,7.0,27.7,home,0
+901197,83.0,M,heart failure,4.0,2,,27.5,nursing facility,1
+901198,57.0,M,hip fracture,5.0,2,10.0,32.2,home,0
+901199,90.0,F,pneumonia,8.0,2,5.0,31.4,home,0
+901200,41.0,F,diabetes,19.0,1,11.0,35.5,home,1
+901201,48.0,M,diabetes,8.0,6,9.0,31.6,home,1
+901202,56.0,M,heart failure,2.0,1,,32.2,home,0
+901203,59.0,M,hip fracture,4.0,0,6.0,20.1,home,1
+901204,38.0,M,pneumonia,2.0,0,8.0,32.5,home,0
+901205,43.0,M,COPD,4.0,3,6.0,29.0,home,0
+901206,71.0,F,hip fracture,6.0,1,10.0,20.3,home,1
+901207,50.0,F,hip fracture,9.0,0,,25.4,home,0
+901208,77.0,F,hip fracture,4.0,2,8.0,26.7,home,0
+901209,89.0,F,diabetes,7.0,1,12.0,30.1,home,0
+901210,39.0,F,COPD,16.0,1,13.0,29.4,home,0
+901211,57.0,M,hip fracture,7.0,1,4.0,22.8,home,1
+901212,91.0,F,COPD,4.0,1,9.0,28.0,home,0
+901213,80.0,M,diabetes,1.0,2,,29.1,nursing facility,0
+901214,41.0,F,pneumonia,3.0,0,3.0,24.8,home,0
+901215,69.0,F,hip fracture,4.0,0,14.0,31.1,nursing facility,0
+901216,90.0,F,COPD,8.0,1,12.0,,home,0
+901217,28.0,M,diabetes,2.0,1,6.0,26.8,rehab,0
+901218,69.0,M,pneumonia,1.0,0,5.0,29.2,home,0
+901219,80.0,F,COPD,8.0,1,6.0,16.7,home,0
+901220,55.0,F,heart failure,4.0,1,3.0,23.1,home,1
+901221,53.0,M,heart failure,3.0,2,6.0,26.4,home,1
+901222,75.0,M,heart failure,9.0,2,11.0,34.1,home,0
+901223,37.0,M,heart failure,3.0,0,5.0,27.6,home,0
+901224,72.0,F,hip fracture,2.0,2,6.0,27.7,rehab,1
+901225,83.0,F,pneumonia,14.0,0,10.0,37.4,home,0
+901226,65.0,M,hip fracture,6.0,2,,24.7,home,0
+901227,38.0,F,diabetes,2.0,2,14.0,34.1,home,0
+901228,89.0,F,diabetes,1.0,1,6.0,28.6,home,0
+901229,63.0,M,hip fracture,2.0,4,10.0,30.6,home,1
+901230,72.0,F,COPD,2.0,1,3.0,,home,1
+901231,49.0,F,pneumonia,8.0,1,7.0,28.1,home,1
+901232,62.0,F,pneumonia,4.0,1,4.0,22.0,home,1
+901233,81.0,F,diabetes,1.0,2,13.0,28.8,home,1
+901234,39.0,M,COPD,3.0,1,11.0,29.4,home,0
+901235,42.0,M,COPD,2.0,1,13.0,36.1,nursing facility,1
+901236,29.0,M,COPD,3.0,3,9.0,,home,1
+901237,70.0,F,hip fracture,1.0,0,,29.1,home,0
+901238,70.0,M,heart failure,12.0,3,,20.5,home,1
+901239,49.0,F,COPD,8.0,1,13.0,35.1,rehab,0
+901240,68.0,F,heart failure,1.0,1,7.0,28.3,rehab,1
+901241,63.0,M,hip fracture,3.0,1,9.0,22.0,home,1
+901242,94.0,F,COPD,4.0,2,4.0,32.3,home,1
+901243,44.0,F,hip fracture,15.0,2,12.0,,home,0
+901244,67.0,F,hip fracture,5.0,0,9.0,30.3,rehab,0
+901245,56.0,M,hip fracture,6.0,1,5.0,25.2,rehab,0
+901246,92.0,M,hip fracture,7.0,0,7.0,18.4,home,0
+901247,70.0,M,hip fracture,3.0,1,11.0,24.5,home,0
+901248,44.0,M,pneumonia,6.0,0,9.0,39.7,home,0
+901249,70.0,M,pneumonia,3.0,3,8.0,27.5,home,1
+901250,60.0,M,diabetes,10.0,0,9.0,15.0,nursing facility,0
+901251,47.0,F,COPD,5.0,1,,,home,0
+901252,69.0,M,COPD,8.0,0,6.0,27.5,home,0
+901253,65.0,M,hip fracture,12.0,0,,34.8,home,0
+901254,44.0,M,hip fracture,4.0,1,9.0,29.2,nursing facility,1
+901255,55.0,M,COPD,10.0,1,10.0,29.6,home,1
+901256,81.0,F,pneumonia,9.0,0,2.0,29.8,rehab,0
+901257,79.0,M,heart failure,8.0,1,6.0,28.8,home,1
+901258,60.0,M,diabetes,7.0,2,,37.0,home,0
+901259,57.0,M,COPD,3.0,1,8.0,,home,0
+901260,67.0,F,hip fracture,2.0,0,11.0,25.1,home,1
+901261,61.0,M,heart failure,2.0,2,4.0,26.1,nursing facility,1
+901262,43.0,F,hip fracture,6.0,0,5.0,21.5,home,1
+901263,73.0,F,diabetes,1.0,2,6.0,31.9,home,0
+901264,50.0,M,diabetes,3.0,1,7.0,29.6,home,0
+901265,86.0,F,hip fracture,6.0,3,5.0,23.0,nursing facility,1
+901266,72.0,F,heart failure,7.0,4,,33.9,home,1
+901267,74.0,F,pneumonia,1.0,3,9.0,32.0,rehab,1
+901268,57.0,M,heart failure,4.0,1,10.0,,rehab,0
+901269,65.0,F,hip fracture,6.0,0,5.0,,home,0
+901270,53.0,M,heart failure,5.0,2,7.0,17.2,rehab,0
+901271,56.0,M,heart failure,2.0,0,9.0,28.9,home,1
+901272,46.0,M,diabetes,8.0,4,12.0,,home,1
+901273,86.0,F,pneumonia,7.0,0,9.0,22.7,nursing facility,1
+901274,45.0,M,diabetes,5.0,1,10.0,38.2,nursing facility,0
+901275,90.0,F,COPD,1.0,4,9.0,23.7,rehab,1
+901276,75.0,F,hip fracture,4.0,2,6.0,27.3,nursing facility,1
+901277,48.0,F,heart failure,6.0,0,12.0,33.0,home,0
+901278,84.0,F,pneumonia,4.0,0,8.0,,home,0
+901279,70.0,F,pneumonia,1.0,0,6.0,24.1,home,0
+901280,50.0,F,COPD,3.0,1,9.0,15.0,home,1
+901281,67.0,M,heart failure,5.0,1,14.0,26.7,nursing facility,0
+901282,58.0,M,COPD,6.0,0,9.0,24.9,home,1
+901283,51.0,M,heart failure,7.0,0,,25.3,rehab,1
+901284,62.0,M,COPD,5.0,0,6.0,20.6,home,0
+901285,67.0,F,diabetes,7.0,1,10.0,26.2,home,1
+901286,58.0,F,diabetes,6.0,2,6.0,30.5,nursing facility,1
+901287,62.0,F,COPD,6.0,1,8.0,23.0,home,0
+901288,76.0,M,COPD,10.0,0,8.0,23.5,home,1
+901289,61.0,F,hip fracture,6.0,2,13.0,,home,0
+901290,57.0,M,hip fracture,7.0,2,15.0,21.3,nursing facility,0
+901291,42.0,M,hip fracture,7.0,1,,22.6,home,0
+901292,62.0,M,diabetes,3.0,1,,19.1,nursing facility,1
+901293,56.0,M,COPD,5.0,2,,34.2,home,0
+901294,59.0,M,pneumonia,6.0,2,6.0,27.6,home,0
+901295,76.0,M,diabetes,5.0,0,10.0,25.5,home,1
+901296,77.0,F,COPD,5.0,2,6.0,30.2,nursing facility,1
+901297,64.0,M,hip fracture,4.0,3,9.0,,home,0
+901298,54.0,F,pneumonia,4.0,0,,25.6,home,1
+901299,65.0,M,pneumonia,2.0,2,7.0,21.5,home,0
+901300,68.0,F,hip fracture,3.0,1,8.0,27.3,home,0
+901301,67.0,M,pneumonia,3.0,1,5.0,31.1,home,1
+901302,40.0,M,heart failure,7.0,1,,30.5,home,1
+901303,68.0,M,COPD,3.0,2,14.0,18.9,home,0
+901304,47.0,F,diabetes,7.0,2,,23.4,home,0
+901305,68.0,F,heart failure,7.0,1,10.0,,home,1
+901306,70.0,F,pneumonia,7.0,3,5.0,20.3,nursing facility,0
+901307,66.0,M,pneumonia,3.0,1,6.0,,rehab,0
+901308,82.0,M,COPD,1.0,2,3.0,33.4,home,1
+901309,63.0,F,diabetes,19.0,3,2.0,26.9,home,1
+901310,68.0,F,diabetes,3.0,0,10.0,21.5,home,0
+901311,49.0,F,hip fracture,11.0,0,,19.4,home,1
+901312,61.0,M,diabetes,4.0,0,6.0,29.0,home,0
+901313,59.0,F,pneumonia,5.0,4,5.0,19.5,home,1
+901314,64.0,F,hip fracture,2.0,3,4.0,25.8,home,0
+901315,60.0,M,pneumonia,7.0,1,11.0,24.3,home,1
+901316,25.0,M,COPD,5.0,2,7.0,27.6,nursing facility,0
+901317,76.0,F,COPD,7.0,0,,28.0,nursing facility,0
+901318,74.0,F,heart failure,1.0,3,7.0,,rehab,1
+901319,30.0,M,heart failure,1.0,0,,27.1,home,0
+901320,67.0,F,COPD,1.0,1,,25.0,nursing facility,0
+901321,79.0,F,heart failure,3.0,0,11.0,31.1,home,0
+901322,75.0,F,diabetes,2.0,0,10.0,20.6,nursing facility,1
+901323,74.0,M,COPD,3.0,0,11.0,32.6,home,0
+901324,60.0,F,COPD,2.0,1,10.0,23.1,home,1
+901325,55.0,F,COPD,4.0,0,7.0,24.8,home,1
+901326,94.0,F,diabetes,6.0,1,12.0,22.1,home,0
+901327,70.0,M,heart failure,15.0,2,9.0,,home,1
+901328,89.0,M,COPD,7.0,1,11.0,29.5,nursing facility,0
+901329,62.0,M,COPD,3.0,2,,,home,0
+901330,78.0,M,COPD,6.0,2,11.0,28.3,nursing facility,0
+901331,76.0,F,hip fracture,12.0,2,11.0,29.0,home,0
+901332,76.0,M,hip fracture,7.0,1,5.0,29.8,home,0
+901333,44.0,M,diabetes,8.0,0,7.0,38.3,home,0
+901334,98.0,M,pneumonia,9.0,1,10.0,21.6,home,1
+901335,68.0,M,diabetes,9.0,0,8.0,25.0,home,0
+901336,58.0,F,diabetes,1.0,2,4.0,29.5,home,0
+901337,68.0,F,COPD,3.0,2,5.0,17.6,home,1
+901338,35.0,M,pneumonia,2.0,1,10.0,30.9,home,1
+901339,86.0,F,COPD,2.0,1,5.0,22.9,home,0
+901340,57.0,M,pneumonia,10.0,1,9.0,27.0,home,0
+901341,68.0,M,COPD,2.0,1,7.0,26.2,home,0
+901342,67.0,F,diabetes,1.0,3,11.0,,home,0
+901343,36.0,F,hip fracture,1.0,2,5.0,36.1,home,0
+901344,59.0,F,heart failure,3.0,2,13.0,,nursing facility,1
+901345,84.0,F,pneumonia,6.0,1,6.0,30.0,home,1
+901346,51.0,M,pneumonia,10.0,2,5.0,28.2,home,0
+901347,68.0,F,pneumonia,2.0,0,13.0,30.0,home,1
+901348,80.0,F,pneumonia,1.0,1,8.0,35.1,home,0
+901349,89.0,M,pneumonia,3.0,1,8.0,28.5,home,0
+901350,51.0,M,heart failure,3.0,1,7.0,34.1,home,1
+901351,81.0,M,hip fracture,8.0,0,,,home,1
+901352,75.0,F,pneumonia,4.0,0,8.0,32.3,rehab,0
+901353,73.0,F,heart failure,3.0,1,9.0,32.3,nursing facility,1
+901354,80.0,M,COPD,1.0,0,10.0,30.0,home,0
+901355,76.0,F,COPD,1.0,2,10.0,31.0,nursing facility,1
+901356,49.0,F,diabetes,18.0,1,,27.8,home,1
+901357,72.0,F,hip fracture,9.0,0,9.0,21.2,home,0
+901358,55.0,F,COPD,3.0,0,3.0,,home,0
+901359,70.0,F,heart failure,11.0,1,,18.3,home,1
+901360,58.0,F,pneumonia,2.0,2,,20.9,home,0
+901361,88.0,F,heart failure,4.0,0,9.0,,nursing facility,0
+901362,79.0,M,pneumonia,2.0,1,13.0,22.2,home,1
+901363,72.0,F,hip fracture,2.0,2,8.0,27.5,home,0
+901364,54.0,M,pneumonia,1.0,0,10.0,,home,0
+901365,71.0,F,hip fracture,1.0,2,10.0,22.9,home,0
+901366,47.0,M,COPD,6.0,2,8.0,28.5,home,1
+901367,51.0,F,pneumonia,3.0,1,9.0,26.5,home,0
+901368,38.0,F,COPD,6.0,0,4.0,24.1,home,1
+901369,78.0,M,heart failure,5.0,0,11.0,31.9,home,0
+901370,57.0,F,pneumonia,10.0,1,10.0,,home,0
+901371,79.0,M,hip fracture,7.0,0,6.0,27.1,home,0
+901372,82.0,F,diabetes,3.0,2,7.0,26.6,home,1
+901373,81.0,F,pneumonia,5.0,2,7.0,31.8,home,1
+901374,58.0,M,diabetes,2.0,2,,30.7,nursing facility,1
+901375,88.0,F,COPD,1.0,0,8.0,42.2,home,1
+901376,83.0,M,diabetes,1.0,0,11.0,19.9,rehab,0
+901377,45.0,M,heart failure,8.0,2,10.0,35.1,home,0
+901378,70.0,M,hip fracture,13.0,3,4.0,21.9,home,0
+901379,52.0,M,hip fracture,2.0,0,7.0,35.9,home,0
+901380,63.0,F,hip fracture,3.0,0,6.0,30.4,rehab,1
+901381,84.0,F,pneumonia,7.0,1,12.0,28.6,home,1
+901382,70.0,F,diabetes,3.0,1,,15.3,rehab,0
+901383,90.0,M,COPD,4.0,2,11.0,,home,0
+901384,75.0,F,heart failure,1.0,0,10.0,20.6,home,1
+901385,77.0,F,pneumonia,6.0,1,,,home,1
+901386,91.0,M,hip fracture,13.0,0,8.0,32.6,home,1
+901387,84.0,F,COPD,4.0,0,11.0,20.2,home,1
+901388,78.0,F,pneumonia,7.0,1,3.0,28.4,home,0
+901389,87.0,M,COPD,3.0,1,13.0,,home,1
+901390,84.0,F,pneumonia,3.0,3,7.0,42.6,home,1
+901391,43.0,M,COPD,5.0,2,,,home,0
+901392,49.0,F,diabetes,8.0,0,,35.0,home,1
+901393,66.0,M,diabetes,3.0,1,7.0,25.8,home,0
+901394,82.0,M,diabetes,8.0,4,3.0,36.8,rehab,1
+901395,53.0,F,heart failure,6.0,2,8.0,,rehab,0
+901396,38.0,F,diabetes,5.0,1,10.0,30.7,home,0
+901397,64.0,F,COPD,9.0,1,7.0,36.4,nursing facility,0
+901398,55.0,M,hip fracture,8.0,1,8.0,28.2,home,0
+901399,88.0,M,heart failure,3.0,0,8.0,24.4,home,1
+901400,27.0,F,heart failure,4.0,1,,24.5,home,1
+901401,78.0,M,hip fracture,4.0,1,,,home,1
+901402,75.0,F,hip fracture,4.0,1,11.0,23.7,rehab,1
+901403,22.0,F,diabetes,3.0,1,6.0,22.9,home,0
+901404,48.0,M,pneumonia,4.0,0,9.0,31.9,home,0
+901405,60.0,M,pneumonia,4.0,1,8.0,,home,0
+901406,70.0,M,diabetes,2.0,1,8.0,18.4,home,0
+901407,65.0,F,pneumonia,4.0,1,2.0,33.2,nursing facility,0
+901408,74.0,M,heart failure,9.0,2,4.0,38.8,rehab,1
+901409,67.0,M,pneumonia,3.0,0,12.0,25.5,nursing facility,1
+901410,52.0,F,hip fracture,1.0,1,8.0,17.8,home,1
+901411,91.0,F,diabetes,5.0,2,8.0,24.8,home,0
+901412,69.0,F,COPD,9.0,3,11.0,25.5,home,1
+901413,51.0,M,diabetes,3.0,0,,37.0,home,0
+901414,72.0,F,COPD,6.0,2,4.0,27.3,home,1
+901415,62.0,F,COPD,7.0,3,7.0,28.8,nursing facility,1
+901416,57.0,F,hip fracture,11.0,1,6.0,22.2,nursing facility,0
+901417,54.0,M,pneumonia,10.0,1,9.0,31.1,home,1
+901418,40.0,F,heart failure,4.0,1,9.0,34.0,home,0
+901419,50.0,F,hip fracture,7.0,2,,,home,1
+901420,44.0,F,diabetes,4.0,2,12.0,,home,1
+901421,33.0,F,diabetes,7.0,0,10.0,30.1,home,0
+901422,72.0,F,diabetes,4.0,2,4.0,18.9,home,1
+901423,69.0,F,COPD,3.0,1,11.0,27.6,home,1
+901424,61.0,M,diabetes,20.0,2,6.0,23.6,home,1
+901425,46.0,F,heart failure,1.0,1,7.0,38.4,home,0
+901426,52.0,M,heart failure,3.0,0,14.0,19.3,home,0
+901427,89.0,F,diabetes,9.0,1,3.0,,nursing facility,1
+901428,50.0,M,pneumonia,4.0,1,9.0,,home,0
+901429,78.0,M,heart failure,2.0,1,6.0,29.4,home,0
+901430,70.0,M,hip fracture,3.0,1,7.0,22.2,home,0
+901431,72.0,F,diabetes,4.0,1,,30.9,home,1
+901432,57.0,F,diabetes,2.0,3,7.0,27.6,home,0
+901433,60.0,M,diabetes,5.0,0,9.0,26.8,home,0
+901434,63.0,M,COPD,4.0,1,10.0,27.2,home,0
+901435,47.0,F,hip fracture,5.0,0,6.0,,home,1
+901436,86.0,M,heart failure,2.0,2,9.0,38.4,home,1
+901437,51.0,F,diabetes,9.0,3,5.0,30.0,nursing facility,1
+901438,67.0,M,heart failure,2.0,1,11.0,27.5,home,0
+901439,92.0,M,heart failure,4.0,1,11.0,32.5,home,1
+901440,88.0,M,hip fracture,6.0,0,8.0,19.1,home,0
+901441,55.0,F,diabetes,2.0,1,,31.9,home,0
+901442,72.0,F,heart failure,2.0,0,,27.1,home,1
+901443,80.0,M,heart failure,1.0,1,9.0,30.5,home,0
+901444,33.0,M,hip fracture,8.0,1,5.0,27.1,home,0
+901445,97.0,M,COPD,3.0,2,8.0,32.3,home,1
+901446,73.0,M,diabetes,1.0,1,5.0,30.9,nursing facility,1
+901447,60.0,M,hip fracture,3.0,3,8.0,29.4,home,0
+901448,63.0,F,heart failure,1.0,2,13.0,33.3,home,1
+901449,28.0,M,hip fracture,8.0,0,12.0,22.6,home,0
+901450,75.0,M,diabetes,3.0,2,3.0,28.9,home,0
+901451,89.0,F,hip fracture,5.0,2,5.0,21.4,nursing facility,0
+901452,61.0,M,heart failure,8.0,0,8.0,31.8,nursing facility,0
+901453,90.0,M,COPD,5.0,0,14.0,21.0,home,0
+901454,75.0,F,pneumonia,3.0,3,8.0,33.7,nursing facility,1
+901455,43.0,F,COPD,5.0,2,6.0,29.6,home,0
+901456,73.0,F,COPD,2.0,1,,27.2,home,0
+901457,32.0,M,diabetes,3.0,0,12.0,24.2,nursing facility,0
+901458,34.0,F,heart failure,3.0,2,14.0,29.7,home,1
+901459,74.0,F,pneumonia,2.0,2,8.0,29.9,home,0
+901460,73.0,M,pneumonia,4.0,2,6.0,24.1,home,1
+901461,63.0,F,pneumonia,14.0,0,8.0,32.8,nursing facility,0
+901462,62.0,M,heart failure,8.0,0,7.0,28.1,home,1
+901463,40.0,M,diabetes,1.0,1,7.0,16.1,nursing facility,0
+901464,80.0,M,hip fracture,4.0,0,8.0,20.6,nursing facility,1
+901465,64.0,F,diabetes,1.0,3,,32.3,nursing facility,0
+901466,61.0,M,heart failure,7.0,1,10.0,32.7,home,0
+901467,98.0,M,heart failure,8.0,1,11.0,25.8,home,1
+901468,69.0,M,hip fracture,3.0,1,8.0,31.3,nursing facility,0
+901469,64.0,M,heart failure,6.0,0,6.0,,home,0
+901470,96.0,F,COPD,7.0,2,9.0,18.4,nursing facility,0
+901471,69.0,F,hip fracture,5.0,1,10.0,29.1,nursing facility,0
+901472,57.0,M,hip fracture,6.0,2,8.0,21.6,home,0
+901473,89.0,F,diabetes,8.0,1,9.0,25.5,home,1
+901474,62.0,M,pneumonia,5.0,0,,28.5,home,0
+901475,52.0,F,COPD,6.0,2,9.0,26.2,home,1
+901476,59.0,F,heart failure,2.0,0,6.0,29.3,nursing facility,1
+901477,65.0,F,heart failure,2.0,2,8.0,31.7,home,0
+901478,80.0,M,hip fracture,2.0,2,8.0,27.9,home,1
+901479,86.0,M,COPD,2.0,1,9.0,36.2,home,1
+901480,46.0,F,heart failure,2.0,1,7.0,20.2,home,0
+901481,85.0,F,heart failure,3.0,1,11.0,,home,1
+901482,55.0,M,diabetes,15.0,2,15.0,25.7,home,0
+901483,58.0,M,pneumonia,9.0,1,7.0,35.7,home,0
+901484,23.0,M,COPD,13.0,3,13.0,27.8,rehab,0
+901485,91.0,F,heart failure,1.0,3,7.0,34.9,rehab,1
+901486,75.0,F,pneumonia,4.0,2,7.0,36.6,nursing facility,1
+901487,62.0,F,pneumonia,4.0,3,10.0,29.3,home,1
+901488,62.0,M,heart failure,8.0,1,11.0,29.0,home,1
+901489,81.0,M,hip fracture,7.0,2,13.0,31.7,home,1
+901490,65.0,M,diabetes,4.0,2,7.0,24.3,nursing facility,0
+901491,18.0,M,diabetes,2.0,0,7.0,32.3,home,0
+901492,69.0,M,pneumonia,12.0,0,7.0,36.3,home,1
+901493,65.0,M,diabetes,2.0,1,,26.0,nursing facility,0
+901494,67.0,F,heart failure,3.0,1,5.0,33.3,home,0
+901495,66.0,M,diabetes,1.0,4,4.0,34.1,home,1
+901496,79.0,M,COPD,3.0,1,8.0,28.2,rehab,0
+901497,53.0,M,hip fracture,3.0,2,6.0,26.5,home,0
+901498,98.0,F,diabetes,5.0,0,6.0,24.4,rehab,1
+901499,67.0,F,hip fracture,3.0,0,5.0,43.5,nursing facility,0
+901500,53.0,F,COPD,11.0,0,12.0,,nursing facility,0
+901501,67.0,M,pneumonia,6.0,2,12.0,,home,1
+901502,37.0,F,diabetes,2.0,0,10.0,24.1,nursing facility,0
+901503,62.0,F,heart failure,4.0,3,10.0,32.7,home,0
+901504,53.0,M,COPD,2.0,1,3.0,26.1,rehab,0
+901505,49.0,M,pneumonia,4.0,3,,20.9,home,0
+901506,78.0,M,hip fracture,3.0,2,,19.3,rehab,1
+901507,70.0,M,diabetes,2.0,1,7.0,31.7,home,0
+901508,49.0,M,heart failure,3.0,0,2.0,37.7,nursing facility,1
+901509,55.0,F,pneumonia,4.0,1,4.0,32.0,home,0
+901510,70.0,M,hip fracture,1.0,0,5.0,26.4,home,1
+901511,98.0,M,COPD,4.0,1,6.0,34.9,home,0
+901512,63.0,M,pneumonia,4.0,1,10.0,29.1,nursing facility,1
+901513,62.0,F,pneumonia,3.0,1,8.0,27.0,rehab,0
+901514,73.0,M,COPD,1.0,0,9.0,22.9,home,0
+901515,45.0,M,pneumonia,5.0,0,8.0,25.2,home,0
+901516,63.0,F,hip fracture,6.0,4,11.0,35.6,nursing facility,0
+901517,76.0,M,hip fracture,12.0,1,12.0,22.7,home,0
+901518,71.0,F,diabetes,6.0,2,14.0,25.5,home,0
+901519,70.0,F,hip fracture,10.0,1,8.0,29.0,home,1
+901520,45.0,F,diabetes,4.0,0,7.0,30.9,home,1
+901521,65.0,M,hip fracture,4.0,2,11.0,28.1,home,0
+901522,88.0,M,heart failure,2.0,0,6.0,36.0,home,1
+901523,98.0,M,hip fracture,3.0,2,10.0,29.1,home,1
+901524,81.0,M,heart failure,1.0,0,6.0,32.3,home,0
+901525,56.0,F,COPD,4.0,0,,24.1,nursing facility,0
+901526,58.0,F,hip fracture,5.0,0,7.0,31.0,home,0
+901527,62.0,M,COPD,4.0,2,3.0,,home,1
+901528,98.0,F,COPD,3.0,0,8.0,20.8,nursing facility,1
+901529,43.0,F,pneumonia,2.0,1,,26.7,home,0
+901530,62.0,F,pneumonia,2.0,1,5.0,24.6,home,0
+901531,38.0,F,COPD,3.0,0,6.0,,home,0
+901532,58.0,F,COPD,3.0,1,6.0,35.1,home,0
+901533,60.0,F,heart failure,3.0,0,11.0,22.2,home,0
+901534,80.0,M,hip fracture,6.0,1,13.0,34.6,home,0
+901535,78.0,M,pneumonia,5.0,1,12.0,23.2,home,0
+901536,69.0,F,heart failure,5.0,2,10.0,31.0,nursing facility,1
+901537,61.0,M,pneumonia,2.0,1,,,home,0
+901538,58.0,F,pneumonia,1.0,1,7.0,,home,0
+901539,92.0,F,hip fracture,2.0,2,12.0,26.5,home,1
+901540,63.0,M,hip fracture,11.0,1,10.0,29.2,home,0
+901541,47.0,M,hip fracture,3.0,2,9.0,32.4,home,0
+901542,53.0,F,diabetes,1.0,0,,27.6,nursing facility,0
+901543,66.0,M,hip fracture,1.0,2,0.0,24.4,home,0
+901544,52.0,F,heart failure,5.0,3,4.0,,rehab,1
+901545,40.0,F,COPD,8.0,0,,20.7,home,0
+901546,80.0,F,hip fracture,8.0,2,6.0,33.9,home,1
+901547,54.0,F,diabetes,3.0,4,,38.6,home,1
+901548,63.0,F,hip fracture,4.0,2,5.0,33.0,nursing facility,1
+901549,66.0,M,hip fracture,8.0,1,6.0,21.5,nursing facility,0
+901550,60.0,F,diabetes,3.0,1,8.0,19.4,nursing facility,0
+901551,62.0,F,COPD,4.0,1,9.0,23.3,home,0
+901552,23.0,F,diabetes,2.0,2,14.0,16.9,home,0
+901553,65.0,F,COPD,8.0,1,7.0,31.8,home,1
+901554,61.0,M,hip fracture,13.0,1,9.0,31.6,nursing facility,1
+901555,58.0,F,hip fracture,13.0,1,8.0,28.8,home,1
+901556,63.0,F,diabetes,2.0,1,9.0,24.9,home,0
+901557,98.0,M,pneumonia,7.0,0,8.0,32.7,home,1
+901558,91.0,F,hip fracture,9.0,2,8.0,28.6,home,1
+901559,76.0,M,heart failure,12.0,4,8.0,23.6,home,1
+901560,90.0,M,pneumonia,4.0,0,6.0,33.3,home,0
+901561,58.0,F,heart failure,4.0,1,7.0,27.6,home,0
+901562,64.0,F,pneumonia,10.0,1,11.0,25.2,home,1
+901563,72.0,F,hip fracture,2.0,0,6.0,27.6,home,0
+901564,79.0,M,diabetes,2.0,1,6.0,29.1,home,1
+901565,78.0,M,COPD,5.0,2,6.0,30.8,home,1
+901566,94.0,F,diabetes,5.0,1,6.0,30.0,rehab,1
+901567,63.0,F,heart failure,3.0,1,5.0,23.5,home,0
+901568,86.0,F,COPD,2.0,0,5.0,15.0,home,0
+901569,54.0,M,COPD,2.0,2,5.0,26.9,nursing facility,0
+901570,74.0,F,heart failure,15.0,1,,34.7,rehab,0
+901571,49.0,F,heart failure,6.0,2,10.0,23.7,home,0
+901572,85.0,F,pneumonia,4.0,0,11.0,31.6,home,0
+901573,56.0,M,diabetes,17.0,2,,29.4,nursing facility,0
+901574,86.0,F,diabetes,1.0,2,7.0,23.6,home,0
+901575,34.0,F,hip fracture,3.0,0,7.0,26.8,home,0
+901576,94.0,M,COPD,7.0,0,7.0,20.5,home,0
+901577,64.0,M,heart failure,3.0,1,10.0,29.5,home,1
+901578,72.0,F,pneumonia,1.0,0,9.0,23.1,rehab,0
+901579,69.0,M,hip fracture,4.0,1,5.0,28.3,home,0
+901580,37.0,F,COPD,3.0,2,9.0,28.4,rehab,1
+901581,55.0,F,hip fracture,1.0,0,9.0,,home,1
+901582,55.0,F,diabetes,7.0,0,5.0,,rehab,0
+901583,63.0,F,pneumonia,4.0,1,,16.4,home,1
+901584,39.0,F,hip fracture,3.0,1,14.0,27.4,home,1
+901585,54.0,F,hip fracture,10.0,1,8.0,25.4,home,0
+901586,66.0,M,heart failure,8.0,0,,30.3,home,1
+901587,82.0,M,COPD,3.0,0,6.0,30.2,home,0
+901588,76.0,F,hip fracture,4.0,0,7.0,,home,0
+901589,45.0,M,heart failure,5.0,1,7.0,,home,0
+901590,78.0,F,pneumonia,6.0,0,9.0,28.6,nursing facility,1
+901591,90.0,F,pneumonia,8.0,1,,27.9,home,1
+901592,77.0,M,heart failure,7.0,0,,,home,0
+901593,59.0,M,COPD,3.0,1,6.0,28.9,home,0
+901594,50.0,M,COPD,4.0,2,4.0,,nursing facility,1
+901595,57.0,M,heart failure,6.0,1,7.0,34.7,rehab,1
+901596,91.0,M,pneumonia,10.0,1,,31.4,home,1
+901597,48.0,F,hip fracture,5.0,1,10.0,34.1,nursing facility,0
+901598,24.0,F,COPD,11.0,1,7.0,,home,0
+901599,79.0,F,pneumonia,7.0,2,,21.1,rehab,1
+901600,54.0,M,pneumonia,5.0,1,8.0,25.0,rehab,0
+901601,63.0,M,pneumonia,3.0,0,11.0,24.4,home,0
+901602,58.0,F,heart failure,4.0,1,8.0,39.2,home,0
+901603,82.0,F,hip fracture,3.0,0,8.0,24.5,home,1
+901604,58.0,F,pneumonia,7.0,2,9.0,25.8,home,0
+901605,52.0,M,hip fracture,6.0,3,8.0,28.3,home,1
+901606,51.0,F,COPD,8.0,1,6.0,,nursing facility,0
+901607,93.0,F,diabetes,4.0,0,10.0,21.8,home,1
+901608,89.0,M,hip fracture,2.0,1,9.0,32.5,home,1
+901609,59.0,M,diabetes,6.0,1,10.0,,nursing facility,0
+901610,56.0,F,pneumonia,5.0,0,,22.4,nursing facility,0
+901611,63.0,M,COPD,3.0,2,8.0,35.1,home,1
+901612,74.0,M,heart failure,4.0,1,11.0,23.3,home,1
+901613,51.0,M,pneumonia,4.0,1,3.0,30.1,nursing facility,0
+901614,89.0,M,COPD,8.0,2,7.0,34.2,nursing facility,0
+901615,69.0,F,diabetes,1.0,5,7.0,24.0,nursing facility,0
+901616,22.0,M,hip fracture,6.0,4,7.0,29.8,rehab,0
+901617,48.0,F,pneumonia,7.0,0,7.0,27.1,home,0
+901618,60.0,M,hip fracture,3.0,1,4.0,22.7,nursing facility,1
+901619,98.0,M,diabetes,3.0,1,7.0,15.3,home,0
+901620,90.0,F,COPD,3.0,0,,,nursing facility,0
+901621,68.0,F,heart failure,3.0,2,9.0,33.4,home,0
+901622,46.0,F,COPD,2.0,1,8.0,25.9,home,0
+901623,63.0,M,hip fracture,3.0,3,10.0,35.9,rehab,0
+901624,65.0,F,COPD,4.0,0,11.0,30.7,home,1
+901625,57.0,M,heart failure,2.0,0,9.0,20.9,rehab,0
+901626,66.0,F,hip fracture,3.0,2,8.0,26.3,home,1
+901627,75.0,F,hip fracture,9.0,3,4.0,22.4,home,1
+901628,56.0,F,COPD,8.0,1,8.0,36.9,home,0
+901629,45.0,M,COPD,2.0,3,5.0,24.1,nursing facility,0
+901630,66.0,F,diabetes,7.0,0,,24.8,home,0
+901631,38.0,M,hip fracture,6.0,1,9.0,22.5,home,1
+901632,56.0,F,heart failure,2.0,1,11.0,18.1,rehab,1
+901633,82.0,F,hip fracture,4.0,4,,17.7,home,1
+901634,66.0,M,hip fracture,16.0,0,6.0,26.5,home,0
+901635,43.0,M,pneumonia,6.0,0,9.0,24.5,nursing facility,1
+901636,62.0,F,heart failure,6.0,2,12.0,29.5,nursing facility,1
+901637,58.0,M,heart failure,3.0,0,5.0,24.9,home,1
+901638,64.0,M,hip fracture,10.0,0,13.0,26.3,home,1
+901639,78.0,F,hip fracture,3.0,1,11.0,28.4,home,0
+901640,54.0,M,diabetes,3.0,1,7.0,33.4,rehab,0
+901641,42.0,M,COPD,4.0,3,7.0,20.8,home,0
+901642,87.0,F,pneumonia,1.0,0,8.0,23.5,home,0
+901643,48.0,F,COPD,1.0,0,8.0,36.9,home,0
+901644,72.0,F,heart failure,4.0,1,5.0,22.7,nursing facility,1
+901645,68.0,F,diabetes,2.0,3,9.0,24.5,home,0
+901646,57.0,F,hip fracture,10.0,1,4.0,30.9,home,0
+901647,71.0,M,diabetes,3.0,0,9.0,34.7,home,1
+901648,67.0,M,COPD,3.0,2,6.0,,home,1
+901649,65.0,F,heart failure,17.0,1,8.0,24.0,home,1
+901650,74.0,F,COPD,5.0,2,3.0,25.1,home,1
+901651,51.0,F,heart failure,3.0,1,10.0,26.9,rehab,0
+901652,77.0,F,pneumonia,2.0,1,7.0,25.4,home,0
+901653,49.0,M,pneumonia,13.0,1,7.0,30.7,nursing facility,1
+901654,78.0,M,pneumonia,6.0,0,13.0,24.4,home,0
+901655,84.0,F,diabetes,3.0,2,3.0,30.0,nursing facility,1
+901656,49.0,F,hip fracture,1.0,1,10.0,21.9,home,0
+901657,94.0,F,pneumonia,3.0,1,1.0,31.6,nursing facility,0
+901658,52.0,M,pneumonia,2.0,1,7.0,31.3,home,1
+901659,61.0,M,pneumonia,1.0,3,1.0,35.0,nursing facility,0
+901660,49.0,M,diabetes,3.0,1,14.0,29.7,home,0
+901661,58.0,M,pneumonia,7.0,0,7.0,,home,1
+901662,63.0,F,COPD,4.0,0,,,home,1
+901663,52.0,F,pneumonia,12.0,2,10.0,28.6,home,1
+901664,78.0,M,diabetes,1.0,2,,36.0,home,0
+901665,49.0,M,heart failure,7.0,0,7.0,25.6,nursing facility,0
+901666,67.0,M,pneumonia,16.0,1,9.0,,home,1
+901667,45.0,F,COPD,8.0,0,8.0,26.5,rehab,0
+901668,47.0,M,diabetes,2.0,0,,30.7,home,1
+901669,64.0,F,pneumonia,2.0,0,11.0,29.0,nursing facility,0
+901670,67.0,M,heart failure,5.0,1,6.0,18.9,rehab,1
+901671,56.0,M,heart failure,3.0,0,9.0,31.5,rehab,1
+901672,67.0,M,hip fracture,12.0,1,5.0,27.7,home,0
+901673,69.0,M,hip fracture,2.0,0,10.0,34.2,home,1
+901674,51.0,M,hip fracture,2.0,2,10.0,27.5,home,0
+901675,62.0,M,heart failure,6.0,1,6.0,38.3,home,1
+901676,48.0,F,pneumonia,5.0,1,7.0,21.1,rehab,0
+901677,41.0,M,diabetes,2.0,2,9.0,18.6,nursing facility,0
+901678,52.0,F,heart failure,7.0,1,7.0,,home,1
+901679,58.0,F,pneumonia,4.0,2,5.0,32.3,nursing facility,0
+901680,81.0,F,hip fracture,4.0,0,5.0,32.0,nursing facility,1
+901681,70.0,M,pneumonia,6.0,2,6.0,27.5,home,1
+901682,64.0,M,diabetes,5.0,0,5.0,25.6,home,1
+901683,27.0,F,diabetes,14.0,1,4.0,23.0,home,1
+901684,47.0,M,pneumonia,1.0,1,10.0,,home,0
+901685,70.0,F,diabetes,4.0,1,6.0,23.1,home,1
+901686,72.0,M,diabetes,5.0,2,9.0,29.5,home,1
+901687,62.0,F,hip fracture,5.0,3,2.0,31.1,home,0
+901688,43.0,M,diabetes,10.0,1,8.0,26.9,nursing facility,1
+901689,31.0,F,heart failure,2.0,4,10.0,29.9,home,0
+901690,36.0,M,heart failure,1.0,2,11.0,,home,1
+901691,65.0,F,pneumonia,5.0,1,,32.7,home,0
+901692,69.0,F,diabetes,2.0,3,5.0,34.3,home,1
+901693,91.0,F,diabetes,6.0,2,7.0,25.6,home,1
+901694,52.0,F,heart failure,7.0,1,6.0,30.5,home,0
+901695,68.0,M,COPD,12.0,2,,32.5,nursing facility,0
+901696,50.0,F,diabetes,1.0,0,,32.3,home,0
+901697,60.0,M,COPD,2.0,2,12.0,40.1,home,0
+901698,64.0,F,COPD,3.0,3,4.0,40.6,home,0
+901699,54.0,F,heart failure,10.0,0,6.0,27.6,rehab,0
+901700,86.0,F,pneumonia,2.0,1,12.0,16.2,home,0
+901701,46.0,M,hip fracture,3.0,1,4.0,36.6,home,0
+901702,76.0,F,pneumonia,13.0,1,5.0,17.7,rehab,1
+901703,60.0,M,diabetes,4.0,1,8.0,26.3,rehab,1
+901704,55.0,M,pneumonia,8.0,1,10.0,35.7,home,1
+901705,80.0,F,hip fracture,4.0,2,11.0,,nursing facility,1
+901706,54.0,F,heart failure,1.0,1,6.0,24.9,home,1
+901707,68.0,F,COPD,2.0,0,5.0,34.2,home,0
+901708,63.0,F,diabetes,1.0,0,6.0,27.7,home,0
+901709,75.0,F,heart failure,1.0,3,3.0,24.5,home,1
+901710,44.0,F,COPD,8.0,2,5.0,24.8,home,1
+901711,68.0,F,hip fracture,4.0,1,10.0,16.2,home,0
+901712,71.0,F,COPD,2.0,0,10.0,28.7,nursing facility,1
+901713,53.0,F,diabetes,6.0,1,11.0,22.2,home,0
+901714,47.0,F,diabetes,6.0,0,6.0,27.2,home,0
+901715,47.0,M,diabetes,2.0,0,7.0,28.5,home,0
+901716,63.0,F,pneumonia,4.0,2,5.0,25.0,rehab,0
+901717,51.0,F,COPD,7.0,2,10.0,31.8,nursing facility,1
+901718,72.0,F,pneumonia,2.0,0,7.0,23.2,nursing facility,0
+901719,61.0,M,COPD,3.0,1,8.0,29.6,rehab,0
+901720,59.0,F,COPD,1.0,1,5.0,26.8,home,0
+901721,63.0,F,COPD,2.0,2,7.0,26.0,home,0
+901722,64.0,M,diabetes,3.0,0,6.0,28.2,home,0
+901723,65.0,M,diabetes,1.0,1,,24.4,home,0
+901724,73.0,M,heart failure,2.0,1,,22.3,home,1
+901725,82.0,F,pneumonia,1.0,3,8.0,,home,1
+901726,70.0,M,hip fracture,11.0,0,,29.6,home,0
+901727,72.0,F,pneumonia,4.0,1,8.0,32.4,nursing facility,0
+901728,88.0,F,hip fracture,1.0,2,4.0,,home,0
+901729,88.0,M,hip fracture,1.0,1,10.0,29.8,home,0
+901730,65.0,F,heart failure,1.0,0,8.0,19.4,home,1
+901731,47.0,M,heart failure,1.0,2,8.0,20.3,nursing facility,0
+901732,83.0,M,COPD,7.0,2,9.0,,rehab,0
+901733,51.0,F,heart failure,3.0,0,4.0,32.7,home,1
+901734,52.0,M,pneumonia,9.0,0,8.0,34.1,home,0
+901735,51.0,F,hip fracture,4.0,0,13.0,41.8,home,0
+901736,58.0,M,diabetes,2.0,1,8.0,32.2,nursing facility,0
+901737,27.0,M,COPD,2.0,1,11.0,42.9,home,0
+901738,56.0,M,heart failure,7.0,0,10.0,29.9,home,0
+901739,82.0,M,diabetes,11.0,0,7.0,27.0,home,0
+901740,98.0,F,hip fracture,5.0,1,5.0,35.6,nursing facility,0
+901741,72.0,F,hip fracture,2.0,0,8.0,29.5,nursing facility,1
+901742,77.0,M,pneumonia,2.0,0,10.0,26.1,home,0
+901743,79.0,M,diabetes,4.0,0,7.0,31.9,home,1
+901744,55.0,M,diabetes,9.0,2,10.0,22.0,home,1
+901745,49.0,F,heart failure,3.0,1,8.0,27.1,home,0
+901746,70.0,F,heart failure,2.0,1,17.0,33.5,home,1
+901747,83.0,F,pneumonia,6.0,0,10.0,28.0,home,0
+901748,67.0,M,hip fracture,10.0,1,13.0,32.5,home,1
+901749,70.0,M,hip fracture,5.0,1,5.0,27.7,home,1
+901750,64.0,F,hip fracture,6.0,0,6.0,29.2,rehab,0
+901751,63.0,M,heart failure,9.0,0,11.0,23.9,home,0
+901752,57.0,M,heart failure,4.0,2,3.0,23.7,home,0
+901753,82.0,M,diabetes,1.0,0,12.0,29.3,rehab,0
+901754,78.0,M,pneumonia,9.0,1,13.0,26.8,home,0
+901755,63.0,M,COPD,16.0,2,7.0,30.2,home,1
+901756,70.0,M,hip fracture,9.0,2,7.0,33.9,home,0
+901757,75.0,M,COPD,3.0,1,5.0,25.4,nursing facility,0
+901758,83.0,M,diabetes,4.0,1,6.0,31.7,nursing facility,0
+901759,96.0,M,pneumonia,4.0,3,4.0,,home,1
+901760,93.0,F,hip fracture,5.0,2,13.0,45.1,home,1
+901761,66.0,M,pneumonia,4.0,2,12.0,34.5,home,0
+901762,69.0,F,hip fracture,4.0,2,5.0,33.5,home,0
+901763,61.0,M,pneumonia,3.0,3,10.0,25.6,home,1
+901764,78.0,F,pneumonia,3.0,0,8.0,33.3,home,1
+901765,83.0,F,heart failure,4.0,1,4.0,24.0,nursing facility,1
+901766,40.0,M,COPD,4.0,2,11.0,27.7,home,0
+901767,68.0,F,diabetes,5.0,1,5.0,31.0,home,0
+901768,89.0,M,COPD,1.0,3,12.0,28.0,home,0
+901769,43.0,M,diabetes,5.0,0,8.0,28.3,home,0
+901770,90.0,M,diabetes,5.0,1,9.0,28.8,home,0
+901771,84.0,F,COPD,3.0,1,8.0,29.4,home,0
+901772,57.0,M,diabetes,2.0,1,12.0,45.9,home,1
+901773,49.0,M,heart failure,2.0,4,11.0,20.7,home,1
+901774,93.0,F,COPD,3.0,1,10.0,27.6,home,1
+901775,59.0,M,pneumonia,2.0,2,8.0,24.1,nursing facility,0
+901776,45.0,F,pneumonia,3.0,1,4.0,21.8,home,1
+901777,66.0,M,COPD,1.0,1,8.0,17.1,home,0
+901778,43.0,F,heart failure,1.0,2,6.0,29.3,home,0
+901779,49.0,M,heart failure,4.0,3,4.0,25.5,home,1
+901780,93.0,F,pneumonia,4.0,3,,24.8,home,0
+901781,58.0,F,pneumonia,3.0,2,7.0,26.6,home,0
+901782,62.0,M,COPD,2.0,1,6.0,29.9,home,1
+901783,38.0,F,diabetes,8.0,0,4.0,28.5,nursing facility,1
+901784,50.0,F,COPD,3.0,3,7.0,30.3,home,1
+901785,81.0,F,diabetes,2.0,0,9.0,21.2,nursing facility,0
+901786,71.0,F,COPD,3.0,1,9.0,31.8,home,1
+901787,81.0,M,diabetes,4.0,0,9.0,28.1,home,0
+901788,80.0,F,heart failure,1.0,1,,19.3,home,1
+901789,68.0,F,pneumonia,3.0,4,5.0,22.7,home,1
+901790,57.0,M,diabetes,11.0,1,5.0,27.7,home,0
+901791,29.0,F,diabetes,1.0,0,11.0,30.3,nursing facility,0
+901792,81.0,F,hip fracture,2.0,0,12.0,29.7,nursing facility,0
+901793,65.0,M,diabetes,11.0,3,,20.8,home,1
+901794,98.0,M,heart failure,8.0,0,11.0,28.2,home,0
+901795,62.0,M,heart failure,4.0,1,6.0,31.6,home,0
+901796,62.0,M,pneumonia,3.0,1,14.0,25.9,home,1
+901797,56.0,F,heart failure,10.0,2,5.0,26.9,home,1
+901798,44.0,M,diabetes,5.0,1,11.0,33.4,home,0
+901799,64.0,M,heart failure,7.0,2,12.0,21.3,nursing facility,1
+901800,69.0,M,hip fracture,4.0,1,,29.5,home,1
+901801,67.0,M,hip fracture,4.0,1,9.0,27.6,home,0
+901802,59.0,F,diabetes,3.0,1,8.0,28.0,rehab,0
+901803,51.0,M,heart failure,1.0,0,8.0,26.7,home,1
+901804,82.0,F,heart failure,7.0,3,9.0,32.3,nursing facility,1
+901805,79.0,F,hip fracture,6.0,1,10.0,27.7,nursing facility,1
+901806,53.0,F,heart failure,8.0,0,7.0,24.1,home,1
+901807,43.0,M,diabetes,3.0,0,11.0,27.6,home,0
+901808,53.0,M,hip fracture,4.0,1,,25.3,rehab,1
+901809,53.0,F,hip fracture,17.0,1,12.0,30.4,home,1
+901810,80.0,F,heart failure,4.0,0,9.0,29.8,nursing facility,0
+901811,50.0,F,diabetes,3.0,0,,26.7,home,0
+901812,70.0,M,COPD,6.0,1,,18.4,home,1
+901813,48.0,F,COPD,9.0,1,6.0,22.3,home,0
+901814,62.0,F,hip fracture,2.0,1,7.0,31.9,home,1
+901815,98.0,F,pneumonia,2.0,3,2.0,29.3,home,1
+901816,54.0,M,hip fracture,4.0,1,14.0,22.2,home,1
+901817,71.0,F,heart failure,4.0,0,6.0,,home,0
+901818,57.0,M,COPD,1.0,0,8.0,29.0,home,0
+901819,83.0,M,heart failure,3.0,0,5.0,28.5,home,1
+901820,70.0,M,COPD,9.0,0,5.0,20.3,home,1
+901821,65.0,F,COPD,3.0,1,7.0,32.9,home,0
+901822,88.0,M,pneumonia,4.0,1,8.0,15.0,home,0
+901823,78.0,M,heart failure,5.0,2,9.0,23.6,home,1
+901824,75.0,F,hip fracture,11.0,2,9.0,,home,0
+901825,46.0,F,hip fracture,1.0,0,9.0,32.9,home,0
+901826,50.0,F,diabetes,9.0,0,9.0,29.3,home,0
+901827,88.0,M,heart failure,2.0,1,7.0,30.9,home,1
+901828,46.0,F,COPD,1.0,1,7.0,24.6,home,0
+901829,90.0,M,diabetes,1.0,2,,30.4,home,1
+901830,90.0,M,hip fracture,2.0,3,9.0,,home,0
+901831,61.0,F,COPD,12.0,1,8.0,24.3,home,1
+901832,50.0,M,heart failure,16.0,2,10.0,26.2,home,1
+901833,44.0,F,heart failure,6.0,2,4.0,20.2,home,0
+901834,76.0,F,diabetes,5.0,2,6.0,18.8,home,1
+901835,72.0,M,diabetes,4.0,0,6.0,32.8,rehab,0
+901836,51.0,F,hip fracture,2.0,3,9.0,33.5,home,1
+901837,46.0,M,heart failure,2.0,0,,,home,0
+901838,71.0,M,diabetes,4.0,3,7.0,,home,0
+901839,53.0,F,diabetes,4.0,0,8.0,,home,0
+901840,62.0,M,pneumonia,4.0,2,9.0,,rehab,1
+901841,39.0,M,COPD,1.0,0,7.0,28.9,nursing facility,0
+901842,69.0,F,COPD,2.0,0,,39.6,home,0
+901843,65.0,M,pneumonia,3.0,0,7.0,26.1,nursing facility,0
+901844,55.0,F,pneumonia,7.0,0,8.0,29.9,home,0
+901845,44.0,M,heart failure,7.0,0,12.0,27.8,nursing facility,0
+901846,61.0,M,COPD,9.0,3,12.0,,nursing facility,0
+901847,68.0,F,diabetes,1.0,1,9.0,38.1,home,1
+901848,69.0,M,pneumonia,6.0,3,6.0,,home,0
+901849,64.0,F,pneumonia,1.0,0,,18.7,home,0
+901850,51.0,M,diabetes,3.0,0,,34.3,nursing facility,0
+901851,73.0,M,COPD,9.0,0,4.0,30.0,home,0
+901852,81.0,M,pneumonia,10.0,2,5.0,23.2,rehab,0
+901853,53.0,F,hip fracture,1.0,2,,25.2,nursing facility,1
+901854,42.0,M,pneumonia,12.0,1,8.0,26.4,home,1
+901855,86.0,F,diabetes,7.0,0,10.0,24.1,nursing facility,0
+901856,66.0,M,heart failure,3.0,1,6.0,,home,1
+901857,32.0,F,COPD,4.0,0,,18.5,home,0
+901858,76.0,F,heart failure,4.0,0,9.0,19.4,home,1
+901859,65.0,M,diabetes,6.0,2,8.0,39.9,nursing facility,1
+901860,51.0,F,diabetes,3.0,0,,30.8,home,0
+901861,63.0,F,diabetes,3.0,1,2.0,22.9,home,1
+901862,45.0,F,diabetes,3.0,2,11.0,23.8,home,0
+901863,48.0,F,pneumonia,4.0,2,3.0,37.0,home,0
+901864,35.0,F,heart failure,4.0,0,7.0,,home,0
+901865,80.0,F,hip fracture,1.0,1,,32.7,home,1
+901866,53.0,F,hip fracture,4.0,1,7.0,21.2,home,1
+901867,64.0,F,diabetes,1.0,4,6.0,31.4,nursing facility,0
+901868,66.0,M,pneumonia,5.0,0,8.0,15.0,home,1
+901869,19.0,F,heart failure,7.0,2,11.0,37.5,home,0
+901870,63.0,M,COPD,2.0,1,14.0,29.0,nursing facility,1
+901871,42.0,F,pneumonia,6.0,1,9.0,23.6,home,0
+901872,80.0,F,COPD,4.0,0,6.0,25.5,home,0
+901873,41.0,M,heart failure,3.0,2,13.0,19.9,home,0
+901874,74.0,M,heart failure,2.0,1,6.0,22.9,home,0
+901875,87.0,M,pneumonia,2.0,3,6.0,34.8,home,1
+901876,64.0,F,heart failure,2.0,3,5.0,24.8,home,0
+901877,77.0,F,hip fracture,2.0,3,4.0,28.5,home,0
+901878,82.0,F,COPD,4.0,3,8.0,24.4,home,0
+901879,63.0,M,pneumonia,8.0,4,9.0,30.8,nursing facility,0
+901880,57.0,M,hip fracture,19.0,0,13.0,30.2,home,0
+901881,38.0,F,diabetes,4.0,1,5.0,24.9,home,0
+901882,90.0,M,hip fracture,13.0,1,,26.1,home,0
+901883,77.0,F,hip fracture,9.0,0,9.0,29.8,home,1
+901884,71.0,F,pneumonia,3.0,2,8.0,17.4,home,0
+901885,34.0,F,diabetes,4.0,1,8.0,37.0,home,0
+901886,79.0,F,pneumonia,6.0,0,,23.8,home,1
+901887,55.0,M,COPD,7.0,1,3.0,24.5,home,0
+901888,64.0,M,heart failure,4.0,2,19.0,31.5,home,0
+901889,67.0,M,pneumonia,9.0,2,,26.3,home,1
+901890,79.0,F,diabetes,7.0,2,9.0,22.5,home,0
+901891,56.0,M,diabetes,6.0,2,12.0,27.8,nursing facility,0
+901892,50.0,M,pneumonia,3.0,2,,27.0,home,0
+901893,71.0,M,diabetes,3.0,0,6.0,36.3,home,0
+901894,66.0,F,hip fracture,1.0,0,9.0,16.6,home,1
+901895,52.0,M,COPD,6.0,0,7.0,24.1,rehab,1
+901896,95.0,M,diabetes,3.0,1,4.0,24.7,nursing facility,1
+901897,80.0,F,diabetes,8.0,3,11.0,29.3,home,1
+901898,36.0,M,COPD,1.0,2,5.0,26.2,home,1
+901899,26.0,F,COPD,10.0,0,13.0,27.6,home,0
+901900,31.0,M,pneumonia,3.0,0,13.0,26.1,rehab,0
+901901,55.0,M,diabetes,11.0,1,5.0,19.4,home,1
+901902,69.0,M,pneumonia,4.0,2,6.0,31.3,home,0
+901903,89.0,F,pneumonia,3.0,2,6.0,,home,0
+901904,64.0,M,pneumonia,1.0,3,,,home,0
+901905,51.0,F,hip fracture,1.0,0,9.0,34.5,rehab,1
+901906,64.0,F,pneumonia,3.0,0,,31.9,home,0
+901907,62.0,F,hip fracture,1.0,2,,33.9,home,0
+901908,47.0,M,hip fracture,11.0,2,10.0,24.7,home,0
+901909,64.0,M,pneumonia,10.0,0,,32.2,home,0
+901910,32.0,F,heart failure,1.0,1,8.0,23.1,home,0
+901911,56.0,F,heart failure,3.0,1,,24.2,home,0
+901912,69.0,F,hip fracture,3.0,1,7.0,25.6,home,1
+901913,58.0,M,COPD,3.0,0,14.0,40.4,home,0
+901914,70.0,M,heart failure,5.0,3,8.0,44.8,home,1
+901915,79.0,F,hip fracture,4.0,0,10.0,24.7,home,0
+901916,72.0,F,diabetes,2.0,0,7.0,20.2,home,1
+901917,73.0,M,pneumonia,4.0,0,8.0,,home,1
+901918,73.0,M,hip fracture,2.0,0,14.0,,home,1
+901919,60.0,F,hip fracture,9.0,1,7.0,35.4,home,0
+901920,79.0,M,COPD,5.0,2,,26.8,nursing facility,1
+901921,67.0,F,heart failure,2.0,2,5.0,32.8,home,0
+901922,48.0,F,heart failure,13.0,1,7.0,,home,0
+901923,78.0,M,pneumonia,2.0,1,5.0,27.3,home,1
+901924,63.0,F,COPD,3.0,0,9.0,32.4,home,0
+901925,18.0,F,COPD,1.0,0,4.0,27.8,home,0
+901926,91.0,M,pneumonia,1.0,0,7.0,,home,1
+901927,64.0,F,hip fracture,4.0,3,7.0,35.9,home,1
+901928,52.0,M,hip fracture,5.0,0,7.0,27.9,nursing facility,0
+901929,76.0,F,COPD,5.0,0,5.0,24.4,nursing facility,1
+901930,70.0,F,hip fracture,7.0,0,11.0,35.3,home,0
+901931,68.0,M,diabetes,5.0,1,7.0,27.6,home,0
+901932,92.0,F,hip fracture,4.0,1,7.0,26.4,home,1
+901933,83.0,M,heart failure,6.0,0,6.0,21.3,home,0
+901934,61.0,M,heart failure,5.0,2,13.0,37.0,rehab,1
+901935,54.0,F,COPD,3.0,3,8.0,33.1,home,0
+901936,45.0,F,heart failure,8.0,1,14.0,30.2,nursing facility,1
+901937,72.0,M,diabetes,12.0,1,6.0,30.4,nursing facility,1
+901938,67.0,M,heart failure,20.0,0,12.0,27.6,home,1
+901939,83.0,M,COPD,9.0,0,3.0,,home,0
+901940,69.0,M,COPD,6.0,0,13.0,31.5,home,0
+901941,77.0,M,hip fracture,8.0,0,4.0,33.2,home,1
+901942,87.0,F,heart failure,7.0,1,5.0,36.1,nursing facility,0
+901943,58.0,M,diabetes,2.0,4,4.0,26.2,home,1
+901944,51.0,F,heart failure,10.0,1,,22.2,nursing facility,1
+901945,66.0,M,heart failure,9.0,2,13.0,29.5,home,1
+901946,46.0,F,heart failure,2.0,1,6.0,33.9,home,0
+901947,63.0,M,diabetes,8.0,1,,37.3,rehab,1
+901948,62.0,F,pneumonia,10.0,2,9.0,35.7,home,0
+901949,89.0,M,hip fracture,4.0,1,9.0,28.8,home,0
+901950,61.0,M,pneumonia,6.0,2,11.0,20.6,home,0
+901951,85.0,F,COPD,2.0,1,6.0,32.9,home,1
+901952,60.0,M,pneumonia,6.0,0,9.0,30.8,home,0
+901953,65.0,M,pneumonia,2.0,1,6.0,15.0,nursing facility,1
+901954,58.0,F,heart failure,5.0,1,6.0,26.7,nursing facility,1
+901955,65.0,M,hip fracture,6.0,1,9.0,24.9,nursing facility,1
+901956,56.0,M,hip fracture,4.0,1,12.0,,nursing facility,0
+901957,48.0,M,heart failure,9.0,0,9.0,29.1,home,0
+901958,46.0,F,pneumonia,4.0,0,5.0,32.0,home,0
+901959,80.0,F,diabetes,7.0,1,10.0,33.5,rehab,1
+901960,68.0,F,diabetes,4.0,0,3.0,15.0,home,1
+901961,91.0,F,hip fracture,4.0,2,7.0,,home,1
+901962,89.0,F,COPD,7.0,3,9.0,22.5,home,1
+901963,50.0,F,pneumonia,13.0,2,6.0,21.8,home,0
+901964,96.0,F,hip fracture,4.0,1,13.0,23.4,home,0
+901965,58.0,F,pneumonia,2.0,0,8.0,23.7,nursing facility,0
+901966,40.0,M,COPD,4.0,0,10.0,27.8,home,0
+901967,47.0,F,hip fracture,6.0,1,10.0,,home,0
+901968,57.0,M,hip fracture,2.0,3,,,home,1
+901969,27.0,M,heart failure,4.0,2,9.0,29.9,home,0
+901970,73.0,M,diabetes,7.0,0,8.0,20.6,home,0
+901971,60.0,F,diabetes,5.0,0,10.0,18.4,home,0
+901972,75.0,M,COPD,1.0,0,10.0,23.8,home,1
+901973,71.0,M,pneumonia,18.0,5,7.0,28.1,home,1
+901974,69.0,F,diabetes,4.0,2,7.0,30.0,nursing facility,0
+901975,77.0,M,COPD,3.0,0,4.0,,home,0
+901976,73.0,F,heart failure,7.0,4,,28.4,home,1
+901977,43.0,M,pneumonia,5.0,0,6.0,31.8,nursing facility,0
+901978,90.0,M,heart failure,4.0,2,13.0,28.5,nursing facility,1
+901979,58.0,F,heart failure,7.0,0,2.0,36.4,home,0
+901980,66.0,M,pneumonia,6.0,0,,32.5,nursing facility,0
+901981,77.0,M,heart failure,5.0,0,8.0,29.5,home,1
+901982,54.0,M,pneumonia,23.0,2,6.0,27.6,home,1
+901983,57.0,F,hip fracture,5.0,1,9.0,28.0,nursing facility,0
+901984,36.0,F,COPD,2.0,1,9.0,26.4,nursing facility,0
+901985,75.0,M,hip fracture,13.0,1,5.0,20.9,home,0
+901986,75.0,M,pneumonia,1.0,0,4.0,25.1,home,0
+901987,58.0,F,hip fracture,4.0,2,6.0,36.1,home,1
+901988,52.0,F,heart failure,4.0,0,4.0,39.4,home,1
+901989,23.0,F,COPD,2.0,0,3.0,26.3,home,0
+901990,72.0,M,COPD,2.0,3,8.0,26.3,nursing facility,1
+901991,49.0,M,hip fracture,3.0,1,15.0,29.8,home,0
+901992,56.0,M,COPD,4.0,1,7.0,26.0,rehab,0
+901993,58.0,M,COPD,3.0,0,11.0,27.4,nursing facility,1
+901994,58.0,F,hip fracture,1.0,0,9.0,24.9,home,0
+901995,66.0,F,hip fracture,7.0,0,5.0,29.4,home,1
+901996,73.0,M,heart failure,7.0,1,12.0,28.5,home,1
+901997,66.0,F,diabetes,6.0,0,10.0,27.1,home,1
+901998,46.0,M,heart failure,4.0,1,6.0,,home,1
+901999,63.0,F,diabetes,2.0,0,6.0,26.7,home,0

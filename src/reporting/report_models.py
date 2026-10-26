@@ -64,7 +64,7 @@ class ReportMetadata(BaseModel):
     dataset_id: str
     dataset_version: int
     generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
-    generator: str = "AI Data Analyst Agent"
+    generator: str = "CelestiusAI"
     ai_narrative_applied: bool = False
     evidence_item_count: int = 0
 

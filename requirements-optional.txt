@@ -1,0 +1,17 @@
+-r requirements.txt
+
+# Extra model families in the Model Lab catalog (each is detected at runtime and skipped if missing)
+xgboost>=2.0
+lightgbm>=4.0
+catboost>=1.2
+
+# Bayesian hyperparameter search and SHAP explanations
+optuna>=3.5
+shap>=0.45
+
+# Data Sources page: SQL databases and BigQuery
+sqlalchemy>=2.0
+pandas-gbq>=0.22
+
+# AI Analyst provider: Claude (Ollama needs no Python package, only a local server)
+anthropic>=0.40.0

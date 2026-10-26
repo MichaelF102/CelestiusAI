@@ -1,4 +1,4 @@
-"""Controlled, approved analytical tool registry for the AI Data Analyst Agent.
+"""Controlled, approved analytical tool registry for the CelestiusAI.
 
 Provides deterministic execution wrappers over established analytical, EDA,
 and statistical intelligence modules. The LLM can only request execution through

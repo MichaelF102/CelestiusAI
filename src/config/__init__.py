@@ -1,4 +1,4 @@
-"""Configuration module for AI Data Analyst Agent."""
+"""Configuration module for CelestiusAI."""
 
 from src.config.settings import AppSettings, get_settings
 

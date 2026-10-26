@@ -1,0 +1,1001 @@
+student_id,school,gender,study_hours_week,attendance_pct,prior_gpa,tutoring,parent_education,final_score
+1,South High,M,6.4,88.0,2.76,No,high school,79.0
+2,East Academy,F,7.5,80.0,2.87,No,college,83.3
+3,East Academy,M,9.7,80.0,2.56,No,graduate,77.2
+4,North High,F,7.3,91.0,2.51,No,high school,81.7
+5,North High,M,7.0,85.0,3.28,No,college,86.2
+6,South High,F,,92.0,3.15,No,high school,89.2
+7,East Academy,F,18.4,100.0,2.72,Yes,college,100.0
+8,East Academy,F,10.8,100.0,3.6,No,high school,99.9
+9,South High,M,15.8,92.0,2.29,Yes,graduate,98.0
+10,East Academy,F,3.8,95.0,2.77,No,graduate,74.5
+11,East Academy,F,17.6,97.0,2.54,No,graduate,88.0
+12,East Academy,F,18.4,100.0,2.81,Yes,high school,97.0
+13,East Academy,F,10.3,77.0,2.6,No,college,89.4
+14,East Academy,M,7.5,74.0,2.98,Yes,graduate,82.3
+15,East Academy,M,12.0,100.0,2.96,No,graduate,100.0
+16,East Academy,F,2.9,81.0,2.23,No,graduate,69.5
+17,North High,M,10.8,71.0,3.15,No,high school,97.5
+18,North High,M,2.5,88.0,2.8,No,high school,72.4
+19,East Academy,M,15.9,79.0,2.45,No,high school,93.3
+20,South High,F,9.4,99.0,3.21,No,high school,92.8
+21,East Academy,M,6.6,100.0,3.16,No,college,89.6
+22,South High,M,1.2,92.0,3.63,No,high school,72.4
+23,East Academy,M,15.4,86.0,1.32,No,college,85.3
+24,North High,F,10.0,89.0,2.85,No,high school,85.8
+25,East Academy,M,7.5,83.0,2.74,No,college,87.7
+26,North High,F,14.4,89.0,2.2,No,college,80.9
+27,North High,M,4.3,90.0,1.89,No,high school,61.7
+28,East Academy,M,14.1,84.0,1.55,No,high school,79.4
+29,North High,F,15.0,85.0,3.37,No,high school,91.1
+30,East Academy,M,8.7,84.0,2.45,No,graduate,79.9
+31,South High,M,14.6,100.0,3.6,No,college,91.8
+32,East Academy,M,16.6,88.0,2.82,No,graduate,99.8
+33,East Academy,F,6.9,79.0,3.54,Yes,high school,78.2
+34,North High,M,7.1,99.0,2.78,No,graduate,86.9
+35,East Academy,M,13.2,86.0,3.21,No,college,89.1
+36,East Academy,M,13.0,83.0,2.71,No,high school,100.0
+37,East Academy,F,6.8,63.0,2.34,Yes,college,75.7
+38,North High,F,0.0,80.0,2.69,Yes,college,67.1
+39,South High,F,3.8,75.0,2.8,No,high school,71.9
+40,East Academy,M,14.9,87.0,3.03,Yes,graduate,94.9
+41,East Academy,M,8.0,84.0,3.76,No,high school,96.5
+42,North High,F,6.2,89.0,3.18,No,college,81.4
+43,South High,F,11.4,90.0,3.51,No,graduate,95.0
+44,East Academy,F,2.9,79.0,3.17,No,high school,81.1
+45,East Academy,M,18.9,67.0,2.52,No,high school,90.3
+46,East Academy,F,2.2,92.0,3.64,Yes,high school,80.3
+47,North High,M,9.2,84.0,2.76,No,high school,79.4
+48,East Academy,F,11.5,80.0,4.0,No,college,91.5
+49,North High,M,12.4,77.0,2.81,No,graduate,90.7
+50,East Academy,F,5.5,78.0,3.99,No,graduate,92.2
+51,East Academy,F,,100.0,2.35,No,high school,86.2
+52,East Academy,F,14.1,84.0,3.27,Yes,graduate,100.0
+53,East Academy,M,10.5,92.0,2.85,No,college,84.5
+54,East Academy,M,12.7,81.0,2.65,No,high school,82.0
+55,South High,M,10.6,74.0,2.7,Yes,high school,86.9
+56,South High,M,,97.0,2.76,No,graduate,95.9
+57,North High,M,6.5,100.0,3.06,No,college,88.2
+58,East Academy,M,,100.0,2.7,No,college,81.2
+59,East Academy,F,8.9,89.0,2.46,No,high school,79.7
+60,North High,F,5.5,86.0,2.07,No,high school,69.2
+61,South High,M,15.7,98.0,1.94,Yes,high school,100.0
+62,South High,F,12.8,92.0,2.98,No,graduate,87.8
+63,East Academy,F,14.9,100.0,3.07,No,college,97.8
+64,South High,F,4.0,96.0,3.02,Yes,college,84.5
+65,South High,F,4.7,100.0,2.2,No,graduate,86.3
+66,South High,M,,89.0,3.44,No,high school,100.0
+67,North High,F,10.6,92.0,2.92,No,high school,81.1
+68,East Academy,M,10.9,76.0,4.0,No,high school,83.9
+69,East Academy,M,13.8,98.0,3.22,Yes,high school,96.0
+70,North High,F,5.9,84.0,2.77,No,graduate,80.0
+71,South High,M,,99.0,3.18,No,college,86.7
+72,North High,M,6.5,79.0,2.19,No,college,68.4
+73,South High,M,18.3,92.0,2.28,Yes,college,95.7
+74,North High,F,,80.0,2.77,No,college,100.0
+75,South High,F,6.8,80.0,2.73,Yes,high school,83.8
+76,East Academy,F,15.7,84.0,2.59,No,college,84.6
+77,North High,M,13.5,100.0,2.79,No,graduate,96.5
+78,North High,F,13.4,88.0,3.43,No,high school,96.9
+79,East Academy,M,12.4,76.0,3.46,Yes,graduate,93.6
+80,North High,M,9.0,97.0,3.9,No,college,80.6
+81,North High,M,17.0,90.0,2.45,No,graduate,100.0
+82,South High,M,13.2,80.0,2.82,No,high school,86.0
+83,North High,F,5.1,99.0,2.87,No,high school,80.3
+84,South High,F,5.4,78.0,3.32,No,college,77.6
+85,South High,M,7.3,79.0,3.97,No,graduate,77.9
+86,East Academy,F,13.3,73.0,2.65,No,high school,82.8
+87,South High,M,,88.0,2.76,No,high school,82.0
+88,North High,M,8.8,83.0,2.17,Yes,college,79.0
+89,North High,M,8.1,92.0,2.89,No,college,78.7
+90,East Academy,M,10.2,100.0,2.46,No,high school,93.2
+91,East Academy,F,14.8,76.0,1.94,No,graduate,75.6
+92,East Academy,M,8.2,86.0,3.14,No,high school,79.8
+93,East Academy,F,10.0,88.0,2.56,Yes,high school,85.2
+94,North High,F,16.8,96.0,3.38,No,high school,100.0
+95,South High,F,3.8,86.0,2.7,No,high school,64.5
+96,North High,M,11.2,82.0,2.44,No,high school,85.9
+97,North High,F,10.8,95.0,2.44,No,college,83.4
+98,South High,M,9.7,83.0,2.54,Yes,graduate,92.3
+99,North High,F,14.0,87.0,2.45,No,graduate,84.7
+100,South High,M,18.7,95.0,1.71,No,college,88.6
+101,East Academy,M,10.0,89.0,2.71,Yes,college,97.1
+102,North High,F,9.8,100.0,3.21,No,college,93.7
+103,North High,F,12.6,98.0,4.0,No,high school,100.0
+104,North High,F,5.3,81.0,3.78,No,college,88.4
+105,North High,F,8.6,92.0,3.58,Yes,high school,90.4
+106,East Academy,M,11.3,90.0,2.98,No,high school,98.9
+107,South High,F,10.9,81.0,2.25,No,college,74.2
+108,East Academy,M,7.1,88.0,3.19,No,college,82.9
+109,North High,M,14.4,94.0,2.41,No,college,90.0
+110,East Academy,F,5.5,93.0,2.28,Yes,high school,71.7
+111,East Academy,M,7.2,95.0,3.2,Yes,college,96.7
+112,North High,M,6.0,81.0,2.83,No,college,80.0
+113,South High,M,11.6,86.0,1.93,No,high school,84.0
+114,East Academy,F,13.3,94.0,2.25,Yes,college,85.1
+115,North High,M,9.6,79.0,1.84,No,high school,75.8
+116,North High,F,14.6,82.0,3.01,No,high school,81.4
+117,North High,M,8.4,99.0,2.18,No,high school,68.5
+118,North High,M,10.4,82.0,2.38,Yes,high school,90.1
+119,South High,M,,85.0,1.39,No,high school,83.5
+120,North High,F,9.9,100.0,3.39,Yes,college,99.4
+121,South High,M,10.7,85.0,1.84,No,high school,76.2
+122,East Academy,M,6.0,88.0,2.56,No,high school,84.1
+123,North High,M,1.7,76.0,3.34,No,high school,71.4
+124,South High,F,7.9,86.0,3.45,No,college,91.6
+125,South High,M,,83.0,3.65,No,graduate,95.4
+126,South High,F,9.1,76.0,3.59,Yes,graduate,91.7
+127,North High,M,5.9,71.0,2.85,No,college,86.6
+128,South High,M,5.0,83.0,1.99,No,graduate,66.3
+129,North High,M,18.1,83.0,3.39,No,high school,95.7
+130,South High,F,13.0,90.0,4.0,No,high school,100.0
+131,North High,M,11.4,100.0,2.02,No,graduate,82.7
+132,North High,M,,90.0,2.54,No,high school,74.4
+133,East Academy,F,7.5,93.0,3.25,No,high school,79.5
+134,East Academy,M,9.5,81.0,2.94,Yes,high school,94.3
+135,North High,M,14.6,86.0,3.8,No,graduate,100.0
+136,North High,M,14.0,95.0,2.73,No,graduate,95.4
+137,North High,M,7.8,100.0,2.51,No,high school,77.5
+138,South High,M,8.1,76.0,2.93,Yes,high school,91.1
+139,East Academy,M,7.9,89.0,2.07,Yes,high school,69.4
+140,North High,M,7.2,97.0,2.32,No,graduate,75.3
+141,North High,F,13.7,85.0,3.56,No,high school,99.4
+142,North High,M,12.6,100.0,2.53,No,high school,87.6
+143,North High,F,11.3,83.0,4.0,No,graduate,87.9
+144,East Academy,F,7.6,87.0,3.42,No,college,74.0
+145,North High,M,15.0,92.0,2.05,No,college,94.5
+146,South High,F,10.1,78.0,3.52,No,high school,86.3
+147,North High,M,,83.0,3.03,No,high school,75.7
+148,East Academy,F,15.1,89.0,2.45,Yes,high school,100.0
+149,South High,M,10.9,88.0,4.0,Yes,college,97.4
+150,South High,F,7.7,100.0,3.43,No,college,88.4
+151,East Academy,F,15.3,85.0,2.13,No,high school,86.0
+152,South High,F,0.7,88.0,3.06,No,graduate,78.4
+153,North High,M,7.4,81.0,2.96,No,college,86.0
+154,East Academy,M,12.7,82.0,3.52,No,college,93.0
+155,South High,F,7.2,96.0,2.58,No,high school,74.8
+156,South High,M,18.1,97.0,2.09,No,high school,97.2
+157,North High,M,17.9,91.0,3.21,No,high school,100.0
+158,South High,M,11.2,92.0,3.64,No,college,87.3
+159,East Academy,M,10.9,83.0,2.1,No,graduate,83.9
+160,South High,M,16.9,90.0,3.06,Yes,high school,94.0
+161,South High,F,12.6,100.0,3.22,No,high school,100.0
+162,South High,M,5.9,100.0,3.37,No,high school,78.8
+163,North High,F,9.1,67.0,2.08,Yes,college,82.2
+164,South High,F,6.6,92.0,2.26,No,high school,77.0
+165,East Academy,F,12.5,100.0,3.2,No,high school,95.5
+166,East Academy,F,10.8,80.0,2.85,Yes,college,87.8
+167,North High,F,15.7,95.0,3.32,No,high school,100.0
+168,South High,M,11.1,100.0,2.88,No,high school,84.6
+169,North High,F,7.0,77.0,3.48,No,high school,85.4
+170,South High,M,5.6,89.0,2.21,No,college,74.9
+171,East Academy,F,16.1,91.0,2.22,No,high school,89.6
+172,South High,M,15.2,86.0,2.05,Yes,high school,100.0
+173,South High,F,6.8,72.0,2.75,No,graduate,82.0
+174,East Academy,F,4.2,91.0,3.57,Yes,college,80.4
+175,East Academy,F,3.8,98.0,3.17,Yes,college,98.4
+176,East Academy,F,14.1,80.0,3.26,No,college,93.3
+177,East Academy,F,8.6,77.0,2.45,Yes,high school,91.1
+178,North High,M,17.3,96.0,3.6,No,high school,100.0
+179,North High,F,8.5,79.0,3.55,Yes,high school,88.8
+180,East Academy,M,8.9,87.0,3.07,Yes,graduate,83.7
+181,East Academy,M,9.1,92.0,3.53,Yes,college,94.9
+182,East Academy,F,12.6,82.0,2.03,Yes,college,88.5
+183,North High,M,17.1,90.0,1.59,No,college,87.8
+184,North High,F,6.4,92.0,1.99,Yes,college,84.8
+185,East Academy,M,,85.0,1.77,No,college,83.5
+186,East Academy,F,15.8,68.0,2.52,Yes,college,100.0
+187,North High,F,9.6,79.0,3.76,No,graduate,92.8
+188,East Academy,F,8.6,89.0,2.22,No,college,79.7
+189,North High,F,14.6,74.0,3.17,No,graduate,86.7
+190,South High,M,7.8,73.0,1.78,No,high school,67.8
+191,East Academy,F,9.1,88.0,1.34,No,college,74.9
+192,North High,M,6.4,90.0,3.21,No,college,82.1
+193,South High,F,8.2,76.0,2.77,No,college,75.1
+194,East Academy,F,11.3,94.0,2.2,No,high school,90.0
+195,South High,F,11.7,90.0,3.73,No,college,92.2
+196,East Academy,M,9.3,75.0,2.33,Yes,high school,80.2
+197,East Academy,M,10.6,94.0,2.92,No,high school,86.0
+198,North High,M,5.0,73.0,2.91,Yes,high school,85.0
+199,North High,F,18.5,86.0,3.28,No,high school,100.0
+200,North High,F,5.9,94.0,2.86,No,college,93.8
+201,South High,F,12.2,89.0,3.28,No,graduate,100.0
+202,East Academy,M,7.0,80.0,3.2,Yes,high school,86.2
+203,South High,M,10.1,81.0,3.06,No,high school,84.5
+204,South High,F,2.0,100.0,3.05,No,college,79.1
+205,East Academy,M,7.3,80.0,3.78,Yes,graduate,82.7
+206,North High,M,5.1,98.0,3.84,No,high school,99.6
+207,East Academy,M,11.4,87.0,1.71,No,college,78.1
+208,North High,M,10.4,85.0,2.41,Yes,high school,79.3
+209,East Academy,M,6.4,86.0,2.89,Yes,college,80.4
+210,North High,F,6.1,100.0,2.61,No,college,73.8
+211,East Academy,F,11.7,79.0,2.57,Yes,college,86.6
+212,South High,F,8.0,92.0,3.62,Yes,college,92.4
+213,South High,F,12.4,89.0,4.0,No,graduate,100.0
+214,South High,M,11.1,94.0,3.58,No,college,100.0
+215,East Academy,F,8.1,74.0,2.76,No,graduate,86.3
+216,South High,F,8.9,92.0,2.36,No,high school,80.3
+217,North High,F,2.6,91.0,1.58,No,high school,59.4
+218,South High,M,9.9,86.0,1.28,No,high school,69.9
+219,South High,M,9.1,95.0,3.51,Yes,high school,89.8
+220,South High,M,9.9,71.0,2.62,No,graduate,75.9
+221,North High,M,15.8,74.0,1.91,No,college,88.0
+222,South High,M,10.6,83.0,2.05,No,high school,80.6
+223,North High,F,10.1,100.0,2.27,No,graduate,79.5
+224,South High,F,10.0,87.0,3.87,No,college,96.0
+225,South High,M,8.3,87.0,2.74,Yes,high school,96.4
+226,South High,M,15.7,99.0,2.87,Yes,graduate,100.0
+227,East Academy,M,9.9,90.0,3.39,Yes,high school,98.2
+228,East Academy,F,15.1,84.0,2.02,No,college,85.7
+229,South High,F,12.8,100.0,3.28,Yes,college,96.5
+230,East Academy,F,7.1,95.0,3.74,No,graduate,99.5
+231,East Academy,F,10.9,92.0,2.79,Yes,high school,94.8
+232,East Academy,M,14.5,84.0,2.62,No,high school,90.1
+233,South High,M,8.6,93.0,3.69,Yes,college,93.8
+234,South High,F,10.4,76.0,2.86,No,college,88.5
+235,East Academy,M,9.2,89.0,3.14,No,college,86.0
+236,East Academy,M,9.3,92.0,2.65,No,college,93.0
+237,East Academy,M,13.2,98.0,2.37,No,college,89.0
+238,North High,M,6.8,100.0,2.99,No,graduate,83.5
+239,East Academy,F,8.8,93.0,4.0,No,college,96.4
+240,East Academy,F,10.7,99.0,2.58,No,high school,95.0
+241,North High,M,0.0,84.0,1.93,No,high school,52.4
+242,South High,F,8.8,87.0,2.52,No,high school,84.2
+243,East Academy,M,10.4,91.0,2.8,Yes,high school,88.0
+244,South High,M,11.6,100.0,3.25,No,college,93.2
+245,North High,F,7.4,95.0,2.52,Yes,college,93.6
+246,East Academy,F,6.3,76.0,2.8,Yes,graduate,74.4
+247,North High,F,13.5,69.0,3.66,No,graduate,87.7
+248,South High,M,7.3,90.0,3.5,Yes,college,99.3
+249,South High,M,11.8,77.0,1.32,No,graduate,77.9
+250,East Academy,F,10.3,79.0,2.72,Yes,graduate,96.3
+251,North High,F,,93.0,1.86,No,college,74.8
+252,South High,M,8.1,89.0,1.92,No,high school,70.9
+253,South High,F,6.9,100.0,3.57,No,college,84.4
+254,South High,M,14.0,81.0,1.59,No,college,85.6
+255,East Academy,M,10.8,81.0,2.43,No,high school,86.8
+256,South High,F,3.1,94.0,4.0,No,graduate,83.2
+257,South High,M,17.4,100.0,1.68,No,high school,87.6
+258,North High,F,15.6,100.0,2.8,No,high school,95.5
+259,East Academy,M,15.1,76.0,1.82,No,high school,85.2
+260,East Academy,F,6.4,83.0,2.2,No,high school,80.0
+261,South High,M,8.0,95.0,2.98,No,high school,92.4
+262,North High,F,,96.0,2.24,No,high school,71.2
+263,South High,F,15.9,85.0,3.13,No,high school,89.0
+264,North High,F,10.4,79.0,1.47,No,high school,76.1
+265,East Academy,M,11.2,82.0,2.02,No,graduate,73.6
+266,North High,F,9.1,100.0,3.12,Yes,graduate,97.0
+267,South High,F,,93.0,3.13,No,high school,82.5
+268,East Academy,M,13.6,65.0,3.81,No,graduate,92.3
+269,North High,F,19.0,67.0,2.78,No,high school,100.0
+270,South High,F,9.0,93.0,1.86,Yes,graduate,85.5
+271,East Academy,M,6.5,79.0,2.52,Yes,college,80.2
+272,North High,M,7.4,91.0,2.33,No,graduate,69.0
+273,East Academy,M,7.6,84.0,2.65,No,college,81.1
+274,North High,F,4.2,80.0,3.77,No,college,88.6
+275,South High,M,8.0,91.0,3.2,Yes,college,82.0
+276,South High,F,8.7,78.0,2.62,No,college,86.0
+277,South High,F,4.0,95.0,2.77,No,high school,80.1
+278,North High,F,11.8,79.0,3.16,No,college,91.9
+279,East Academy,F,,79.0,3.36,No,high school,76.4
+280,North High,F,5.5,78.0,2.66,Yes,college,85.8
+281,South High,F,10.2,90.0,2.75,No,graduate,80.4
+282,North High,F,16.4,100.0,3.75,Yes,high school,100.0
+283,East Academy,F,15.7,89.0,3.76,Yes,high school,100.0
+284,East Academy,F,14.6,96.0,2.34,Yes,college,99.4
+285,North High,M,14.6,81.0,2.87,No,college,92.9
+286,North High,F,14.0,100.0,2.69,No,high school,93.8
+287,East Academy,M,13.1,81.0,3.17,No,high school,87.1
+288,South High,F,13.7,78.0,2.09,Yes,high school,88.9
+289,North High,M,18.2,95.0,2.77,No,high school,100.0
+290,South High,F,8.6,95.0,2.66,Yes,high school,92.6
+291,North High,M,13.5,100.0,3.39,Yes,graduate,100.0
+292,East Academy,F,4.7,100.0,2.68,No,college,86.9
+293,South High,F,12.8,85.0,3.3,No,college,90.4
+294,South High,F,15.8,99.0,2.87,Yes,high school,100.0
+295,North High,F,8.8,80.0,3.36,No,high school,78.2
+296,North High,M,17.1,92.0,2.93,Yes,college,100.0
+297,East Academy,F,6.4,75.0,2.82,No,high school,84.4
+298,South High,F,16.4,100.0,3.32,No,high school,100.0
+299,South High,F,9.2,93.0,3.61,No,high school,88.4
+300,South High,F,11.7,91.0,2.7,No,graduate,92.1
+301,East Academy,M,8.7,83.0,1.64,No,high school,65.5
+302,South High,F,12.8,91.0,3.0,No,graduate,79.7
+303,North High,M,,87.0,3.05,No,college,91.0
+304,North High,M,14.7,98.0,2.57,Yes,high school,94.7
+305,East Academy,M,,86.0,2.09,No,college,79.7
+306,South High,M,11.2,79.0,2.2,No,high school,83.7
+307,North High,F,9.2,94.0,2.89,No,college,91.2
+308,South High,F,11.9,90.0,3.29,No,college,86.0
+309,South High,M,8.4,88.0,3.52,No,high school,85.3
+310,South High,M,9.3,99.0,2.82,No,college,84.1
+311,North High,F,4.7,80.0,3.49,No,graduate,84.1
+312,East Academy,F,8.4,84.0,3.42,Yes,college,86.4
+313,East Academy,F,8.6,92.0,3.29,No,college,100.0
+314,South High,F,9.6,91.0,3.27,No,high school,90.3
+315,South High,M,10.4,82.0,2.85,No,high school,77.9
+316,East Academy,M,4.0,78.0,3.28,No,college,83.7
+317,South High,M,13.4,96.0,3.14,No,college,89.9
+318,North High,M,19.1,97.0,3.03,No,college,100.0
+319,North High,M,10.3,100.0,4.0,No,high school,94.6
+320,South High,F,2.4,87.0,2.82,No,high school,73.2
+321,North High,M,13.4,92.0,3.74,No,graduate,100.0
+322,East Academy,M,10.2,87.0,1.75,Yes,graduate,72.9
+323,North High,M,9.4,93.0,3.72,Yes,graduate,87.0
+324,South High,F,10.8,96.0,3.39,Yes,high school,97.8
+325,North High,F,10.3,98.0,2.69,No,college,84.9
+326,East Academy,F,9.4,100.0,2.81,Yes,college,81.3
+327,South High,F,12.5,95.0,3.72,Yes,high school,93.6
+328,East Academy,F,11.3,90.0,3.27,No,college,97.9
+329,North High,F,9.0,98.0,2.88,No,college,85.4
+330,North High,F,13.1,84.0,2.78,No,college,89.7
+331,East Academy,M,15.3,94.0,2.93,Yes,college,100.0
+332,North High,F,15.4,89.0,3.23,No,college,91.8
+333,South High,F,6.4,100.0,3.95,Yes,college,100.0
+334,South High,F,10.6,99.0,2.41,No,graduate,88.0
+335,East Academy,M,12.8,100.0,2.94,Yes,college,100.0
+336,East Academy,M,11.0,90.0,3.41,No,college,97.8
+337,East Academy,F,9.9,81.0,3.32,Yes,high school,85.5
+338,North High,M,15.0,83.0,2.51,No,high school,83.0
+339,East Academy,M,11.7,85.0,3.2,No,high school,91.3
+340,East Academy,M,12.2,91.0,1.55,No,college,92.3
+341,East Academy,M,4.4,88.0,3.23,No,high school,75.3
+342,South High,F,4.7,89.0,2.85,No,college,79.2
+343,East Academy,M,8.4,96.0,2.3,No,high school,75.3
+344,North High,F,11.1,97.0,2.72,Yes,high school,100.0
+345,East Academy,M,14.1,94.0,2.16,No,college,93.8
+346,North High,F,7.3,89.0,3.2,No,graduate,80.5
+347,South High,M,16.7,99.0,2.87,No,college,95.9
+348,East Academy,M,,84.0,2.8,Yes,high school,83.5
+349,East Academy,F,8.5,90.0,3.62,Yes,high school,91.9
+350,North High,F,13.6,85.0,2.24,No,college,85.9
+351,North High,M,16.1,92.0,2.63,Yes,college,92.2
+352,North High,F,10.7,74.0,3.26,No,high school,88.9
+353,South High,M,10.6,90.0,3.48,Yes,high school,93.7
+354,South High,F,11.5,79.0,3.79,No,high school,92.6
+355,North High,M,13.5,75.0,1.96,No,graduate,87.6
+356,East Academy,F,9.5,84.0,3.15,Yes,graduate,91.8
+357,South High,F,10.2,91.0,3.0,No,high school,95.4
+358,North High,M,11.0,86.0,3.36,No,college,84.7
+359,East Academy,M,9.8,98.0,2.78,No,college,95.1
+360,South High,F,,98.0,2.1,No,college,78.9
+361,South High,M,7.6,79.0,2.97,No,high school,85.3
+362,South High,M,2.5,73.0,2.03,No,high school,61.8
+363,East Academy,F,8.2,78.0,1.77,No,college,67.8
+364,East Academy,M,8.8,99.0,2.74,Yes,college,95.9
+365,South High,M,17.8,82.0,3.43,No,graduate,100.0
+366,East Academy,F,14.5,89.0,4.0,Yes,high school,100.0
+367,East Academy,F,11.8,100.0,2.54,Yes,high school,100.0
+368,South High,F,8.3,81.0,2.77,No,high school,72.7
+369,North High,F,5.6,84.0,2.98,Yes,high school,85.7
+370,East Academy,M,7.6,89.0,3.25,No,college,78.0
+371,South High,F,12.2,89.0,3.84,No,high school,96.1
+372,North High,F,9.6,92.0,3.43,No,high school,86.8
+373,South High,M,6.0,85.0,3.0,No,college,81.8
+374,South High,F,10.9,82.0,3.14,No,college,93.2
+375,East Academy,M,7.4,83.0,2.93,Yes,high school,85.3
+376,South High,F,11.9,78.0,2.6,No,college,95.3
+377,East Academy,M,17.7,95.0,2.88,No,college,93.1
+378,East Academy,F,13.6,89.0,1.93,No,high school,95.8
+379,South High,M,0.2,84.0,4.0,No,graduate,66.0
+380,East Academy,F,14.6,100.0,3.43,Yes,high school,100.0
+381,South High,M,8.0,80.0,3.35,No,college,78.5
+382,South High,F,11.2,79.0,3.58,Yes,high school,96.9
+383,North High,M,11.5,78.0,2.7,No,graduate,86.2
+384,East Academy,F,11.1,81.0,2.99,No,high school,81.6
+385,North High,M,3.0,92.0,3.3,No,high school,83.4
+386,East Academy,F,15.1,89.0,3.96,No,graduate,100.0
+387,North High,F,6.3,76.0,3.58,No,graduate,84.4
+388,East Academy,M,6.5,92.0,2.21,No,high school,80.4
+389,South High,M,11.1,100.0,2.73,No,high school,87.4
+390,South High,M,12.9,96.0,2.79,Yes,graduate,100.0
+391,North High,M,7.8,95.0,2.82,No,high school,87.1
+392,East Academy,F,3.8,91.0,3.69,No,high school,77.7
+393,East Academy,M,11.8,81.0,2.86,Yes,high school,86.2
+394,North High,F,9.0,100.0,2.41,No,high school,84.9
+395,East Academy,M,13.5,93.0,2.89,No,college,87.8
+396,North High,F,15.0,100.0,3.34,No,high school,92.3
+397,North High,M,5.2,96.0,2.75,Yes,graduate,81.9
+398,North High,M,5.1,100.0,3.01,No,high school,81.4
+399,South High,M,9.5,92.0,2.85,Yes,college,87.6
+400,East Academy,F,6.7,91.0,3.81,Yes,college,100.0
+401,North High,F,16.9,72.0,3.17,No,high school,90.4
+402,East Academy,F,10.6,100.0,3.68,No,high school,100.0
+403,North High,M,10.7,99.0,2.5,No,graduate,79.0
+404,North High,M,11.2,85.0,2.34,No,college,91.3
+405,South High,M,16.1,90.0,2.96,Yes,high school,98.3
+406,East Academy,M,,90.0,2.66,No,college,84.3
+407,North High,F,13.5,88.0,2.83,No,college,97.0
+408,North High,M,7.5,88.0,2.62,No,college,77.8
+409,North High,F,13.3,96.0,3.04,No,college,97.2
+410,East Academy,M,8.7,87.0,2.92,No,high school,87.2
+411,East Academy,F,8.1,93.0,2.12,No,graduate,80.1
+412,North High,M,8.0,97.0,3.05,No,high school,77.5
+413,North High,F,15.0,81.0,2.27,Yes,college,75.1
+414,South High,M,8.9,94.0,3.19,Yes,high school,89.1
+415,South High,M,11.8,91.0,3.83,No,high school,98.8
+416,East Academy,M,10.6,95.0,3.61,No,college,100.0
+417,North High,M,12.3,89.0,2.62,Yes,high school,87.0
+418,East Academy,F,7.9,82.0,1.75,No,high school,75.3
+419,East Academy,M,4.9,97.0,4.0,No,high school,78.9
+420,East Academy,F,8.9,75.0,3.21,No,high school,90.6
+421,South High,M,10.6,71.0,2.43,No,college,78.1
+422,East Academy,M,6.8,100.0,1.83,No,college,86.1
+423,East Academy,F,10.0,91.0,2.84,No,college,83.7
+424,South High,M,12.8,75.0,3.36,No,college,89.9
+425,East Academy,M,2.1,76.0,3.07,Yes,high school,85.4
+426,North High,M,,84.0,3.29,Yes,college,100.0
+427,East Academy,F,14.1,72.0,3.85,No,high school,100.0
+428,East Academy,M,11.4,97.0,2.23,No,high school,87.2
+429,East Academy,F,,70.0,2.55,No,college,83.3
+430,North High,M,2.2,77.0,2.89,No,college,66.6
+431,North High,F,10.9,82.0,3.18,Yes,college,96.7
+432,East Academy,F,11.8,86.0,2.83,No,graduate,93.3
+433,North High,M,12.2,68.0,3.06,No,college,81.6
+434,North High,M,12.0,69.0,3.12,No,college,94.7
+435,South High,F,17.6,93.0,3.34,No,high school,100.0
+436,North High,M,13.0,99.0,2.24,No,college,88.4
+437,South High,M,7.8,85.0,2.31,No,graduate,69.7
+438,North High,M,4.4,79.0,2.43,No,high school,61.8
+439,East Academy,M,6.4,99.0,2.4,No,college,75.7
+440,South High,F,8.7,100.0,4.0,No,college,93.3
+441,South High,M,,92.0,2.69,No,graduate,80.6
+442,North High,F,10.2,75.0,3.22,No,college,88.2
+443,North High,M,11.2,84.0,2.69,No,college,90.3
+444,North High,F,7.9,90.0,2.78,No,college,77.3
+445,East Academy,M,8.6,76.0,3.15,No,high school,75.6
+446,North High,M,11.7,92.0,3.72,No,graduate,86.7
+447,South High,M,9.2,88.0,3.22,No,college,79.3
+448,East Academy,F,7.5,96.0,2.45,No,college,75.9
+449,South High,M,8.3,92.0,1.85,No,college,78.4
+450,East Academy,F,12.0,100.0,2.95,No,college,91.7
+451,North High,M,8.0,100.0,2.41,Yes,college,91.4
+452,South High,M,8.9,82.0,2.54,No,college,77.9
+453,South High,F,17.4,100.0,2.75,No,graduate,97.2
+454,South High,F,9.6,93.0,2.54,No,graduate,91.1
+455,South High,F,10.9,87.0,2.67,No,graduate,88.2
+456,East Academy,F,14.5,78.0,2.52,No,high school,89.3
+457,North High,F,17.0,77.0,2.75,No,high school,100.0
+458,South High,F,12.8,89.0,3.05,No,high school,84.7
+459,South High,F,4.9,99.0,1.76,No,high school,70.1
+460,East Academy,M,19.6,82.0,1.82,No,high school,100.0
+461,North High,M,6.4,79.0,3.66,No,college,82.4
+462,East Academy,M,5.4,70.0,3.6,No,high school,79.4
+463,East Academy,M,6.8,100.0,2.8,No,high school,81.1
+464,South High,M,15.9,76.0,3.75,Yes,high school,100.0
+465,East Academy,F,9.9,83.0,3.57,No,high school,80.6
+466,South High,M,2.4,86.0,3.26,No,high school,83.1
+467,South High,M,17.5,89.0,3.67,No,college,100.0
+468,South High,M,3.8,90.0,2.15,Yes,high school,72.6
+469,North High,M,17.5,96.0,2.68,Yes,high school,100.0
+470,East Academy,F,0.0,82.0,1.87,No,high school,60.8
+471,South High,M,9.5,89.0,2.7,Yes,graduate,88.4
+472,East Academy,F,10.1,94.0,2.81,No,graduate,90.3
+473,South High,M,7.6,89.0,3.32,No,college,79.9
+474,South High,M,9.7,84.0,3.13,No,graduate,81.1
+475,South High,M,14.3,92.0,2.71,Yes,graduate,100.0
+476,East Academy,F,10.8,91.0,3.42,No,high school,83.9
+477,North High,F,12.9,82.0,2.35,No,college,84.7
+478,North High,F,10.5,86.0,2.27,Yes,college,88.5
+479,East Academy,M,10.8,87.0,3.11,Yes,college,96.8
+480,South High,F,7.7,88.0,3.24,No,college,76.8
+481,South High,F,9.8,100.0,2.51,No,high school,88.3
+482,East Academy,F,13.7,74.0,2.81,No,high school,82.5
+483,North High,M,14.5,100.0,3.38,No,high school,98.7
+484,North High,F,5.4,89.0,3.25,No,high school,72.1
+485,South High,F,7.5,96.0,1.93,No,high school,71.3
+486,East Academy,F,10.7,88.0,2.62,Yes,high school,84.8
+487,North High,M,9.5,75.0,2.09,No,college,77.0
+488,North High,F,6.8,92.0,2.61,No,college,83.4
+489,North High,M,1.8,88.0,2.74,No,college,75.1
+490,East Academy,M,11.2,100.0,3.01,Yes,high school,96.3
+491,North High,F,,68.0,4.0,No,graduate,81.3
+492,North High,F,18.3,100.0,1.85,No,college,87.9
+493,East Academy,F,14.8,74.0,1.71,No,graduate,79.4
+494,East Academy,F,11.8,76.0,2.03,No,high school,72.8
+495,East Academy,F,4.8,84.0,3.15,No,college,77.9
+496,North High,M,7.1,93.0,2.82,Yes,college,80.9
+497,South High,M,14.5,99.0,2.91,No,college,93.2
+498,East Academy,M,6.9,100.0,3.6,Yes,college,85.9
+499,East Academy,F,9.1,93.0,2.83,No,college,79.6
+500,South High,F,11.8,91.0,1.98,No,college,82.9
+501,South High,M,12.5,78.0,2.41,No,graduate,87.4
+502,South High,M,8.6,98.0,2.5,No,graduate,81.0
+503,East Academy,M,12.1,89.0,2.81,No,graduate,89.2
+504,South High,M,3.4,73.0,2.36,Yes,college,74.0
+505,South High,M,10.0,73.0,2.04,No,college,78.7
+506,East Academy,F,9.6,100.0,1.96,No,college,87.8
+507,North High,M,16.8,77.0,2.19,Yes,high school,94.8
+508,East Academy,M,11.8,87.0,3.09,No,college,97.9
+509,North High,M,1.1,75.0,2.21,No,high school,72.7
+510,North High,M,16.2,93.0,1.99,No,high school,92.1
+511,East Academy,M,21.0,80.0,3.84,No,high school,100.0
+512,North High,F,12.3,90.0,2.73,Yes,college,96.8
+513,North High,M,12.9,89.0,2.56,Yes,college,100.0
+514,East Academy,M,16.5,96.0,3.36,Yes,college,100.0
+515,South High,M,10.0,84.0,4.0,Yes,college,98.2
+516,North High,F,9.9,77.0,1.99,No,high school,71.0
+517,North High,F,11.1,98.0,3.62,No,graduate,95.9
+518,North High,F,0.0,75.0,2.88,No,graduate,68.8
+519,South High,F,7.8,89.0,2.36,Yes,graduate,87.7
+520,South High,M,12.7,89.0,3.02,No,high school,87.3
+521,East Academy,F,12.5,86.0,2.27,No,college,85.6
+522,North High,F,3.9,85.0,1.96,No,college,65.5
+523,East Academy,F,9.0,100.0,2.81,No,high school,83.0
+524,North High,M,7.8,77.0,3.72,No,college,94.4
+525,South High,M,7.1,89.0,2.4,No,high school,69.1
+526,South High,F,13.8,79.0,1.98,Yes,graduate,94.9
+527,East Academy,M,6.4,100.0,2.18,No,high school,74.6
+528,North High,M,9.1,91.0,3.6,No,high school,97.5
+529,South High,M,12.5,92.0,2.91,No,college,100.0
+530,North High,F,6.2,74.0,3.89,No,college,87.5
+531,North High,F,9.8,75.0,2.6,Yes,college,76.1
+532,East Academy,F,5.9,75.0,2.77,No,high school,75.1
+533,North High,M,9.8,83.0,1.98,Yes,graduate,94.8
+534,East Academy,F,9.4,100.0,3.4,No,graduate,80.3
+535,East Academy,M,12.4,96.0,3.25,No,college,89.5
+536,South High,M,8.0,88.0,3.86,Yes,high school,90.6
+537,East Academy,F,8.7,84.0,3.17,No,high school,92.5
+538,South High,F,3.3,84.0,2.55,No,college,72.7
+539,North High,M,7.2,95.0,1.99,Yes,high school,81.6
+540,North High,F,5.6,88.0,2.87,No,college,73.5
+541,South High,F,4.6,96.0,2.64,No,high school,74.0
+542,South High,F,8.3,91.0,1.79,Yes,college,81.7
+543,South High,F,9.7,85.0,2.03,No,graduate,71.6
+544,North High,M,9.5,90.0,2.52,No,high school,72.1
+545,East Academy,F,14.2,86.0,2.63,No,high school,88.0
+546,South High,M,7.6,80.0,2.76,No,college,82.0
+547,East Academy,F,6.8,76.0,4.0,No,high school,90.4
+548,North High,M,1.2,89.0,1.64,Yes,college,66.5
+549,North High,M,14.4,100.0,2.82,No,high school,97.2
+550,North High,F,12.7,86.0,2.23,Yes,graduate,85.7
+551,East Academy,F,12.4,100.0,3.54,No,high school,86.1
+552,East Academy,F,6.8,81.0,3.78,No,high school,92.6
+553,East Academy,M,7.4,84.0,2.48,No,graduate,81.5
+554,South High,M,7.6,100.0,3.12,No,college,98.3
+555,North High,F,4.6,87.0,3.61,No,high school,77.2
+556,East Academy,M,11.4,86.0,2.53,No,college,90.4
+557,South High,F,9.5,92.0,3.51,No,graduate,93.5
+558,South High,M,14.8,88.0,2.82,No,college,96.7
+559,North High,F,10.6,87.0,2.66,No,college,92.8
+560,North High,F,9.0,92.0,2.34,No,high school,73.3
+561,South High,F,12.5,98.0,2.43,No,high school,87.3
+562,South High,F,12.8,78.0,2.55,Yes,graduate,89.7
+563,North High,M,5.5,98.0,3.35,No,college,79.7
+564,South High,M,3.4,73.0,2.02,No,high school,54.7
+565,South High,F,5.2,90.0,2.41,Yes,high school,81.0
+566,South High,M,13.6,85.0,3.27,No,college,86.3
+567,South High,M,12.5,94.0,1.97,No,high school,95.8
+568,North High,F,15.3,100.0,3.9,No,graduate,100.0
+569,South High,F,10.2,97.0,3.42,No,high school,91.5
+570,North High,M,11.5,90.0,3.12,No,high school,85.2
+571,South High,F,8.3,89.0,1.96,No,college,73.3
+572,East Academy,F,17.8,95.0,2.27,Yes,high school,100.0
+573,East Academy,M,12.7,78.0,3.4,Yes,high school,95.1
+574,South High,F,16.2,76.0,3.37,No,graduate,96.3
+575,South High,M,11.9,83.0,3.08,No,college,92.2
+576,South High,F,,73.0,3.03,No,high school,87.7
+577,South High,M,14.0,97.0,2.38,No,high school,90.6
+578,South High,M,3.9,100.0,2.14,No,graduate,71.4
+579,South High,F,13.2,90.0,1.95,No,high school,93.4
+580,South High,M,9.5,79.0,2.96,No,high school,81.2
+581,East Academy,F,11.6,82.0,4.0,No,college,97.5
+582,South High,M,5.1,71.0,3.29,No,graduate,87.9
+583,South High,F,10.3,83.0,3.74,No,high school,76.0
+584,South High,F,7.4,100.0,3.91,Yes,college,91.6
+585,South High,M,6.5,98.0,2.8,No,college,87.1
+586,East Academy,M,15.6,95.0,2.52,No,college,98.2
+587,North High,F,12.0,96.0,3.18,Yes,graduate,94.5
+588,North High,F,8.5,78.0,2.64,Yes,college,78.9
+589,East Academy,M,7.3,83.0,2.37,No,high school,78.4
+590,South High,F,8.4,97.0,3.08,No,graduate,89.2
+591,East Academy,F,10.6,93.0,2.56,No,graduate,87.1
+592,North High,F,11.3,96.0,2.96,No,graduate,98.9
+593,East Academy,M,10.3,85.0,2.48,No,college,86.5
+594,North High,F,3.0,78.0,2.09,No,high school,56.4
+595,North High,F,10.0,99.0,2.01,No,high school,80.1
+596,East Academy,F,10.9,87.0,2.72,No,high school,89.3
+597,North High,M,12.9,77.0,3.15,No,graduate,88.4
+598,South High,F,9.8,100.0,3.37,No,high school,94.2
+599,South High,M,9.3,81.0,3.44,No,high school,91.3
+600,South High,M,10.2,85.0,3.11,No,college,86.9
+601,North High,F,7.8,100.0,2.3,No,graduate,76.5
+602,East Academy,F,18.2,94.0,3.39,Yes,high school,100.0
+603,North High,M,6.9,84.0,3.11,No,college,85.7
+604,South High,M,6.1,88.0,2.74,No,high school,90.8
+605,North High,F,11.0,81.0,2.58,No,high school,85.2
+606,East Academy,F,11.0,85.0,3.14,No,college,82.8
+607,North High,M,12.5,99.0,3.62,Yes,high school,97.8
+608,East Academy,M,9.2,63.0,3.62,No,graduate,81.6
+609,East Academy,M,,81.0,3.52,No,high school,85.2
+610,East Academy,M,6.4,94.0,2.06,Yes,high school,74.4
+611,North High,F,9.9,69.0,3.22,Yes,graduate,93.9
+612,North High,F,11.0,85.0,2.62,No,high school,80.1
+613,East Academy,F,9.7,100.0,3.15,No,graduate,83.1
+614,South High,F,5.0,100.0,2.41,No,college,84.1
+615,South High,M,4.7,83.0,3.66,Yes,college,91.2
+616,North High,F,14.3,86.0,2.68,No,graduate,87.6
+617,North High,F,10.0,93.0,2.06,Yes,college,74.1
+618,East Academy,F,9.2,72.0,3.08,No,college,82.1
+619,North High,F,17.1,75.0,3.01,No,high school,93.5
+620,South High,M,13.6,74.0,3.13,No,college,87.9
+621,North High,F,4.6,90.0,3.19,No,college,70.5
+622,South High,M,8.7,75.0,3.98,No,graduate,82.8
+623,East Academy,F,13.8,98.0,3.17,No,college,97.5
+624,North High,M,12.4,81.0,2.4,No,high school,78.4
+625,North High,M,11.2,79.0,3.51,Yes,high school,100.0
+626,South High,M,16.3,92.0,2.48,No,college,91.9
+627,North High,F,4.6,74.0,2.82,Yes,college,78.4
+628,North High,M,13.3,84.0,2.95,No,college,83.2
+629,South High,F,7.9,87.0,1.9,No,high school,86.0
+630,East Academy,M,14.9,85.0,3.62,Yes,college,100.0
+631,North High,F,9.8,100.0,2.34,No,high school,85.0
+632,South High,M,3.6,96.0,2.79,No,college,71.0
+633,East Academy,F,11.1,100.0,3.61,Yes,high school,100.0
+634,North High,F,0.0,86.0,3.76,Yes,college,78.3
+635,North High,M,14.5,73.0,2.39,No,high school,80.9
+636,East Academy,F,11.4,83.0,3.26,Yes,graduate,97.2
+637,North High,F,14.8,95.0,2.62,No,college,96.2
+638,North High,M,11.3,99.0,2.6,No,graduate,87.3
+639,North High,F,10.9,84.0,2.67,No,high school,98.0
+640,South High,F,16.0,77.0,3.45,No,high school,100.0
+641,South High,M,13.4,83.0,3.75,No,graduate,100.0
+642,East Academy,F,,71.0,1.37,Yes,college,72.4
+643,North High,F,8.1,86.0,2.78,No,college,72.1
+644,South High,M,16.2,76.0,3.41,No,college,100.0
+645,East Academy,M,5.4,72.0,2.66,No,college,72.3
+646,North High,F,5.1,69.0,2.73,Yes,graduate,71.5
+647,North High,F,6.8,98.0,3.46,No,college,90.6
+648,South High,M,4.1,80.0,4.0,No,college,82.7
+649,South High,F,10.5,91.0,2.42,Yes,college,95.1
+650,East Academy,F,9.2,93.0,3.0,No,high school,90.6
+651,South High,M,14.0,91.0,2.8,No,high school,100.0
+652,East Academy,M,8.8,86.0,2.24,No,college,80.3
+653,North High,F,16.4,65.0,2.55,No,college,92.5
+654,North High,M,8.8,75.0,2.96,No,college,81.1
+655,South High,F,13.6,73.0,2.85,No,college,86.8
+656,South High,F,14.7,95.0,3.2,No,graduate,93.0
+657,North High,M,11.5,94.0,3.14,No,high school,89.7
+658,East Academy,F,,90.0,2.28,No,college,77.8
+659,East Academy,M,4.6,83.0,2.71,No,graduate,79.3
+660,North High,F,5.5,97.0,1.95,No,college,69.5
+661,East Academy,F,12.1,91.0,2.93,No,graduate,91.2
+662,North High,F,8.3,95.0,2.77,No,high school,77.0
+663,East Academy,F,12.3,84.0,3.99,No,college,98.5
+664,East Academy,M,7.1,84.0,3.2,No,high school,83.4
+665,North High,F,9.9,82.0,3.47,No,high school,91.3
+666,South High,M,10.1,82.0,2.53,Yes,graduate,88.8
+667,South High,F,12.8,74.0,2.88,No,college,91.0
+668,East Academy,F,8.4,79.0,2.47,Yes,high school,74.0
+669,South High,F,12.7,78.0,4.0,No,graduate,95.8
+670,East Academy,M,3.3,100.0,3.09,No,high school,86.7
+671,East Academy,F,4.7,96.0,3.32,No,graduate,79.6
+672,East Academy,F,10.2,95.0,2.51,No,high school,80.5
+673,South High,M,9.2,78.0,2.69,No,graduate,81.8
+674,East Academy,M,11.7,84.0,2.72,No,college,88.8
+675,North High,F,3.4,95.0,2.26,No,high school,72.1
+676,North High,M,11.0,86.0,2.37,No,college,78.9
+677,East Academy,F,3.1,79.0,3.54,Yes,college,86.6
+678,South High,F,15.1,91.0,3.65,No,high school,96.3
+679,South High,M,,95.0,2.73,No,graduate,93.9
+680,North High,M,8.0,100.0,1.61,No,college,83.1
+681,North High,M,12.1,93.0,3.02,Yes,college,98.9
+682,North High,M,11.4,82.0,3.17,No,college,89.3
+683,South High,M,7.7,93.0,3.63,Yes,college,99.4
+684,North High,M,9.2,91.0,2.51,No,high school,88.4
+685,South High,F,16.7,67.0,2.8,No,college,89.8
+686,South High,M,6.2,98.0,2.89,No,college,86.3
+687,South High,F,16.1,94.0,2.68,No,graduate,100.0
+688,North High,M,7.8,90.0,2.44,Yes,high school,72.4
+689,North High,F,5.2,100.0,2.76,Yes,high school,74.2
+690,South High,M,15.2,93.0,2.71,No,high school,85.5
+691,South High,M,12.6,98.0,2.26,No,high school,91.7
+692,East Academy,M,10.5,95.0,2.0,Yes,graduate,81.9
+693,South High,F,14.2,79.0,2.9,No,college,92.7
+694,South High,M,9.6,86.0,3.37,No,college,78.7
+695,South High,M,8.4,88.0,1.41,No,high school,72.4
+696,North High,M,,87.0,1.51,Yes,high school,86.2
+697,East Academy,F,11.5,100.0,2.4,No,high school,69.6
+698,North High,M,7.7,72.0,2.03,No,college,71.2
+699,North High,M,15.4,88.0,2.34,No,college,90.5
+700,East Academy,M,12.2,74.0,3.48,No,graduate,96.6
+701,East Academy,F,17.0,100.0,2.35,No,graduate,100.0
+702,North High,F,24.3,95.0,3.27,No,high school,100.0
+703,North High,M,5.5,97.0,2.33,No,college,80.7
+704,North High,M,12.8,72.0,3.56,No,graduate,88.3
+705,South High,M,12.1,89.0,3.16,No,high school,96.4
+706,East Academy,M,5.9,90.0,3.5,No,college,77.4
+707,South High,F,12.7,73.0,2.19,Yes,college,78.8
+708,East Academy,F,0.4,100.0,3.57,Yes,college,72.5
+709,East Academy,M,5.7,100.0,2.94,No,high school,76.8
+710,South High,M,13.6,82.0,2.59,No,college,88.0
+711,North High,M,4.8,91.0,2.63,No,high school,81.3
+712,North High,M,7.6,74.0,3.05,No,high school,91.2
+713,East Academy,M,9.9,83.0,2.78,No,college,79.0
+714,North High,M,5.0,94.0,2.94,No,graduate,81.7
+715,North High,M,,88.0,2.91,No,college,84.1
+716,East Academy,M,11.5,97.0,2.08,No,college,92.5
+717,North High,F,10.4,83.0,3.1,No,college,85.7
+718,East Academy,F,9.1,94.0,3.01,No,high school,89.6
+719,North High,M,15.3,64.0,3.23,No,college,94.1
+720,North High,F,9.2,73.0,3.14,No,high school,82.6
+721,North High,M,13.1,83.0,3.18,Yes,graduate,99.8
+722,East Academy,M,10.4,82.0,2.44,No,high school,85.1
+723,North High,F,4.6,100.0,3.08,No,high school,86.9
+724,North High,M,6.3,97.0,2.35,Yes,high school,83.7
+725,South High,F,12.2,85.0,2.5,Yes,college,84.2
+726,East Academy,M,4.4,79.0,3.13,No,college,72.0
+727,North High,M,10.9,78.0,3.39,No,high school,81.5
+728,South High,F,12.7,83.0,3.15,Yes,graduate,100.0
+729,East Academy,F,5.7,84.0,4.0,No,graduate,88.2
+730,South High,M,2.8,90.0,3.49,Yes,graduate,80.7
+731,North High,M,,81.0,3.51,No,college,97.0
+732,East Academy,F,17.0,75.0,2.93,No,college,87.8
+733,East Academy,F,11.0,86.0,2.3,No,high school,82.4
+734,East Academy,F,16.9,93.0,3.29,No,graduate,100.0
+735,North High,F,12.5,86.0,2.09,No,high school,78.3
+736,North High,M,7.9,91.0,3.35,No,college,74.3
+737,North High,F,10.7,79.0,2.36,No,college,73.4
+738,North High,M,12.8,96.0,3.35,No,college,99.5
+739,North High,M,0.0,91.0,3.19,No,high school,69.6
+740,East Academy,F,11.2,100.0,3.07,Yes,college,93.5
+741,South High,F,15.1,87.0,3.39,No,college,100.0
+742,East Academy,M,13.0,99.0,3.38,No,graduate,100.0
+743,East Academy,F,8.7,82.0,2.4,No,high school,73.9
+744,East Academy,F,8.9,93.0,3.49,Yes,graduate,99.4
+745,South High,F,2.6,82.0,3.18,No,high school,80.9
+746,North High,F,,75.0,2.94,No,college,93.2
+747,North High,F,1.2,83.0,3.3,Yes,college,77.0
+748,South High,F,13.2,80.0,2.8,No,high school,93.4
+749,North High,F,11.6,88.0,3.66,No,graduate,99.3
+750,North High,M,8.4,89.0,3.55,No,high school,82.8
+751,North High,M,12.1,84.0,3.06,No,graduate,86.3
+752,South High,M,13.9,70.0,2.19,Yes,high school,97.0
+753,East Academy,F,8.0,93.0,2.88,No,high school,85.1
+754,North High,F,4.6,94.0,2.93,Yes,graduate,80.5
+755,North High,M,13.7,75.0,3.16,Yes,high school,94.5
+756,East Academy,M,9.7,83.0,3.37,No,high school,78.6
+757,South High,M,11.1,98.0,3.07,No,college,88.2
+758,North High,M,5.7,87.0,4.0,No,college,85.8
+759,North High,M,15.7,83.0,3.58,No,college,100.0
+760,North High,F,13.6,100.0,2.04,Yes,high school,100.0
+761,North High,M,4.7,87.0,2.75,No,high school,74.7
+762,North High,F,2.6,94.0,3.81,Yes,college,82.4
+763,East Academy,M,11.0,92.0,3.32,No,high school,100.0
+764,East Academy,M,9.3,87.0,3.23,No,college,93.2
+765,East Academy,F,7.4,83.0,2.49,No,graduate,76.0
+766,South High,F,7.1,81.0,2.61,Yes,graduate,83.5
+767,East Academy,M,9.6,91.0,3.16,No,college,89.4
+768,North High,M,10.6,88.0,3.09,Yes,high school,85.1
+769,East Academy,M,10.7,88.0,1.62,No,college,83.7
+770,North High,M,16.8,72.0,3.45,No,high school,95.0
+771,North High,F,16.3,82.0,3.56,Yes,high school,96.7
+772,South High,F,0.9,76.0,3.13,No,college,75.7
+773,North High,F,13.6,92.0,2.1,Yes,college,93.2
+774,South High,M,15.6,78.0,3.16,Yes,high school,100.0
+775,East Academy,M,3.6,77.0,3.04,No,high school,60.6
+776,South High,M,7.5,78.0,2.36,No,college,89.9
+777,North High,M,8.2,94.0,3.09,No,high school,80.6
+778,South High,M,13.1,92.0,1.01,No,high school,72.9
+779,South High,F,11.7,89.0,3.32,No,college,87.6
+780,East Academy,M,11.3,89.0,3.19,No,college,84.5
+781,South High,M,10.9,82.0,2.47,No,college,81.6
+782,East Academy,F,13.9,80.0,2.98,No,college,93.8
+783,North High,F,,84.0,2.99,No,graduate,89.9
+784,South High,F,6.2,86.0,2.72,Yes,high school,78.5
+785,North High,M,6.2,84.0,3.85,No,college,84.7
+786,North High,F,7.5,100.0,3.87,No,high school,91.8
+787,East Academy,M,,95.0,2.51,No,graduate,100.0
+788,East Academy,M,11.6,99.0,3.32,No,high school,92.0
+789,North High,M,13.1,90.0,3.76,No,high school,100.0
+790,South High,M,17.0,86.0,4.0,No,high school,100.0
+791,South High,F,11.7,73.0,3.38,No,college,100.0
+792,South High,M,2.2,79.0,3.5,No,graduate,88.1
+793,North High,F,11.4,94.0,3.98,Yes,college,100.0
+794,South High,M,7.8,94.0,4.0,Yes,high school,100.0
+795,South High,F,8.0,93.0,3.35,No,college,88.8
+796,East Academy,M,7.3,89.0,2.31,Yes,high school,83.8
+797,South High,M,9.6,100.0,2.74,No,high school,88.5
+798,East Academy,M,5.2,89.0,3.51,Yes,high school,97.9
+799,North High,M,14.0,92.0,3.18,No,college,100.0
+800,East Academy,F,12.7,100.0,2.08,No,high school,92.1
+801,South High,M,11.9,80.0,2.72,No,high school,85.3
+802,North High,F,11.7,78.0,3.81,Yes,high school,99.0
+803,North High,F,5.9,90.0,2.97,No,high school,80.5
+804,North High,F,13.6,96.0,2.34,No,high school,92.2
+805,East Academy,F,6.2,70.0,3.66,No,college,78.2
+806,South High,M,3.6,95.0,2.74,Yes,high school,82.2
+807,North High,F,8.8,95.0,2.23,No,graduate,70.8
+808,North High,M,10.7,100.0,2.66,No,high school,86.6
+809,South High,F,10.9,100.0,3.3,No,college,89.7
+810,East Academy,F,14.5,75.0,2.63,No,high school,89.1
+811,North High,F,8.6,78.0,2.53,No,high school,79.5
+812,North High,F,15.1,74.0,2.96,No,college,83.1
+813,South High,M,16.5,92.0,3.59,No,college,97.9
+814,North High,F,,66.0,2.96,No,high school,90.1
+815,East Academy,M,6.1,94.0,3.39,No,college,82.9
+816,East Academy,M,15.7,92.0,2.65,No,college,95.3
+817,East Academy,F,10.4,80.0,2.21,No,graduate,74.0
+818,North High,F,10.9,83.0,3.44,Yes,college,89.6
+819,East Academy,F,4.5,78.0,2.95,No,graduate,78.3
+820,East Academy,M,2.9,77.0,2.48,No,graduate,69.4
+821,North High,M,16.6,86.0,2.31,No,high school,95.6
+822,South High,M,13.5,95.0,3.73,No,graduate,96.6
+823,South High,F,7.2,100.0,2.54,No,graduate,78.6
+824,East Academy,F,8.5,100.0,2.65,No,high school,77.4
+825,South High,F,5.4,77.0,3.43,No,college,79.5
+826,East Academy,F,10.2,68.0,2.28,No,graduate,76.4
+827,South High,F,2.0,90.0,3.71,Yes,college,89.9
+828,South High,M,13.5,92.0,2.32,No,graduate,84.2
+829,South High,M,11.9,80.0,3.24,No,high school,81.4
+830,North High,M,14.7,97.0,3.03,No,college,96.6
+831,East Academy,M,10.6,100.0,2.35,Yes,college,85.6
+832,East Academy,M,12.8,78.0,3.05,No,college,94.5
+833,South High,M,12.0,82.0,2.57,Yes,high school,89.0
+834,North High,F,12.3,85.0,3.13,Yes,college,91.8
+835,North High,M,7.9,76.0,3.17,No,high school,84.2
+836,North High,M,14.7,95.0,2.28,Yes,high school,98.9
+837,East Academy,M,4.9,82.0,3.12,Yes,college,84.5
+838,North High,M,8.0,100.0,3.29,Yes,high school,93.1
+839,South High,F,9.9,100.0,3.34,Yes,graduate,92.1
+840,South High,M,19.4,79.0,3.0,No,graduate,95.1
+841,North High,F,6.2,79.0,2.46,Yes,high school,70.5
+842,North High,F,11.3,88.0,2.44,No,high school,86.6
+843,South High,M,11.8,100.0,3.69,No,high school,100.0
+844,South High,F,3.5,87.0,3.42,No,graduate,86.8
+845,East Academy,M,19.9,100.0,2.39,Yes,college,100.0
+846,South High,M,14.4,93.0,2.96,No,graduate,84.9
+847,East Academy,F,11.4,90.0,2.24,No,high school,83.1
+848,East Academy,F,9.3,98.0,3.28,No,graduate,96.4
+849,East Academy,F,13.3,100.0,2.21,No,graduate,86.0
+850,South High,M,0.9,84.0,2.19,Yes,graduate,62.7
+851,South High,F,16.7,92.0,4.0,Yes,college,100.0
+852,North High,F,8.8,85.0,2.04,No,college,77.9
+853,North High,M,,78.0,1.78,No,high school,84.0
+854,East Academy,F,6.0,99.0,2.71,Yes,college,80.4
+855,North High,F,7.6,76.0,2.68,No,graduate,63.8
+856,North High,F,,87.0,2.68,No,college,71.2
+857,South High,M,8.9,100.0,3.62,No,college,94.7
+858,South High,F,,100.0,3.59,No,college,100.0
+859,East Academy,F,7.2,84.0,3.25,No,college,74.8
+860,North High,M,16.3,91.0,2.7,No,high school,94.1
+861,East Academy,M,9.4,82.0,1.77,Yes,college,78.1
+862,South High,M,9.5,76.0,3.34,No,college,91.0
+863,South High,M,6.1,83.0,3.04,No,high school,84.4
+864,North High,F,12.3,84.0,2.94,No,high school,83.4
+865,East Academy,M,8.0,100.0,2.15,No,high school,88.4
+866,East Academy,F,,93.0,2.82,No,high school,96.3
+867,East Academy,M,5.9,84.0,3.68,No,college,87.6
+868,East Academy,M,14.6,92.0,4.0,No,graduate,100.0
+869,South High,M,,93.0,2.7,No,high school,96.7
+870,North High,M,8.8,100.0,3.17,No,college,87.4
+871,South High,F,11.6,87.0,3.3,No,high school,92.1
+872,North High,F,7.5,94.0,2.58,No,graduate,73.8
+873,North High,F,13.9,100.0,3.58,No,graduate,98.4
+874,South High,M,13.8,99.0,3.8,No,college,100.0
+875,North High,M,,94.0,2.3,Yes,college,80.5
+876,South High,F,12.5,80.0,4.0,Yes,graduate,100.0
+877,East Academy,F,2.8,96.0,3.28,No,college,77.3
+878,South High,F,9.6,79.0,4.0,No,high school,93.6
+879,East Academy,F,5.9,75.0,4.0,No,college,77.5
+880,North High,M,10.9,90.0,3.38,Yes,college,100.0
+881,South High,M,11.0,91.0,2.76,No,college,75.6
+882,East Academy,M,4.7,91.0,2.97,No,high school,83.9
+883,South High,M,5.5,86.0,3.15,Yes,high school,79.5
+884,North High,F,8.0,76.0,3.68,No,graduate,90.8
+885,North High,M,8.7,89.0,2.56,No,high school,84.3
+886,North High,F,8.9,99.0,3.14,No,high school,80.7
+887,South High,M,10.5,100.0,3.69,No,high school,92.8
+888,East Academy,F,8.2,100.0,2.07,Yes,college,83.5
+889,South High,F,18.0,84.0,3.52,No,high school,100.0
+890,North High,F,11.8,86.0,2.84,Yes,college,100.0
+891,East Academy,M,7.5,72.0,2.41,No,high school,78.2
+892,North High,M,15.0,99.0,2.88,No,high school,86.9
+893,East Academy,F,12.7,89.0,2.07,No,graduate,88.5
+894,East Academy,M,14.8,100.0,3.86,Yes,high school,100.0
+895,East Academy,M,14.8,87.0,2.44,Yes,graduate,100.0
+896,North High,F,5.9,86.0,2.21,No,high school,73.5
+897,East Academy,M,8.7,98.0,2.69,Yes,college,93.5
+898,East Academy,F,9.7,90.0,2.9,No,college,91.9
+899,South High,M,4.1,76.0,2.5,No,college,66.9
+900,North High,F,,100.0,3.82,No,college,99.6
+901,North High,F,7.2,100.0,3.59,Yes,high school,95.5
+902,North High,M,12.9,86.0,2.37,No,high school,74.7
+903,East Academy,F,13.2,75.0,1.64,No,graduate,80.6
+904,East Academy,F,8.6,95.0,3.89,No,graduate,100.0
+905,North High,F,2.6,84.0,2.64,No,high school,59.1
+906,South High,M,12.9,93.0,2.33,Yes,high school,82.8
+907,South High,F,7.1,84.0,4.0,No,college,82.1
+908,South High,F,12.6,85.0,2.95,No,college,79.0
+909,East Academy,F,2.4,81.0,2.3,No,college,65.5
+910,East Academy,F,16.0,84.0,2.36,Yes,graduate,96.2
+911,North High,M,11.0,77.0,4.0,No,high school,92.5
+912,North High,F,13.3,87.0,3.72,No,high school,93.3
+913,South High,F,10.9,75.0,2.93,No,high school,82.2
+914,North High,M,15.9,91.0,3.41,Yes,college,100.0
+915,South High,M,16.9,100.0,2.83,Yes,high school,97.2
+916,North High,F,,86.0,2.8,Yes,college,84.4
+917,East Academy,M,8.9,81.0,3.34,Yes,college,91.2
+918,North High,M,12.6,70.0,3.03,No,college,83.4
+919,North High,M,13.8,90.0,3.34,No,graduate,97.1
+920,North High,M,2.0,97.0,3.44,No,high school,86.2
+921,North High,M,11.4,77.0,3.61,Yes,high school,95.8
+922,East Academy,M,4.8,100.0,2.02,Yes,high school,79.7
+923,South High,F,15.4,81.0,1.96,No,college,85.3
+924,South High,M,12.1,96.0,2.8,No,high school,86.2
+925,East Academy,F,6.8,77.0,1.84,Yes,high school,79.4
+926,East Academy,F,7.0,89.0,2.9,No,high school,71.7
+927,East Academy,F,17.2,99.0,3.04,No,high school,100.0
+928,North High,M,18.1,86.0,3.02,Yes,college,99.3
+929,East Academy,M,10.4,84.0,3.7,No,graduate,96.4
+930,South High,M,8.9,81.0,2.15,Yes,college,84.9
+931,East Academy,F,13.2,91.0,1.98,No,high school,87.0
+932,East Academy,M,6.7,73.0,3.18,No,high school,75.3
+933,South High,F,10.3,81.0,2.55,Yes,college,78.4
+934,South High,M,12.3,78.0,2.93,No,high school,93.4
+935,East Academy,M,12.4,83.0,3.57,No,high school,100.0
+936,East Academy,M,,95.0,3.32,No,high school,100.0
+937,North High,M,9.9,77.0,2.76,No,college,76.4
+938,East Academy,M,9.6,75.0,4.0,No,high school,94.6
+939,East Academy,M,5.4,88.0,2.23,No,college,58.2
+940,East Academy,F,2.9,83.0,2.87,Yes,graduate,69.7
+941,East Academy,M,12.3,77.0,2.19,No,graduate,75.9
+942,North High,M,9.7,86.0,2.98,No,high school,86.7
+943,North High,M,16.5,63.0,3.06,No,college,87.4
+944,East Academy,M,12.8,85.0,2.32,No,college,87.2
+945,North High,F,3.9,93.0,3.75,No,college,91.9
+946,North High,F,14.1,90.0,3.42,Yes,high school,89.6
+947,North High,M,7.1,92.0,3.3,Yes,high school,93.9
+948,North High,M,9.2,86.0,3.55,No,college,90.6
+949,North High,F,7.6,85.0,4.0,No,college,88.7
+950,North High,F,2.3,90.0,2.75,No,high school,74.1
+951,South High,F,16.4,77.0,2.1,No,high school,90.0
+952,East Academy,M,9.6,88.0,2.56,No,high school,89.5
+953,North High,F,11.7,78.0,2.11,No,high school,84.1
+954,North High,F,8.4,90.0,3.5,No,high school,81.8
+955,East Academy,F,6.2,85.0,2.38,Yes,high school,65.8
+956,East Academy,F,7.6,89.0,3.21,No,college,88.8
+957,North High,M,17.0,80.0,2.32,No,college,100.0
+958,South High,F,7.8,78.0,3.05,No,college,84.4
+959,North High,F,5.5,96.0,1.96,No,high school,67.5
+960,North High,M,18.2,100.0,3.11,No,college,94.2
+961,South High,M,8.7,81.0,2.87,No,college,82.2
+962,East Academy,F,7.1,81.0,2.54,No,college,82.8
+963,East Academy,M,14.6,90.0,3.52,No,high school,96.8
+964,North High,M,6.9,91.0,2.84,No,high school,73.8
+965,South High,F,11.7,100.0,2.68,No,college,94.4
+966,East Academy,M,10.0,86.0,3.32,Yes,college,97.0
+967,South High,M,6.6,97.0,3.28,No,high school,86.0
+968,South High,M,4.9,81.0,2.85,Yes,college,80.8
+969,North High,M,15.3,71.0,4.0,No,college,96.4
+970,South High,F,13.8,90.0,3.54,No,high school,100.0
+971,North High,M,18.0,77.0,3.44,Yes,high school,96.9
+972,East Academy,F,10.7,94.0,3.1,Yes,high school,98.8
+973,North High,M,9.8,100.0,2.49,No,college,90.4
+974,South High,M,11.4,73.0,3.74,No,high school,84.9
+975,South High,M,12.5,87.0,2.54,No,college,80.5
+976,East Academy,F,15.2,97.0,3.3,No,high school,95.0
+977,North High,M,2.6,80.0,3.01,No,graduate,78.2
+978,North High,F,14.3,99.0,2.93,No,college,85.5
+979,South High,F,9.0,87.0,2.27,No,high school,72.3
+980,South High,M,11.5,89.0,3.63,Yes,college,100.0
+981,North High,M,7.3,79.0,4.0,No,high school,89.0
+982,East Academy,M,10.5,81.0,2.94,Yes,graduate,92.2
+983,South High,M,17.4,92.0,2.52,Yes,graduate,95.7
+984,North High,F,2.3,95.0,2.8,No,college,72.9
+985,East Academy,M,12.1,95.0,3.21,No,college,100.0
+986,East Academy,M,10.5,89.0,2.99,No,college,84.9
+987,East Academy,M,9.1,79.0,3.97,No,graduate,92.8
+988,East Academy,M,10.3,93.0,2.95,No,high school,84.7
+989,East Academy,M,12.1,100.0,2.86,No,college,87.4
+990,South High,F,8.7,88.0,3.62,No,college,78.3
+991,North High,M,10.1,92.0,1.8,Yes,high school,75.6
+992,East Academy,F,9.7,96.0,2.34,No,college,81.2
+993,South High,F,11.2,80.0,2.2,Yes,graduate,91.7
+994,South High,M,9.0,78.0,2.85,No,college,82.6
+995,East Academy,F,9.9,91.0,2.33,No,high school,79.4
+996,North High,M,13.6,73.0,2.83,No,high school,81.2
+997,East Academy,F,12.0,93.0,2.36,Yes,graduate,93.0
+998,South High,F,15.7,100.0,4.0,No,graduate,100.0
+999,North High,F,8.8,95.0,2.84,Yes,high school,89.4
+1000,South High,F,2.6,85.0,2.49,No,high school,73.0

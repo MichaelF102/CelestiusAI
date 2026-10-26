@@ -1,4 +1,4 @@
-"""Data models package for AI Data Analyst Agent."""
+"""Data models package for CelestiusAI."""
 
 from src.models.common import (
     AnalysisFinding,

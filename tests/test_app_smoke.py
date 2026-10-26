@@ -53,7 +53,7 @@ def test_page_files_syntax():
         "3_Exploration_Studio.py",
         "4_Statistical_Intelligence.py",
         "5_AI_Analyst.py",
-        "6_Predictive_Lab.py",
+        "6_Model_Lab.py",
         "7_Intelligence_Reports.py",
     ]
 
@@ -121,7 +121,7 @@ def test_streamlit_app_smoke():
             "pages/3_Exploration_Studio.py",
             "pages/4_Statistical_Intelligence.py",
             "pages/5_AI_Analyst.py",
-            "pages/6_Predictive_Lab.py",
+            "pages/6_Model_Lab.py",
             "pages/7_Intelligence_Reports.py",
         ]
         for page in pages:

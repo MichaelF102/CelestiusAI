@@ -9,7 +9,7 @@ def test_default_settings():
     """Verify default values when no environment variables are set."""
     settings = load_settings_from_env()
 
-    assert settings.app_name == "AI Data Analyst Agent"
+    assert settings.app_name == "CelestiusAI"
     assert settings.app_env == "development"
     assert settings.log_level == "INFO"
     assert settings.max_upload_size_mb == 100

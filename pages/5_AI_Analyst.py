@@ -17,7 +17,11 @@ from src.agent.orchestration import (
 from src.agent.provider_factory import ProviderFactory
 from src.config.settings import get_settings
 from src.core.session_state import (
+    KEY_ANALYST_PREFILL,
     KEY_CURRENT_DATASET,
+    KEY_DATA_DICTIONARY,
+    KEY_LLM_OVERRIDE,
+    KEY_PRIVACY_REDACT,
     init_session_state,
     is_dataset_loaded,
 )
@@ -26,6 +30,7 @@ from src.core.ui_components import (
     render_page_header,
     render_sidebar_status,
 )
+from src.datascience.dictionary import context_for_llm
 from src.ingestion.loader import ManagedDataset
 from src.ingestion.schema import infer_dataset_schema
 
@@ -51,6 +56,15 @@ if "pending_plan_state" not in st.session_state:
     st.session_state.pending_plan_state = None
 
 service: AnalystService = st.session_state.analyst_service
+
+# Settings page overrides, privacy redaction, and the user's data dictionary
+_override = st.session_state.get(KEY_LLM_OVERRIDE)
+_signature = repr(sorted((_override or {}).items()))
+if _override and st.session_state.get("_llm_signature") != _signature:
+    service.set_provider(ProviderFactory.from_override(_override, settings))
+    st.session_state["_llm_signature"] = _signature
+service.redact_pii = st.session_state.get(KEY_PRIVACY_REDACT, True)
+service.business_context = context_for_llm(st.session_state.get(KEY_DATA_DICTIONARY) or {})
 orchestrator = InvestigationOrchestrator(
     llm_provider=service.provider,
     tool_registry=service.tool_registry,
@@ -59,7 +73,6 @@ orchestrator = InvestigationOrchestrator(
 render_page_header(
     title="🤖 AI Analyst Workspace",
     subtitle="Evidence-grounded analytical investigations powered by deterministic calculations & agentic orchestration.",
-    badge="Phase 5 & 6 • Agentic Investigation Engine",
 )
 
 # -----------------------------------------------------------------------------
@@ -115,7 +128,7 @@ with st.expander(
 # -----------------------------------------------------------------------------
 if not is_dataset_loaded(st.session_state):
     render_empty_state_banner("AI Analyst Workspace", phase_label="Phase 5 & 6")
-    st.page_link("app.py", label="← Ingest Dataset", icon="📥")
+    st.page_link("pages/1_Executive_Overview.py", label="← Upload a Dataset", icon="📥")
     st.stop()
 
 dataset_obj = st.session_state.get(KEY_CURRENT_DATASET)
@@ -172,22 +185,28 @@ example_questions = [
     "Could missing values or outliers be distorting the observed patterns?",
 ]
 
+_NO_EXAMPLE = "-- Select an example or type your own below --"
 selected_example = st.selectbox(
     "💡 Pick an example analytical question:",
-    ["-- Select an example or type your own below --"] + example_questions,
+    [_NO_EXAMPLE] + example_questions,
 )
 
-q_default = (
-    selected_example if selected_example != "-- Select an example or type your own below --" else ""
-)
+# Seed the question box from an example pick or a question handed over by another page.
+if selected_example != st.session_state.get("_ai_prev_example"):
+    st.session_state["_ai_prev_example"] = selected_example
+    if selected_example != _NO_EXAMPLE:
+        st.session_state["ai_question_input"] = selected_example
+prefill = st.session_state.pop(KEY_ANALYST_PREFILL, None)
+if prefill:
+    st.session_state["ai_question_input"] = prefill
 
 col_q, col_btn = st.columns([5, 1])
 with col_q:
     user_query = st.text_input(
         "Enter your question for the AI Analyst:",
-        value=q_default,
         placeholder="e.g. Why did revenue decline and which segments contributed most?",
         label_visibility="collapsed",
+        key="ai_question_input",
     )
 
 with col_btn:

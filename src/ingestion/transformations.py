@@ -193,6 +193,8 @@ def apply_transformation(
         upper_bound = float(clean_num.quantile(upper_q))
 
         capped_series = clean_num.clip(lower=lower_bound, upper=upper_bound)
+        if pd.api.types.is_integer_dtype(target_df[col]):
+            target_df[col] = target_df[col].astype(float)
         cells_modified = int((clean_num != capped_series).sum())
         target_df.loc[clean_num.index, col] = capped_series
         summary = (

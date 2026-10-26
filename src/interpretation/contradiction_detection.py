@@ -57,11 +57,12 @@ class ContradictionDetector:
         if has_correlation_only:
             for phrase in CAUSAL_PHRASES:
                 if re.search(phrase, all_text):
+                    phrase_label = phrase.strip(r"\b")
                     flags.append(
                         ContradictionFlag(
                             severity="warning",
                             description=(
-                                f"Detected potential correlation-to-causation fallacy (phrase: '{phrase.strip(r'\b')}'). "
+                                f"Detected potential correlation-to-causation fallacy (phrase: '{phrase_label}'). "
                                 "Observational data and regression models establish conditional associations, not proven causality."
                             ),
                             conflicting_claim=f"Text matching pattern: {phrase}",

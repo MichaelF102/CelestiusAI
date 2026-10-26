@@ -36,6 +36,7 @@ from src.interpretation.interpretation_models import (
     EvidencePack,
     TraceMetadata,
 )
+from src.security.privacy import redact_text
 
 logger = logging.getLogger(__name__)
 
@@ -54,6 +55,9 @@ class AnalystService:
         self.context_builder = AnalyticalContextBuilder()
         self.claim_validator = ClaimValidator()
         self.contradiction_detector = ContradictionDetector()
+        self.redact_pii = True  # scrub emails/phones/etc. from prompts sent to an LLM
+        self.business_context = ""  # optional user-provided data dictionary text
+        self.last_redactions: dict[str, int] = {}
 
     def set_provider(self, provider: LLMProvider) -> None:
         """Dynamically update provider (useful in UI model selection or tests)."""
@@ -167,6 +171,8 @@ class AnalystService:
 
         # 5. Build prompts
         conv_context = self.context_builder.build_conversation_context(dataset_version)
+        if self.business_context:
+            conv_context += f"\n\nBusiness context supplied by the user (data dictionary):\n{self.business_context}"
         evidence_text = evidence_pack.summary_for_prompt()
         tool_defs_str = "\n".join(
             f"- {t.name}: {t.description}" for t in self.tool_registry.get_tool_definitions()
@@ -179,7 +185,9 @@ class AnalystService:
             available_tools=tool_defs_str,
         )
 
-        # 6. Request interpretation from LLM
+        # 6. Request interpretation from LLM (after optional PII redaction)
+        if self.redact_pii:
+            user_prompt, self.last_redactions = redact_text(user_prompt)
         parsed_response, llm_result = self.provider.generate_structured(
             prompt=user_prompt,
             response_model=AnalystResponse,

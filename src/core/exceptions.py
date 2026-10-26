@@ -2,7 +2,7 @@
 
 
 class DataAnalystError(Exception):
-    """Base exception for all AI Data Analyst Agent application errors."""
+    """Base exception for all CelestiusAI application errors."""
 
     def __init__(self, message: str, user_message: str | None = None) -> None:
         super().__init__(message)

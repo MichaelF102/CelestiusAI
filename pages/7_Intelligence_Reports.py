@@ -6,8 +6,11 @@ import pandas as pd
 import streamlit as st
 from src.config.settings import get_settings
 from src.core.session_state import (
+    KEY_ACTIVE_REPORT_DOC,
     KEY_ANALYSIS_RESULTS,
     KEY_CURRENT_DATASET,
+    KEY_LATEST_INVESTIGATION_STATE,
+    get_model_registry,
     init_session_state,
     is_dataset_loaded,
 )
@@ -17,7 +20,6 @@ from src.core.ui_components import (
     render_sidebar_status,
 )
 from src.ingestion.loader import ManagedDataset
-from src.predictive.model_registry import ModelRegistry
 from src.reporting import (
     ExportService,
     ReportBuilder,
@@ -40,7 +42,6 @@ render_sidebar_status()
 render_page_header(
     title="📑 Intelligence Reports",
     subtitle="Assemble verified analytical findings, quality audits, statistical inferences, and predictive evaluations into exportable executive reports.",
-    badge="Module 6 • Intelligence Reporting Engine",
 )
 
 if not is_dataset_loaded(st.session_state):
@@ -70,17 +71,14 @@ else:
     st.error("Invalid dataset representation in session state.")
     st.stop()
 
-model_registry = st.session_state.get("model_registry")
-if not isinstance(model_registry, ModelRegistry):
-    model_registry = ModelRegistry()
-    st.session_state["model_registry"] = model_registry
+model_registry = get_model_registry(st.session_state)
 
 # Setup Report Evidence Collector
 collector = ReportEvidenceCollector(managed_dataset=managed_ds, model_registry=model_registry)
 
 # Get statistical and investigation results if available in session
 stat_results = st.session_state.get(KEY_ANALYSIS_RESULTS, {}).get("statistical_tests", [])
-inv_trace = st.session_state.get("latest_investigation_state")
+inv_trace = st.session_state.get(KEY_LATEST_INVESTIGATION_STATE)
 
 evidence_bundle = collector.collect_all_evidence(
     investigation_trace=inv_trace,
@@ -183,12 +181,12 @@ if generate_btn:
             report_depth=report_depth,
             ai_narrative_text=ai_narrative,
         )
-        st.session_state["active_report_doc"] = doc
+        st.session_state[KEY_ACTIVE_REPORT_DOC] = doc
         st.success(
             f"Report '{doc.metadata.title}' assembled with {doc.metadata.evidence_item_count} verified evidence items."
         )
 
-active_doc: ReportDocument = st.session_state.get("active_report_doc")
+active_doc: ReportDocument = st.session_state.get(KEY_ACTIVE_REPORT_DOC)
 
 if active_doc:
     st.markdown("---")

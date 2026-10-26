@@ -1,5 +1,6 @@
 """Structured, evidence-grounded 8-layer statistical interpretation generator."""
 
+import html
 import textwrap
 
 from src.analytics.statistical_models import RegressionModelResult, StatisticalTestResult
@@ -61,7 +62,7 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
     """Generate an accessible, human-readable takeaway card with easy-to-read typography and no AI jargon."""
     p_val = result.p_value
     is_sig = p_val < 0.05
-    vars_str = ", ".join(result.selected_variables)
+    vars_str = html.escape(", ".join(map(str, result.selected_variables)))
     eff = result.effect_size
     ci = result.confidence_interval
     meta = result.method_metadata or {}
@@ -74,7 +75,7 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
 
     # Concrete plain-English summary based on test type
     if result.groups and len(result.groups) >= 2 and "mean_g1" in meta:
-        g1, g2 = result.groups[0], result.groups[1]
+        g1, g2 = (html.escape(str(g)) for g in result.groups[:2])
         m1, m2 = float(meta.get("mean_g1", 0.0)), float(meta.get("mean_g2", 0.0))
         med1, med2 = float(meta.get("median_g1", 0.0)), float(meta.get("median_g2", 0.0))
         diff = float(meta.get("raw_diff", m1 - m2))
@@ -82,7 +83,9 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
 
         higher_grp = g1 if diff > 0 else g2
         lower_grp = g2 if diff > 0 else g1
-        measure_col = result.selected_variables[-1] if result.selected_variables else "Value"
+        measure_col = html.escape(
+            str(result.selected_variables[-1]) if result.selected_variables else "Value"
+        )
 
         pct_phrase = f" ({abs(rel_pct):.1f}% higher)" if rel_pct is not None else ""
         if is_sig:
@@ -120,8 +123,8 @@ def render_plain_english_takeaway(result: StatisticalTestResult) -> str:
             "</div>"
         )
     else:
-        headline = f"Analysis of {vars_str}: {result.test_name}"
-        bottom_line = result.summary
+        headline = f"Analysis of {vars_str}: {html.escape(result.test_name)}"
+        bottom_line = html.escape(result.summary)
         details_html = ""
 
     # Human-friendly explanation of p-value & effect size
@@ -186,11 +189,18 @@ def render_regression_plain_english(result: RegressionModelResult) -> str:
     neg_preds = [c for c in sig_preds if c.estimate < 0]
 
     pos_str = (
-        ", ".join(f"<strong>{c.variable}</strong> (+{c.estimate:,.2f})" for c in pos_preds)
+        ", ".join(
+            f"<strong>{html.escape(str(c.variable))}</strong> (+{c.estimate:,.2f})"
+            for c in pos_preds
+        )
         or "None"
     )
     neg_str = (
-        ", ".join(f"<strong>{c.variable}</strong> ({c.estimate:,.2f})" for c in neg_preds) or "None"
+        ", ".join(
+            f"<strong>{html.escape(str(c.variable))}</strong> ({c.estimate:,.2f})"
+            for c in neg_preds
+        )
+        or "None"
     )
 
     card_html = (
@@ -198,10 +208,10 @@ def render_regression_plain_english(result: RegressionModelResult) -> str:
         "background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); "
         'border: 1px solid #334155; border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; color: #f1f5f9;">'
         '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">'
-        f'<div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">OLS Regression: Predicting <strong>{result.outcome_variable}</strong></div>'
+        f'<div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">OLS Regression: Predicting <strong>{html.escape(str(result.outcome_variable))}</strong></div>'
         f'<span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #0284c7; padding: 4px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.85rem;">R² = {r2_pct:.1f}% Variance Explained</span>'
         "</div>"
-        f'<p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">This model explains <strong>{r2_pct:.1f}%</strong> of all variation in <strong>{result.outcome_variable}</strong> using {len(result.predictor_variables)} predictor variable(s). The overall model is <strong>{"statistically significant (p < 0.001)" if result.f_pvalue < 0.001 else "not statistically significant"}</strong>.</p>'
+        f'<p style="font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">This model explains <strong>{r2_pct:.1f}%</strong> of all variation in <strong>{html.escape(str(result.outcome_variable))}</strong> using {len(result.predictor_variables)} predictor variable(s). The overall model is <strong>{"statistically significant (p < 0.001)" if result.f_pvalue < 0.001 else "not statistically significant"}</strong>.</p>'
         '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 14px;">'
         '<div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px;">'
         '<div style="font-size: 0.8rem; color: #34d399; font-weight: 700; text-transform: uppercase;">Top Positive Drivers (Increases Outcome)</div>'

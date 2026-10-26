@@ -1,4 +1,4 @@
-# Multi-stage or slim secure Dockerfile for AI Data Analyst Agent
+# Multi-stage or slim secure Dockerfile for CelestiusAI
 FROM python:3.12-slim
 
 # Prevent python from buffering stdout/stderr and writing pyc files

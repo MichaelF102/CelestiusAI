@@ -1,5 +1,7 @@
 """Page 3: Exploration Studio — Interactive Distributions, Correlations, and Grounded EDA Insights."""
 
+from dataclasses import replace
+
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -13,21 +15,43 @@ from src.analytics.distributions import (
     diagnose_distribution_shape,
 )
 from src.analytics.eda_service import EDAService
-from src.analytics.grouped_analysis import (
-    analyze_grouped_disparity,
-)
 from src.analytics.interpretation import (
     generate_category_concentration_finding,
     generate_correlation_finding,
     generate_grouped_disparity_finding,
     generate_skewness_finding,
 )
-from src.analytics.relationships import (
-    compute_cramers_v,
-    compute_pairwise_correlations,
-)
-from src.analytics.temporal import analyze_temporal_series
 from src.config.settings import get_settings
+from src.core.caching import (
+    cached_correlation_matrix,
+    cached_cramers_v,
+    cached_eda_summary,
+    cached_grouped_disparity,
+    cached_pairwise_correlations,
+    cached_temporal_series,
+)
+from src.core.code_options import combine_snippets
+from src.core.code_r_sql import (
+    r_correlation,
+    r_crosstab,
+    r_distribution,
+    r_grouped,
+    sql_grouped,
+    sql_time_trend,
+    sql_top_categories,
+)
+from src.core.code_snippets import (
+    correlation_snippet,
+    crosstab_snippet,
+    custom_chart_snippet,
+    distribution_snippet,
+    grouped_snippet,
+    interactive_explorer_snippet,
+    load_kwargs,
+    multi_scatter_snippet,
+    time_trend_snippet,
+    violin_snippet,
+)
 from src.core.session_state import (
     KEY_CURRENT_DATASET,
     KEY_GENERATED_FINDINGS,
@@ -35,6 +59,9 @@ from src.core.session_state import (
     is_dataset_loaded,
 )
 from src.core.ui_components import (
+    esc,
+    render_code_button,
+    render_code_export,
     render_empty_state_banner,
     render_page_header,
     render_sidebar_status,
@@ -66,7 +93,6 @@ render_sidebar_status()
 render_page_header(
     title="📈 Exploration Studio",
     subtitle="Interactive distributions, bivariate correlations, segment disparities, and grounded analytical narratives.",
-    badge="Module 2 • Exploratory Analysis & Interpretations",
 )
 
 if not is_dataset_loaded(st.session_state):
@@ -93,6 +119,8 @@ else:
 if raw_df.empty:
     st.warning("The active working dataset contains 0 records.")
     st.stop()
+
+LOAD = load_kwargs(dataset_obj)
 
 # ==============================================================================
 # INTERACTIVE FILTERS & WORKING SUBSET
@@ -186,15 +214,15 @@ def render_interpretation_card(finding: EDAFinding) -> None:
                     border-radius: 8px; padding: 14px 18px; margin-top: 14px; margin-bottom: 14px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                 <span style="font-size: 0.95rem; font-weight: 600; color: #f8fafc;">
-                    {icon} {finding.title}
+                    {icon} {esc(finding.title)}
                 </span>
                 <span style="font-size: 0.75rem; text-transform: uppercase; background: #1e293b; color: #94a3b8;
                              padding: 2px 8px; border-radius: 4px; border: 1px solid #475569;">
-                    {finding.category.replace("_", " ")}
+                    {esc(finding.category.replace("_", " "))}
                 </span>
             </div>
             <p style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 8px; line-height: 1.5;">
-                {finding.summary}
+                {esc(finding.summary)}
             </p>
         </div>
         """,
@@ -315,6 +343,23 @@ with tab_var:
             f"Classification: **{inferred_type.capitalize()}** | Missing: **{col_series.isna().sum():,}** ({col_series.isna().mean() * 100:.1f}%) | Distinct: **{col_series.nunique(dropna=True):,}**"
         )
 
+        _is_num = inferred_type == "numeric"
+        _vc1, _vc2 = st.columns(2)
+        with _vc1:
+            render_code_button(
+                f"Distribution of {target_col}",
+                lambda o: distribution_snippet(target_col, _is_num, options=o, **LOAD),
+                key="code_var",
+                r_builder=lambda: r_distribution(dataset_name, target_col, _is_num),
+                sql_builder=lambda: sql_top_categories("data", target_col),
+            )
+        with _vc2:
+            render_code_button(
+                "Interactive column explorer (ipywidgets)",
+                lambda o: interactive_explorer_snippet(options=o, **LOAD),
+                key="code_interactive",
+            )
+
         if inferred_type == "numeric":
             num_sum = compute_numeric_summary(col_series, target_col)
             shape_diag = diagnose_distribution_shape(col_series)
@@ -354,7 +399,7 @@ with tab_var:
             render_interpretation_card(fnd_cat)
 
         elif inferred_type == "datetime":
-            temp_res = analyze_temporal_series(df, target_col)
+            temp_res = cached_temporal_series(df, target_col)
             d_col1, d_col2 = st.columns(2)
             d_col1.metric("Earliest Date", temp_res.earliest_date or "N/A")
             d_col2.metric("Latest Date", temp_res.latest_date or "N/A")
@@ -368,6 +413,12 @@ with tab_var:
                     .reset_index()
                 )
                 daily_agg.columns = ["date", meas]
+                render_code_button(
+                    f"Trend of {meas}",
+                    lambda o: time_trend_snippet(target_col, meas, "D", options=o, **LOAD),
+                    key="code_trend",
+                    sql_builder=lambda: sql_time_trend("data", target_col, meas),
+                )
                 ts_fig = build_time_series_chart(daily_agg, "date", meas, agg_name="mean")
                 st.plotly_chart(
                     ts_fig, use_container_width=True, key=f"ts_plot_{target_col}_{meas}"
@@ -397,6 +448,19 @@ with tab_dist:
                 ["Histogram + Markers", "Violin Density", "Empirical Quantiles"],
                 index=0,
             )
+
+            render_code_button(
+                f"Distribution of {dist_col}",
+                lambda o: distribution_snippet(dist_col, True, options=o, **LOAD),
+                key="code_dist",
+                r_builder=lambda: r_distribution(dataset_name, dist_col, True),
+            )
+            if chart_mode == "Violin Density":
+                render_code_button(
+                    f"Violin: {dist_col}",
+                    lambda o: violin_snippet(dist_col, None, options=o, **LOAD),
+                    key="code_violin",
+                )
 
         with dist_c2:
             s_clean = pd.to_numeric(df[dist_col], errors="coerce").dropna()
@@ -467,10 +531,20 @@ with tab_corr:
                 options=numeric_cols,
                 default=numeric_cols[:8],
             )
+            render_code_button(
+                f"{corr_method.capitalize()} correlation",
+                lambda o: correlation_snippet(
+                    corr_features or numeric_cols[:8], corr_method, options=o, **LOAD
+                ),
+                key="code_corr",
+                r_builder=lambda: r_correlation(
+                    dataset_name, corr_features or numeric_cols[:8], corr_method
+                ),
+            )
 
         with corr_c2:
             if len(corr_features) >= 2:
-                corr_matrix = df[corr_features].corr(method=corr_method)
+                corr_matrix = cached_correlation_matrix(df, tuple(corr_features), corr_method)
                 heat_fig = build_correlation_heatmap(
                     corr_matrix, title=f"{corr_method.capitalize()} Correlation Heatmap"
                 )
@@ -479,9 +553,7 @@ with tab_corr:
         st.markdown("---")
         st.markdown("#### Ranked Pairwise Associations & Bivariate Scatter")
 
-        ranked_pairs = compute_pairwise_correlations(
-            df, numeric_cols, method=corr_method, min_sample=10
-        )
+        ranked_pairs = cached_pairwise_correlations(df, tuple(numeric_cols), corr_method, 10)
         if ranked_pairs:
             rp_c1, rp_c2 = st.columns([1, 1])
             with rp_c1:
@@ -529,7 +601,13 @@ with tab_corr:
                     "Category B:", [c for c in categorical_cols if c != c_v1], index=0
                 )
 
-            c_v_score, contingency_df = compute_cramers_v(df, c_v1, c_v2)
+            render_code_button(
+                f"Association: {c_v1} x {c_v2}",
+                lambda o: crosstab_snippet(c_v1, c_v2, options=o, **LOAD),
+                key="code_crosstab",
+                r_builder=lambda: r_crosstab(dataset_name, c_v1, c_v2),
+            )
+            c_v_score, contingency_df = cached_cramers_v(df, c_v1, c_v2)
             st.info(
                 f"**Cramér's V Association:** `{c_v_score:.3f}` (0.0 = complete independence, 1.0 = perfect co-occurrence)."
             )
@@ -557,7 +635,14 @@ with tab_group:
                 "Aggregation Function:", ["mean", "median", "sum", "count", "std"], index=0
             )
 
-        grp_result = analyze_grouped_disparity(df, grp_col_sel, grp_meas_sel, agg=grp_agg_sel)
+        render_code_button(
+            f"{grp_agg_sel} of {grp_meas_sel} by {grp_col_sel}",
+            lambda o: grouped_snippet(grp_col_sel, grp_meas_sel, grp_agg_sel, options=o, **LOAD),
+            key="code_group",
+            r_builder=lambda: r_grouped(dataset_name, grp_col_sel, grp_meas_sel, grp_agg_sel),
+            sql_builder=lambda: sql_grouped("data", grp_col_sel, grp_meas_sel, grp_agg_sel),
+        )
+        grp_result = cached_grouped_disparity(df, grp_col_sel, grp_meas_sel, grp_agg_sel)
 
         if grp_result and grp_result.groups:
             r_c1, r_c2 = st.columns([3, 2])
@@ -621,6 +706,11 @@ with tab_multi:
         color_arg = None if m_color == "None" else m_color
         size_arg = None if m_size == "None" else m_size
 
+        render_code_button(
+            f"Scatter: {my_col} vs {mx_col}",
+            lambda o: multi_scatter_snippet(mx_col, my_col, color_arg, size_arg, options=o, **LOAD),
+            key="code_multi",
+        )
         multi_fig, was_sampled = build_bivariate_scatter(
             df,
             mx_col,
@@ -644,7 +734,9 @@ with tab_insights:
 
     # Generate EDA Summary via EDAService
     if isinstance(dataset_obj, ManagedDataset):
-        eda_summary = EDAService.generate_eda_summary(dataset_obj)
+        eda_summary = cached_eda_summary(
+            dataset_obj, dataset_obj.dataset_id, dataset_obj.version, dataset_obj.fingerprint
+        )
     else:
         # Wrap standalone df
         managed_temp = ManagedDataset(
@@ -688,23 +780,23 @@ with tab_insights:
                             padding: 12px 16px; margin-bottom: 12px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                         <span style="font-weight: 600; color: #38bdf8; font-size: 0.95rem;">
-                            📊 {rec.title}
+                            📊 {esc(rec.title)}
                         </span>
                         <span style="background: #0284c7; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">
                             Suitability Score: {rec.suitability_score:.0f}/100
                         </span>
                     </div>
                     <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px;">
-                        <strong>Purpose:</strong> {rec.purpose}
+                        <strong>Purpose:</strong> {esc(rec.purpose)}
                     </p>
                     <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 2px;">
-                        <strong>Why Appropriate:</strong> {rec.why_appropriate}
+                        <strong>Why Appropriate:</strong> {esc(rec.why_appropriate)}
                     </p>
                     <p style="font-size: 0.8rem; color: #f59e0b; margin-bottom: 2px;">
-                        <strong>Limitations:</strong> {rec.limitations}
+                        <strong>Limitations:</strong> {esc(rec.limitations)}
                     </p>
                     <p style="font-size: 0.8rem; color: #10b981; margin-bottom: 0px;">
-                        <strong>Suggested Follow-up:</strong> {rec.suggested_followup}
+                        <strong>Suggested Follow-up:</strong> {esc(rec.suggested_followup)}
                     </p>
                 </div>
                 """,
@@ -1104,6 +1196,25 @@ with tab_custom:
                 if insight_text:
                     st.info(insight_text)
 
+                _chart_params = {
+                    "chart_type": chart_type,
+                    "x": x_col,
+                    "y": None if y_col == "None" else y_col,
+                    "agg": agg_func,
+                    "color": c_arg,
+                    "size": s_arg,
+                    "facet": f_arg,
+                    "title": custom_title,
+                    "log_y": log_y,
+                    "trend": show_trend,
+                    "horizontal": orientation == "h",
+                }
+                render_code_button(
+                    custom_title or "Custom chart",
+                    lambda o: custom_chart_snippet(**_chart_params, options=o, **LOAD),
+                    key="code_custom",
+                )
+
                 # Action buttons: Data download & Pin to Canvas
                 st.markdown("---")
                 btn_c1, btn_c2 = st.columns(2)
@@ -1129,6 +1240,7 @@ with tab_custom:
                                 or f"Plotted {x_col}"
                                 + (f" against {y_metric}" if y_metric else ""),
                                 "timestamp": pd.Timestamp.now().strftime("%H:%M:%S"),
+                                "code_params": _chart_params,
                             }
                         )
                         st.success(f"Pinned '{custom_title}' to Canvas below!")
@@ -1151,17 +1263,46 @@ with tab_custom:
                 st.markdown(
                     f"""
                     <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid #475569; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
-                        <h5 style="color: #38bdf8; margin: 0 0 6px 0;">📊 {saved["title"]}</h5>
-                        <p style="font-size: 0.8rem; color: #94a3b8; margin: 0 0 4px 0;"><strong>Type:</strong> {saved["type"]} • <em>Pinned at {saved["timestamp"]}</em></p>
-                        <p style="font-size: 0.82rem; color: #e2e8f0; margin: 0;">{saved["summary"]}</p>
+                        <h5 style="color: #38bdf8; margin: 0 0 6px 0;">📊 {esc(saved["title"])}</h5>
+                        <p style="font-size: 0.8rem; color: #94a3b8; margin: 0 0 4px 0;"><strong>Type:</strong> {esc(saved["type"])} • <em>Pinned at {esc(saved["timestamp"])}</em></p>
+                        <p style="font-size: 0.82rem; color: #e2e8f0; margin: 0;">{esc(saved["summary"])}</p>
                     </div>
                     """,
                     unsafe_allow_html=True,
                 )
+                if saved.get("code_params"):
+                    render_code_button(
+                        f"Pinned: {saved['title']}",
+                        lambda o, _p=saved["code_params"]: custom_chart_snippet(
+                            **_p, options=o, **LOAD
+                        ),
+                        key=f"code_pinned_{idx}",
+                    )
+
+        _pinned = [p for p in st.session_state["saved_custom_charts"] if p.get("code_params")]
+        if _pinned:
+            render_code_button(
+                f"All {len(_pinned)} pinned charts",
+                lambda o: combine_snippets(
+                    [
+                        (
+                            p["title"],
+                            custom_chart_snippet(
+                                **p["code_params"], options=replace(o, style="notebook"), **LOAD
+                            ),
+                        )
+                        for p in _pinned
+                    ],
+                    title="Pinned charts",
+                ),
+                key="code_pinned_all",
+            )
 
         if st.button("🗑️ Clear Pinned Visuals Canvas", key="btn_clear_canvas"):
             st.session_state["saved_custom_charts"] = []
             st.rerun()
 
 st.markdown("---")
-st.page_link("app.py", label="← Return to Main Workspace", icon="🏠")
+st.page_link("pages/0_Home.py", label="← Return to Home", icon="🏠")
+
+render_code_export()

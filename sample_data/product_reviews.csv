@@ -1,0 +1,1801 @@
+review_id,product_category,rating,review_text,verified_purchase,helpful_votes,recommended
+1,books,3,does the job but instructions were unclear,Yes,2,0
+2,kitchen,5,great quality and fast shipping,Yes,2,1
+3,books,3,does the job but instructions were unclear,Yes,3,0
+4,books,5,love it works perfectly,No,1,1
+5,kitchen,5,love it works perfectly,Yes,2,1
+6,outdoors,4,great quality and fast shipping,Yes,3,1
+7,toys,4,excellent value highly recommend,Yes,1,1
+8,kitchen,4,love it works perfectly,Yes,3,1
+9,toys,2,very disappointed cheap material again,Yes,1,0
+10,books,4,sturdy and well made,Yes,5,1
+11,electronics,3,does the job but instructions were unclear,Yes,4,0
+12,electronics,3,does the job but instructions were unclear overall,Yes,0,0
+13,outdoors,2,waste of money stopped working,Yes,1,0
+14,books,2,arrived late and damaged,Yes,2,0
+15,electronics,5,great quality and fast shipping,Yes,0,1
+16,outdoors,4,great quality and fast shipping,Yes,3,1
+17,books,3,it is okay for the price overall,Yes,2,0
+18,kitchen,4,sturdy and well made,Yes,2,1
+19,toys,4,excellent value highly recommend again,Yes,1,1
+20,toys,4,excellent value highly recommend,Yes,1,1
+21,outdoors,5,love it works perfectly,No,2,1
+22,outdoors,2,very disappointed cheap material,Yes,2,0
+23,books,4,excellent value highly recommend again,Yes,2,1
+24,toys,3,does the job but instructions were unclear,Yes,3,0
+25,books,1,waste of money stopped working again,Yes,1,0
+26,outdoors,2,poor quality would not buy again,Yes,2,0
+27,kitchen,4,very happy with this purchase,Yes,4,1
+28,toys,4,sturdy and well made,Yes,1,1
+29,electronics,4,great quality and fast shipping thanks,Yes,1,1
+30,electronics,4,very happy with this purchase,Yes,1,1
+31,books,4,very happy with this purchase,Yes,4,1
+32,electronics,3,does the job but instructions were unclear thanks,Yes,4,0
+33,outdoors,2,waste of money stopped working,Yes,2,0
+34,books,3,does the job but instructions were unclear,No,2,0
+35,kitchen,1,waste of money stopped working,Yes,1,0
+36,books,4,great quality and fast shipping,No,1,1
+37,electronics,4,love it works perfectly,Yes,2,1
+38,electronics,5,great quality and fast shipping,Yes,1,1
+39,outdoors,5,love it works perfectly honestly,Yes,3,1
+40,electronics,1,very disappointed cheap material,Yes,1,0
+41,outdoors,5,sturdy and well made thanks,Yes,2,1
+42,kitchen,5,love it works perfectly,No,4,1
+43,outdoors,5,excellent value highly recommend,Yes,5,1
+44,electronics,2,broke after two days terrible,Yes,3,0
+45,outdoors,4,sturdy and well made,Yes,0,1
+46,electronics,4,great quality and fast shipping overall,Yes,2,1
+47,outdoors,5,excellent value highly recommend,Yes,1,1
+48,outdoors,3,it is okay for the price,Yes,2,0
+49,books,4,sturdy and well made honestly,Yes,0,1
+50,books,3,it is okay for the price,Yes,2,0
+51,outdoors,4,sturdy and well made overall,Yes,3,1
+52,toys,4,very happy with this purchase,Yes,5,1
+53,outdoors,4,love it works perfectly thanks,Yes,1,1
+54,books,5,sturdy and well made,Yes,1,1
+55,books,3,decent but a bit smaller than expected,Yes,2,0
+56,outdoors,4,great quality and fast shipping overall,Yes,3,1
+57,toys,1,waste of money stopped working,Yes,0,0
+58,books,4,very happy with this purchase,Yes,0,1
+59,electronics,4,excellent value highly recommend,Yes,0,1
+60,electronics,2,arrived late and damaged again,Yes,3,0
+61,kitchen,3,decent but a bit smaller than expected,Yes,3,0
+62,toys,1,broke after two days terrible,Yes,7,0
+63,outdoors,4,excellent value highly recommend,Yes,3,1
+64,toys,4,very happy with this purchase,Yes,0,1
+65,outdoors,4,love it works perfectly overall,No,2,1
+66,outdoors,1,poor quality would not buy again honestly,Yes,1,0
+67,kitchen,5,very happy with this purchase honestly,Yes,3,1
+68,books,3,does the job but instructions were unclear,Yes,1,0
+69,kitchen,3,it is okay for the price,No,1,0
+70,books,5,love it works perfectly thanks,No,3,1
+71,books,4,love it works perfectly,Yes,2,1
+72,outdoors,5,excellent value highly recommend honestly,Yes,1,1
+73,electronics,4,very happy with this purchase,Yes,3,1
+74,books,3,does the job but instructions were unclear,No,0,0
+75,outdoors,2,waste of money stopped working again,Yes,2,0
+76,outdoors,2,poor quality would not buy again,No,3,0
+77,outdoors,3,does the job but instructions were unclear,Yes,0,0
+78,books,2,poor quality would not buy again,Yes,1,0
+79,toys,4,love it works perfectly thanks,Yes,2,1
+80,outdoors,5,very happy with this purchase overall,Yes,4,1
+81,outdoors,5,sturdy and well made overall,No,4,1
+82,toys,3,does the job but instructions were unclear,Yes,3,0
+83,books,3,does the job but instructions were unclear,Yes,1,0
+84,books,5,love it works perfectly again,Yes,3,1
+85,books,5,very happy with this purchase,Yes,1,1
+86,outdoors,4,great quality and fast shipping again,No,2,1
+87,kitchen,3,average product nothing special,Yes,1,0
+88,toys,4,excellent value highly recommend,Yes,2,1
+89,kitchen,2,arrived late and damaged,Yes,2,0
+90,outdoors,4,love it works perfectly thanks,No,1,1
+91,books,5,excellent value highly recommend,Yes,2,1
+92,outdoors,3,decent but a bit smaller than expected,Yes,1,0
+93,books,4,excellent value highly recommend thanks,Yes,4,1
+94,outdoors,4,great quality and fast shipping thanks,Yes,2,1
+95,toys,5,love it works perfectly,Yes,3,1
+96,outdoors,4,love it works perfectly again,Yes,1,1
+97,toys,4,sturdy and well made,Yes,2,1
+98,outdoors,5,great quality and fast shipping,Yes,2,1
+99,books,3,decent but a bit smaller than expected,Yes,3,0
+100,electronics,1,poor quality would not buy again,Yes,2,0
+101,electronics,5,very happy with this purchase,Yes,1,1
+102,toys,4,very happy with this purchase honestly,Yes,0,1
+103,kitchen,5,sturdy and well made,Yes,1,1
+104,outdoors,2,very disappointed cheap material,No,2,0
+105,books,1,poor quality would not buy again,Yes,1,0
+106,toys,4,excellent value highly recommend,Yes,0,1
+107,electronics,5,sturdy and well made thanks,Yes,3,1
+108,books,5,sturdy and well made again,Yes,2,1
+109,toys,4,love it works perfectly,No,4,1
+110,kitchen,1,poor quality would not buy again honestly,Yes,2,0
+111,books,4,love it works perfectly,Yes,4,1
+112,books,4,very happy with this purchase,Yes,7,1
+113,toys,2,broke after two days terrible again,Yes,2,0
+114,books,5,great quality and fast shipping again,Yes,4,1
+115,electronics,5,very happy with this purchase,Yes,6,1
+116,books,5,very happy with this purchase,Yes,4,1
+117,outdoors,4,excellent value highly recommend honestly,No,3,1
+118,kitchen,5,great quality and fast shipping thanks,No,3,1
+119,books,5,very happy with this purchase overall,Yes,0,1
+120,toys,3,average product nothing special,Yes,0,0
+121,toys,4,very happy with this purchase honestly,Yes,4,1
+122,kitchen,5,love it works perfectly thanks,Yes,1,1
+123,books,4,love it works perfectly,Yes,2,1
+124,outdoors,2,broke after two days terrible,Yes,4,0
+125,toys,1,poor quality would not buy again,Yes,1,0
+126,books,1,waste of money stopped working honestly,Yes,1,0
+127,toys,4,sturdy and well made thanks,Yes,3,1
+128,books,1,very disappointed cheap material,Yes,4,0
+129,electronics,5,excellent value highly recommend overall,Yes,0,1
+130,toys,5,great quality and fast shipping,Yes,3,1
+131,books,5,very happy with this purchase,No,5,1
+132,outdoors,5,excellent value highly recommend,Yes,1,1
+133,kitchen,4,very happy with this purchase,Yes,1,1
+134,toys,5,very happy with this purchase,No,3,1
+135,electronics,5,excellent value highly recommend,Yes,1,1
+136,books,1,waste of money stopped working again,Yes,4,0
+137,kitchen,1,very disappointed cheap material honestly,Yes,2,0
+138,toys,2,arrived late and damaged thanks,Yes,2,0
+139,outdoors,5,excellent value highly recommend,No,4,1
+140,books,4,love it works perfectly again,Yes,2,1
+141,toys,5,excellent value highly recommend,Yes,4,1
+142,electronics,4,very happy with this purchase,Yes,2,1
+143,toys,4,sturdy and well made,Yes,3,1
+144,outdoors,4,very happy with this purchase,Yes,2,1
+145,outdoors,5,great quality and fast shipping overall,Yes,1,1
+146,outdoors,4,excellent value highly recommend,Yes,1,1
+147,electronics,5,great quality and fast shipping thanks,No,1,1
+148,kitchen,5,very happy with this purchase overall,Yes,1,1
+149,kitchen,5,sturdy and well made,Yes,3,1
+150,outdoors,3,it is okay for the price,Yes,1,0
+151,kitchen,3,does the job but instructions were unclear,Yes,1,0
+152,kitchen,4,great quality and fast shipping,No,3,1
+153,books,5,very happy with this purchase,Yes,2,1
+154,kitchen,4,excellent value highly recommend thanks,Yes,2,1
+155,toys,2,waste of money stopped working,Yes,2,0
+156,toys,3,does the job but instructions were unclear overall,Yes,1,0
+157,electronics,5,love it works perfectly thanks,Yes,4,1
+158,kitchen,3,it is okay for the price thanks,Yes,3,0
+159,electronics,3,it is okay for the price,No,0,0
+160,kitchen,4,sturdy and well made honestly,Yes,4,1
+161,toys,2,poor quality would not buy again,Yes,2,0
+162,kitchen,2,arrived late and damaged,Yes,4,0
+163,books,5,excellent value highly recommend again,Yes,3,1
+164,toys,4,excellent value highly recommend thanks,Yes,2,1
+165,books,3,it is okay for the price,Yes,1,0
+166,kitchen,5,excellent value highly recommend,Yes,0,1
+167,kitchen,3,it is okay for the price,Yes,1,0
+168,kitchen,5,love it works perfectly,Yes,1,1
+169,kitchen,5,love it works perfectly overall,No,1,1
+170,electronics,1,arrived late and damaged overall,Yes,6,0
+171,books,1,arrived late and damaged,Yes,2,0
+172,books,5,love it works perfectly,Yes,0,1
+173,books,2,very disappointed cheap material honestly,Yes,1,0
+174,books,2,poor quality would not buy again honestly,Yes,1,0
+175,outdoors,5,love it works perfectly,Yes,0,1
+176,electronics,4,love it works perfectly overall,Yes,5,1
+177,outdoors,5,very happy with this purchase,Yes,2,1
+178,outdoors,5,sturdy and well made,Yes,3,1
+179,toys,5,great quality and fast shipping honestly,Yes,6,1
+180,books,1,very disappointed cheap material,Yes,4,0
+181,toys,4,great quality and fast shipping,Yes,1,1
+182,toys,3,does the job but instructions were unclear again,Yes,4,0
+183,books,2,poor quality would not buy again,Yes,0,0
+184,electronics,4,very happy with this purchase overall,Yes,4,1
+185,toys,5,great quality and fast shipping again,No,0,1
+186,toys,5,great quality and fast shipping,Yes,0,1
+187,toys,4,sturdy and well made,Yes,1,1
+188,kitchen,4,sturdy and well made,Yes,2,1
+189,electronics,5,excellent value highly recommend,Yes,3,1
+190,books,4,sturdy and well made,No,1,1
+191,books,5,very happy with this purchase,No,0,1
+192,electronics,4,excellent value highly recommend,Yes,0,1
+193,electronics,5,excellent value highly recommend,Yes,0,1
+194,books,5,sturdy and well made again,Yes,0,1
+195,electronics,4,love it works perfectly overall,Yes,3,1
+196,kitchen,2,arrived late and damaged thanks,Yes,4,0
+197,books,5,love it works perfectly,Yes,2,1
+198,outdoors,1,poor quality would not buy again overall,Yes,1,0
+199,kitchen,1,poor quality would not buy again,Yes,1,0
+200,kitchen,1,arrived late and damaged,Yes,2,0
+201,toys,5,excellent value highly recommend,No,2,1
+202,books,5,great quality and fast shipping,Yes,3,1
+203,electronics,1,broke after two days terrible,Yes,3,0
+204,electronics,1,broke after two days terrible,Yes,3,0
+205,toys,2,waste of money stopped working,Yes,2,0
+206,electronics,5,great quality and fast shipping overall,Yes,0,1
+207,outdoors,4,love it works perfectly honestly,Yes,3,1
+208,kitchen,5,excellent value highly recommend honestly,Yes,2,1
+209,books,5,great quality and fast shipping honestly,Yes,0,1
+210,outdoors,5,love it works perfectly again,Yes,0,1
+211,books,4,very happy with this purchase,Yes,6,1
+212,books,5,great quality and fast shipping,Yes,1,1
+213,kitchen,3,average product nothing special,Yes,2,0
+214,outdoors,5,sturdy and well made,No,0,1
+215,electronics,1,waste of money stopped working,Yes,1,0
+216,electronics,3,average product nothing special honestly,Yes,1,0
+217,outdoors,4,great quality and fast shipping,Yes,2,1
+218,books,5,sturdy and well made,Yes,5,1
+219,toys,4,very happy with this purchase thanks,Yes,2,1
+220,electronics,4,excellent value highly recommend,Yes,1,1
+221,kitchen,5,sturdy and well made,Yes,3,1
+222,electronics,5,excellent value highly recommend,Yes,0,1
+223,toys,5,excellent value highly recommend,Yes,0,1
+224,outdoors,5,great quality and fast shipping overall,Yes,0,1
+225,books,1,very disappointed cheap material,Yes,1,0
+226,outdoors,3,it is okay for the price,Yes,2,0
+227,books,5,excellent value highly recommend,Yes,0,1
+228,toys,5,excellent value highly recommend,Yes,3,1
+229,outdoors,5,love it works perfectly,Yes,2,1
+230,toys,4,love it works perfectly,Yes,2,1
+231,kitchen,5,excellent value highly recommend thanks,Yes,2,1
+232,electronics,4,excellent value highly recommend,Yes,1,1
+233,electronics,2,very disappointed cheap material again,No,1,0
+234,books,5,sturdy and well made,Yes,4,1
+235,books,4,love it works perfectly,Yes,1,1
+236,outdoors,1,poor quality would not buy again,Yes,4,0
+237,books,3,does the job but instructions were unclear thanks,Yes,1,0
+238,outdoors,3,does the job but instructions were unclear overall,No,4,0
+239,kitchen,1,broke after two days terrible,Yes,4,0
+240,electronics,5,love it works perfectly again,No,0,1
+241,books,4,great quality and fast shipping,No,0,1
+242,outdoors,4,sturdy and well made thanks,Yes,0,1
+243,toys,4,excellent value highly recommend overall,Yes,1,1
+244,outdoors,5,love it works perfectly,Yes,3,1
+245,books,4,very happy with this purchase,Yes,2,1
+246,kitchen,3,decent but a bit smaller than expected again,Yes,5,0
+247,kitchen,4,excellent value highly recommend overall,Yes,5,1
+248,electronics,3,it is okay for the price thanks,Yes,3,0
+249,books,5,love it works perfectly,No,3,1
+250,books,5,very happy with this purchase honestly,Yes,6,1
+251,toys,2,broke after two days terrible overall,Yes,3,0
+252,toys,1,poor quality would not buy again,Yes,2,0
+253,electronics,5,great quality and fast shipping,Yes,1,1
+254,books,4,love it works perfectly,Yes,2,1
+255,kitchen,5,sturdy and well made,Yes,3,1
+256,outdoors,3,does the job but instructions were unclear,Yes,1,0
+257,kitchen,2,poor quality would not buy again honestly,Yes,3,0
+258,kitchen,5,very happy with this purchase,Yes,5,1
+259,electronics,1,arrived late and damaged,Yes,0,0
+260,toys,5,sturdy and well made,Yes,0,1
+261,electronics,5,excellent value highly recommend again,Yes,3,1
+262,outdoors,5,very happy with this purchase,Yes,2,1
+263,toys,4,very happy with this purchase thanks,Yes,3,1
+264,toys,3,it is okay for the price,No,2,0
+265,kitchen,1,waste of money stopped working,Yes,1,0
+266,kitchen,4,excellent value highly recommend,Yes,2,1
+267,books,5,very happy with this purchase,No,4,1
+268,electronics,3,decent but a bit smaller than expected,Yes,3,0
+269,outdoors,4,great quality and fast shipping,Yes,3,1
+270,kitchen,2,arrived late and damaged thanks,Yes,2,0
+271,electronics,5,great quality and fast shipping,Yes,2,1
+272,outdoors,5,very happy with this purchase again,Yes,2,1
+273,outdoors,3,it is okay for the price honestly,Yes,2,0
+274,toys,4,love it works perfectly honestly,Yes,0,1
+275,books,3,average product nothing special overall,Yes,2,0
+276,toys,3,average product nothing special again,Yes,3,0
+277,toys,1,poor quality would not buy again,Yes,3,0
+278,toys,4,sturdy and well made honestly,No,3,1
+279,electronics,5,very happy with this purchase,Yes,2,1
+280,outdoors,5,very happy with this purchase,Yes,5,1
+281,toys,5,sturdy and well made,Yes,2,1
+282,kitchen,4,love it works perfectly,Yes,0,1
+283,books,4,excellent value highly recommend,Yes,4,1
+284,books,4,sturdy and well made again,Yes,4,1
+285,books,2,arrived late and damaged,No,3,0
+286,books,5,excellent value highly recommend again,Yes,2,1
+287,kitchen,3,decent but a bit smaller than expected thanks,Yes,2,0
+288,books,4,great quality and fast shipping overall,Yes,2,1
+289,electronics,1,very disappointed cheap material,Yes,1,0
+290,toys,4,sturdy and well made,Yes,1,1
+291,outdoors,5,love it works perfectly,Yes,5,1
+292,electronics,4,excellent value highly recommend,Yes,4,1
+293,outdoors,4,excellent value highly recommend overall,Yes,1,1
+294,outdoors,4,sturdy and well made,Yes,1,1
+295,kitchen,5,excellent value highly recommend,Yes,1,1
+296,kitchen,5,great quality and fast shipping thanks,Yes,2,1
+297,kitchen,4,sturdy and well made,Yes,4,1
+298,outdoors,3,does the job but instructions were unclear,Yes,2,0
+299,kitchen,5,great quality and fast shipping honestly,Yes,4,1
+300,toys,4,sturdy and well made honestly,Yes,3,1
+301,electronics,5,great quality and fast shipping,Yes,2,1
+302,outdoors,2,very disappointed cheap material,Yes,4,0
+303,outdoors,3,does the job but instructions were unclear,No,2,0
+304,outdoors,5,great quality and fast shipping,Yes,2,1
+305,kitchen,4,sturdy and well made again,Yes,3,1
+306,toys,3,it is okay for the price thanks,Yes,2,0
+307,books,4,very happy with this purchase,Yes,4,1
+308,kitchen,4,very happy with this purchase,Yes,3,1
+309,electronics,5,love it works perfectly,Yes,1,1
+310,outdoors,1,waste of money stopped working,Yes,1,0
+311,toys,3,does the job but instructions were unclear,Yes,3,0
+312,kitchen,5,great quality and fast shipping,Yes,1,1
+313,kitchen,2,very disappointed cheap material again,Yes,1,0
+314,outdoors,4,great quality and fast shipping,Yes,1,1
+315,toys,4,love it works perfectly thanks,Yes,1,1
+316,books,5,excellent value highly recommend,No,1,1
+317,books,5,sturdy and well made overall,Yes,1,1
+318,books,3,it is okay for the price,Yes,1,0
+319,toys,3,it is okay for the price again,Yes,1,0
+320,toys,1,waste of money stopped working,Yes,3,0
+321,toys,4,excellent value highly recommend,Yes,3,1
+322,kitchen,4,love it works perfectly honestly,Yes,3,1
+323,books,5,love it works perfectly honestly,Yes,1,1
+324,outdoors,5,great quality and fast shipping,No,4,1
+325,electronics,5,sturdy and well made,No,1,1
+326,kitchen,5,great quality and fast shipping honestly,Yes,2,1
+327,books,4,sturdy and well made overall,Yes,4,1
+328,electronics,4,love it works perfectly,Yes,5,1
+329,outdoors,3,does the job but instructions were unclear honestly,Yes,2,0
+330,kitchen,5,great quality and fast shipping again,Yes,1,1
+331,books,5,sturdy and well made overall,Yes,1,1
+332,kitchen,2,waste of money stopped working honestly,Yes,2,0
+333,toys,3,it is okay for the price again,Yes,4,0
+334,kitchen,4,love it works perfectly,Yes,3,1
+335,electronics,3,decent but a bit smaller than expected,Yes,2,0
+336,electronics,4,love it works perfectly overall,Yes,1,1
+337,outdoors,5,excellent value highly recommend thanks,Yes,3,1
+338,toys,3,does the job but instructions were unclear,Yes,2,0
+339,books,4,love it works perfectly,Yes,1,1
+340,books,4,sturdy and well made honestly,Yes,2,1
+341,books,4,excellent value highly recommend again,No,1,1
+342,kitchen,3,decent but a bit smaller than expected,No,1,0
+343,kitchen,4,sturdy and well made,Yes,3,1
+344,electronics,1,waste of money stopped working overall,Yes,2,0
+345,electronics,2,waste of money stopped working,No,3,0
+346,outdoors,5,great quality and fast shipping honestly,Yes,1,1
+347,toys,2,broke after two days terrible thanks,Yes,2,0
+348,outdoors,3,it is okay for the price,Yes,0,0
+349,toys,4,sturdy and well made honestly,Yes,1,1
+350,outdoors,5,sturdy and well made thanks,Yes,1,1
+351,books,5,great quality and fast shipping,Yes,3,1
+352,toys,4,love it works perfectly overall,Yes,0,1
+353,electronics,5,love it works perfectly honestly,No,3,1
+354,outdoors,3,average product nothing special,No,1,0
+355,books,5,sturdy and well made,Yes,1,1
+356,toys,1,broke after two days terrible thanks,Yes,0,0
+357,toys,3,it is okay for the price,Yes,0,0
+358,toys,3,average product nothing special,Yes,2,0
+359,electronics,4,excellent value highly recommend,Yes,2,1
+360,kitchen,2,very disappointed cheap material,Yes,1,0
+361,toys,5,excellent value highly recommend,Yes,0,1
+362,books,3,does the job but instructions were unclear,No,2,0
+363,electronics,4,great quality and fast shipping,No,5,1
+364,kitchen,1,broke after two days terrible,Yes,1,0
+365,toys,4,very happy with this purchase,Yes,1,1
+366,outdoors,4,sturdy and well made honestly,Yes,3,1
+367,electronics,1,waste of money stopped working overall,Yes,2,0
+368,electronics,4,excellent value highly recommend honestly,Yes,3,1
+369,books,5,great quality and fast shipping honestly,Yes,2,1
+370,books,5,great quality and fast shipping,Yes,1,1
+371,outdoors,5,great quality and fast shipping honestly,Yes,3,1
+372,books,5,love it works perfectly thanks,Yes,0,1
+373,electronics,4,excellent value highly recommend,Yes,2,1
+374,toys,5,very happy with this purchase,Yes,2,1
+375,toys,4,love it works perfectly again,Yes,2,1
+376,outdoors,4,love it works perfectly honestly,No,4,1
+377,toys,4,love it works perfectly,Yes,2,1
+378,toys,4,love it works perfectly,Yes,1,1
+379,books,4,sturdy and well made,No,3,1
+380,books,4,great quality and fast shipping,Yes,0,1
+381,kitchen,5,excellent value highly recommend,Yes,1,1
+382,toys,4,love it works perfectly,Yes,1,1
+383,toys,4,very happy with this purchase overall,Yes,1,1
+384,books,4,excellent value highly recommend,Yes,2,1
+385,toys,5,love it works perfectly overall,Yes,1,1
+386,electronics,5,sturdy and well made,Yes,1,1
+387,kitchen,5,excellent value highly recommend,No,7,1
+388,toys,3,average product nothing special,No,3,0
+389,electronics,4,love it works perfectly,Yes,2,1
+390,electronics,4,love it works perfectly,Yes,3,1
+391,toys,5,very happy with this purchase,No,2,1
+392,toys,4,very happy with this purchase,Yes,0,1
+393,kitchen,2,arrived late and damaged honestly,Yes,3,0
+394,books,5,love it works perfectly again,Yes,2,1
+395,books,2,broke after two days terrible again,Yes,2,0
+396,toys,4,love it works perfectly,No,2,1
+397,books,5,very happy with this purchase,Yes,2,1
+398,books,5,love it works perfectly,Yes,3,1
+399,kitchen,5,very happy with this purchase overall,No,4,1
+400,kitchen,3,does the job but instructions were unclear,Yes,1,0
+401,kitchen,1,arrived late and damaged,Yes,3,0
+402,electronics,1,arrived late and damaged overall,Yes,0,0
+403,toys,5,sturdy and well made honestly,Yes,2,1
+404,outdoors,5,great quality and fast shipping,Yes,2,1
+405,outdoors,5,love it works perfectly overall,Yes,0,1
+406,electronics,4,love it works perfectly honestly,Yes,2,1
+407,kitchen,5,excellent value highly recommend,Yes,2,1
+408,electronics,5,great quality and fast shipping again,No,4,1
+409,outdoors,1,arrived late and damaged,No,1,0
+410,kitchen,4,sturdy and well made honestly,Yes,3,1
+411,toys,5,very happy with this purchase,Yes,3,1
+412,outdoors,4,love it works perfectly,Yes,2,1
+413,electronics,4,excellent value highly recommend,Yes,3,1
+414,kitchen,1,arrived late and damaged,Yes,2,0
+415,toys,2,arrived late and damaged thanks,Yes,2,0
+416,books,2,very disappointed cheap material overall,Yes,5,0
+417,books,4,great quality and fast shipping,No,1,1
+418,toys,5,very happy with this purchase,Yes,0,1
+419,electronics,4,excellent value highly recommend,Yes,1,1
+420,books,4,sturdy and well made thanks,Yes,2,1
+421,electronics,3,does the job but instructions were unclear,Yes,1,0
+422,books,1,broke after two days terrible honestly,No,2,0
+423,outdoors,4,very happy with this purchase again,No,2,1
+424,outdoors,4,sturdy and well made,Yes,2,1
+425,outdoors,3,it is okay for the price,Yes,2,0
+426,books,1,very disappointed cheap material again,Yes,4,0
+427,books,5,excellent value highly recommend,No,2,1
+428,outdoors,4,great quality and fast shipping,Yes,3,1
+429,kitchen,4,excellent value highly recommend,Yes,2,1
+430,electronics,4,very happy with this purchase,No,1,1
+431,kitchen,4,love it works perfectly honestly,Yes,1,1
+432,outdoors,4,sturdy and well made thanks,Yes,4,1
+433,toys,5,great quality and fast shipping,Yes,2,1
+434,books,3,average product nothing special,Yes,1,0
+435,toys,2,very disappointed cheap material,Yes,2,0
+436,books,4,sturdy and well made overall,Yes,5,1
+437,books,5,sturdy and well made again,No,0,1
+438,electronics,4,excellent value highly recommend,Yes,0,1
+439,toys,4,love it works perfectly,Yes,4,1
+440,electronics,1,arrived late and damaged again,Yes,0,0
+441,books,4,sturdy and well made,Yes,4,1
+442,kitchen,3,average product nothing special,Yes,1,0
+443,electronics,5,excellent value highly recommend,Yes,3,1
+444,kitchen,1,arrived late and damaged thanks,Yes,2,0
+445,books,3,average product nothing special,Yes,1,0
+446,outdoors,5,great quality and fast shipping again,Yes,3,1
+447,books,1,poor quality would not buy again again,Yes,1,0
+448,books,3,average product nothing special thanks,Yes,2,0
+449,toys,4,very happy with this purchase overall,Yes,2,1
+450,toys,4,love it works perfectly honestly,Yes,6,1
+451,electronics,4,great quality and fast shipping honestly,No,2,1
+452,outdoors,5,great quality and fast shipping again,Yes,0,1
+453,toys,1,waste of money stopped working,Yes,1,0
+454,kitchen,5,love it works perfectly,Yes,1,1
+455,kitchen,3,decent but a bit smaller than expected,Yes,3,0
+456,electronics,3,does the job but instructions were unclear,Yes,3,0
+457,kitchen,1,poor quality would not buy again again,Yes,4,0
+458,outdoors,3,does the job but instructions were unclear,No,3,0
+459,kitchen,5,great quality and fast shipping thanks,Yes,1,1
+460,outdoors,5,very happy with this purchase,Yes,3,1
+461,kitchen,5,excellent value highly recommend overall,No,2,1
+462,toys,4,great quality and fast shipping,Yes,2,1
+463,books,2,waste of money stopped working,Yes,3,0
+464,electronics,1,poor quality would not buy again,Yes,1,0
+465,books,3,average product nothing special thanks,No,2,0
+466,books,4,sturdy and well made,No,0,1
+467,toys,4,very happy with this purchase overall,Yes,2,1
+468,books,5,very happy with this purchase thanks,No,6,1
+469,toys,4,great quality and fast shipping,Yes,3,1
+470,outdoors,5,excellent value highly recommend,Yes,0,1
+471,kitchen,3,average product nothing special overall,No,1,0
+472,electronics,5,great quality and fast shipping,Yes,0,1
+473,electronics,5,great quality and fast shipping thanks,Yes,1,1
+474,toys,3,decent but a bit smaller than expected honestly,No,3,0
+475,books,5,sturdy and well made,Yes,2,1
+476,toys,4,very happy with this purchase,Yes,1,1
+477,electronics,4,sturdy and well made again,Yes,2,1
+478,books,3,it is okay for the price again,Yes,0,0
+479,kitchen,4,great quality and fast shipping,Yes,1,1
+480,electronics,1,very disappointed cheap material,Yes,3,0
+481,kitchen,5,very happy with this purchase,Yes,1,1
+482,books,3,average product nothing special thanks,Yes,3,0
+483,books,5,excellent value highly recommend,Yes,1,1
+484,books,2,poor quality would not buy again,No,1,0
+485,kitchen,4,great quality and fast shipping,Yes,0,1
+486,kitchen,2,broke after two days terrible,Yes,2,0
+487,toys,4,very happy with this purchase,Yes,5,1
+488,outdoors,5,great quality and fast shipping,Yes,2,1
+489,toys,4,sturdy and well made overall,Yes,5,1
+490,kitchen,2,waste of money stopped working,Yes,3,0
+491,books,5,great quality and fast shipping,No,3,1
+492,kitchen,5,very happy with this purchase,Yes,3,1
+493,toys,5,excellent value highly recommend,Yes,3,1
+494,outdoors,4,great quality and fast shipping,No,2,1
+495,toys,4,great quality and fast shipping honestly,Yes,7,1
+496,toys,2,broke after two days terrible overall,Yes,5,0
+497,toys,2,arrived late and damaged,Yes,2,0
+498,electronics,4,love it works perfectly,Yes,4,1
+499,electronics,5,great quality and fast shipping overall,Yes,0,1
+500,outdoors,4,excellent value highly recommend,Yes,3,1
+501,outdoors,5,very happy with this purchase,Yes,2,1
+502,outdoors,5,love it works perfectly again,Yes,2,1
+503,electronics,4,sturdy and well made,Yes,3,1
+504,toys,4,sturdy and well made again,No,3,1
+505,books,5,very happy with this purchase,Yes,2,1
+506,outdoors,2,waste of money stopped working,Yes,5,0
+507,toys,3,average product nothing special,Yes,2,0
+508,electronics,5,love it works perfectly honestly,Yes,0,1
+509,toys,4,love it works perfectly,Yes,3,1
+510,electronics,4,excellent value highly recommend honestly,Yes,1,1
+511,toys,4,love it works perfectly,Yes,2,1
+512,electronics,3,average product nothing special,No,3,0
+513,electronics,5,very happy with this purchase honestly,Yes,1,1
+514,electronics,4,love it works perfectly,Yes,0,1
+515,toys,3,does the job but instructions were unclear overall,Yes,3,0
+516,electronics,4,very happy with this purchase,Yes,0,1
+517,books,4,excellent value highly recommend,No,5,1
+518,kitchen,4,very happy with this purchase,No,0,1
+519,kitchen,2,broke after two days terrible,Yes,1,0
+520,toys,1,poor quality would not buy again,Yes,2,0
+521,outdoors,1,arrived late and damaged,Yes,2,0
+522,kitchen,4,sturdy and well made,Yes,3,1
+523,electronics,4,great quality and fast shipping thanks,Yes,1,1
+524,toys,5,sturdy and well made overall,Yes,1,1
+525,toys,4,love it works perfectly overall,Yes,2,1
+526,books,5,sturdy and well made,Yes,3,1
+527,electronics,4,sturdy and well made,Yes,1,1
+528,books,1,waste of money stopped working,Yes,3,0
+529,outdoors,1,poor quality would not buy again,Yes,2,0
+530,outdoors,4,great quality and fast shipping again,Yes,2,1
+531,kitchen,4,excellent value highly recommend,Yes,2,1
+532,books,1,broke after two days terrible,Yes,4,0
+533,books,3,does the job but instructions were unclear,Yes,2,0
+534,kitchen,5,excellent value highly recommend overall,Yes,4,1
+535,toys,5,love it works perfectly,Yes,2,1
+536,toys,1,waste of money stopped working,No,1,0
+537,books,1,waste of money stopped working honestly,No,1,0
+538,books,1,broke after two days terrible,Yes,0,0
+539,kitchen,4,love it works perfectly thanks,No,1,1
+540,books,4,excellent value highly recommend again,No,3,1
+541,electronics,3,does the job but instructions were unclear honestly,Yes,3,0
+542,outdoors,5,excellent value highly recommend,Yes,1,1
+543,toys,3,does the job but instructions were unclear,Yes,4,0
+544,electronics,3,does the job but instructions were unclear,Yes,4,0
+545,outdoors,4,excellent value highly recommend again,No,1,1
+546,toys,4,sturdy and well made,Yes,3,1
+547,electronics,3,decent but a bit smaller than expected honestly,Yes,3,0
+548,kitchen,5,great quality and fast shipping,Yes,2,1
+549,outdoors,4,love it works perfectly,Yes,1,1
+550,toys,4,very happy with this purchase,Yes,4,1
+551,kitchen,4,very happy with this purchase,Yes,2,1
+552,electronics,3,decent but a bit smaller than expected,Yes,3,0
+553,electronics,4,sturdy and well made,Yes,0,1
+554,books,5,very happy with this purchase thanks,Yes,5,1
+555,electronics,5,great quality and fast shipping,Yes,6,1
+556,books,5,sturdy and well made again,Yes,1,1
+557,electronics,3,average product nothing special,No,1,0
+558,kitchen,4,great quality and fast shipping thanks,Yes,1,1
+559,toys,5,love it works perfectly,No,4,1
+560,toys,5,great quality and fast shipping,Yes,1,1
+561,kitchen,3,average product nothing special thanks,Yes,3,0
+562,outdoors,3,it is okay for the price overall,No,1,0
+563,toys,2,very disappointed cheap material,Yes,3,0
+564,books,5,very happy with this purchase honestly,Yes,4,1
+565,kitchen,2,very disappointed cheap material,Yes,3,0
+566,books,5,very happy with this purchase,Yes,0,1
+567,electronics,4,sturdy and well made,Yes,3,1
+568,toys,5,very happy with this purchase again,Yes,1,1
+569,books,4,very happy with this purchase,Yes,0,1
+570,electronics,4,very happy with this purchase,No,1,1
+571,electronics,5,very happy with this purchase overall,Yes,1,1
+572,electronics,2,very disappointed cheap material honestly,Yes,2,0
+573,toys,4,great quality and fast shipping,Yes,1,1
+574,outdoors,4,very happy with this purchase,Yes,2,1
+575,kitchen,5,sturdy and well made,Yes,2,1
+576,kitchen,4,excellent value highly recommend thanks,Yes,3,1
+577,electronics,4,excellent value highly recommend,Yes,1,1
+578,kitchen,5,very happy with this purchase honestly,Yes,1,1
+579,toys,4,very happy with this purchase,Yes,2,1
+580,electronics,4,great quality and fast shipping overall,Yes,1,1
+581,toys,4,great quality and fast shipping,Yes,1,1
+582,toys,2,waste of money stopped working,Yes,1,0
+583,kitchen,1,broke after two days terrible honestly,No,1,0
+584,kitchen,4,very happy with this purchase again,No,1,1
+585,kitchen,4,very happy with this purchase thanks,Yes,1,1
+586,books,4,very happy with this purchase,Yes,0,1
+587,electronics,4,excellent value highly recommend,Yes,3,1
+588,kitchen,4,very happy with this purchase,Yes,4,1
+589,kitchen,2,waste of money stopped working,Yes,2,0
+590,toys,1,broke after two days terrible,Yes,2,0
+591,toys,4,very happy with this purchase overall,Yes,3,1
+592,books,2,arrived late and damaged,Yes,1,0
+593,books,3,does the job but instructions were unclear,Yes,0,0
+594,books,4,sturdy and well made,Yes,0,1
+595,kitchen,3,average product nothing special thanks,Yes,3,0
+596,kitchen,4,excellent value highly recommend,Yes,1,1
+597,outdoors,4,love it works perfectly thanks,Yes,1,1
+598,electronics,2,arrived late and damaged,Yes,1,0
+599,electronics,5,sturdy and well made,Yes,0,1
+600,electronics,4,sturdy and well made overall,No,1,1
+601,electronics,5,great quality and fast shipping,Yes,2,1
+602,electronics,5,excellent value highly recommend,Yes,0,1
+603,books,4,great quality and fast shipping,Yes,5,1
+604,books,5,excellent value highly recommend,Yes,1,1
+605,outdoors,4,great quality and fast shipping,Yes,1,1
+606,outdoors,2,poor quality would not buy again,No,2,0
+607,toys,5,sturdy and well made thanks,Yes,2,1
+608,books,3,decent but a bit smaller than expected honestly,Yes,3,0
+609,books,3,average product nothing special,Yes,1,0
+610,kitchen,1,very disappointed cheap material,Yes,1,0
+611,books,4,sturdy and well made again,Yes,3,1
+612,kitchen,3,it is okay for the price,No,0,0
+613,electronics,5,very happy with this purchase,Yes,0,1
+614,electronics,4,very happy with this purchase honestly,Yes,1,1
+615,toys,5,sturdy and well made,Yes,2,1
+616,outdoors,3,does the job but instructions were unclear,Yes,2,0
+617,toys,4,love it works perfectly overall,Yes,2,1
+618,toys,4,great quality and fast shipping again,Yes,3,1
+619,kitchen,3,decent but a bit smaller than expected,No,2,0
+620,toys,4,sturdy and well made,Yes,0,1
+621,kitchen,4,excellent value highly recommend again,Yes,0,1
+622,toys,5,great quality and fast shipping again,Yes,3,1
+623,electronics,3,average product nothing special honestly,Yes,4,0
+624,toys,4,love it works perfectly,No,2,1
+625,toys,4,sturdy and well made,No,2,1
+626,outdoors,5,love it works perfectly,Yes,1,1
+627,electronics,3,average product nothing special,Yes,2,0
+628,outdoors,5,great quality and fast shipping thanks,Yes,1,1
+629,kitchen,5,excellent value highly recommend,No,2,1
+630,kitchen,2,very disappointed cheap material,No,2,0
+631,toys,4,sturdy and well made,Yes,1,1
+632,kitchen,2,broke after two days terrible thanks,Yes,1,0
+633,outdoors,4,very happy with this purchase,Yes,1,1
+634,books,5,love it works perfectly,Yes,2,1
+635,books,5,very happy with this purchase,Yes,4,1
+636,electronics,2,broke after two days terrible,Yes,1,0
+637,electronics,1,arrived late and damaged,Yes,1,0
+638,kitchen,5,great quality and fast shipping thanks,Yes,4,1
+639,kitchen,1,arrived late and damaged,Yes,3,0
+640,books,5,very happy with this purchase,Yes,1,1
+641,kitchen,4,love it works perfectly,Yes,2,1
+642,outdoors,5,excellent value highly recommend,Yes,2,1
+643,books,5,love it works perfectly again,No,4,1
+644,outdoors,3,average product nothing special,Yes,0,0
+645,books,5,great quality and fast shipping,Yes,0,1
+646,outdoors,4,excellent value highly recommend,Yes,4,1
+647,kitchen,5,excellent value highly recommend,Yes,5,1
+648,outdoors,4,very happy with this purchase,Yes,4,1
+649,toys,5,love it works perfectly thanks,Yes,1,1
+650,books,5,great quality and fast shipping,Yes,1,1
+651,toys,4,love it works perfectly,Yes,3,1
+652,outdoors,4,excellent value highly recommend,Yes,4,1
+653,toys,1,broke after two days terrible,Yes,1,0
+654,outdoors,5,excellent value highly recommend,Yes,1,1
+655,kitchen,4,very happy with this purchase thanks,Yes,2,1
+656,toys,5,sturdy and well made overall,Yes,2,1
+657,books,4,excellent value highly recommend,Yes,2,1
+658,outdoors,5,very happy with this purchase overall,Yes,2,1
+659,outdoors,4,great quality and fast shipping,Yes,1,1
+660,outdoors,5,very happy with this purchase,Yes,1,1
+661,outdoors,2,waste of money stopped working thanks,Yes,2,0
+662,electronics,1,poor quality would not buy again thanks,Yes,1,0
+663,outdoors,3,decent but a bit smaller than expected thanks,Yes,2,0
+664,electronics,5,sturdy and well made again,Yes,0,1
+665,kitchen,5,excellent value highly recommend,Yes,5,1
+666,electronics,2,broke after two days terrible,Yes,1,0
+667,books,3,average product nothing special,Yes,2,0
+668,outdoors,4,excellent value highly recommend thanks,Yes,3,1
+669,books,3,does the job but instructions were unclear again,Yes,1,0
+670,books,5,great quality and fast shipping,Yes,5,1
+671,outdoors,5,sturdy and well made honestly,Yes,0,1
+672,outdoors,3,does the job but instructions were unclear again,No,2,0
+673,electronics,2,poor quality would not buy again,Yes,0,0
+674,electronics,4,very happy with this purchase thanks,Yes,3,1
+675,electronics,4,love it works perfectly honestly,Yes,3,1
+676,outdoors,4,great quality and fast shipping,Yes,1,1
+677,books,4,very happy with this purchase honestly,Yes,1,1
+678,toys,5,sturdy and well made,Yes,3,1
+679,electronics,3,does the job but instructions were unclear honestly,Yes,0,0
+680,outdoors,5,excellent value highly recommend,Yes,1,1
+681,toys,5,sturdy and well made,Yes,1,1
+682,electronics,4,very happy with this purchase,No,4,1
+683,outdoors,3,it is okay for the price,Yes,1,0
+684,toys,2,broke after two days terrible,Yes,0,0
+685,toys,2,poor quality would not buy again,Yes,2,0
+686,books,1,very disappointed cheap material,No,0,0
+687,outdoors,4,excellent value highly recommend,Yes,2,1
+688,kitchen,4,love it works perfectly honestly,Yes,3,1
+689,kitchen,3,it is okay for the price,Yes,4,0
+690,toys,5,love it works perfectly,No,1,1
+691,outdoors,5,excellent value highly recommend,Yes,2,1
+692,toys,1,waste of money stopped working honestly,No,5,0
+693,kitchen,4,great quality and fast shipping,No,2,1
+694,toys,2,waste of money stopped working,Yes,5,0
+695,outdoors,1,broke after two days terrible,No,1,0
+696,electronics,5,sturdy and well made thanks,Yes,2,1
+697,toys,3,it is okay for the price again,Yes,3,0
+698,books,3,does the job but instructions were unclear,Yes,0,0
+699,kitchen,3,average product nothing special,Yes,3,0
+700,toys,5,love it works perfectly,Yes,3,1
+701,toys,1,broke after two days terrible,Yes,1,0
+702,toys,4,very happy with this purchase thanks,Yes,4,1
+703,books,5,very happy with this purchase honestly,Yes,3,1
+704,outdoors,5,great quality and fast shipping,Yes,4,1
+705,outdoors,4,love it works perfectly overall,Yes,1,1
+706,electronics,4,very happy with this purchase,Yes,4,1
+707,kitchen,1,poor quality would not buy again,Yes,1,0
+708,toys,5,sturdy and well made overall,Yes,2,1
+709,toys,1,very disappointed cheap material,Yes,4,0
+710,outdoors,4,love it works perfectly thanks,Yes,5,1
+711,kitchen,4,great quality and fast shipping,Yes,2,1
+712,kitchen,1,very disappointed cheap material,Yes,1,0
+713,outdoors,1,very disappointed cheap material,No,1,0
+714,kitchen,3,does the job but instructions were unclear,Yes,1,0
+715,outdoors,4,excellent value highly recommend overall,No,1,1
+716,electronics,5,great quality and fast shipping,Yes,4,1
+717,toys,4,great quality and fast shipping thanks,Yes,3,1
+718,electronics,5,great quality and fast shipping again,No,4,1
+719,kitchen,5,sturdy and well made,Yes,1,1
+720,books,5,great quality and fast shipping honestly,Yes,4,1
+721,electronics,3,average product nothing special,No,3,0
+722,kitchen,5,sturdy and well made overall,No,4,1
+723,books,4,great quality and fast shipping,Yes,0,1
+724,electronics,5,very happy with this purchase,Yes,0,1
+725,books,5,sturdy and well made again,No,2,1
+726,kitchen,4,very happy with this purchase again,Yes,2,1
+727,kitchen,3,does the job but instructions were unclear,Yes,4,0
+728,toys,3,it is okay for the price thanks,Yes,1,0
+729,outdoors,4,love it works perfectly,No,1,1
+730,electronics,2,arrived late and damaged,Yes,2,0
+731,outdoors,4,great quality and fast shipping,Yes,2,1
+732,electronics,1,very disappointed cheap material,Yes,1,0
+733,outdoors,2,broke after two days terrible,No,3,0
+734,toys,5,excellent value highly recommend overall,No,1,1
+735,kitchen,4,excellent value highly recommend,Yes,3,1
+736,toys,5,sturdy and well made,Yes,2,1
+737,electronics,5,excellent value highly recommend thanks,No,2,1
+738,outdoors,4,excellent value highly recommend thanks,Yes,1,1
+739,outdoors,5,great quality and fast shipping again,Yes,5,1
+740,books,5,excellent value highly recommend,Yes,2,1
+741,kitchen,1,very disappointed cheap material,Yes,2,0
+742,toys,4,sturdy and well made,Yes,5,1
+743,electronics,4,excellent value highly recommend again,Yes,2,1
+744,electronics,4,very happy with this purchase again,Yes,3,1
+745,kitchen,3,it is okay for the price,Yes,3,0
+746,electronics,4,great quality and fast shipping,Yes,0,1
+747,kitchen,4,sturdy and well made,Yes,2,1
+748,electronics,5,love it works perfectly again,Yes,3,1
+749,books,5,great quality and fast shipping,Yes,1,1
+750,toys,5,very happy with this purchase honestly,Yes,1,1
+751,outdoors,5,very happy with this purchase,Yes,1,1
+752,toys,5,very happy with this purchase thanks,No,1,1
+753,books,4,sturdy and well made,Yes,0,1
+754,outdoors,5,sturdy and well made honestly,Yes,2,1
+755,electronics,4,excellent value highly recommend,No,1,1
+756,kitchen,5,great quality and fast shipping overall,No,0,1
+757,electronics,5,excellent value highly recommend,Yes,4,1
+758,kitchen,4,love it works perfectly thanks,Yes,6,1
+759,toys,2,arrived late and damaged honestly,No,1,0
+760,books,5,very happy with this purchase,Yes,1,1
+761,books,2,very disappointed cheap material,Yes,3,0
+762,kitchen,3,average product nothing special,Yes,3,0
+763,kitchen,5,sturdy and well made,Yes,1,1
+764,outdoors,4,love it works perfectly,No,2,1
+765,kitchen,3,average product nothing special,Yes,0,0
+766,kitchen,5,love it works perfectly,No,4,1
+767,toys,1,very disappointed cheap material honestly,Yes,1,0
+768,books,5,excellent value highly recommend,Yes,3,1
+769,electronics,5,sturdy and well made again,No,3,1
+770,toys,2,very disappointed cheap material,Yes,0,0
+771,toys,5,excellent value highly recommend,Yes,3,1
+772,outdoors,2,broke after two days terrible,Yes,1,0
+773,outdoors,3,decent but a bit smaller than expected,Yes,0,0
+774,books,4,sturdy and well made overall,Yes,4,1
+775,kitchen,5,sturdy and well made,Yes,2,1
+776,books,4,very happy with this purchase honestly,Yes,1,1
+777,toys,1,poor quality would not buy again thanks,Yes,2,0
+778,electronics,4,very happy with this purchase,Yes,0,1
+779,toys,3,decent but a bit smaller than expected,Yes,0,0
+780,outdoors,5,very happy with this purchase,Yes,1,1
+781,kitchen,3,average product nothing special,Yes,2,0
+782,toys,5,very happy with this purchase,Yes,3,1
+783,electronics,1,very disappointed cheap material,Yes,0,0
+784,electronics,4,excellent value highly recommend,Yes,2,1
+785,books,3,decent but a bit smaller than expected thanks,Yes,2,0
+786,books,5,excellent value highly recommend overall,Yes,1,1
+787,kitchen,3,decent but a bit smaller than expected,Yes,2,0
+788,books,4,sturdy and well made,Yes,1,1
+789,toys,5,very happy with this purchase,Yes,1,1
+790,books,2,very disappointed cheap material,Yes,5,0
+791,books,3,it is okay for the price,Yes,2,0
+792,outdoors,5,excellent value highly recommend,Yes,2,1
+793,kitchen,5,sturdy and well made thanks,Yes,3,1
+794,outdoors,5,love it works perfectly,Yes,1,1
+795,books,5,great quality and fast shipping thanks,No,1,1
+796,toys,5,very happy with this purchase,Yes,3,1
+797,electronics,4,very happy with this purchase,Yes,3,1
+798,toys,5,great quality and fast shipping,Yes,2,1
+799,outdoors,4,love it works perfectly,No,2,1
+800,toys,5,great quality and fast shipping,Yes,1,1
+801,kitchen,4,very happy with this purchase again,Yes,3,1
+802,toys,4,great quality and fast shipping again,Yes,1,1
+803,outdoors,1,poor quality would not buy again overall,Yes,0,0
+804,outdoors,1,broke after two days terrible,No,1,0
+805,outdoors,3,does the job but instructions were unclear,Yes,1,0
+806,books,5,great quality and fast shipping,Yes,1,1
+807,toys,5,sturdy and well made,Yes,4,1
+808,kitchen,2,poor quality would not buy again,Yes,2,0
+809,outdoors,4,love it works perfectly,Yes,2,1
+810,kitchen,3,decent but a bit smaller than expected,Yes,1,0
+811,books,2,arrived late and damaged,No,3,0
+812,outdoors,5,very happy with this purchase overall,No,6,1
+813,books,4,excellent value highly recommend,No,3,1
+814,kitchen,5,very happy with this purchase thanks,Yes,2,1
+815,books,4,sturdy and well made,Yes,2,1
+816,electronics,5,very happy with this purchase,Yes,1,1
+817,toys,1,broke after two days terrible,Yes,3,0
+818,electronics,4,sturdy and well made honestly,Yes,1,1
+819,outdoors,1,very disappointed cheap material overall,Yes,0,0
+820,kitchen,1,waste of money stopped working,Yes,2,0
+821,toys,5,very happy with this purchase overall,Yes,4,1
+822,outdoors,1,very disappointed cheap material,Yes,1,0
+823,outdoors,5,great quality and fast shipping,Yes,0,1
+824,electronics,2,very disappointed cheap material honestly,Yes,1,0
+825,outdoors,2,very disappointed cheap material again,Yes,0,0
+826,outdoors,4,great quality and fast shipping overall,Yes,2,1
+827,toys,3,it is okay for the price,Yes,1,0
+828,kitchen,5,sturdy and well made honestly,Yes,2,1
+829,books,4,sturdy and well made honestly,Yes,2,1
+830,outdoors,5,excellent value highly recommend,Yes,3,1
+831,outdoors,5,excellent value highly recommend,Yes,4,1
+832,kitchen,4,excellent value highly recommend thanks,Yes,2,1
+833,books,4,great quality and fast shipping,Yes,1,1
+834,electronics,5,very happy with this purchase honestly,Yes,3,1
+835,electronics,4,very happy with this purchase,Yes,0,1
+836,outdoors,5,love it works perfectly,No,5,1
+837,toys,5,very happy with this purchase again,Yes,3,1
+838,books,4,sturdy and well made,Yes,1,1
+839,outdoors,4,great quality and fast shipping,No,2,1
+840,toys,4,love it works perfectly,No,4,1
+841,toys,3,decent but a bit smaller than expected,Yes,0,0
+842,books,2,very disappointed cheap material,Yes,1,0
+843,kitchen,4,love it works perfectly overall,Yes,2,1
+844,kitchen,4,love it works perfectly,Yes,1,1
+845,electronics,3,it is okay for the price,Yes,4,0
+846,kitchen,4,very happy with this purchase,Yes,1,1
+847,electronics,5,very happy with this purchase overall,Yes,0,1
+848,outdoors,5,excellent value highly recommend,Yes,1,1
+849,kitchen,5,love it works perfectly,Yes,1,1
+850,books,5,great quality and fast shipping,Yes,1,1
+851,electronics,5,love it works perfectly overall,Yes,2,1
+852,electronics,3,decent but a bit smaller than expected again,Yes,3,0
+853,toys,4,great quality and fast shipping,Yes,4,1
+854,electronics,2,poor quality would not buy again again,Yes,2,0
+855,electronics,4,excellent value highly recommend,No,0,1
+856,outdoors,5,excellent value highly recommend thanks,Yes,1,1
+857,outdoors,5,excellent value highly recommend,Yes,2,1
+858,outdoors,1,broke after two days terrible thanks,Yes,1,0
+859,toys,4,sturdy and well made,Yes,3,1
+860,electronics,2,broke after two days terrible overall,Yes,0,0
+861,outdoors,5,sturdy and well made thanks,Yes,1,1
+862,kitchen,1,poor quality would not buy again,Yes,0,0
+863,books,5,great quality and fast shipping,No,2,1
+864,books,1,very disappointed cheap material,Yes,3,0
+865,outdoors,5,excellent value highly recommend again,Yes,2,1
+866,kitchen,4,love it works perfectly,Yes,1,1
+867,kitchen,5,great quality and fast shipping,Yes,5,1
+868,electronics,5,excellent value highly recommend,Yes,1,1
+869,electronics,4,excellent value highly recommend,Yes,1,1
+870,electronics,5,excellent value highly recommend,Yes,3,1
+871,electronics,5,great quality and fast shipping again,Yes,0,1
+872,books,4,very happy with this purchase,No,4,1
+873,toys,4,excellent value highly recommend,Yes,5,1
+874,toys,4,sturdy and well made,Yes,2,1
+875,outdoors,4,excellent value highly recommend again,Yes,3,1
+876,kitchen,5,love it works perfectly,Yes,1,1
+877,books,1,poor quality would not buy again thanks,Yes,2,0
+878,outdoors,3,does the job but instructions were unclear thanks,Yes,2,0
+879,electronics,5,great quality and fast shipping overall,Yes,3,1
+880,outdoors,4,great quality and fast shipping,Yes,1,1
+881,toys,5,sturdy and well made thanks,Yes,0,1
+882,toys,3,average product nothing special,Yes,1,0
+883,books,5,love it works perfectly,Yes,3,1
+884,toys,1,poor quality would not buy again honestly,Yes,2,0
+885,electronics,4,great quality and fast shipping,No,0,1
+886,electronics,2,poor quality would not buy again honestly,Yes,0,0
+887,electronics,4,very happy with this purchase,Yes,1,1
+888,toys,4,excellent value highly recommend honestly,Yes,1,1
+889,toys,2,very disappointed cheap material,Yes,1,0
+890,books,3,average product nothing special,Yes,2,0
+891,kitchen,1,very disappointed cheap material overall,Yes,2,0
+892,outdoors,3,decent but a bit smaller than expected,No,1,0
+893,books,2,poor quality would not buy again thanks,No,3,0
+894,electronics,2,very disappointed cheap material overall,Yes,1,0
+895,outdoors,3,it is okay for the price again,Yes,4,0
+896,kitchen,2,waste of money stopped working thanks,Yes,1,0
+897,outdoors,5,great quality and fast shipping thanks,Yes,3,1
+898,books,5,very happy with this purchase,Yes,1,1
+899,toys,1,poor quality would not buy again,Yes,3,0
+900,kitchen,2,very disappointed cheap material,Yes,1,0
+901,books,5,excellent value highly recommend,Yes,1,1
+902,electronics,4,excellent value highly recommend,Yes,2,1
+903,electronics,4,excellent value highly recommend,Yes,0,1
+904,books,1,broke after two days terrible overall,Yes,0,0
+905,toys,1,waste of money stopped working,No,1,0
+906,toys,4,love it works perfectly,Yes,1,1
+907,outdoors,4,excellent value highly recommend,Yes,0,1
+908,books,4,excellent value highly recommend,Yes,1,1
+909,electronics,1,broke after two days terrible,Yes,1,0
+910,kitchen,3,it is okay for the price thanks,Yes,2,0
+911,electronics,5,love it works perfectly,Yes,5,1
+912,books,4,very happy with this purchase,Yes,6,1
+913,toys,4,great quality and fast shipping thanks,Yes,2,1
+914,books,5,great quality and fast shipping again,Yes,1,1
+915,electronics,2,broke after two days terrible,Yes,4,0
+916,electronics,5,sturdy and well made,Yes,3,1
+917,books,3,average product nothing special honestly,Yes,0,0
+918,electronics,5,very happy with this purchase again,Yes,5,1
+919,books,3,decent but a bit smaller than expected,Yes,3,0
+920,electronics,1,poor quality would not buy again,Yes,0,0
+921,electronics,4,sturdy and well made overall,Yes,3,1
+922,toys,2,very disappointed cheap material thanks,Yes,2,0
+923,toys,5,excellent value highly recommend honestly,Yes,1,1
+924,toys,5,very happy with this purchase again,Yes,3,1
+925,kitchen,4,love it works perfectly,Yes,2,1
+926,books,5,excellent value highly recommend,Yes,0,1
+927,books,4,love it works perfectly,No,0,1
+928,kitchen,5,love it works perfectly honestly,No,2,1
+929,outdoors,3,it is okay for the price overall,Yes,2,0
+930,electronics,2,broke after two days terrible,Yes,4,0
+931,outdoors,1,poor quality would not buy again,Yes,1,0
+932,toys,3,average product nothing special,Yes,2,0
+933,kitchen,4,great quality and fast shipping honestly,Yes,5,1
+934,electronics,4,love it works perfectly,Yes,3,1
+935,electronics,1,arrived late and damaged,Yes,1,0
+936,toys,4,sturdy and well made,Yes,3,1
+937,kitchen,1,very disappointed cheap material,Yes,3,0
+938,books,4,excellent value highly recommend overall,Yes,1,1
+939,electronics,5,very happy with this purchase,Yes,2,1
+940,kitchen,4,great quality and fast shipping,No,1,1
+941,toys,4,sturdy and well made,Yes,1,1
+942,books,4,love it works perfectly,Yes,1,1
+943,toys,4,excellent value highly recommend,Yes,2,1
+944,books,1,poor quality would not buy again thanks,Yes,1,0
+945,toys,1,very disappointed cheap material,Yes,2,0
+946,kitchen,4,love it works perfectly,Yes,2,1
+947,outdoors,5,excellent value highly recommend again,Yes,2,1
+948,kitchen,4,great quality and fast shipping,Yes,7,1
+949,kitchen,4,very happy with this purchase,Yes,1,1
+950,books,5,excellent value highly recommend thanks,Yes,0,1
+951,kitchen,5,sturdy and well made overall,Yes,7,1
+952,kitchen,5,sturdy and well made,No,1,1
+953,kitchen,4,great quality and fast shipping,Yes,2,1
+954,books,1,broke after two days terrible again,Yes,0,0
+955,books,4,sturdy and well made,Yes,0,1
+956,toys,3,decent but a bit smaller than expected,Yes,5,0
+957,electronics,4,love it works perfectly thanks,Yes,3,1
+958,books,5,love it works perfectly again,Yes,1,1
+959,electronics,5,great quality and fast shipping,Yes,3,1
+960,kitchen,5,very happy with this purchase,Yes,0,1
+961,electronics,4,very happy with this purchase thanks,Yes,0,1
+962,electronics,4,sturdy and well made,Yes,3,1
+963,toys,4,great quality and fast shipping thanks,Yes,0,1
+964,electronics,1,waste of money stopped working overall,Yes,0,0
+965,kitchen,3,it is okay for the price,Yes,2,0
+966,outdoors,4,sturdy and well made thanks,No,1,1
+967,outdoors,4,sturdy and well made overall,Yes,1,1
+968,toys,5,excellent value highly recommend again,Yes,4,1
+969,outdoors,5,great quality and fast shipping,Yes,1,1
+970,books,5,excellent value highly recommend thanks,Yes,2,1
+971,kitchen,5,very happy with this purchase overall,Yes,0,1
+972,toys,4,very happy with this purchase thanks,Yes,5,1
+973,outdoors,4,love it works perfectly,No,3,1
+974,electronics,4,excellent value highly recommend,Yes,1,1
+975,books,4,very happy with this purchase overall,Yes,1,1
+976,kitchen,2,broke after two days terrible,Yes,2,0
+977,electronics,1,poor quality would not buy again,Yes,1,0
+978,electronics,2,arrived late and damaged,Yes,2,0
+979,books,3,it is okay for the price,Yes,0,0
+980,outdoors,5,sturdy and well made honestly,Yes,4,1
+981,electronics,4,excellent value highly recommend,Yes,2,1
+982,outdoors,3,does the job but instructions were unclear honestly,Yes,3,0
+983,toys,3,does the job but instructions were unclear thanks,Yes,4,0
+984,kitchen,5,very happy with this purchase,Yes,1,1
+985,outdoors,4,sturdy and well made thanks,Yes,5,1
+986,toys,3,average product nothing special,Yes,2,0
+987,kitchen,4,great quality and fast shipping,Yes,2,1
+988,books,3,average product nothing special again,No,0,0
+989,kitchen,4,love it works perfectly again,Yes,1,1
+990,toys,5,love it works perfectly,No,1,1
+991,kitchen,3,average product nothing special again,Yes,1,0
+992,outdoors,5,sturdy and well made thanks,No,4,1
+993,books,4,excellent value highly recommend honestly,Yes,3,1
+994,kitchen,1,poor quality would not buy again thanks,Yes,3,0
+995,books,1,poor quality would not buy again,Yes,2,0
+996,kitchen,3,it is okay for the price,Yes,0,0
+997,toys,4,love it works perfectly,Yes,2,1
+998,toys,5,love it works perfectly thanks,Yes,0,1
+999,toys,4,sturdy and well made,Yes,1,1
+1000,toys,5,great quality and fast shipping overall,Yes,10,1
+1001,electronics,4,love it works perfectly,No,3,1
+1002,electronics,4,very happy with this purchase again,Yes,2,1
+1003,outdoors,1,very disappointed cheap material,Yes,0,0
+1004,electronics,4,very happy with this purchase honestly,Yes,3,1
+1005,kitchen,5,great quality and fast shipping overall,Yes,0,1
+1006,electronics,5,sturdy and well made,Yes,2,1
+1007,electronics,5,excellent value highly recommend thanks,Yes,1,1
+1008,electronics,5,love it works perfectly,Yes,1,1
+1009,books,1,very disappointed cheap material thanks,No,0,0
+1010,kitchen,4,love it works perfectly,Yes,4,1
+1011,outdoors,4,great quality and fast shipping thanks,Yes,2,1
+1012,outdoors,4,excellent value highly recommend honestly,Yes,0,1
+1013,kitchen,2,poor quality would not buy again,Yes,1,0
+1014,books,4,great quality and fast shipping,Yes,4,1
+1015,toys,4,great quality and fast shipping overall,Yes,1,1
+1016,outdoors,4,sturdy and well made overall,Yes,1,1
+1017,kitchen,4,very happy with this purchase,Yes,2,1
+1018,outdoors,3,average product nothing special,Yes,0,0
+1019,electronics,1,very disappointed cheap material,Yes,1,0
+1020,electronics,1,poor quality would not buy again,Yes,0,0
+1021,toys,5,excellent value highly recommend,Yes,3,1
+1022,kitchen,4,sturdy and well made,No,1,1
+1023,electronics,2,poor quality would not buy again,Yes,4,0
+1024,electronics,5,great quality and fast shipping,Yes,1,1
+1025,books,5,sturdy and well made thanks,Yes,0,1
+1026,kitchen,5,very happy with this purchase,Yes,2,1
+1027,kitchen,4,sturdy and well made,Yes,2,1
+1028,kitchen,5,very happy with this purchase overall,Yes,1,1
+1029,electronics,1,waste of money stopped working,Yes,2,0
+1030,books,4,excellent value highly recommend,No,2,1
+1031,books,4,very happy with this purchase thanks,Yes,3,1
+1032,outdoors,2,waste of money stopped working,Yes,5,0
+1033,toys,3,it is okay for the price,Yes,0,0
+1034,books,2,poor quality would not buy again thanks,No,4,0
+1035,kitchen,4,very happy with this purchase,Yes,3,1
+1036,toys,5,great quality and fast shipping honestly,Yes,3,1
+1037,toys,1,arrived late and damaged,Yes,3,0
+1038,toys,2,waste of money stopped working,Yes,1,0
+1039,outdoors,5,love it works perfectly,Yes,2,1
+1040,kitchen,5,sturdy and well made,Yes,1,1
+1041,outdoors,5,love it works perfectly thanks,Yes,1,1
+1042,kitchen,4,love it works perfectly,Yes,1,1
+1043,electronics,5,sturdy and well made,Yes,4,1
+1044,kitchen,4,sturdy and well made,No,0,1
+1045,toys,5,sturdy and well made,Yes,1,1
+1046,electronics,4,love it works perfectly again,Yes,0,1
+1047,electronics,5,very happy with this purchase,Yes,3,1
+1048,electronics,5,very happy with this purchase thanks,Yes,0,1
+1049,outdoors,3,it is okay for the price,Yes,3,0
+1050,outdoors,1,very disappointed cheap material,Yes,3,0
+1051,books,4,love it works perfectly overall,Yes,3,1
+1052,toys,5,love it works perfectly honestly,Yes,2,1
+1053,electronics,5,sturdy and well made again,Yes,1,1
+1054,kitchen,3,average product nothing special again,Yes,3,0
+1055,books,1,poor quality would not buy again,Yes,1,0
+1056,electronics,4,sturdy and well made,Yes,0,1
+1057,books,5,great quality and fast shipping thanks,Yes,0,1
+1058,outdoors,1,arrived late and damaged honestly,Yes,4,0
+1059,outdoors,2,poor quality would not buy again,No,2,0
+1060,toys,3,does the job but instructions were unclear honestly,No,4,0
+1061,kitchen,2,very disappointed cheap material,Yes,3,0
+1062,books,4,very happy with this purchase,Yes,3,1
+1063,kitchen,5,great quality and fast shipping again,No,1,1
+1064,electronics,5,great quality and fast shipping,Yes,2,1
+1065,outdoors,5,sturdy and well made,Yes,0,1
+1066,kitchen,4,excellent value highly recommend,Yes,2,1
+1067,electronics,4,love it works perfectly,Yes,1,1
+1068,books,5,very happy with this purchase,Yes,3,1
+1069,toys,3,does the job but instructions were unclear again,Yes,1,0
+1070,electronics,4,love it works perfectly,Yes,2,1
+1071,toys,4,sturdy and well made again,Yes,1,1
+1072,books,4,sturdy and well made,Yes,1,1
+1073,outdoors,5,love it works perfectly,Yes,2,1
+1074,electronics,4,very happy with this purchase,Yes,2,1
+1075,toys,4,sturdy and well made,No,1,1
+1076,electronics,3,does the job but instructions were unclear again,Yes,3,0
+1077,outdoors,4,love it works perfectly,Yes,3,1
+1078,outdoors,4,love it works perfectly,Yes,2,1
+1079,books,4,excellent value highly recommend thanks,Yes,1,1
+1080,books,5,very happy with this purchase overall,No,1,1
+1081,electronics,4,love it works perfectly overall,Yes,1,1
+1082,toys,3,decent but a bit smaller than expected,Yes,2,0
+1083,books,5,great quality and fast shipping thanks,Yes,3,1
+1084,books,4,love it works perfectly honestly,Yes,1,1
+1085,electronics,5,very happy with this purchase,Yes,1,1
+1086,outdoors,3,average product nothing special honestly,No,1,0
+1087,kitchen,3,average product nothing special,Yes,4,0
+1088,electronics,4,excellent value highly recommend,Yes,3,1
+1089,books,4,love it works perfectly honestly,Yes,2,1
+1090,electronics,4,excellent value highly recommend,Yes,1,1
+1091,kitchen,4,very happy with this purchase,Yes,4,1
+1092,books,3,average product nothing special thanks,Yes,2,0
+1093,toys,1,poor quality would not buy again,Yes,1,0
+1094,books,1,broke after two days terrible,No,3,0
+1095,toys,3,decent but a bit smaller than expected,Yes,1,0
+1096,electronics,1,poor quality would not buy again,Yes,1,0
+1097,outdoors,3,average product nothing special,Yes,2,0
+1098,kitchen,3,it is okay for the price thanks,Yes,2,0
+1099,books,4,excellent value highly recommend overall,Yes,1,1
+1100,electronics,5,excellent value highly recommend honestly,Yes,1,1
+1101,outdoors,5,great quality and fast shipping,Yes,1,1
+1102,electronics,4,sturdy and well made honestly,Yes,1,1
+1103,kitchen,5,love it works perfectly,Yes,0,1
+1104,outdoors,3,does the job but instructions were unclear honestly,No,0,0
+1105,toys,5,great quality and fast shipping again,Yes,4,1
+1106,kitchen,4,sturdy and well made honestly,No,1,1
+1107,outdoors,4,very happy with this purchase honestly,No,0,1
+1108,electronics,1,arrived late and damaged,Yes,2,0
+1109,outdoors,3,decent but a bit smaller than expected,Yes,3,0
+1110,books,4,excellent value highly recommend,No,2,1
+1111,outdoors,5,love it works perfectly,Yes,1,1
+1112,books,4,love it works perfectly,Yes,5,1
+1113,toys,5,excellent value highly recommend,Yes,3,1
+1114,kitchen,4,very happy with this purchase,Yes,1,1
+1115,outdoors,4,love it works perfectly,Yes,3,1
+1116,outdoors,5,great quality and fast shipping,Yes,3,1
+1117,electronics,1,arrived late and damaged,Yes,1,0
+1118,outdoors,4,love it works perfectly honestly,Yes,1,1
+1119,books,4,sturdy and well made,Yes,1,1
+1120,outdoors,4,excellent value highly recommend again,Yes,3,1
+1121,electronics,4,sturdy and well made,No,1,1
+1122,outdoors,1,waste of money stopped working,No,0,0
+1123,kitchen,4,love it works perfectly overall,Yes,0,1
+1124,outdoors,3,does the job but instructions were unclear,Yes,2,0
+1125,books,3,does the job but instructions were unclear thanks,Yes,4,0
+1126,kitchen,5,excellent value highly recommend,Yes,2,1
+1127,toys,1,arrived late and damaged honestly,No,1,0
+1128,electronics,3,decent but a bit smaller than expected,Yes,1,0
+1129,electronics,4,great quality and fast shipping,Yes,0,1
+1130,outdoors,1,waste of money stopped working overall,No,2,0
+1131,books,4,very happy with this purchase,Yes,5,1
+1132,toys,5,love it works perfectly,Yes,1,1
+1133,kitchen,3,average product nothing special,No,2,0
+1134,kitchen,4,very happy with this purchase,No,3,1
+1135,electronics,5,love it works perfectly,Yes,2,1
+1136,kitchen,4,excellent value highly recommend,No,4,1
+1137,toys,2,broke after two days terrible,Yes,1,0
+1138,kitchen,3,decent but a bit smaller than expected,Yes,3,0
+1139,toys,4,sturdy and well made,Yes,2,1
+1140,books,5,sturdy and well made,Yes,3,1
+1141,toys,2,poor quality would not buy again honestly,Yes,0,0
+1142,outdoors,4,sturdy and well made,Yes,2,1
+1143,electronics,5,love it works perfectly,Yes,3,1
+1144,toys,1,arrived late and damaged,Yes,0,0
+1145,kitchen,3,decent but a bit smaller than expected,Yes,3,0
+1146,electronics,1,very disappointed cheap material overall,Yes,3,0
+1147,books,5,great quality and fast shipping,No,2,1
+1148,kitchen,2,poor quality would not buy again,Yes,1,0
+1149,electronics,4,very happy with this purchase again,Yes,2,1
+1150,toys,2,broke after two days terrible,Yes,0,0
+1151,electronics,4,love it works perfectly overall,Yes,2,1
+1152,electronics,5,sturdy and well made,Yes,2,1
+1153,books,3,decent but a bit smaller than expected,No,3,0
+1154,books,5,very happy with this purchase overall,No,3,1
+1155,kitchen,4,love it works perfectly,Yes,3,1
+1156,electronics,5,love it works perfectly again,Yes,0,1
+1157,outdoors,2,broke after two days terrible thanks,Yes,2,0
+1158,kitchen,5,excellent value highly recommend thanks,Yes,3,1
+1159,books,4,sturdy and well made,Yes,1,1
+1160,toys,3,it is okay for the price,Yes,3,0
+1161,books,4,love it works perfectly,Yes,1,1
+1162,books,4,sturdy and well made,Yes,2,1
+1163,books,4,sturdy and well made overall,Yes,2,1
+1164,outdoors,4,love it works perfectly again,No,1,1
+1165,kitchen,4,sturdy and well made honestly,Yes,3,1
+1166,toys,1,waste of money stopped working,No,1,0
+1167,outdoors,4,excellent value highly recommend overall,No,1,1
+1168,toys,5,excellent value highly recommend,Yes,2,1
+1169,electronics,3,it is okay for the price,Yes,1,0
+1170,toys,1,broke after two days terrible,Yes,3,0
+1171,kitchen,4,very happy with this purchase honestly,Yes,2,1
+1172,outdoors,5,excellent value highly recommend,Yes,0,1
+1173,outdoors,5,great quality and fast shipping thanks,Yes,0,1
+1174,kitchen,2,very disappointed cheap material,Yes,1,0
+1175,toys,3,decent but a bit smaller than expected,No,4,0
+1176,electronics,4,love it works perfectly overall,Yes,1,1
+1177,kitchen,2,waste of money stopped working overall,Yes,2,0
+1178,kitchen,3,average product nothing special,Yes,2,0
+1179,outdoors,5,love it works perfectly,Yes,0,1
+1180,books,4,great quality and fast shipping overall,Yes,4,1
+1181,toys,2,very disappointed cheap material,Yes,3,0
+1182,electronics,2,broke after two days terrible,Yes,5,0
+1183,electronics,4,very happy with this purchase,Yes,2,1
+1184,electronics,5,sturdy and well made,Yes,0,1
+1185,books,5,excellent value highly recommend,Yes,3,1
+1186,books,2,very disappointed cheap material thanks,Yes,3,0
+1187,electronics,5,sturdy and well made,Yes,3,1
+1188,toys,4,great quality and fast shipping honestly,Yes,1,1
+1189,toys,2,very disappointed cheap material thanks,Yes,0,0
+1190,kitchen,4,excellent value highly recommend honestly,Yes,3,1
+1191,electronics,4,great quality and fast shipping overall,Yes,0,1
+1192,books,5,sturdy and well made again,Yes,4,1
+1193,kitchen,5,very happy with this purchase,Yes,1,1
+1194,books,5,love it works perfectly,Yes,1,1
+1195,electronics,5,very happy with this purchase,Yes,2,1
+1196,books,5,great quality and fast shipping honestly,Yes,3,1
+1197,kitchen,5,love it works perfectly,Yes,0,1
+1198,toys,4,very happy with this purchase overall,Yes,2,1
+1199,kitchen,4,sturdy and well made,Yes,0,1
+1200,books,4,very happy with this purchase,Yes,1,1
+1201,kitchen,3,does the job but instructions were unclear,Yes,1,0
+1202,electronics,1,broke after two days terrible honestly,Yes,4,0
+1203,kitchen,5,great quality and fast shipping,Yes,3,1
+1204,toys,5,love it works perfectly,Yes,3,1
+1205,electronics,5,very happy with this purchase thanks,Yes,1,1
+1206,books,3,it is okay for the price,Yes,5,0
+1207,kitchen,3,it is okay for the price,Yes,1,0
+1208,books,4,excellent value highly recommend thanks,Yes,0,1
+1209,kitchen,4,very happy with this purchase,Yes,4,1
+1210,toys,5,great quality and fast shipping,Yes,4,1
+1211,kitchen,5,sturdy and well made,Yes,0,1
+1212,kitchen,5,sturdy and well made,No,0,1
+1213,books,5,great quality and fast shipping,Yes,3,1
+1214,toys,3,does the job but instructions were unclear again,Yes,3,0
+1215,toys,5,sturdy and well made,Yes,2,1
+1216,toys,4,very happy with this purchase,Yes,2,1
+1217,toys,3,decent but a bit smaller than expected,Yes,0,0
+1218,kitchen,5,great quality and fast shipping overall,Yes,2,1
+1219,books,5,excellent value highly recommend overall,Yes,3,1
+1220,kitchen,5,great quality and fast shipping,No,3,1
+1221,toys,4,great quality and fast shipping,Yes,2,1
+1222,books,4,sturdy and well made overall,No,3,1
+1223,toys,4,very happy with this purchase,Yes,0,1
+1224,toys,3,average product nothing special overall,Yes,0,0
+1225,electronics,4,excellent value highly recommend,Yes,4,1
+1226,kitchen,4,sturdy and well made again,Yes,0,1
+1227,electronics,4,very happy with this purchase,Yes,2,1
+1228,books,5,great quality and fast shipping again,Yes,2,1
+1229,books,1,poor quality would not buy again,Yes,2,0
+1230,outdoors,5,very happy with this purchase,Yes,4,1
+1231,electronics,2,waste of money stopped working,Yes,0,0
+1232,outdoors,2,broke after two days terrible,Yes,0,0
+1233,electronics,5,very happy with this purchase overall,Yes,2,1
+1234,kitchen,5,sturdy and well made honestly,Yes,2,1
+1235,kitchen,2,poor quality would not buy again,Yes,2,0
+1236,electronics,5,very happy with this purchase,Yes,2,1
+1237,outdoors,3,does the job but instructions were unclear thanks,Yes,2,0
+1238,electronics,4,sturdy and well made again,Yes,2,1
+1239,books,4,very happy with this purchase,Yes,2,1
+1240,books,1,very disappointed cheap material,Yes,0,0
+1241,toys,3,decent but a bit smaller than expected again,Yes,0,0
+1242,books,3,average product nothing special overall,Yes,2,0
+1243,outdoors,1,very disappointed cheap material overall,Yes,1,0
+1244,toys,2,poor quality would not buy again,Yes,2,0
+1245,electronics,2,waste of money stopped working,No,0,0
+1246,electronics,1,waste of money stopped working overall,Yes,3,0
+1247,toys,4,love it works perfectly,Yes,2,1
+1248,toys,4,love it works perfectly,Yes,0,1
+1249,kitchen,5,excellent value highly recommend,Yes,2,1
+1250,outdoors,4,excellent value highly recommend,Yes,1,1
+1251,books,5,great quality and fast shipping honestly,Yes,1,1
+1252,outdoors,5,great quality and fast shipping again,Yes,5,1
+1253,toys,5,very happy with this purchase thanks,No,9,1
+1254,kitchen,2,very disappointed cheap material thanks,Yes,0,0
+1255,outdoors,5,great quality and fast shipping again,Yes,1,1
+1256,kitchen,3,does the job but instructions were unclear,No,3,0
+1257,kitchen,5,love it works perfectly honestly,Yes,3,1
+1258,electronics,4,very happy with this purchase,Yes,1,1
+1259,toys,5,great quality and fast shipping,Yes,3,1
+1260,kitchen,5,great quality and fast shipping,Yes,3,1
+1261,toys,4,excellent value highly recommend,Yes,1,1
+1262,kitchen,5,excellent value highly recommend,Yes,2,1
+1263,toys,5,sturdy and well made,Yes,1,1
+1264,outdoors,4,sturdy and well made,Yes,0,1
+1265,outdoors,4,excellent value highly recommend,No,0,1
+1266,books,4,sturdy and well made honestly,Yes,2,1
+1267,books,4,sturdy and well made again,Yes,2,1
+1268,books,4,sturdy and well made,Yes,2,1
+1269,outdoors,4,sturdy and well made honestly,Yes,2,1
+1270,kitchen,3,it is okay for the price,Yes,2,0
+1271,toys,2,waste of money stopped working honestly,Yes,3,0
+1272,toys,4,very happy with this purchase,Yes,3,1
+1273,electronics,5,very happy with this purchase,No,3,1
+1274,toys,3,decent but a bit smaller than expected honestly,Yes,0,0
+1275,electronics,5,great quality and fast shipping,No,0,1
+1276,electronics,4,sturdy and well made again,Yes,4,1
+1277,kitchen,5,sturdy and well made thanks,Yes,2,1
+1278,outdoors,5,love it works perfectly,Yes,0,1
+1279,outdoors,5,excellent value highly recommend overall,Yes,2,1
+1280,electronics,5,love it works perfectly again,Yes,3,1
+1281,outdoors,3,average product nothing special thanks,Yes,1,0
+1282,outdoors,4,excellent value highly recommend,No,1,1
+1283,toys,3,does the job but instructions were unclear thanks,Yes,0,0
+1284,toys,5,sturdy and well made thanks,Yes,1,1
+1285,books,5,love it works perfectly,Yes,1,1
+1286,electronics,5,excellent value highly recommend,Yes,3,1
+1287,books,5,sturdy and well made,Yes,6,1
+1288,kitchen,3,decent but a bit smaller than expected,Yes,4,0
+1289,toys,5,excellent value highly recommend,Yes,1,1
+1290,books,5,great quality and fast shipping thanks,Yes,4,1
+1291,kitchen,5,sturdy and well made,Yes,0,1
+1292,electronics,4,sturdy and well made honestly,Yes,2,1
+1293,toys,3,does the job but instructions were unclear honestly,Yes,2,0
+1294,books,4,sturdy and well made,Yes,3,1
+1295,toys,5,excellent value highly recommend,Yes,2,1
+1296,electronics,4,sturdy and well made,Yes,2,1
+1297,outdoors,3,average product nothing special,Yes,0,0
+1298,electronics,3,it is okay for the price,Yes,1,0
+1299,toys,3,does the job but instructions were unclear overall,Yes,4,0
+1300,books,3,does the job but instructions were unclear honestly,Yes,2,0
+1301,kitchen,5,great quality and fast shipping,Yes,3,1
+1302,electronics,4,love it works perfectly,Yes,3,1
+1303,toys,4,sturdy and well made,Yes,2,1
+1304,books,2,waste of money stopped working again,Yes,3,0
+1305,toys,3,decent but a bit smaller than expected,Yes,3,0
+1306,outdoors,4,great quality and fast shipping again,Yes,1,1
+1307,toys,3,does the job but instructions were unclear,Yes,4,0
+1308,outdoors,4,very happy with this purchase,Yes,3,1
+1309,electronics,5,very happy with this purchase honestly,Yes,2,1
+1310,outdoors,4,great quality and fast shipping honestly,No,3,1
+1311,outdoors,3,does the job but instructions were unclear again,Yes,2,0
+1312,electronics,5,excellent value highly recommend,Yes,8,1
+1313,kitchen,4,very happy with this purchase honestly,Yes,1,1
+1314,books,5,very happy with this purchase,Yes,3,1
+1315,toys,4,love it works perfectly,Yes,3,1
+1316,electronics,4,sturdy and well made thanks,Yes,2,1
+1317,toys,1,very disappointed cheap material honestly,Yes,4,0
+1318,electronics,5,sturdy and well made,Yes,3,1
+1319,kitchen,5,very happy with this purchase,Yes,1,1
+1320,books,4,excellent value highly recommend honestly,Yes,2,1
+1321,outdoors,3,decent but a bit smaller than expected thanks,Yes,3,0
+1322,toys,1,very disappointed cheap material thanks,Yes,2,0
+1323,outdoors,5,excellent value highly recommend,Yes,2,1
+1324,kitchen,3,average product nothing special,Yes,2,0
+1325,books,1,waste of money stopped working,No,6,0
+1326,electronics,5,excellent value highly recommend,Yes,4,1
+1327,kitchen,5,sturdy and well made overall,Yes,3,1
+1328,kitchen,4,great quality and fast shipping thanks,Yes,4,1
+1329,outdoors,5,great quality and fast shipping thanks,Yes,2,1
+1330,books,3,decent but a bit smaller than expected,Yes,2,0
+1331,books,5,sturdy and well made thanks,Yes,0,1
+1332,books,4,sturdy and well made honestly,No,4,1
+1333,outdoors,1,poor quality would not buy again honestly,Yes,2,0
+1334,toys,1,poor quality would not buy again,Yes,4,0
+1335,toys,3,it is okay for the price again,Yes,1,0
+1336,kitchen,1,very disappointed cheap material thanks,Yes,4,0
+1337,outdoors,3,it is okay for the price thanks,No,1,0
+1338,kitchen,3,average product nothing special again,Yes,2,0
+1339,outdoors,5,excellent value highly recommend,Yes,4,1
+1340,outdoors,3,it is okay for the price,Yes,2,0
+1341,toys,5,sturdy and well made again,Yes,3,1
+1342,outdoors,4,very happy with this purchase,Yes,0,1
+1343,electronics,3,decent but a bit smaller than expected thanks,Yes,4,0
+1344,toys,4,sturdy and well made,Yes,4,1
+1345,electronics,2,arrived late and damaged honestly,Yes,0,0
+1346,toys,5,excellent value highly recommend,Yes,2,1
+1347,electronics,1,very disappointed cheap material honestly,No,0,0
+1348,kitchen,4,love it works perfectly thanks,Yes,0,1
+1349,toys,5,sturdy and well made again,Yes,3,1
+1350,electronics,3,decent but a bit smaller than expected,Yes,2,0
+1351,outdoors,5,excellent value highly recommend thanks,Yes,3,1
+1352,outdoors,4,great quality and fast shipping,Yes,2,1
+1353,outdoors,4,excellent value highly recommend overall,Yes,0,1
+1354,kitchen,5,sturdy and well made overall,Yes,3,1
+1355,outdoors,5,very happy with this purchase,Yes,3,1
+1356,toys,1,broke after two days terrible,Yes,1,0
+1357,outdoors,5,love it works perfectly,Yes,1,1
+1358,outdoors,1,arrived late and damaged overall,Yes,4,0
+1359,books,5,sturdy and well made,Yes,0,1
+1360,outdoors,4,great quality and fast shipping,Yes,4,1
+1361,outdoors,4,very happy with this purchase again,Yes,3,1
+1362,books,5,very happy with this purchase,Yes,5,1
+1363,books,5,very happy with this purchase,Yes,5,1
+1364,outdoors,4,very happy with this purchase,Yes,7,1
+1365,kitchen,1,poor quality would not buy again,Yes,2,0
+1366,outdoors,4,sturdy and well made overall,Yes,5,1
+1367,kitchen,4,very happy with this purchase,Yes,1,1
+1368,toys,2,poor quality would not buy again,No,3,0
+1369,outdoors,1,waste of money stopped working,Yes,1,0
+1370,outdoors,1,very disappointed cheap material honestly,Yes,4,0
+1371,kitchen,4,very happy with this purchase overall,Yes,2,1
+1372,books,2,waste of money stopped working,Yes,6,0
+1373,toys,2,poor quality would not buy again again,Yes,2,0
+1374,books,1,poor quality would not buy again honestly,Yes,1,0
+1375,toys,5,excellent value highly recommend,Yes,1,1
+1376,outdoors,5,sturdy and well made thanks,Yes,1,1
+1377,toys,1,very disappointed cheap material overall,Yes,1,0
+1378,electronics,4,great quality and fast shipping,Yes,1,1
+1379,toys,5,love it works perfectly,Yes,4,1
+1380,toys,1,poor quality would not buy again thanks,Yes,1,0
+1381,toys,4,sturdy and well made,Yes,1,1
+1382,books,3,does the job but instructions were unclear,Yes,3,0
+1383,electronics,4,excellent value highly recommend,Yes,2,1
+1384,kitchen,3,does the job but instructions were unclear,Yes,1,0
+1385,electronics,1,very disappointed cheap material overall,Yes,0,0
+1386,books,5,sturdy and well made,No,3,1
+1387,electronics,5,very happy with this purchase overall,Yes,0,1
+1388,toys,1,very disappointed cheap material thanks,Yes,3,0
+1389,electronics,5,very happy with this purchase,No,2,1
+1390,toys,1,arrived late and damaged,Yes,0,0
+1391,toys,2,waste of money stopped working,Yes,1,0
+1392,electronics,4,sturdy and well made again,Yes,1,1
+1393,electronics,5,sturdy and well made overall,Yes,3,1
+1394,books,5,excellent value highly recommend overall,Yes,8,1
+1395,outdoors,4,excellent value highly recommend honestly,No,4,1
+1396,books,2,arrived late and damaged,Yes,2,0
+1397,outdoors,5,sturdy and well made honestly,Yes,3,1
+1398,outdoors,4,sturdy and well made again,Yes,2,1
+1399,books,5,sturdy and well made,No,3,1
+1400,books,4,love it works perfectly,Yes,2,1
+1401,kitchen,3,does the job but instructions were unclear again,Yes,1,0
+1402,electronics,1,very disappointed cheap material honestly,Yes,0,0
+1403,kitchen,5,sturdy and well made,Yes,0,1
+1404,outdoors,4,sturdy and well made,No,3,1
+1405,electronics,3,it is okay for the price,Yes,1,0
+1406,kitchen,5,love it works perfectly,Yes,2,1
+1407,kitchen,3,it is okay for the price,Yes,2,0
+1408,books,2,very disappointed cheap material,Yes,0,0
+1409,kitchen,5,excellent value highly recommend thanks,Yes,0,1
+1410,electronics,4,love it works perfectly,Yes,2,1
+1411,kitchen,5,sturdy and well made,Yes,3,1
+1412,books,5,sturdy and well made,Yes,5,1
+1413,electronics,5,excellent value highly recommend,Yes,5,1
+1414,outdoors,5,excellent value highly recommend,Yes,2,1
+1415,toys,5,excellent value highly recommend thanks,Yes,0,1
+1416,toys,5,great quality and fast shipping,Yes,4,1
+1417,electronics,3,it is okay for the price,No,1,0
+1418,kitchen,4,very happy with this purchase,Yes,2,1
+1419,books,3,decent but a bit smaller than expected,Yes,4,0
+1420,toys,2,broke after two days terrible,No,0,0
+1421,books,2,arrived late and damaged,Yes,0,0
+1422,books,5,very happy with this purchase,Yes,0,1
+1423,books,4,love it works perfectly,Yes,4,1
+1424,books,2,poor quality would not buy again again,Yes,1,0
+1425,kitchen,4,very happy with this purchase honestly,No,0,1
+1426,books,4,great quality and fast shipping thanks,Yes,5,1
+1427,outdoors,5,very happy with this purchase,Yes,2,1
+1428,electronics,4,great quality and fast shipping honestly,No,1,1
+1429,books,1,waste of money stopped working again,Yes,3,0
+1430,kitchen,5,love it works perfectly again,Yes,2,1
+1431,electronics,1,arrived late and damaged thanks,Yes,1,0
+1432,outdoors,5,sturdy and well made,Yes,1,1
+1433,books,5,great quality and fast shipping,Yes,0,1
+1434,toys,5,great quality and fast shipping,Yes,2,1
+1435,outdoors,5,great quality and fast shipping,Yes,1,1
+1436,outdoors,5,excellent value highly recommend honestly,Yes,1,1
+1437,books,2,very disappointed cheap material,Yes,1,0
+1438,electronics,5,excellent value highly recommend,Yes,2,1
+1439,toys,5,love it works perfectly honestly,Yes,2,1
+1440,books,4,excellent value highly recommend,Yes,2,1
+1441,outdoors,5,sturdy and well made,Yes,5,1
+1442,kitchen,4,great quality and fast shipping,Yes,1,1
+1443,kitchen,4,very happy with this purchase,Yes,0,1
+1444,electronics,3,decent but a bit smaller than expected,Yes,3,0
+1445,electronics,5,very happy with this purchase,Yes,3,1
+1446,outdoors,5,sturdy and well made,Yes,1,1
+1447,electronics,4,great quality and fast shipping honestly,Yes,2,1
+1448,toys,4,love it works perfectly thanks,Yes,3,1
+1449,kitchen,4,excellent value highly recommend,Yes,2,1
+1450,books,4,very happy with this purchase,Yes,3,1
+1451,books,5,great quality and fast shipping,Yes,1,1
+1452,outdoors,5,sturdy and well made honestly,Yes,1,1
+1453,toys,5,very happy with this purchase,Yes,1,1
+1454,books,4,love it works perfectly honestly,Yes,0,1
+1455,outdoors,4,excellent value highly recommend again,Yes,4,1
+1456,kitchen,1,poor quality would not buy again,Yes,5,0
+1457,electronics,2,very disappointed cheap material honestly,Yes,1,0
+1458,books,5,very happy with this purchase,Yes,3,1
+1459,outdoors,3,average product nothing special,Yes,0,0
+1460,kitchen,4,love it works perfectly,Yes,2,1
+1461,kitchen,4,sturdy and well made,Yes,1,1
+1462,electronics,5,sturdy and well made,Yes,3,1
+1463,toys,4,sturdy and well made,Yes,3,1
+1464,outdoors,2,arrived late and damaged thanks,Yes,6,0
+1465,electronics,4,sturdy and well made,Yes,1,1
+1466,kitchen,3,average product nothing special,Yes,3,0
+1467,electronics,5,excellent value highly recommend,Yes,2,1
+1468,toys,4,excellent value highly recommend,Yes,1,1
+1469,books,3,average product nothing special,Yes,1,0
+1470,outdoors,5,great quality and fast shipping,Yes,1,1
+1471,toys,5,very happy with this purchase,Yes,1,1
+1472,toys,5,sturdy and well made overall,Yes,0,1
+1473,electronics,5,love it works perfectly overall,Yes,3,1
+1474,kitchen,5,very happy with this purchase,No,1,1
+1475,kitchen,5,very happy with this purchase,No,1,1
+1476,outdoors,1,poor quality would not buy again again,Yes,2,0
+1477,books,5,sturdy and well made,Yes,0,1
+1478,books,2,poor quality would not buy again,Yes,2,0
+1479,books,2,poor quality would not buy again,No,1,0
+1480,outdoors,3,average product nothing special honestly,Yes,2,0
+1481,outdoors,5,very happy with this purchase again,Yes,0,1
+1482,electronics,4,very happy with this purchase,No,1,1
+1483,outdoors,4,love it works perfectly honestly,No,0,1
+1484,outdoors,5,love it works perfectly,Yes,2,1
+1485,kitchen,4,sturdy and well made,Yes,2,1
+1486,books,1,broke after two days terrible thanks,Yes,2,0
+1487,toys,3,decent but a bit smaller than expected,Yes,1,0
+1488,books,4,sturdy and well made honestly,Yes,0,1
+1489,electronics,4,great quality and fast shipping,Yes,3,1
+1490,kitchen,2,waste of money stopped working thanks,Yes,2,0
+1491,toys,5,sturdy and well made,Yes,2,1
+1492,toys,2,arrived late and damaged again,Yes,2,0
+1493,books,4,excellent value highly recommend again,Yes,2,1
+1494,toys,3,average product nothing special overall,Yes,2,0
+1495,electronics,2,arrived late and damaged,Yes,2,0
+1496,books,4,very happy with this purchase again,Yes,3,1
+1497,kitchen,4,love it works perfectly,Yes,3,1
+1498,electronics,2,poor quality would not buy again again,Yes,5,0
+1499,toys,5,excellent value highly recommend,Yes,2,1
+1500,kitchen,5,excellent value highly recommend,Yes,2,1
+1501,electronics,1,arrived late and damaged,Yes,1,0
+1502,electronics,4,very happy with this purchase thanks,Yes,0,1
+1503,books,2,waste of money stopped working,No,4,0
+1504,electronics,4,very happy with this purchase,Yes,2,1
+1505,kitchen,3,decent but a bit smaller than expected,Yes,2,0
+1506,outdoors,3,average product nothing special,Yes,4,0
+1507,kitchen,4,sturdy and well made,Yes,3,1
+1508,toys,4,love it works perfectly overall,Yes,2,1
+1509,electronics,2,poor quality would not buy again again,Yes,2,0
+1510,outdoors,5,love it works perfectly,Yes,1,1
+1511,books,4,very happy with this purchase honestly,Yes,3,1
+1512,outdoors,2,waste of money stopped working,No,2,0
+1513,kitchen,2,arrived late and damaged,Yes,2,0
+1514,kitchen,5,great quality and fast shipping,Yes,1,1
+1515,electronics,4,excellent value highly recommend,No,4,1
+1516,toys,1,broke after two days terrible overall,Yes,3,0
+1517,outdoors,4,love it works perfectly,Yes,5,1
+1518,electronics,4,very happy with this purchase,Yes,2,1
+1519,toys,4,sturdy and well made,Yes,3,1
+1520,outdoors,5,sturdy and well made thanks,Yes,1,1
+1521,kitchen,3,average product nothing special,Yes,3,0
+1522,toys,3,decent but a bit smaller than expected,Yes,1,0
+1523,outdoors,4,great quality and fast shipping,Yes,3,1
+1524,toys,1,waste of money stopped working,Yes,5,0
+1525,books,4,very happy with this purchase,No,3,1
+1526,toys,2,poor quality would not buy again overall,Yes,2,0
+1527,books,4,sturdy and well made,Yes,3,1
+1528,outdoors,1,poor quality would not buy again honestly,Yes,2,0
+1529,outdoors,2,poor quality would not buy again,Yes,2,0
+1530,toys,3,decent but a bit smaller than expected overall,Yes,1,0
+1531,toys,4,love it works perfectly overall,Yes,1,1
+1532,kitchen,5,great quality and fast shipping thanks,Yes,1,1
+1533,books,4,very happy with this purchase again,Yes,0,1
+1534,toys,4,love it works perfectly honestly,Yes,2,1
+1535,kitchen,4,very happy with this purchase,Yes,0,1
+1536,toys,4,love it works perfectly,Yes,0,1
+1537,kitchen,4,very happy with this purchase honestly,Yes,1,1
+1538,kitchen,5,love it works perfectly honestly,Yes,0,1
+1539,kitchen,3,does the job but instructions were unclear thanks,No,2,0
+1540,outdoors,2,broke after two days terrible overall,Yes,0,0
+1541,outdoors,3,it is okay for the price,Yes,3,0
+1542,outdoors,5,excellent value highly recommend honestly,No,1,1
+1543,electronics,5,excellent value highly recommend,Yes,0,1
+1544,books,5,great quality and fast shipping overall,Yes,3,1
+1545,books,4,love it works perfectly,Yes,3,1
+1546,books,5,excellent value highly recommend overall,Yes,1,1
+1547,kitchen,4,love it works perfectly honestly,Yes,2,1
+1548,books,4,very happy with this purchase thanks,Yes,4,1
+1549,kitchen,5,excellent value highly recommend thanks,Yes,0,1
+1550,outdoors,5,excellent value highly recommend overall,Yes,2,1
+1551,kitchen,2,very disappointed cheap material again,Yes,1,0
+1552,kitchen,3,does the job but instructions were unclear,Yes,1,0
+1553,books,5,excellent value highly recommend again,Yes,1,1
+1554,electronics,5,sturdy and well made,Yes,3,1
+1555,electronics,5,love it works perfectly,Yes,2,1
+1556,outdoors,5,very happy with this purchase,Yes,2,1
+1557,toys,5,excellent value highly recommend,Yes,1,1
+1558,toys,4,sturdy and well made,Yes,0,1
+1559,toys,2,poor quality would not buy again again,No,0,0
+1560,kitchen,5,sturdy and well made again,Yes,4,1
+1561,kitchen,4,love it works perfectly again,Yes,2,1
+1562,electronics,2,waste of money stopped working,Yes,2,0
+1563,toys,4,excellent value highly recommend overall,Yes,1,1
+1564,toys,4,excellent value highly recommend,Yes,3,1
+1565,outdoors,5,excellent value highly recommend overall,No,0,1
+1566,books,4,love it works perfectly,Yes,3,1
+1567,electronics,4,love it works perfectly thanks,Yes,0,1
+1568,kitchen,4,sturdy and well made,Yes,4,1
+1569,books,5,love it works perfectly overall,Yes,3,1
+1570,toys,5,sturdy and well made,Yes,0,1
+1571,outdoors,4,great quality and fast shipping thanks,Yes,3,1
+1572,outdoors,5,excellent value highly recommend,Yes,3,1
+1573,electronics,5,love it works perfectly overall,Yes,1,1
+1574,outdoors,3,decent but a bit smaller than expected,No,2,0
+1575,kitchen,5,great quality and fast shipping,Yes,3,1
+1576,toys,5,sturdy and well made thanks,Yes,2,1
+1577,toys,5,sturdy and well made,Yes,3,1
+1578,kitchen,3,decent but a bit smaller than expected thanks,No,0,0
+1579,outdoors,3,it is okay for the price,No,0,0
+1580,kitchen,5,love it works perfectly,Yes,1,1
+1581,electronics,4,great quality and fast shipping,Yes,4,1
+1582,toys,4,sturdy and well made thanks,Yes,0,1
+1583,toys,5,love it works perfectly,Yes,3,1
+1584,books,3,average product nothing special again,Yes,1,0
+1585,toys,4,great quality and fast shipping,Yes,0,1
+1586,outdoors,2,very disappointed cheap material overall,Yes,2,0
+1587,kitchen,4,great quality and fast shipping,Yes,1,1
+1588,electronics,4,excellent value highly recommend,No,3,1
+1589,books,4,love it works perfectly,Yes,3,1
+1590,kitchen,3,decent but a bit smaller than expected again,Yes,3,0
+1591,outdoors,5,sturdy and well made thanks,Yes,4,1
+1592,books,4,love it works perfectly honestly,Yes,2,1
+1593,kitchen,4,sturdy and well made thanks,Yes,1,1
+1594,books,2,very disappointed cheap material,Yes,2,0
+1595,kitchen,4,very happy with this purchase,Yes,2,1
+1596,kitchen,4,very happy with this purchase,No,1,1
+1597,electronics,5,great quality and fast shipping overall,Yes,1,1
+1598,electronics,3,decent but a bit smaller than expected,Yes,1,0
+1599,books,1,waste of money stopped working,Yes,0,0
+1600,toys,4,excellent value highly recommend,Yes,2,1
+1601,kitchen,3,decent but a bit smaller than expected,Yes,3,0
+1602,kitchen,5,very happy with this purchase,Yes,0,1
+1603,books,3,does the job but instructions were unclear thanks,Yes,2,0
+1604,toys,5,love it works perfectly,Yes,4,1
+1605,toys,4,love it works perfectly,Yes,1,1
+1606,toys,3,it is okay for the price,No,2,0
+1607,toys,4,excellent value highly recommend thanks,Yes,4,1
+1608,kitchen,3,it is okay for the price,Yes,0,0
+1609,electronics,4,excellent value highly recommend,Yes,2,1
+1610,outdoors,2,very disappointed cheap material honestly,Yes,3,0
+1611,kitchen,3,decent but a bit smaller than expected overall,Yes,4,0
+1612,outdoors,5,sturdy and well made,Yes,4,1
+1613,outdoors,5,very happy with this purchase,No,1,1
+1614,outdoors,3,it is okay for the price,Yes,3,0
+1615,outdoors,4,excellent value highly recommend honestly,Yes,5,1
+1616,toys,3,average product nothing special overall,Yes,1,0
+1617,electronics,4,sturdy and well made again,Yes,2,1
+1618,toys,2,very disappointed cheap material overall,Yes,2,0
+1619,toys,4,sturdy and well made,Yes,3,1
+1620,toys,4,love it works perfectly,Yes,1,1
+1621,electronics,1,very disappointed cheap material overall,Yes,5,0
+1622,kitchen,5,sturdy and well made,Yes,0,1
+1623,books,3,decent but a bit smaller than expected,Yes,1,0
+1624,kitchen,4,sturdy and well made,Yes,2,1
+1625,kitchen,4,great quality and fast shipping,Yes,0,1
+1626,toys,1,arrived late and damaged,Yes,2,0
+1627,books,2,poor quality would not buy again,No,2,0
+1628,electronics,5,very happy with this purchase,Yes,2,1
+1629,outdoors,3,does the job but instructions were unclear,Yes,2,0
+1630,toys,4,excellent value highly recommend overall,Yes,2,1
+1631,electronics,4,excellent value highly recommend,Yes,1,1
+1632,kitchen,5,excellent value highly recommend,Yes,3,1
+1633,toys,4,sturdy and well made,Yes,2,1
+1634,electronics,4,sturdy and well made,Yes,2,1
+1635,toys,2,waste of money stopped working overall,Yes,2,0
+1636,electronics,5,sturdy and well made overall,Yes,2,1
+1637,toys,3,average product nothing special thanks,Yes,2,0
+1638,books,4,excellent value highly recommend again,Yes,3,1
+1639,kitchen,4,love it works perfectly,Yes,2,1
+1640,kitchen,5,very happy with this purchase honestly,No,6,1
+1641,books,5,sturdy and well made again,Yes,1,1
+1642,toys,4,love it works perfectly,Yes,1,1
+1643,books,4,very happy with this purchase,Yes,2,1
+1644,books,2,poor quality would not buy again honestly,Yes,1,0
+1645,outdoors,3,it is okay for the price honestly,Yes,3,0
+1646,outdoors,4,great quality and fast shipping,Yes,3,1
+1647,outdoors,4,very happy with this purchase,Yes,1,1
+1648,books,3,does the job but instructions were unclear,Yes,2,0
+1649,toys,4,great quality and fast shipping,Yes,2,1
+1650,kitchen,5,love it works perfectly,Yes,1,1
+1651,electronics,3,does the job but instructions were unclear honestly,Yes,4,0
+1652,kitchen,3,does the job but instructions were unclear,No,1,0
+1653,electronics,5,sturdy and well made,Yes,2,1
+1654,outdoors,4,excellent value highly recommend honestly,Yes,2,1
+1655,outdoors,2,broke after two days terrible,Yes,0,0
+1656,books,2,waste of money stopped working,Yes,2,0
+1657,electronics,4,love it works perfectly thanks,Yes,3,1
+1658,books,5,great quality and fast shipping overall,Yes,2,1
+1659,electronics,1,arrived late and damaged,No,5,0
+1660,electronics,5,very happy with this purchase thanks,No,1,1
+1661,electronics,1,broke after two days terrible overall,Yes,1,0
+1662,electronics,4,love it works perfectly thanks,Yes,1,1
+1663,kitchen,5,excellent value highly recommend,Yes,1,1
+1664,books,4,sturdy and well made overall,Yes,0,1
+1665,electronics,5,excellent value highly recommend,No,3,1
+1666,kitchen,5,very happy with this purchase,No,4,1
+1667,toys,5,love it works perfectly,Yes,0,1
+1668,books,3,average product nothing special,No,0,0
+1669,toys,5,love it works perfectly,Yes,2,1
+1670,outdoors,5,love it works perfectly,Yes,1,1
+1671,books,5,love it works perfectly again,Yes,1,1
+1672,kitchen,3,decent but a bit smaller than expected,Yes,2,0
+1673,outdoors,4,excellent value highly recommend again,No,2,1
+1674,kitchen,3,average product nothing special overall,Yes,4,0
+1675,toys,1,poor quality would not buy again,Yes,4,0
+1676,outdoors,1,waste of money stopped working honestly,Yes,4,0
+1677,kitchen,5,sturdy and well made,Yes,1,1
+1678,kitchen,3,decent but a bit smaller than expected,Yes,1,0
+1679,toys,5,very happy with this purchase,No,4,1
+1680,electronics,1,waste of money stopped working,Yes,2,0
+1681,electronics,5,love it works perfectly honestly,No,2,1
+1682,kitchen,5,love it works perfectly overall,Yes,0,1
+1683,books,5,sturdy and well made,Yes,2,1
+1684,books,4,sturdy and well made,Yes,1,1
+1685,kitchen,5,very happy with this purchase overall,No,3,1
+1686,books,4,sturdy and well made honestly,Yes,2,1
+1687,outdoors,2,arrived late and damaged honestly,No,1,0
+1688,kitchen,5,sturdy and well made thanks,Yes,1,1
+1689,outdoors,5,sturdy and well made,No,0,1
+1690,kitchen,4,sturdy and well made honestly,Yes,0,1
+1691,outdoors,5,very happy with this purchase,Yes,1,1
+1692,books,5,love it works perfectly,Yes,2,1
+1693,toys,4,sturdy and well made thanks,No,0,1
+1694,outdoors,5,sturdy and well made,Yes,3,1
+1695,books,5,great quality and fast shipping,Yes,1,1
+1696,toys,4,great quality and fast shipping,Yes,2,1
+1697,books,5,great quality and fast shipping,No,1,1
+1698,outdoors,3,decent but a bit smaller than expected overall,Yes,0,0
+1699,electronics,3,decent but a bit smaller than expected,Yes,3,0
+1700,books,4,sturdy and well made again,Yes,0,1
+1701,kitchen,1,waste of money stopped working,Yes,1,0
+1702,outdoors,4,excellent value highly recommend,Yes,0,1
+1703,kitchen,4,great quality and fast shipping,No,1,1
+1704,toys,5,great quality and fast shipping,Yes,4,1
+1705,toys,2,broke after two days terrible,Yes,0,0
+1706,electronics,5,great quality and fast shipping,Yes,1,1
+1707,electronics,1,broke after two days terrible overall,Yes,3,0
+1708,outdoors,5,excellent value highly recommend,No,6,1
+1709,outdoors,3,average product nothing special,Yes,2,0
+1710,toys,2,poor quality would not buy again,Yes,0,0
+1711,kitchen,5,excellent value highly recommend overall,Yes,2,1
+1712,outdoors,5,very happy with this purchase,No,2,1
+1713,kitchen,5,very happy with this purchase honestly,Yes,2,1
+1714,kitchen,4,love it works perfectly again,Yes,5,1
+1715,toys,5,love it works perfectly overall,Yes,1,1
+1716,outdoors,4,sturdy and well made,Yes,1,1
+1717,outdoors,3,does the job but instructions were unclear again,Yes,2,0
+1718,toys,4,love it works perfectly thanks,Yes,4,1
+1719,electronics,5,great quality and fast shipping,No,1,1
+1720,outdoors,3,does the job but instructions were unclear overall,Yes,4,0
+1721,outdoors,5,great quality and fast shipping again,Yes,3,1
+1722,toys,5,love it works perfectly,Yes,1,1
+1723,electronics,5,very happy with this purchase,No,3,1
+1724,kitchen,4,sturdy and well made overall,Yes,2,1
+1725,electronics,5,great quality and fast shipping,No,1,1
+1726,kitchen,5,love it works perfectly thanks,Yes,0,1
+1727,outdoors,5,very happy with this purchase again,Yes,0,1
+1728,kitchen,5,excellent value highly recommend thanks,Yes,1,1
+1729,kitchen,5,great quality and fast shipping,Yes,6,1
+1730,toys,4,great quality and fast shipping,Yes,2,1
+1731,toys,4,love it works perfectly overall,No,4,1
+1732,outdoors,4,sturdy and well made,Yes,4,1
+1733,books,4,love it works perfectly again,Yes,1,1
+1734,electronics,5,sturdy and well made,Yes,2,1
+1735,kitchen,4,love it works perfectly again,Yes,3,1
+1736,books,5,sturdy and well made,Yes,5,1
+1737,outdoors,4,great quality and fast shipping honestly,No,3,1
+1738,books,5,sturdy and well made thanks,Yes,2,1
+1739,toys,5,excellent value highly recommend,Yes,1,1
+1740,kitchen,5,sturdy and well made again,Yes,1,1
+1741,outdoors,2,waste of money stopped working overall,Yes,3,0
+1742,toys,5,love it works perfectly overall,Yes,1,1
+1743,books,4,love it works perfectly,Yes,1,1
+1744,books,5,love it works perfectly,Yes,0,1
+1745,toys,4,very happy with this purchase,Yes,4,1
+1746,electronics,4,excellent value highly recommend thanks,Yes,2,1
+1747,outdoors,1,broke after two days terrible,Yes,3,0
+1748,electronics,2,broke after two days terrible honestly,No,6,0
+1749,kitchen,5,very happy with this purchase thanks,Yes,2,1
+1750,electronics,4,very happy with this purchase,Yes,4,1
+1751,kitchen,3,average product nothing special,Yes,0,0
+1752,books,5,great quality and fast shipping again,No,4,1
+1753,books,1,poor quality would not buy again honestly,Yes,0,0
+1754,books,4,love it works perfectly again,No,3,1
+1755,toys,2,arrived late and damaged thanks,Yes,5,0
+1756,kitchen,4,very happy with this purchase,No,2,1
+1757,electronics,5,sturdy and well made,Yes,2,1
+1758,toys,5,very happy with this purchase,Yes,4,1
+1759,outdoors,5,sturdy and well made,Yes,1,1
+1760,toys,2,poor quality would not buy again again,Yes,3,0
+1761,books,4,excellent value highly recommend,Yes,0,1
+1762,outdoors,3,average product nothing special,Yes,2,0
+1763,electronics,5,love it works perfectly,Yes,3,1
+1764,toys,2,waste of money stopped working,Yes,0,0
+1765,electronics,4,very happy with this purchase thanks,Yes,2,1
+1766,outdoors,5,sturdy and well made,Yes,0,1
+1767,kitchen,5,sturdy and well made,No,2,1
+1768,outdoors,4,very happy with this purchase,Yes,1,1
+1769,electronics,4,very happy with this purchase,Yes,4,1
+1770,outdoors,5,love it works perfectly thanks,No,2,1
+1771,electronics,4,great quality and fast shipping honestly,Yes,2,1
+1772,toys,3,decent but a bit smaller than expected,Yes,1,0
+1773,kitchen,5,very happy with this purchase,Yes,4,1
+1774,books,4,very happy with this purchase honestly,No,1,1
+1775,books,4,excellent value highly recommend honestly,Yes,4,1
+1776,toys,3,does the job but instructions were unclear,Yes,0,0
+1777,toys,5,love it works perfectly again,Yes,4,1
+1778,books,2,very disappointed cheap material,Yes,4,0
+1779,outdoors,4,love it works perfectly,Yes,4,1
+1780,books,2,very disappointed cheap material,Yes,2,0
+1781,outdoors,5,excellent value highly recommend,No,1,1
+1782,outdoors,4,sturdy and well made,Yes,2,1
+1783,electronics,3,it is okay for the price,Yes,3,0
+1784,electronics,5,excellent value highly recommend,Yes,0,1
+1785,electronics,5,excellent value highly recommend,No,3,1
+1786,electronics,1,broke after two days terrible,Yes,2,0
+1787,electronics,4,great quality and fast shipping overall,Yes,2,1
+1788,electronics,4,love it works perfectly,Yes,1,1
+1789,electronics,5,very happy with this purchase again,No,1,1
+1790,outdoors,4,sturdy and well made,Yes,2,1
+1791,outdoors,4,excellent value highly recommend again,No,3,1
+1792,outdoors,4,sturdy and well made,No,4,1
+1793,books,4,very happy with this purchase,Yes,2,1
+1794,kitchen,5,excellent value highly recommend,Yes,2,1
+1795,outdoors,5,love it works perfectly,No,3,1
+1796,toys,5,love it works perfectly overall,No,3,1
+1797,kitchen,5,sturdy and well made,Yes,2,1
+1798,toys,2,arrived late and damaged,Yes,2,0
+1799,electronics,4,love it works perfectly overall,Yes,3,1
+1800,books,4,very happy with this purchase,Yes,1,1

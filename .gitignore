@@ -55,3 +55,34 @@ artifacts/*
 !artifacts/.gitkeep
 scratch/
 *.log
+
+# Model registry, saved projects, and exported artifacts (local user data)
+artifacts/models/
+artifacts/projects/
+*.joblib
+*.pkl
+
+# Local databases and scratch data
+*.duckdb
+*.sqlite
+*.sqlite3
+data/
+uploads/
+
+# Notebooks and Python tooling caches
+.ipynb_checkpoints/
+.mypy_cache/
+.pyre/
+.hypothesis/
+.tox/
+.python-version
+
+# Streamlit local state
+.streamlit/secrets.toml
+.streamlit/cache/
+
+# OS / editor extras
+Thumbs.db
+*.bak
+*.tmp
+.claude/

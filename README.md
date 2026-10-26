@@ -1,392 +1,342 @@
-# AI Data Analyst Agent
+# CelestiusAI: Data Analyst and Data Scientist
 
-> **From raw data to validated insights and informed decisions.**
+**An AI-assisted analytics and machine-learning workspace that takes you from a raw file to validated insights, tested models, and a deployed prediction service, with the Python for every step.**
 
-An enterprise-grade, autonomous data analytics platform combining the disciplines of data analysis, statistics, machine learning, and strategic business consulting. 
+CelestiusAI pairs two roles in one Streamlit application:
 
-Deterministic computational engines (Pandas, NumPy, SciPy, statsmodels, scikit-learn) calculate verified metrics, while an LLM narrative layer synthesizes findings into natural language using an evidence-backed interpretation framework.
+- **Data Analyst:** ingest, audit, clean, document, explore, visualize, and report.
+- **Data Scientist:** test hypotheses, engineer features, build and compare models, explain them, and run them in production.
 
----
-
-## 🏗️ Repository Architecture
-
-```text
-DA_Agent/
-├── app.py                            # Main Streamlit workspace landing page
-├── pages/
-│   ├── 1_Executive_Overview.py       # High-level metrics & quality score synthesis
-│   ├── 2_Data_Quality.py             # Ingestion, profiling, anomaly audits, and cleaning workbench
-│   ├── 3_Exploration_Studio.py       # Interactive distributions & automated charts
-│   ├── 4_Statistical_Intelligence.py # Hypothesis tests, effect sizes, and assumptions
-│   ├── 5_AI_Analyst.py               # Conversational workspace & 6-layer interpretation
-│   ├── 6_Predictive_Lab.py           # Forecasting, ML models, and walk-forward checks
-│   └── 7_Intelligence_Reports.py     # PDF/HTML exportable intelligence dossiers
-├── src/
-│   ├── config/
-│   │   ├── __init__.py
-│   │   └── settings.py               # Typed Pydantic configuration & secret masking
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── exceptions.py             # Domain exception hierarchy (user vs tech errors)
-│   │   ├── logging_config.py         # Structured logging with rerun deduplication
-│   │   ├── session_state.py          # Session state keys, defaults, and lifecycle
-│   │   └── ui_components.py          # Reusable dark-mode UI layout components
-│   ├── models/
-│   │   ├── __init__.py
-│   │   └── common.py                 # Pydantic schemas: Metadata, Steps, Plans, Findings
-│   ├── ingestion/
-│   │   ├── __init__.py
-│   │   ├── loader.py                 # CSV/Excel/Parquet loaders, fallbacks, & ManagedDataset
-│   │   ├── models.py                 # ColumnSchema and DatasetIngestionReport schemas
-│   │   ├── schema.py                 # Automatic schema inference & semantic type heuristics
-│   │   ├── transformation_history.py # Reversible transformation pipeline (undo & reset)
-│   │   ├── transformations.py        # Deterministic cleaning operations & dry-run previews
-│   │   └── validators.py             # Size bounds, extensions, and content fingerprints
-│   ├── profiling/
-│   │   ├── __init__.py
-│   │   ├── consistency.py            # Whitespace, casing, and domain constraint checks
-│   │   ├── duplicates.py             # Exact duplicate and key conflict detectors
-│   │   ├── missing_values.py         # Null percentage audits & suspicious placeholder tokens
-│   │   ├── models.py                 # QualityIssue, QualityScore, and DatasetProfile schemas
-│   │   ├── outliers.py               # IQR, Z-Score, and Modified Z-Score (MAD) detectors
-│   │   ├── profiler.py               # Comprehensive dataset profiling orchestrator
-│   │   └── quality_score.py          # Transparent multi-dimensional scoring framework
-│   ├── analytics/                    # Deterministic statistical engines (Phase 3+)
-│   ├── agent/                        # Autonomous planning & tool execution (Phase 4+)
-│   ├── interpretation/               # Structured 6-layer narrative generation (Phase 4+)
-│   ├── reporting/                    # Dossier compilation & rendering (Phase 6+)
-│   └── security/                     # Code guardrails & privacy controls
-├── tests/
-│   ├── conftest.py                   # Pytest fixtures and environment isolation
-│   ├── test_settings.py              # Configuration validation and secret safety tests
-│   ├── test_session_state.py         # Session lifecycle & rerun preservation tests
-│   ├── test_models.py                # Pydantic schema validation & serialization tests
-│   ├── test_ingestion.py             # Ingestion, encodings, delimiters, Excel sheets, Parquet
-│   ├── test_schema.py                # Semantic type inference, identifiers, constants, targets
-│   ├── test_profiling.py             # Missingness, duplicates, outliers (IQR/MAD), consistency
-│   ├── test_quality_score.py         # Quality score formulas, weights, and penalty calculations
-│   ├── test_transformations.py       # Dry-run previews, immutable raw data, undo, and reset
-│   └── test_app_smoke.py             # Multi-page AppTest execution with active datasets
-├── sample_data/
-│   ├── README.md
-│   └── ecommerce_customer_churn.csv  # Sample dataset with intentional quality anomalies
-├── artifacts/                        # Generated reports and analysis artifacts
-├── .streamlit/
-│   └── config.toml                   # Dark-first theme and server settings
-├── .env.example                      # Safe placeholder environment template
-├── pyproject.toml                    # Project configuration (Ruff, Pytest)
-├── requirements.txt                  # Pinned runtime & test dependencies
-└── README.md
-```
+An **AI Analyst** sits on top: it plans multi-step investigations and explains results in plain English, but it never computes anything itself. Deterministic engines (pandas, SciPy, statsmodels, scikit-learn) produce every number, and every claim the AI makes is checked against that computed evidence.
 
 ---
 
-## 🔍 Data Ingestion & Quality Intelligence (Phase 2)
+## Contents
 
-### 1. Ingestion Capabilities & Formats
-- **CSV Ingestion:** Automatic encoding fallback (`utf-8`, `utf-8-sig`, `latin1`, `cp1252`, `iso-8859-1`) and delimiter sniffing (`,`, `;`, `\t`, `|`).
-- **Excel Ingestion:** `.xlsx` and `.xls` support via `openpyxl`, with automated sheet listing and sheet selection.
-- **Parquet Ingestion:** High-speed columnar ingestion via `pyarrow`.
-- **Integrity Safeguards:** Enforces configurable file size limits (`MAX_UPLOAD_SIZE_MB`), rejects empty files, detects and disambiguates duplicate column headers, and computes a non-sensitive SHA-256 content fingerprint.
-
-### 2. Schema Inference & Semantic Classification
-- Automatically detects semantic column roles:
-  - **Numeric:** Quantitative continuous metrics.
-  - **Categorical:** Discrete groups and low-cardinality codes.
-  - **Datetime:** Native timestamps or text dates with high parse rates.
-  - **Boolean:** Native flags and binary 0/1 or yes/no indicators.
-  - **Identifier:** Keys, IDs, and UUIDs flagged to prevent statistical misuse.
-  - **Constant / Near-Constant:** Columns with zero or trivial variance.
-  - **Potential Target Candidates:** Outcome variables for future modeling (`churn`, `price`, `revenue`, `status`).
-
-### 3. Data Quality Scoring Methodology
-The quality score ranges from **0 to 100** based on an explicit, weighted multi-dimensional formula:
-
-$$\text{Overall Score} = 0.40 \cdot \text{Completeness} + 0.25 \cdot \text{Uniqueness} + 0.20 \cdot \text{Consistency} + 0.15 \cdot \text{Validity}$$
-
-- **Completeness (40%):** Evaluates non-missing cell coverage: $\max(0, 100 - \text{missing\_cell\_pct} \times 1.5)$.
-- **Uniqueness (25%):** Penalizes duplicate rows: $\max(0, 100 - \text{duplicate\_row\_pct} \times 2.0)$.
-- **Consistency (20%):** Penalizes formatting anomalies (unstripped whitespace, mixed categorical casings).
-- **Validity (15%):** Penalizes severe statistical outliers and domain constraint violations (e.g. negative age/prices).
-
-### 4. Interactive Cleaning Workbench & Immutability
-- **Immutable Raw Data:** The original uploaded DataFrame (`_raw_df`) is never modified or mutated.
-- **Dry-Run Previews:** Users inspect before/after row counts, cell modification metrics, and sample row comparisons prior to execution.
-- **Supported Operations:**
-  - `drop_column`: Remove empty or constant columns.
-  - `drop_duplicates`: Eliminate duplicate records with configurable subset and keep strategies.
-  - `impute_numeric`: Median, mean, or constant imputation.
-  - `impute_categorical`: Mode or placeholder value imputation.
-  - `strip_whitespace`: Normalize unstripped strings.
-  - `standardize_casing`: Harmonize categorical casing to title/lower/upper case.
-  - `cap_outliers`: Winsorize extreme values to configurable percentiles.
-  - `convert_type`: Safely convert date or numeric strings.
-- **Reversible Pipeline:** Replay-based `Undo Last Transformation` and `Reset All to Raw` guarantees full reproducibility without bloated in-memory copies.
+1. [Highlights](#highlights)
+2. [Quickstart](#quickstart)
+3. [A 10-minute guided tour](#a-10-minute-guided-tour)
+4. [Workspaces and features](#workspaces-and-features)
+5. [The AI Analyst and LLM providers](#the-ai-analyst-and-llm-providers)
+6. [View code: reproduce anything in Colab or Jupyter](#view-code-reproduce-anything-in-colab-or-jupyter)
+7. [Sample datasets](#sample-datasets)
+8. [Configuration](#configuration)
+9. [Architecture](#architecture)
+10. [Security and privacy](#security-and-privacy)
+11. [Testing and quality](#testing-and-quality)
+12. [Docker](#docker)
+13. [Troubleshooting](#troubleshooting)
+14. [Known limitations](#known-limitations)
 
 ---
 
-## 🚀 Quickstart Guide (Pop!_OS / Linux Terminal)
+## Highlights
 
-### 1. Create a Virtual Environment
+| | |
+|---|---|
+| **Evidence first** | Deterministic engines compute; the LLM only plans and narrates. Numeric claims are validated against evidence, with zero tolerance for invented figures. |
+| **Works offline** | With no API key and no local model, every analysis, model, and report still works. The AI adds plain-English planning on top. |
+| **Bring your own LLM** | Google Gemini, Anthropic Claude, or a local model through Ollama. Keys live in the session only, and PII can be redacted before any prompt leaves the app. |
+| **Leakage-safe modeling** | Preprocessing is fitted inside each cross-validation fold; leakage suspects are flagged; baselines and nested CV keep scores honest. |
+| **Broad model catalog** | 20+ regression, classification, and ensemble models (linear, tree, boosting, SVM, KNN, MLP, plus XGBoost, LightGBM, and CatBoost when installed). |
+| **Code for every step** | A **`</> View code`** button turns analyses into standalone Python (also R and SQL for core steps) that you can customize, download as `.py` or `.ipynb`, and run in Colab. |
+| **From data to deployment** | Experiment tracking, a versioned model registry with model cards, a FastAPI template, batch scoring checks, drift reports, and live monitoring. |
+| **Reproducible and reversible** | Raw data is immutable; cleaning steps are previewed, undoable, saved as a recipe, and replayed when you reopen a project. |
+
+---
+
+## Quickstart
+
+**Requirements:** Python 3.11 or newer.
 
 ```bash
+# 1. Create and activate a virtual environment
 python3 -m venv .venv
+source .venv/bin/activate            # Windows: .venv\Scripts\activate
+
+# 2. Install
+pip install -r requirements.txt              # core app
+pip install -r requirements-optional.txt     # optional: XGBoost, LightGBM, CatBoost, Optuna, SHAP, SQL, Claude
+
+# 3. (Optional) configure AI providers
+cp .env.example .env                 # then edit .env
+
+# 4. Run
+streamlit run app.py
 ```
 
-### 2. Activate the Environment
+Open <http://localhost:8501>. No dataset yet? Click **Try sample data** on Home, or pick one of the 10 bundled datasets on the Executive Overview.
 
-```bash
-source .venv/bin/activate
-```
+> **After pulling code changes, restart `streamlit run`.** Streamlit keeps imported modules in memory, so a stale server can raise import errors for new helpers.
 
-## 📈 Exploratory Data Analysis & Interactive Analytics (Phase 3)
+### Install options at a glance
 
-### 1. Multi-Tab Exploration Workspace (`pages/3_Exploration_Studio.py`)
-- **Dataset Overview:** Total rows, columns, memory consumption in MB, missing cell percentages, duplicate counts, and identifier safeguards that prevent statistical distortion.
-- **Variable Explorer:** Dynamic univariate profiling:
-  - *Numeric:* Mean, median, std dev, variance, min/max, quartiles, IQR, skewness, kurtosis, zero/negative counts, and outlier counts via Tukey's fences.
-  - *Categorical:* Unique category counts, frequency bar charts, dominant category share, rare categories (<1%), and missing/blank counts.
-  - *Datetime:* Span in days, temporal interval analysis, and chronological metric trends.
-- **Distribution Diagnostics:** Configurable histogram bins (10–80), Tukey box plots, violin density plots with quartile markers, and empirical quantile breakdowns. Includes actionable central tendency advice (mean vs. median divergence).
-- **Correlations & Relationships:** Pearson & Spearman pairwise correlation heatmaps with 2-decimal annotations, top correlated pair rankings with sample size $N$ and p-values, bivariate scatter plots with OLS trendlines, and categorical association via Cramér's V.
-- **Grouped Disparity Analysis:** Segment comparisons across categorical dimensions using flexible aggregation functions (`mean`, `median`, `sum`, `count`, `std`), disparity ratios between top and bottom groups, and sample size imbalance warnings.
-- **Multivariate Studio:** Interactive scatter plotting with X-axis, Y-axis, categorical color grouping, and quantitative bubble size encoding, supported by client performance sampling safeguards (2,500 record ceiling).
-- **Automated Insights & Chart Recommendations:** Fully deterministic scoring of optimal chart types and compilation of grounded 6-layer analytical findings.
-
-### 2. Grounded 6-Layer Interpretation Engine (`src/analytics/interpretation.py`)
-Deterministic, calculation-backed analytical findings adhering to the 6-layer interpretation model without LLM hallucination:
-1. **Observation:** What did the data reveal?
-2. **Quantitative Evidence:** Exact calculated values, units, and sample sizes.
-3. **Statistical Context:** Distributional shape, variability, missingness, or descriptive uncertainty (strictly non-causal).
-4. **Practical Implication:** Operational and analytical impact.
-5. **Limitations & Confounders:** Plausible confounding variables, sampling effects, and alternative explanations.
-6. **Next Investigation:** Concrete follow-up analyses with available dataset features.
-
-### 3. Deterministic Chart Recommender (`src/analytics/chart_recommender.py`)
-Selects and ranks optimal visualizations based on column cardinality, statistical data types, and analytical objectives, assigning a 0–100 suitability score with documented rationale and limitations.
+| File | Purpose |
+|---|---|
+| `requirements.txt` | Everything needed to run the app (Gemini SDK included). |
+| `requirements-optional.txt` | Extra model families, Optuna, SHAP, SQL connectors, Claude. Each is detected at runtime and skipped if missing. |
+| `requirements-dev.txt` | Optional packages plus pytest, ruff, and the libraries the tests use to run generated code. |
+| `pyproject.toml` | Same dependencies as extras: `pip install -e ".[ml,sql,claude,dev]"`. |
 
 ---
 
-## 🧪 Statistical Intelligence & Inference Engine (Phase 4)
+## A 10-minute guided tour
 
-### 1. Multi-Objective Statistical Workspace (`pages/4_Statistical_Intelligence.py`)
-- **Two-Group Comparisons:** Welch's t-test (heteroscedastic default), Student's t-test (equal variance), and Mann-Whitney U rank-sum test with exact p-values, Welch-Satterthwaite confidence intervals, and Cohen's d / Hedges' g / Cliff's delta effect sizes.
-- **Paired Comparisons:** Paired Student's t-test and Wilcoxon signed-rank test for repeated measures and aligned pre/post observations, with paired confidence intervals and $d_z$ effect sizes.
-- **Multi-Group Comparisons:** One-Way ANOVA omnibus testing across 3+ segments with $\eta^2$ and $\omega^2$ effect sizes and between/within variance breakdowns.
-- **Categorical Association:** Pearson Chi-Square test of independence, Fisher's exact test for sparse $2 \times 2$ tables, Cochran's expected frequency checks, standardized residual matrices, and Cramér's V.
-- **Correlation Inference:** Pearson and Spearman correlation tests with exact p-values, Fisher's $z$-transformation confidence intervals, and non-causal interpretative safeguards.
-- **OLS Linear Regression:** Ordinary Least Squares estimation with dummy-encoded categorical predictors, parameter uncertainty (std errors, t-statistics, 95% CIs), $R^2$, adjusted $R^2$, overall model F-tests, and comprehensive diagnostics:
-  - *Multicollinearity:* Variance Inflation Factor (VIF).
-  - *Heteroscedasticity:* Breusch-Pagan LM test.
-  - *Autocorrelation:* Durbin-Watson test.
-  - *Residual Normality:* Jarque-Bera test.
-  - *Influential Observations:* Cook's distance ($4/N$ threshold).
+1. **Load data.** On **Executive Overview**, drop a CSV/Excel/Parquet file into the search-bar-style uploader, or load a sample dataset.
+2. **Audit quality.** Open **Data Quality**: review the 0-100 quality score, preview each suggested fix, apply it, and undo if you disagree. Export the cleaning recipe.
+3. **Understand the data.** **Exploration Studio** shows distributions, correlations, and segment differences; **Data Dictionary** documents every column.
+4. **Test a hypothesis.** **Statistical Intelligence** runs t-tests, ANOVA, chi-square, correlation, and OLS with assumption checks, effect sizes, and a plain-English takeaway.
+5. **Build a model.** In **Model Lab**, use **AutoML** for a one-click pipeline, or **Train & evaluate**, **Selection & race**, **Ensembles**, and **Tuning** for control.
+6. **Explain it.** **Model Explainer** gives global importance, partial dependence, what-if scenarios, fairness, and drift checks.
+7. **Ship it.** **MLOps** logs runs, registers versioned models with model cards, serves them with a FastAPI template, and monitors live performance.
+8. **Ask and report.** Ask the **AI Analyst** questions in plain English, then export an HTML or PDF dossier from **Intelligence Reports**.
 
-### 2. Multiplicity Correction & Assumption Diagnostics
-- **Multiple-Testing Correction (`src/analytics/multiple_testing.py`):** Benjamini-Hochberg False Discovery Rate (FDR) control, Bonferroni FWER, and Holm-Bonferroni step-down correction.
-- **Assumption Verification (`src/analytics/assumption_checks.py`):** Shapiro-Wilk and D'Agostino-Pearson normality tests, Levene's / Brown-Forsythe homoscedasticity test, and normal Q-Q plot generation.
-- **Robustness & Sensitivity (`src/analytics/robustness.py`):** Compares baseline findings against non-parametric alternatives, outlier-trimmed samples (Tukey 1.5x IQR), and conservative significance levels ($\alpha = 0.01$).
-
-### 3. Grounded 8-Layer Interpretation Framework (`src/analytics/statistical_interpretation.py`)
-Deterministic, calculation-backed narrative generated for every inferential result:
-1. **Research Question:** Specific empirical relationship or difference under evaluation.
-2. **Method & Rationale:** Why the test was selected and its mathematical justification.
-3. **Quantitative Evidence:** Actual test statistics, degrees of freedom, sample sizes, and p-values.
-4. **Statistical Evidence:** Relation to the null hypothesis without confusing statistical detectability with proof.
-5. **Effect Size & Practical Importance:** Standardized magnitude (Cohen's d, Cliff's delta, Cramér's V, $\eta^2$, $R^2$) evaluated in operational context.
-6. **Assumptions & Limitations:** Diagnostic warnings, dependence concerns, sample limitations, and omitted confounders.
-7. **Grounded Conclusion:** Humble, non-causal conclusion language.
-8. **Recommended Next Investigation:** Concrete follow-up analyses and sensitivity checks.
+At any step, click **`</> View code`** to get the Python behind what you see.
 
 ---
 
-## 🤖 Phase 5: Evidence-Grounded AI Interpretation Engine
+## Workspaces and features
 
-Phase 5 connects deterministic data profiling, EDA, and statistical inference to a configurable Large Language Model (LLM).
+Navigation is grouped into six sections. Larger pages contain switchable sections (a radio at the top), so only the section you are viewing runs.
 
-### Core Philosophy
-**The LLM interprets evidence; deterministic Python functions calculate evidence.** Zero hallucination or fabrication of metrics, charts, p-values, or unexecuted actions.
+### Start
 
-### Key Capabilities
-- **Configurable LLM Provider Layer:** Pluggable interface supporting Google Gemini (`google-genai` SDK) and a deterministic offline `MockLLMProvider`. No API keys are leaked in logs or exceptions.
-- **Evidence Pack (Source of Truth):** Assembles scoped, verified analytical context with stable IDs (`ev_...`), exact metric values, sample sizes, and provenance.
-- **Numerical Claim Validation:** Deterministically verifies that all quantitative statements made in analyst findings correspond directly to active Evidence Pack items within strict floating-point tolerances.
-- **Contradiction Detection:** Proactively flags correlation-to-causation fallacies, directional conflicts (claiming increase when trend is negative), false significance assertions ($p \ge 0.05$), and stale dataset references.
-- **Controlled Analytical Tool Registry:** Safe execution wrappers (`get_dataset_overview`, `calculate_descriptive_statistics`, `compare_groups`, `calculate_correlation`, `fit_regression`, `get_regression_diagnostics`, `inspect_missingness`) with audit logs. Arbitrary Python/shell execution is strictly blocked.
-- **8-Layer Deep Interpretation Framework:** Generates comprehensive analyses addressing what happened, magnitude, concentration, mechanisms, confounding, robustness, and next actions.
-- **Exploratory Hypothesis Generation:** Formulates structured, testable hypotheses with explicit supporting/weakening criteria and exploratory labeling.
-- **Conversational Memory:** Preserves multi-turn session context with dataset version scoping, reference resolution, and invalidation upon dataset changes.
-- **No-Provider Fallback:** Full application remains functional without external credentials, providing deterministic analytical synthesis.
+| Page | What it does |
+|---|---|
+| **Home** | Project overview, quick access, featured workspaces, current dataset panel, workflow guide, and FAQ. |
+| **Executive Overview** | Search-bar-style upload (CSV, Excel, Parquet), 10 bundled sample datasets, a one-screen briefing with grounded findings, and recommended next steps. |
+
+### Data Analyst
+
+| Page | Capabilities |
+|---|---|
+| **Data Quality** | Schema inference and semantic types; missing values and placeholder tokens; exact duplicates and key conflicts; outliers (IQR, Z-score, MAD); consistency checks; a transparent multi-dimensional quality score; a cleaning workbench with dry-run previews, undo, reset, and a replayable recipe. |
+| **Data Dictionary** | Auto-generated column documentation: types, ranges, categories, descriptions you can edit, and export. |
+| **Data Sources** | Beyond file upload: read-only SQL, URL, and Google Sheets sources with safe-query guards. |
+| **Transformation Studio** | Joins, pivots, and reshaping with previews; results register as the active dataset. |
+| **Exploration Studio** | Univariate and bivariate views, correlations, grouped and temporal analysis, an automated chart recommender, and grounded interpretation. |
+| **Dashboard Builder** | 17 tile types (KPIs with trends, gauges, combo, funnel, map, and more), sections, resizable tiles, themes, colour-blind-safe palettes, cross-filtering, drill-down, parameters, calculated fields; export to HTML, Excel, or PDF; AI-assisted layout; generate a standalone Streamlit app. |
+
+### Data Scientist
+
+| Page | Sections and capabilities |
+|---|---|
+| **Statistical Intelligence** | *Hypothesis tests:* two-group, paired, multi-group ANOVA, chi-square, correlation, multiple-testing correction, robustness checks, OLS with diagnostics, plain-English takeaways. *A/B testing & power:* sample size, frequentist and Bayesian results, sample-ratio mismatch, a peeking simulator with corrected thresholds. |
+| **Feature Lab** | *Engineering:* transforms, encodings, bins, dates, interactions, with leakage and identifier warnings and a reusable recipe. *Selection:* filter, wrapper (RFE), embedded, and stability selection; minimal feature sets; VIF and collinearity clusters; PCA compression; a voting summary that feeds the modeling pages. |
+| **Unsupervised Lab** | K-means with elbow and silhouette, plain-English cluster profiles, PCA with loadings, isolation-forest anomalies. |
+| **Time Series** | *Classical:* decomposition, stationarity tests, ACF/PACF, rolling-origin backtests against naive baselines, forecasts with ranges. *ML forecasting:* tree and linear models on lag and calendar features (direct or recursive), compared with naive baselines. |
+| **Specialised Methods** | *Causal and uplift:* difference-in-differences with parallel-trends checks, propensity-score matching with balance diagnostics, uplift models with Qini curves. *Survival:* Kaplan-Meier, log-rank, Cox proportional hazards with checks and predicted curves. *Text:* TF-IDF classification with the top terms per class. |
+
+### Modeling
+
+| Page | Sections and capabilities |
+|---|---|
+| **Model Lab** | *Train & evaluate:* leakage-safe training, baselines, walk-forward validation, diagnostics, importance, prediction intervals. *AutoML:* leakage removal, model recommendation, race, tuning, stacking, 1-SE model choice, and a step-by-step report. *Selection & race:* a recommender based on your data's profile, cross-validated races, nested CV, corrected statistical comparison of models, learning and validation curves, model cards. *Ensembles:* bagging, voting, and stacking compared with their members, plus diversity analysis. *Tuning:* random, grid, successive-halving, or Bayesian (Optuna) search over any catalog model. |
+| **Classification & Regression** | *Classification:* imbalance experiments (SMOTE and resampling inside the pipeline), threshold tuning, calibration, multi-class strategies. *Regression:* OLS diagnostics, GLMs (Poisson, Gamma, Tweedie), quantile regression and conformal bands, regularization paths, curvature and splines, target transforms, error analysis, Bayesian regression, bootstrap coefficients, power and sample size, mixed effects. |
+| **Model Explainer** | Permutation importance, PDP/ICE, interaction strength, local explanations (Shapley, SHAP when installed), what-if and counterfactuals, fairness by group, and drift (PSI). |
+| **MLOps** | *Experiments and registry:* run tracking, comparison, tags, notes, import and export, reproduction code; a versioned registry with stages (staging, production) and model cards. *Deployment and monitoring:* single-record and batch scoring with input validation, drift against training data, a FastAPI service template, `requirements.txt` for deployment, prediction logging, and live performance against real outcomes. |
+
+### AI and reports
+
+| Page | Capabilities |
+|---|---|
+| **AI Analyst** | Quick answers or multi-step investigations through a whitelisted tool registry, with an audit log and claim validation. |
+| **Intelligence Reports** | Executive summary, methodology log, statistics, and model results exported as an interactive HTML dossier or a PDF. |
+
+### Workspace
+
+| Page | Capabilities |
+|---|---|
+| **Projects & Sessions** | Versioned projects: the cleaned data, the cleaning recipe (replayed on reopen), and the run history. |
+| **Settings** | AI provider, model, and key (session-only), PII redaction, a sensitive-column scan with masking, and the tool audit log. |
 
 ---
 
-## 🕵️ Phase 6: Agentic Orchestration & Investigation Engine
+## The AI Analyst and LLM providers
 
-Phase 6 connects deterministic analytical capabilities and evidence-grounded AI into a coordinated, multi-step investigation engine.
+**Does it need an LLM?** No. Everything numeric is deterministic. The LLM adds planning and narration; without one the app falls back to a rule-based planner.
 
-### Core Philosophy
-**The LLM proposes plans and synthesizes findings; deterministic Python services execute calculations, enforce DAG dependencies, and validate outputs.**
+| Provider | Setup | Notes |
+|---|---|---|
+| **Google Gemini** | Set `GEMINI_API_KEY` in `.env`, or paste it on **Settings** | Key pasted on Settings lasts for the session only. Model set with `GEMINI_MODEL`. |
+| **Anthropic Claude** | `pip install anthropic`, then `ANTHROPIC_API_KEY` or Settings | Choose the model on Settings. |
+| **Ollama (local)** | Install Ollama, `ollama serve`, `ollama pull llama3.1` | Default host `http://localhost:11434`. No key; data never leaves your machine. Settings checks connectivity. |
+| **Offline** | Nothing | Rule-based planner; all analysis still works. |
 
-### Key Capabilities
-- **Typed Lifecycle Architecture:** Strict Pydantic models for `InvestigationPlan`, `InvestigationStep`, `InvestigationState`, and `InvestigationResult`.
-- **Deterministic DAG Validation (`WorkflowGraphValidator`):** Verifies step dependency acyclicity via Kahn's algorithm, enforces registered tool schemas, blocks prompt-injection attempts, and validates that all referenced columns exist in the active working dataset.
-- **Dependency-Aware Step Execution (`StepExecutor`):** Schedules steps in topological order, halts downstream branches on prerequisite failure, and caches deterministic outputs using composite `(version, tool, args)` keys.
-- **Explicit State Machine (`InvestigationStateMachine`):** Implements an audited transition graph across 12 lifecycle states (`CREATED`, `PLANNING`, `PLAN_VALIDATION`, `READY`, `RUNNING`, `REVIEWING`, `REVISING`, `SYNTHESIZING`, `COMPLETED`, `FAILED`, `CANCELLED`, `BUDGET_EXCEEDED`).
-- **Adaptive Plan Revision (`PlanRevisionEngine`):** Dynamically adjusts remaining steps based on intermediate findings (e.g., automatically appending a robustness check when a significant segment disparity $p < 0.05$ is detected).
-- **Deterministic Stopping Criteria & Budgets (`TerminationEvaluator`):** Enforces bounds on steps, tool calls, elapsed time, and plan revisions. Detects and halts infinite loop cycles via plan signature hashing.
-- **Error Classification & Bounded Recovery (`ErrorRecoveryClassifier`):** Categorizes failures into transient infrastructure, argument errors, assumption violations, and security breaches.
-- **Dual-Mode UI Workspace:** Toggle between **Quick Answer** (instant single-turn synthesis) and **Deep Multi-Step Investigation** (plan preview, user approval, live execution trace, budget indicators, and final investigation report).
+**How answers stay trustworthy**
+
+1. The planner may call only approved analytical tools (no `eval`, shell, or raw SQL).
+2. Each tool returns structured **evidence** with stable IDs, values, and sample sizes.
+3. The narrator writes from that evidence, and a **numerical claim validator** rejects statements that do not match.
+4. Observational data is described with associations, never as proven causes.
 
 ---
 
+## View code: reproduce anything in Colab or Jupyter
+
+Most components have a **`</> View code`** popover with standalone Python (pandas, scikit-learn, statsmodels, Plotly) that reproduces what you see.
+
+- **Customize the code:** chart library (Plotly, Matplotlib, Seaborn), comment level (none, brief, teaching), sanity checks, notebook or function layout, data source (local file, Colab upload, Google Drive, URL, Google Sheet), theme, palette, titles, and size.
+- **Export:** download as `.py` or `.ipynb`, copy a single **Colab cell**, or use the sidebar to export every snippet on the page as one notebook.
+- **Other languages:** R (tidyverse) and SQL equivalents for core components.
+- The test suite executes the generated code and compares its output with the app's engine, so snippets stay correct.
+
 ---
 
-## 🛡️ Phase 8: End-to-End Integration, Production Hardening & Release Readiness
+## Sample datasets
 
-Phase 8 completes the AI Data Analyst Agent by integrating all subsystems into a unified, hardened, production-ready analytical platform.
+Ten ready-made datasets (plus the original e-commerce churn file) live in `sample_data/` and load from the Executive Overview gallery. They include realistic problems: missing values, outliers, imbalance, messy casing.
+
+| Dataset | Good for |
+|---|---|
+| `hr_attrition` | Classification, survival analysis |
+| `house_prices` | Regression, outliers |
+| `retail_sales_daily` | Time series, forecasting |
+| `marketing_ab_test` | A/B testing, causal analysis |
+| `credit_default` | Imbalanced classification |
+| `patient_readmission` | Data quality, classification |
+| `iot_sensor_readings` | Anomalies, time series |
+| `product_reviews` | Text classification |
+| `student_performance` | Regression, group tests |
+| `airline_delays` | Regression, data cleaning |
+| `ecommerce_customer_churn` | Quality audit, churn modeling |
+
+Regenerate the ten synthetic files with `python scripts/make_sample_data.py` (deterministic).
+
+---
+
+## Configuration
+
+Copy `.env.example` to `.env`. Everything is optional.
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `APP_NAME` | `CelestiusAI` | Name shown in the UI and reports. |
+| `APP_ENV` | `development` | Environment label. |
+| `LOG_LEVEL` | `INFO` | Logging verbosity. |
+| `MAX_UPLOAD_SIZE_MB` | `100` | Upload limit. |
+| `AGENT_MAX_ITERATIONS` | `10` | Cap on investigation steps. |
+| `AGENT_EXECUTION_TIMEOUT_SECONDS` | `120` | Time cap for agent runs. |
+| `LLM_PROVIDER` | `gemini` | Default provider (providers can also be switched in Settings). |
+| `GEMINI_API_KEY`, `GEMINI_MODEL` | unset | Gemini credentials and model. |
+| `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL` | unset | Claude credentials and model. |
+| `OLLAMA_HOST`, `OLLAMA_MODEL` | `http://localhost:11434`, `llama3.1` | Local model server and model. |
+| `LLM_TIMEOUT_SECONDS`, `LLM_MAX_RETRIES` | `60`, `2` | Provider call limits. |
+
+Theme and server defaults are in `.streamlit/config.toml`.
+
+---
+
+## Architecture
 
 ```mermaid
 flowchart TD
-    subgraph Ingestion_Lifecycle ["1. Ingestion & Canonical Dataset Lifecycle"]
-        RAW["Uploaded Raw File\n(CSV / Excel / Parquet)"] --> MD["ManagedDataset\n(Raw Immutable DF, Working DF, Fingerprint, Version v)"]
-        MD --> TRANS["Transformation Pipeline\n(Previews, Apply, Undo, Reset)"]
-        TRANS -->|Increments v & Invalidates Downstream| MD
-    end
-
-    subgraph Analytical_Engines ["2. Deterministic Analytical Engines"]
-        MD --> QUAL["Data Quality Engine\n(Missingness, Outliers, Duplicates, Score)"]
-        MD --> EDA["Exploration Studio\n(Distributions, Correlations, Disparities)"]
-        MD --> STAT["Statistical Intelligence Engine\n(Hypothesis Tests, CI, OLS Diagnostics, FDR)"]
-        MD --> PRED["Predictive Analytics Lab\n(Leakage-Safe Splitting, Baselines, ML, Forecasters)"]
-    end
-
-    subgraph Evidence_Layer ["3. Evidence & Governance Layer"]
-        QUAL & EDA & STAT & PRED --> EP["Evidence Pack & Evidence Registry\n(Stable IDs, Calculated Values, Sample Sizes)"]
-        MD -.->|Dataset Changed or Transformed| INVAL["State Invalidation Engine\n(Clears Stale Results & Marks Models Stale)"]
-        INVAL -.-> EP
-    end
-
-    subgraph Agentic_Layer ["4. Agentic AI & Investigation Orchestration"]
-        EP --> AGENT["AI Analyst & Orchestrator\n(DAG Validation, StepExecutor, LLM Synthesis)"]
-        AGENT -->|Tool Invocations| STAT
-        AGENT -->|Tool Invocations| EDA
-        AGENT --> CLAIM["Numerical Claim Validator\n(Zero Hallucination Tolerance)"]
-    end
-
-    subgraph Delivery_Layer ["5. Delivery & Reporting"]
-        EP & CLAIM & PRED --> REP["Intelligence Reporting Engine\n(Executive, EDA, Stat, AI, Predictive Reports)"]
-        REP --> HTML["Interactive HTML Dossier"]
-        REP --> PDF["Publication-Ready PDF Export"]
-    end
+    RAW["Uploaded file / SQL / URL / sample"] --> MD["ManagedDataset<br/>(immutable raw, working copy, fingerprint, version)"]
+    MD --> CLEAN["Cleaning pipeline<br/>(preview, apply, undo, recipe)"]
+    CLEAN -->|new version, stale results cleared| MD
+    MD --> ENG["Deterministic engines<br/>profiling, EDA, statistics, features, models"]
+    ENG --> EV["Evidence registry<br/>(stable IDs, values, sample sizes)"]
+    EV --> AGENT["AI Analyst<br/>planner, whitelisted tools, narrator"]
+    AGENT --> CV["Claim validator"]
+    EV --> REP["Reports (HTML / PDF)"]
+    ENG --> OPS["Experiments, registry, deployment, monitoring"]
 ```
 
-### 1. Canonical Dataset Lifecycle & Downstream Invalidation
-- **Version Tracking:** The `ManagedDataset` maintains a monotonically increasing `version` counter (starting at `v=1`).
-- **Strict Invalidation Rules (`invalidate_downstream_analyses`):**
-  - Applying, undoing, or resetting a data cleaning transformation increments dataset version and clears stale downstream analysis caches, active report documents, and latest investigation states.
-  - Previously trained predictive models in the `ModelRegistry` are deterministically flagged with `is_stale = True`, preventing obsolete models from being presented as current.
-  - Uploading a new dataset triggers a complete session state purge, preventing evidence leakage across independent datasets or sessions.
-- **Original Data Immutability:** Raw uploaded records are preserved in `_raw_df`, guaranteeing safe reset without memory bloat.
+### Repository layout
 
-### 2. Security Hardening
-- **Path Traversal & Filename Defense:** Ingestion sanitizes uploaded filenames, stripping path separators and verifying extensions against explicit allowlists (`.csv`, `.parquet`, `.xlsx`, `.xls`).
-- **No Arbitrary Code Execution:** The analytical tool registry exposes strict, validated Python function endpoints. Arbitrary code execution (`eval`, `exec`, shell scripts, or raw SQL queries) is strictly prohibited.
-- **Prompt Injection Defense:** Plan validation screens user prompts and intermediate inputs against structural injection markers (`system:`, `ignore previous`, `exec(`, `<script>`).
-- **Zero Secret Leakage:** Configuration values (e.g., `GEMINI_API_KEY`) are masked in logs and developer diagnostics using secure masking (`sk-...1234`).
-- **Safe Serialization:** Rejects unsafe pickle or joblib artifacts; uses typed Pydantic models for data interchange.
-
-### 3. Error Classification & Graceful Fallback
-- **Tiered Error Taxonomy:** Separates `DataIngestionError`, `SchemaInferenceError`, `DataQualityError`, and `AnalyticalExecutionError` from transient infrastructure faults.
-- **Deterministic Offline Fallback:** If an LLM provider is unconfigured or encounters API limits, all statistical analysis, hypothesis testing, predictive modeling, and executive report generation remain 100% operational using deterministic offline synthesis.
-- **PDF Export Fallback:** If OS-level PDF rendering libraries or fonts are unavailable, the application gracefully returns a user-friendly error message while offering instant, full-featured standalone HTML exports.
-
-### 4. Container Deployment & Docker Readiness
-A multi-stage, non-root `Dockerfile` is provided for local or cloud container environments:
-```bash
-# Build the container image
-docker build -t da-agent:latest .
-
-# Run the containerized analytical platform
-docker run -p 8501:8501 --env-file .env da-agent:latest
+```text
+CelestiusAI/
+├── app.py                      # Navigation router (st.navigation, grouped sections)
+├── pages/                      # One file per workspace; large pages host switchable sections
+├── src/
+│   ├── sections/               # Section bodies shown inside parent pages
+│   ├── config/                 # Typed settings, secret masking
+│   ├── core/                   # Session state, UI components, code generators, site content
+│   ├── ingestion/              # Loaders, schema inference, cleaning pipeline, recipes, samples
+│   ├── profiling/              # Missingness, duplicates, outliers, quality score
+│   ├── analytics/              # Statistical and exploratory engines
+│   ├── interpretation/         # Grounded narrative layers, contradiction detection
+│   ├── datascience/            # Model catalog, selection, ensembles, regression, features,
+│   │                           #   explainability, tracking, AutoML, causal, survival, text, time series
+│   ├── predictive/             # Leakage-safe predictive lab engine
+│   ├── agent/                  # Planner, tool registry, providers (Gemini, Claude, Ollama)
+│   ├── reporting/              # HTML and PDF dossiers
+│   ├── visualization/          # Chart builders
+│   ├── security/               # Privacy: PII redaction, sensitive-column scan
+│   └── workspace/              # Projects and the model registry
+├── sample_data/                # 11 bundled datasets
+├── scripts/                    # make_sample_data.py
+├── tests/                      # Engine, code-generator, and AppTest page tests
+├── artifacts/                  # Local projects, registry, and exports (git-ignored)
+├── .github/workflows/ci.yml    # Ruff and pytest on Python 3.11 and 3.12
+├── Dockerfile
+├── requirements*.txt, pyproject.toml, .env.example
+└── README.md
 ```
-The container runs as non-root user `appuser` (UID 1000) and includes automatic healthchecks hitting `/_stcore/health`.
+
+### Design principles
+
+- **Tool-first:** every number comes from tested deterministic code.
+- **Engines are separate from UI:** `src/` modules are pure and unit-tested; pages are thin.
+- **Dataset lifecycle:** cleaning increments a dataset version, clears stale downstream results, and marks previously trained models stale.
+- **Generated code is tested:** each code generator is executed in tests and compared with its engine.
 
 ---
 
-## 🚀 Quickstart Guide (Pop!_OS / Linux Terminal)
+## Security and privacy
 
-### 1. Create a Virtual Environment
-
-```bash
-python3 -m venv .venv
-```
-
-### 2. Activate the Environment
-
-```bash
-source .venv/bin/activate
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure Credentials (Optional)
-
-```bash
-cp .env.example .env
-```
-Edit `.env` (optional):
-```env
-LLM_PROVIDER=gemini
-GEMINI_API_KEY="your-gemini-api-key"
-GEMINI_MODEL=gemini-1.5-pro
-```
-*Note: If no API key is configured, the application runs seamlessly in **Deterministic Offline Mode** or with the built-in **Mock Provider**.*
-
-### 5. Run the Application
-
-```bash
-streamlit run app.py
-```
-Open `http://localhost:8501` to start your analytical session!
-
-### 6. Run Automated Tests
-
-Execute the complete 142-test automated test suite:
-```bash
-pytest
-```
-
-### 7. Run Code Quality & Formatting Checks
-
-```bash
-ruff check .
-ruff format --check .
-```
+- **Keys are session-only:** never written to disk or logs; configuration values are masked in diagnostics.
+- **PII controls:** optional redaction before prompts leave the app, a sensitive-column scan, and masking.
+- **No arbitrary execution:** the AI can call only registered analytical tools; no `eval`, shell, or free-form SQL. Data-source SQL is read-only and guarded.
+- **Prompt-injection screening** of user prompts and intermediate inputs.
+- **Upload hardening:** filename sanitization, extension allowlists, size limits, content fingerprints.
+- **Model files are pickles:** `.joblib` exports and registry files are Python pickles. **Only load files you created or fully trust.**
+- **Local data:** saved projects and the registry live under `artifacts/` on your machine and are git-ignored.
+- **Local models:** with Ollama, no data leaves your machine.
 
 ---
 
-## ⚠️ Known Limitations & Boundaries
+## Testing and quality
 
-1. **In-Memory Dataset Scope:** Designed for single-node in-memory analysis (up to ~500MB CSV / 2,000,000 rows depending on host RAM). For petabyte-scale distributed data, an upstream query engine (e.g., BigQuery, DuckDB, Spark) should be used to extract relevant analytical subsets.
-2. **Single-User Local Session State:** Streamlit session state is scoped to individual browser sessions. Multi-tenant enterprise deployments require external authentication proxies and database-backed session stores.
-3. **Causal Claims Safeguard:** The application enforces strict non-causal language on observational data. Observational regression or group disparities are reported as empirical associations, never as proven causal effects without experimental controls.
+```bash
+pip install -r requirements-dev.txt
+pytest                      # ~880 tests: engines, code generators, and Streamlit AppTest page flows
+ruff check .                # lint
+ruff format --check .       # formatting
+```
+
+Tests cover each engine against synthetic data with known ground truth (recovered coefficients, conformal coverage, covariate balance, sample-size formulas), execute generated code, and drive pages end to end. CI runs ruff and pytest on Python 3.11 and 3.12.
 
 ---
 
-## 🗺️ Roadmap & Phase Status
+## Docker
 
-| Phase | Milestone | Status |
-| :--- | :--- | :---: |
-| **Phase 1** | **Project Architecture, Shell, Config, Session State & Tests** | **Complete** ✅ |
-| **Phase 2** | **Data Ingestion, Profiling, Quality Scoring & Cleaning Workbench** | **Complete** ✅ |
-| **Phase 3** | **Exploratory Data Analysis (EDA) & Interactive Analytics Engine** | **Complete** ✅ |
-| **Phase 4** | **Statistical Intelligence, Hypothesis Testing & Inference Engine** | **Complete** ✅ |
-| **Phase 5** | **Evidence-Grounded AI Interpretation Engine & Claim Validation** | **Complete** ✅ |
-| **Phase 6** | **Agentic Multi-Step Investigation Orchestration & Plan Validation** | **Complete** ✅ |
-| **Phase 7** | **Predictive Intelligence Lab & Executive Report Export Engine** | **Complete** ✅ |
-| **Phase 8** | **End-to-End Integration, Production Hardening & Release Readiness** | **Complete** ✅ |
+```bash
+docker build -t celestiusai:latest .
+docker run -p 8501:8501 --env-file .env celestiusai:latest
+```
 
+The image uses `python:3.12-slim`, runs as a non-root user, and includes a health check on `/_stcore/health`. Install optional packages in the image by adding `requirements-optional.txt` to the Dockerfile if you need XGBoost, SHAP, SQL connectors, or Claude.
+
+---
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| `ImportError` for a new helper after updating | Restart `streamlit run`; Streamlit caches imported modules. |
+| A model (XGBoost, LightGBM, CatBoost) is missing from lists | `pip install -r requirements-optional.txt`. |
+| SHAP or Optuna options missing | Same: they are optional installs. |
+| PDF export unavailable | The HTML export is always available; check that ReportLab and fonts are installed. |
+| AI answers look rule-based | No provider is configured; add a key or start Ollama on **Settings**. |
+| Ollama not detected | Run `ollama serve` and confirm the host (`OLLAMA_HOST`) and that a model is pulled. |
+| Slow page | Use a smaller sample of rows on the heavy modeling sections, or lower CV folds and search trials. |
+
+---
+
+## Known limitations
+
+1. **In-memory scale:** designed for single-node analysis (roughly up to a few hundred MB or about 2 million rows, depending on RAM). For larger data, extract a subset with an upstream engine (BigQuery, DuckDB, Spark).
+2. **Single-user sessions:** Streamlit session state is per browser session. Multi-user deployments need an authentication proxy and a database-backed store.
+3. **Observational data:** the app uses associative language and offers causal tools (matching, difference-in-differences) with explicit warnings; they reduce but cannot remove bias from unmeasured confounders.
+4. **Local registry:** the model registry and projects are file-based on one machine; it is not a shared team registry.

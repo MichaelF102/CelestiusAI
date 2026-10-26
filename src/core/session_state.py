@@ -27,6 +27,23 @@ KEY_MODEL_REGISTRY = "model_registry"  # Predictive model registry
 KEY_PREDICTIVE_RECORDS = "predictive_records"  # Latest predictive model records
 KEY_ACTIVE_REPORT_DOC = "active_report_doc"  # Generated report document
 KEY_LATEST_INVESTIGATION_STATE = "latest_investigation_state"  # Orchestrated investigation trace
+KEY_DATASET_LIBRARY = (
+    "dataset_library"  # Named side tables (joins, pivots, SQL results); workspace-wide
+)
+KEY_DATA_DICTIONARY = "data_dictionary"  # Per-column business descriptions (editable)
+KEY_DASHBOARD_SPEC = "dashboard_spec"  # Dashboard tiles + filters
+KEY_FEATURE_SPECS = "feature_specs"  # Ordered feature-engineering steps
+KEY_FITTED_MODELS = "fitted_models"  # Name -> FittedModel (tuning / deployment)
+KEY_TRANSFORM_OPS = "transform_ops"  # Transformation Studio operation log
+KEY_PRIVACY_REDACT = "privacy_redact"  # Redact PII from text sent to an LLM
+KEY_LLM_OVERRIDE = "llm_override"  # Session-only LLM provider/model/key override
+KEY_EXPERIMENT_LOG = "experiment_log"  # ExperimentLog of every tracked run (workspace-wide)
+KEY_PREDICTION_LOG = "prediction_log"  # Scored rows kept for monitoring
+KEY_AUTOML_RESULT = "automl_result"  # Latest AutoML run
+KEY_SELECTED_FEATURES = "selected_features"  # Feature set chosen on the Feature Selection page
+KEY_BASELINE_QUALITY_SCORE = "baseline_quality_score"  # Score of the raw dataset, for before/after
+KEY_UI_COMPACT = "ui_compact"  # Compact density toggle (UI preference, survives dataset resets)
+KEY_ANALYST_PREFILL = "analyst_prefill_question"  # Question handed to the AI Analyst page
 
 
 def get_default_session_state() -> dict[str, Any]:
@@ -48,6 +65,21 @@ def get_default_session_state() -> dict[str, Any]:
         KEY_PREDICTIVE_RECORDS: [],
         KEY_ACTIVE_REPORT_DOC: None,
         KEY_LATEST_INVESTIGATION_STATE: None,
+        KEY_DATASET_LIBRARY: {},
+        KEY_DATA_DICTIONARY: {},
+        KEY_DASHBOARD_SPEC: None,
+        KEY_FEATURE_SPECS: [],
+        KEY_FITTED_MODELS: {},
+        KEY_TRANSFORM_OPS: [],
+        KEY_PRIVACY_REDACT: True,
+        KEY_LLM_OVERRIDE: None,
+        KEY_EXPERIMENT_LOG: None,
+        KEY_PREDICTION_LOG: None,
+        KEY_AUTOML_RESULT: None,
+        KEY_SELECTED_FEATURES: None,
+        KEY_BASELINE_QUALITY_SCORE: None,
+        KEY_UI_COMPACT: False,
+        KEY_ANALYST_PREFILL: None,
     }
 
 
@@ -114,6 +146,13 @@ def reset_dataset_state(state: MutableMapping[str, Any]) -> None:
         KEY_PREDICTIVE_RECORDS,
         KEY_ACTIVE_REPORT_DOC,
         KEY_LATEST_INVESTIGATION_STATE,
+        KEY_BASELINE_QUALITY_SCORE,
+        KEY_DATA_DICTIONARY,
+        KEY_DASHBOARD_SPEC,
+        KEY_FEATURE_SPECS,
+        KEY_FITTED_MODELS,
+        KEY_AUTOML_RESULT,
+        KEY_SELECTED_FEATURES,
     ]
     for key in keys_to_reset:
         state[key] = defaults[key]
@@ -122,3 +161,33 @@ def reset_dataset_state(state: MutableMapping[str, Any]) -> None:
 def is_dataset_loaded(state: MutableMapping[str, Any]) -> bool:
     """Return True if a dataset reference and metadata are currently loaded in state."""
     return state.get(KEY_CURRENT_DATASET) is not None or state.get(KEY_DATASET_METADATA) is not None
+
+
+def get_or_create(state: MutableMapping[str, Any], key: str, factory: Any) -> Any:
+    """Return `state[key]`, creating it with `factory()` when missing or None."""
+    if state.get(key) is None:
+        state[key] = factory()
+    return state[key]
+
+
+def get_model_registry(state: MutableMapping[str, Any]) -> Any:
+    """Return the predictive ModelRegistry, replacing any missing/invalid entry."""
+    from src.predictive.model_registry import ModelRegistry
+
+    if not isinstance(state.get(KEY_MODEL_REGISTRY), ModelRegistry):
+        state[KEY_MODEL_REGISTRY] = ModelRegistry()
+    return state[KEY_MODEL_REGISTRY]
+
+
+def get_transformation_pipeline(state: MutableMapping[str, Any]) -> Any:
+    """Return the active TransformationPipeline, creating one if needed."""
+    from src.ingestion.transformation_history import TransformationPipeline
+
+    return get_or_create(state, KEY_TRANSFORMATION_PIPELINE, TransformationPipeline)
+
+
+def update_quality_profile(state: MutableMapping[str, Any], profile: Any, schema: Any) -> None:
+    """Store a refreshed quality profile/schema and invalidate dependent analyses."""
+    state[KEY_DATA_QUALITY_REPORT] = profile
+    state[KEY_DATASET_SCHEMA] = schema
+    invalidate_downstream_analyses(state)

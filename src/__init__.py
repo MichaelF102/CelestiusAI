@@ -1,3 +1,3 @@
-"""AI Data Analyst Agent core package."""
+"""CelestiusAI core package."""
 
 __version__ = "0.1.0"

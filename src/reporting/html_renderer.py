@@ -11,6 +11,11 @@ import html
 from src.reporting.report_models import ReportDocument, ReportSection, ReportTable
 
 
+def _escape_multiline(text: str) -> str:
+    """HTML-escape text and convert newlines to <br> (no backslash inside f-strings: py3.11)."""
+    return html.escape(text).replace("\n", "<br>")
+
+
 def render_report_to_html(doc: ReportDocument) -> str:
     """Render a ReportDocument to a complete standalone HTML string."""
     meta = doc.metadata
@@ -182,7 +187,7 @@ def render_report_to_html(doc: ReportDocument) -> str:
 
         <section class="card">
             <h2>Executive Summary</h2>
-            <p>{html.escape(doc.executive_summary).replace("\n", "<br>")}</p>
+            <p>{_escape_multiline(doc.executive_summary)}</p>
         </section>
 
         {"".join(sections_html)}
@@ -195,7 +200,7 @@ def render_report_to_html(doc: ReportDocument) -> str:
         </section>
 
         <footer>
-            Generated deterministically by <strong>AI Data Analyst Agent</strong> &bull; All quantitative findings backed by verified evidence items.
+            Generated deterministically by <strong>CelestiusAI</strong> &bull; All quantitative findings backed by verified evidence items.
         </footer>
     </div>
 </body>
@@ -219,7 +224,7 @@ def _render_section_html(sec: ReportSection) -> str:
     return f"""
     <section class="card">
         <h2>{html.escape(sec.title)}</h2>
-        <p>{html.escape(sec.summary_markdown).replace("\n", "<br>")}</p>
+        <p>{_escape_multiline(sec.summary_markdown)}</p>
         {tables_html}
     </section>
     """

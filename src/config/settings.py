@@ -16,7 +16,7 @@ LogLevelType = Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
 class AppSettings(BaseModel):
     """Application settings schema with validation and sensitive field masking."""
 
-    app_name: str = Field(default="AI Data Analyst Agent", min_length=1)
+    app_name: str = Field(default="CelestiusAI", min_length=1)
     app_version: str = Field(default="0.1.0")
     app_env: str = Field(default="development")
     log_level: LogLevelType = Field(default="INFO")
@@ -28,6 +28,12 @@ class AppSettings(BaseModel):
     # Optional LLM integration (Gemini API)
     gemini_api_key: str | None = Field(default=None)
     gemini_model: str = Field(default="gemini-1.5-pro")
+
+    # Optional additional providers
+    anthropic_api_key: str | None = Field(default=None)
+    anthropic_model: str = Field(default="claude-sonnet-5-5")
+    ollama_host: str = Field(default="http://localhost:11434")
+    ollama_model: str = Field(default="llama3.1")
 
     @field_validator("log_level", mode="before")
     @classmethod
@@ -43,7 +49,10 @@ class AppSettings(BaseModel):
     @property
     def is_llm_configured(self) -> bool:
         """Safe boolean check indicating whether an LLM API key has been supplied."""
-        return bool(self.gemini_api_key and self.gemini_api_key.strip())
+        return bool(
+            (self.gemini_api_key and self.gemini_api_key.strip())
+            or (self.anthropic_api_key and self.anthropic_api_key.strip())
+        )
 
     @property
     def masked_gemini_api_key(self) -> str:
@@ -106,7 +115,7 @@ def load_settings_from_env() -> AppSettings:
         ) from err
 
     return AppSettings(
-        app_name=os.getenv("APP_NAME", "AI Data Analyst Agent"),
+        app_name=os.getenv("APP_NAME", "CelestiusAI"),
         app_version=os.getenv("APP_VERSION", "0.1.0"),
         app_env=os.getenv("APP_ENV", "development"),
         log_level=os.getenv("LOG_LEVEL", "INFO"),  # type: ignore[arg-type]
@@ -115,6 +124,10 @@ def load_settings_from_env() -> AppSettings:
         agent_execution_timeout_seconds=execution_timeout,
         gemini_api_key=os.getenv("GEMINI_API_KEY"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-1.5-pro"),
+        anthropic_api_key=os.getenv("ANTHROPIC_API_KEY") or None,
+        anthropic_model=os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5-5"),
+        ollama_host=os.getenv("OLLAMA_HOST", "http://localhost:11434"),
+        ollama_model=os.getenv("OLLAMA_MODEL", "llama3.1"),
     )
 
 

@@ -137,7 +137,7 @@ def render_report_to_pdf(doc: ReportDocument) -> bytes:
     story.append(
         HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e1"), spaceAfter=8)
     )
-    footer_text = "Generated deterministically by AI Data Analyst Agent. All claims verifiable against dataset evidence items."
+    footer_text = "Generated deterministically by CelestiusAI. All claims verifiable against dataset evidence items."
     story.append(Paragraph(f"<i>{footer_text}</i>", meta_style))
 
     pdf.build(story)
