@@ -2,8 +2,7 @@
 
 import streamlit as st
 from src.config.settings import get_settings
-from src.core.overview import column_type_counts, format_type_counts
-from src.core.session_state import KEY_CURRENT_DATASET, KEY_DATASET_SCHEMA, init_session_state
+from src.core.session_state import KEY_CURRENT_DATASET, init_session_state
 from src.core.site_content import GUIDE, MODULES, PRINCIPLES, TRACKS, WORKFLOW
 from src.core.ui_components import esc, render_sidebar_status
 from src.datascience.catalog import CATALOG
@@ -63,7 +62,7 @@ st.markdown(
     font-size: .88rem; color: #94a3b8; }
 .qt-row b { color: #e2e8f0; font-weight: 600; }
 .qt-badge { background: #1d4ed8; color: #fff; border-radius: 6px; padding: 3px 12px; font-size: .78rem; font-weight: 700; }
-.qt-step { border-radius: 10px; padding: 14px 12px; text-align: center; min-height: 112px;
+.qt-step { border-radius: 10px; padding: 14px 12px; text-align: center; min-height: 130px;
     background: color-mix(in srgb, var(--c) 14%, #0b1222); border: 1px solid color-mix(in srgb, var(--c) 45%, #0b1222); }
 .qt-step b { color: color-mix(in srgb, var(--c) 55%, #fff); font-size: .88rem; }
 .qt-step p { color: #94a3b8; font-size: .75rem; margin: .35rem 0 0 0; line-height: 1.4; }
@@ -223,49 +222,19 @@ for col, (title, desc, tags, page, art_key) in zip(
         )
         st.page_link(page, label="Open workspace →", use_container_width=True)
 
-# ------------------------------------------------------------------ workspace + workflow
-left, right = st.columns([2, 3], gap="large")
-with left:
-    heading("📂 Current Workspace")
-    if has_data:
-        schema = st.session_state.get(KEY_DATASET_SCHEMA) or dataset.schema_info
-        df = dataset.working_df
-        rows = [
-            ("File", esc(dataset.filename)),
-            ("Rows", f"{len(df):,}"),
-            ("Columns", f"{len(df.columns)}"),
-            ("Column types", esc(format_type_counts(column_type_counts(schema)))),
-            ("Cleaning version", f"v{getattr(dataset, 'version', 1)}"),
-            ("State", '<b style="color:#34d399">Active in session</b>'),
-        ]
-        head = f'<span class="qt-badge">{esc(dataset.filename)}</span>'
-    else:
-        rows = [
-            ("File", "none loaded"),
-            ("Supported", "CSV, Excel, SQL, URL, Google Sheet"),
-            ("Samples", f"{len(SAMPLE_CATALOG) + 1} bundled datasets"),
-            ("State", "Waiting for data"),
-        ]
-        head = '<span class="qt-badge" style="background:#475569">NO DATA</span>'
-    body = "".join(f'<div class="qt-row"><span>{k}</span><b>{v}</b></div>' for k, v in rows)
-    st.markdown(
-        f'<div class="qt-panel"><div class="qt-row" style="border:0"><span>ACTIVE DATASET</span>{head}</div>{body}'
-        '<p style="color:#64748b;font-size:.76rem;margin:.8rem 0 0 0">Load data on the Overview; every workspace shares it.</p></div>',
-        unsafe_allow_html=True,
-    )
-with right:
-    st.subheader("Workflow")
-    st.caption("A typical path from file to report. Jump in at any step.")
-    for start in range(0, len(WORKFLOW), 4):
-        row = WORKFLOW[start : start + 4]
-        for col, step in zip(st.columns(4), row, strict=False):
-            color = STEP_COLORS[(step.number - 1) % len(STEP_COLORS)]
-            col.markdown(
-                f'<div class="qt-step" style="--c:{color}">{step.icon}<br><b>{step.number}. {esc(step.title)}</b>'
-                f"<p>{esc(step.description)}</p></div>",
-                unsafe_allow_html=True,
-            )
-            col.page_link(step.page, label="Go →", use_container_width=True)
+# ------------------------------------------------------------------ workflow
+st.subheader("Workflow")
+st.caption("A typical path from file to report. Jump in at any step.")
+PER_ROW = 5
+for start in range(0, len(WORKFLOW), PER_ROW):
+    for col, step in zip(st.columns(PER_ROW), WORKFLOW[start : start + PER_ROW], strict=False):
+        color = STEP_COLORS[(step.number - 1) % len(STEP_COLORS)]
+        col.markdown(
+            f'<div class="qt-step" style="--c:{color}">{step.icon}<br><b>{step.number}. {esc(step.title)}</b>'
+            f"<p>{esc(step.description)}</p></div>",
+            unsafe_allow_html=True,
+        )
+        col.page_link(step.page, label="Go →", use_container_width=True)
 
 # ------------------------------------------------------------------ components (detail)
 st.subheader("Components")

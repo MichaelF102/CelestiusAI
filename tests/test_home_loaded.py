@@ -1,4 +1,4 @@
-"""Home renders its workspace panel with a dataset loaded."""
+"""Home renders without errors with a dataset loaded."""
 
 from pathlib import Path
 
